@@ -71,8 +71,63 @@
     <!-- Page Specific JS File -->
     <script src="<?= base_url(); ?>/assets/js/page/index-0.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modalProfil">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body Del">
+                    <form action="#" id="formProfil" class="form-horizontal">
+                        <input type="text" name="id" id="id" value="" hidden>
+                        <div class="form-group col">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" value="" class="form-control">
+                        </div>
+
+                        <div class="form-group col">
+                            <label for="password">password</label>
+                            <input type="password" name="password" id="password" value="" class="form-control">
+
+                            <div class="invalid-feedback errorPassword">
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" name="showpass" class="custom-control-input" tabindex="3" id="showpass" onclick="myFunction()">
+                                <label class="custom-control-label" for="showpass">Show Password</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="editProfil()" class="btn btn-primary Terima">Edit</button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Kembali</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 <script>
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
     function btnLogout(id) {
         Swal.fire({
             title: 'Apakah anda akan logout?',
@@ -95,6 +150,62 @@
                             }).then((result) => {
                                 if (result.value) {
                                     window.location.replace('/')
+                                }
+                            })
+
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert('Error get data from ajax');
+                    }
+                });
+            }
+        })
+    }
+
+    function btnProfil(id) {
+        $('#formProfil')[0].reset();
+        $('#modalProfil').modal('show');
+        $('.modal-title').text('Edit Profil');
+
+        $.ajax({
+            type: "GET",
+            url: "<?= site_url('admin/getProfil/'); ?>/" + id,
+            dataType: "json",
+            success: function(data) {
+                $('[name=id]').val(data.id);
+                $('[name=name]').val(data.name);
+                $('[name=password]').val(data.password);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error get data from ajax');
+            }
+        });
+    }
+
+    function editProfil() {
+        Swal.fire({
+            title: 'Apakah anda yakin mengganti profil?',
+            showDenyButton: true,
+            icon: 'warning',
+            confirmButtonText: 'Yakin?',
+            denyButtonText: `Kembali`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?= site_url('admin/edit_profil'); ?>",
+                    data: $('#formProfil').serialize(),
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Berhasil',
+                                html: `Data berhasil di edit`,
+                            }).then((result) => {
+                                if (result.value) {
+                                    window.location.replace('/dashboard')
                                 }
                             })
 
