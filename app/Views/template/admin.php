@@ -70,6 +70,43 @@
 
     <!-- Page Specific JS File -->
     <script src="<?= base_url(); ?>/assets/js/page/index-0.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<script>
+    function btnLogout(id) {
+        Swal.fire({
+            title: 'Apakah anda akan logout?',
+            showDenyButton: true,
+            icon: 'warning',
+            confirmButtonText: 'Yakin?',
+            denyButtonText: `Kembali`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?= site_url('auth/logout/'); ?>/" + id,
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Berhasil',
+                                html: `Anda Berhasil Logout`,
+                            }).then((result) => {
+                                if (result.value) {
+                                    window.location.replace('auth')
+                                }
+                            })
+
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert('Error get data from ajax');
+                    }
+                });
+            }
+        })
+    }
+</script>
 
 </html>

@@ -7,12 +7,12 @@
                 <img src="<?= base_url(); ?>/assets/img/stisla-fill.svg" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
                 <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Login Admin</span></h4>
                 <p class="text-muted">Before you get started, you must login or register if you don't already have an account.</p>
-                <form method="POST" action="#" class="needs-validation" novalidate="">
+                <form action="#" class="form-horizontal" id="loginForm">
                     <div class="form-group">
-                        <label for="email">Username</label>
-                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                        <div class="invalid-feedback">
-                            Please fill in your email
+                        <label for="username">Username</label>
+                        <input id="username" type="text" class="form-control" name="username" tabindex="1">
+                        <div class="invalid-feedback errorUsername">
+
                         </div>
                     </div>
 
@@ -20,9 +20,9 @@
                         <div class="d-block">
                             <label for="password" class="control-label">Password</label>
                         </div>
-                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                        <div class="invalid-feedback">
-                            please fill in your password
+                        <input id="password" type="password" class="form-control" name="password" tabindex="2">
+                        <div class="invalid-feedback errorPassword">
+
                         </div>
                     </div>
 
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="form-group text-right">
-                        <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">
+                        <button type="submit" id="login" onclick="btnLogin()" class="btn btn-success btn-lg btn-icon icon-right" tabindex="4">
                             Login
                         </button>
                     </div>
@@ -66,6 +66,60 @@
         } else {
             x.type = "password";
         }
+    }
+
+    function btnLogin() {
+        $.ajax({
+            type: "POST",
+            url: "<?= site_url('auth/login'); ?>",
+            data: $('#loginForm').serialize(),
+            dataType: "json",
+            beforeSend: function() {
+                $('#login').prop('disabled', true);
+                $('#login').html('Loading');
+            },
+            complete: function() {
+                $('#login').prop('disabled', false);
+                $('#login').html('Login');
+            },
+            success: function(response) {
+                if (response.error) {
+                    let data = response.error
+                    if (data.errorUsername) {
+                        $('#username').addClass('is-invalid');
+                        $('.errorUsername').html(data.errorUsername);
+                    } else {
+                        $('#username').removeClass('is-invalid');
+                        $('#username').addClass('is-valid');
+                    }
+                    if (data.errorPassword) {
+                        $('#password').addClass('is-invalid');
+                        $('.errorPassword').html(data.errorPassword);
+                    } else {
+                        $('#password').removeClass('is-invalid');
+                        $('#password').addClass('is-valid');
+                    }
+                }
+                if (response.sukses) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        html: `Anda Berhasil Login`,
+                    }).then((result) => {
+                        if (result.value) {
+                            window.location.replace("<?= base_url('dashboard'); ?>")
+                        }
+                    })
+                }
+                if (response.gagal) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Username atau password salah',
+                    })
+                }
+            }
+        });
     }
 </script>
 <?= $this->endSection(); ?>
