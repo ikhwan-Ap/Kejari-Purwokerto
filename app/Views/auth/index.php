@@ -107,7 +107,7 @@
                         html: `Anda Berhasil Login`,
                     }).then((result) => {
                         if (result.value) {
-                            window.location.replace("<?= base_url('dashboard'); ?>")
+                            window.location.replace("<?= base_url('/dashboard'); ?>")
                         }
                     })
                 }

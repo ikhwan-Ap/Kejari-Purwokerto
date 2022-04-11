@@ -94,7 +94,7 @@
                                 html: `Anda Berhasil Logout`,
                             }).then((result) => {
                                 if (result.value) {
-                                    window.location.replace('auth')
+                                    window.location.replace('/')
                                 }
                             })
 
