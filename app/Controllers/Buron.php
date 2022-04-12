@@ -2,24 +2,24 @@
 
 namespace App\Controllers;
 
-use App\Models\kasusModel;
+use App\Models\buronModel;
 use Config\Services;
 use CodeIgniter\API\ResponseTrait;
 
-class Kasus extends BaseController
+class Buron extends BaseController
 {
     use ResponseTrait;
     public function __construct()
     {
         helper('form');
-        $this->kasus = new kasusModel();
+        $this->buron = new buronModel();
     }
     public function index()
     {
         $data = [
-            'title' => 'Kasus',
+            'title' => 'Buron',
         ];
-        return view('kasus/index', $data);
+        return view('kasus/buron', $data);
     }
 
     public function get_id($id_kasus)
@@ -179,46 +179,42 @@ class Kasus extends BaseController
         }
         echo json_encode($data);
     }
-    public function getKasus()
+    public function getBuron()
     {
 
-        $this->kasus = new kasusModel();
+        $this->buron = new buronModel();
         $request = Services::request();
         if ($request->getMethod(true) == 'POST') {
-            $list = $this->kasus->datatablesKasus();
+            $list = $this->buron->datatablesBuron();
             $row = array();
             $no = $request->getPost('start');
             $no = 1;
             foreach ($list as $hasil) {
                 $action = '
-                <button type="button" onclick="delKasus(' . $hasil->id_kasus . ')" class="btn btn-danger" title="DELETE">
+                <button type="button" onclick="delBuron(' . $hasil->id_buron . ')" class="btn btn-danger" title="DELETE">
                     <span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">
                     </span>
                 </button>
-                <button type="button" class="btn btn-light" onclick="editKasus( ' . $hasil->id_kasus . ' )" title="EDIT">
+                <button type="button" class="btn btn-light" onclick="editBuron( ' . $hasil->id_buron . ' )" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
-                <button type="button" class="btn btn-light" onclick="detailKasus('  . $hasil->id_kasus  . ')"title="DETAIL">
+                <button type="button" class="btn btn-light" onclick="detailBuron('  . $hasil->id_buron  . ')"title="DETAIL">
                         <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
-                </button>
-                <button type="button" class="btn btn-light" onclick="kasusSelesai('  . $hasil->id_kasus  . ')"title="Selesai">
-                        <span class="ion ion-checkmark-circled" data-pack="android" data-tags=""></span>
                 </button>
                 ';
                 $row[] = [
                     $no++,
-                    $hasil->tanggal,
-                    $hasil->no_perkara,
-                    $hasil->nama_terdakwa,
-                    $hasil->nama_hakim,
-                    $hasil->nama_jaksa,
-                    $hasil->keterangan,
+                    $hasil->image,
+                    $hasil->nama_buron,
+                    $hasil->jenis_kelamin,
+                    $hasil->usia,
+                    $hasil->alamat_buron,
                     $action,
                 ];
             }
             $output = [
-                'recordsTotal' => $this->kasus->countKet(),
-                'recordsFiltered' => $this->kasus->countExcept(),
+                'recordsTotal' => $this->buron->countAll(),
+                'recordsFiltered' => $this->buron->countFiltered(),
                 'data' => $row
             ];
             echo json_encode($output);
@@ -256,96 +252,6 @@ class Kasus extends BaseController
                         'nama_hakim' => $data['6'],
                         'panitia_pengganti' => $data['7'],
                         'kategori' => 'Pidana Umum',
-                        'keterangan' => '-',
-                    ];
-                    $this->kasus->add_excel($import);
-                }
-                $data = [
-                    'sukses' => 'Data Telah Berhasil Di Import'
-                ];
-                if ($data != null) {
-                    return $this->setResponseFormat('json')->respond(['sukses' => 'Sukses Bukan Merupakan Excel']);
-                }
-            }
-        }
-        json_encode($data);
-    }
-    public function import_khusus()
-    {
-
-        $file = $this->request->getFile('file_excel');
-        $ext = $file->getClientExtension();
-        // $validation = \Config\Services::validation();
-        if ($this->request->isAJAX()) {
-            if ($ext == 'xls') {
-                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
-            } else if ($ext == 'xlsx') {
-                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
-            } else {
-                return $this->setResponseFormat('json')->respond(['error' => 'Data Bukan Merupakan Excel']);
-            }
-
-            $spreadsheet = $reader->load($file);
-            $sheet = $spreadsheet->getActiveSheet()->toArray();
-            if ($sheet != null) {
-                foreach ($sheet as $x => $data) {
-                    if ($x == 0) {
-                        continue;
-                    }
-                    $import = [
-                        'tanggal' => date("Y-m-d", strtotime($data['1'])),
-                        'no_perkara' => $data['2'],
-                        'agenda' => $data['3'],
-                        'nama_jaksa' => $data['4'],
-                        'nama_terdakwa' => $data['5'],
-                        'nama_hakim' => $data['6'],
-                        'panitia_pengganti' => $data['7'],
-                        'kategori' => 'Pidana Khusus',
-                        'keterangan' => '-',
-                    ];
-                    $this->kasus->add_excel($import);
-                }
-                $data = [
-                    'sukses' => 'Data Telah Berhasil Di Import'
-                ];
-                if ($data != null) {
-                    return $this->setResponseFormat('json')->respond(['sukses' => 'Sukses Bukan Merupakan Excel']);
-                }
-            }
-        }
-        json_encode($data);
-    }
-    public function import_perdata()
-    {
-
-        $file = $this->request->getFile('file_excel');
-        $ext = $file->getClientExtension();
-        // $validation = \Config\Services::validation();
-        if ($this->request->isAJAX()) {
-            if ($ext == 'xls') {
-                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
-            } else if ($ext == 'xlsx') {
-                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
-            } else {
-                return $this->setResponseFormat('json')->respond(['error' => 'Data Bukan Merupakan Excel']);
-            }
-
-            $spreadsheet = $reader->load($file);
-            $sheet = $spreadsheet->getActiveSheet()->toArray();
-            if ($sheet != null) {
-                foreach ($sheet as $x => $data) {
-                    if ($x == 0) {
-                        continue;
-                    }
-                    $import = [
-                        'tanggal' => date("Y-m-d", strtotime($data['1'])),
-                        'no_perkara' => $data['2'],
-                        'agenda' => $data['3'],
-                        'nama_jaksa' => $data['4'],
-                        'nama_terdakwa' => $data['5'],
-                        'nama_hakim' => $data['6'],
-                        'panitia_pengganti' => $data['7'],
-                        'kategori' => 'Perdata Dan Tata Usaha Negara',
                         'keterangan' => '-',
                     ];
                     $this->kasus->add_excel($import);
