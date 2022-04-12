@@ -10,6 +10,15 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Inchraft</h4>
+                        <div class="card-header-action">
+                            <select name="kategori" id="filterKategori" class="form-control">
+                                <option value="">All</option>
+                                <option value="Umum">Umum</option>
+                                <option value="Khusus">Khusus</option>
+                                <option value="Datun">Datun</option>
+                                <option value="Buron">Buron</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="card-body">
@@ -116,8 +125,6 @@
                         </div>
                     </form>
                 </div>
-
-
                 <div class="modal-footer Foot">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
                 </div>
@@ -138,12 +145,19 @@
             "ajax": {
                 "url": "<?= site_url('incraht/get_incraht'); ?>",
                 "type": "POST",
+                "data": function(data) {
+                    data.kategori = $('#filterKategori').val();
+                }
             },
             "columnDefs": [{
                 "targets": [0],
                 "orderable": false,
             }, ],
         });
+
+        $('#filterKategori').change(function() {
+            table.draw();
+        })
     });
 
     function reload_table() {

@@ -22,7 +22,7 @@
                     <div class="card-header">
                         <h4>Data Kasus</h4>
                         <div class="card-header-action">
-                            <select name="filter" id="filter" class="form-control text-color primary">
+                            <select name="kategori" id="filterKategori" class="form-control">
                                 <option value="" hidden>Filter</option>
                                 <option value="Umum">Umum</option>
                                 <option value="Khusus">Khusus</option>
@@ -93,9 +93,9 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="form-group col">
+                                    <div class="form-group col keterangan">
                                         <label for="keterangan">Keterangan</label>
-                                        <textarea id="keterangan" type="text" class="form-control" value="" name="keterangan" readonly>
+                                        <textarea id="keterangan" type="text" class="form-control" value="" name="keterangan">
                                     </textarea>
                                         <div class="invalid-feedback errorKeterangan">
 
@@ -259,12 +259,19 @@
             "ajax": {
                 "url": "<?= site_url('kasus/getKasus'); ?>",
                 "type": "POST",
+                "data": function(data) {
+                    data.kategori = $('#filterKategori').val();
+                }
             },
             "columnDefs": [{
                 "targets": [0],
                 "orderable": false,
             }, ],
         });
+
+        $('#filterKategori').change(function() {
+            table.search(this.value).draw();
+        })
     });
 
     function reload_table() {
@@ -302,6 +309,7 @@
         $('.Foot').show();
         $('.Proses').show();
         $('.Detail').hide();
+        $('.keterangan').show();
     }
 
     function editKasus(id_kasus) {
@@ -310,6 +318,7 @@
         $('.Foot').show();
         $('.Proses').show();
         $('.Detail').hide();
+        $('.keterangan').hide();
         $.ajax({
             url: "<?= site_url('kasus/get_id/'); ?>" + id_kasus,
             type: "GET",

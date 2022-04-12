@@ -16,7 +16,7 @@ class kasusModel extends Model
     ];
     protected $column_search = [
         'nama_terdakwa', 'nama_jaksa', 'nama_hakim',
-        'keterangan', 'no_perkara',  'keterangan', 'tanggal'
+        'keterangan', 'no_perkara',  'keterangan', 'tanggal', 'kategori'
     ];
 
     protected $column_order =
@@ -42,6 +42,8 @@ class kasusModel extends Model
     private  function getDataTables()
     {
         $request = Services::request();
+
+
         $i = 0;
         foreach ($this->column_search as $item) {
             if ($request->getPost('search')['value']) {
@@ -55,6 +57,11 @@ class kasusModel extends Model
                     $this->dt->groupEnd();
                 }
                 $i++;
+            }
+            if ($request->getPost('kategori') == '') {
+                $request->getPost('kategori') == '';
+            } else {
+                $this->dt->orLike($item, $request->getPost('kategori'));
             }
             if ($request->getPost('order')) {
                 $this->dt->orderBy(
