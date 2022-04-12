@@ -14,111 +14,190 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>/template/visitor/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>/template/visitor/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>/template/visitor/styles/responsive.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+	rel="stylesheet"
+/>
+<link rel="stylesheet" href="<?=base_url()?>/template/visitor/fonts/icomoon/style.css" />
+<link rel="stylesheet" href="<?=base_url()?>/template/visitor/css/style.css" />
 </head>
 <body>
 
-<div class="super_container">
-	<!-- Header -->
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<nav class="main_nav">
-							<ul>
-								<li class="active"><a href="#">Beranda</a></li>
-								<li><a href="#">Profil</a></li>
-								<li><a href="#">Reformasi Birokrasi</a></li>
-								<li><a href="#">Info Perkara</a></li>
-								<li><a href="#">Bidang</a></li>
-								<li><a href="#">Sarana</a></li>
-								<li><a href="#">Peraturan</a></li>
-								<li><a href="#">Informasi</a></li>
-								<li><a href="#">Kontak Kami</a></li>
-							</ul>
-						</nav>
-						<div class="hamburger ml-auto menu_mm">
-							<i class="fa fa-bars trans_200 menu_mm" aria-hidden="true"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-
-	<!-- Menu -->
-
-	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-		<div class="logo menu_mm"><a href="#">Avision</a></div>
-		<div class="search">
-			<form action="#">
-				<input type="search" class="header_search_input menu_mm" required="required" placeholder="Type to Search...">
-				<img class="header_search_icon menu_mm" src="<?=base_url()?>/template/visitor/images/search_2.png" alt="">
-			</form>
-		</div>
-		<nav class="menu_nav">
-			<ul class="menu_mm">
-				<li class="menu_mm"><a href="#">Beranda</a></li>
-				<li class="menu_mm"><a href="#">Profil</a></li>
-        <li class="menu_mm"><a href="#">Reformasi Birokrasi</a></li>
-        <li class="menu_mm"><a href="#">Info Perkara</a></li>
-        <li class="menu_mm"><a href="#">Bidang</a></li>
-        <li class="menu_mm"><a href="#">Sarana</a></li>
-        <li class="menu_mm"><a href="#">Peraturan</a></li>
-        <li class="menu_mm"><a href="#">Informasi</a></li>
-        <li class="menu_mm"><a href="#">Kontak Kami</a></li>
-			</ul>
-		</nav>
-	</div>
+<script type='text/javascript'>
+	var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+	var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+	var date = new Date();
+	var day = date.getDate();
+	var month = date.getMonth();
+	var thisDay = date.getDay(),
+	    thisDay = myDays[thisDay];
+	var yy = date.getYear();
+	var year = (yy < 1000) ? yy + 1900 : yy;
 	
-	<!-- Home -->
+	function startTime() {
+		var today=new Date(),
+		curr_hour=today.getHours(),
+		curr_min=today.getMinutes(),
+		curr_sec=today.getSeconds();
+		curr_hour=checkTime(curr_hour);
+		curr_min=checkTime(curr_min);
+		curr_sec=checkTime(curr_sec);
+		document.getElementById('clock').innerHTML=thisDay + ', ' + day + ' ' + months[month] + ' ' + year + '  ' + curr_hour+":"+curr_min+":"+curr_sec;
+	}
+	function checkTime(i) {
+		if (i<10) {
+			i="0" + i;
+		}
+		return i;
+	}
+	setInterval(startTime, 500);
+</script>
 
-	<div class="home">
-		
-		<!-- Home Slider -->
+<div class="super_container">
+<div class="custom-site-mobile-menu custom-site-navbar-target">
+      <div class="custom-site-mobile-menu-header">
+        <div class="custom-site-mobile-menu-close mt-3">
+          <span class="custom-icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="custom-site-mobile-menu-body"></div>
+    </div>
 
-		<div class="home_slider_container">
-			<div class="owl-carousel owl-theme home_slider">
-				
-				<!-- Slider Item -->
-				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(<?=base_url()?>/template/visitor/images/home_slider.jpg)"></div>
-				</div>
+    <div class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <a href="#" class=""
+              ><span class="mr-2 fa fa-clock-o"></span>
+              <span class="d-none d-md-inline-block" id="clock"></span></a>
+            <span class="mx-md-2 d-inline-block"></span>
 
-        <!-- Slider Item -->
-				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(<?=base_url()?>/template/visitor/images/home_slider.jpg)"></div>
-				</div>
+            <div class="float-right">
+              <a href="#" class=""
+                ><span class="mr-2 custom-icon-twitter"></span>
+                <span class="d-none d-md-inline-block">Twitter</span></a
+              >
+              <span class="mx-md-2 d-inline-block"></span>
+              <a href="#" class=""
+                ><span class="mr-2 custom-icon-facebook"></span>
+                <span class="d-none d-md-inline-block">Facebook</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <!-- Slider Item -->
-				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(<?=base_url()?>/template/visitor/images/home_slider.jpg)"></div>
-				</div>
-			</div>
+    <header
+      class="custom-site-navbar js-sticky-header custom-site-navbar-target"
+      role="banner"
+    >
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          <div class="col-12">
+            <nav
+              class="custom-site-navigation text-center mx-auto"
+              role="navigation"
+            >
+              <ul
+                class="custom-site-menu main-menu js-clone-nav mx-auto d-none d-lg-block"
+              >
+                <li><a class="nav-link">Beranda</a></li>
+								<li class="has-children">
+                  <a href="#" class="nav-link">Profil</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" class="nav-link">Sambutan Kejari Purwokerto</a></li>
+                    <li><a href="#" class="nav-link">Visi dan Misi</a></li>
+                    <li><a href="#" class="nav-link">Kegiatan IAD Purwokerto</a></li>
+                    <li><a href="#" class="nav-link">Perintah Harian Jaksa Agung RI</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link">Reformasi Birokrasi</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" class="nav-link">Survei Kepuasan Masyarakat</a></li>
+                    <li><a href="#" class="nav-link">Layanan Kejaksaan Negeri Purwokerto</a></li>
+                    <li><a href="#" class="nav-link">Moto Pelayanan</a></li>
+                    <li><a href="#" class="nav-link">Maklumat Pelayanan</a></li>
+                    <li><a href="#" class="nav-link">Agen Perubahan</a></li>
+                    <li><a href="#" class="nav-link">Komitmen Bersama</a></li>
+                    <li><a href="#" class="nav-link">Bukti Dukung</a></li>
+                    <li><a href="#" class="nav-link">Buku Profil Kejari Purwokerto</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link">Info Perkara</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" class="nav-link">Pidana Umum</a></li>
+                    <li><a href="#" class="nav-link">Pidana Khusus</a></li>
+                    <li><a href="#" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
+                    <li><a href="#" class="nav-link">Jadwal Sidang</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link">Bidang</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" class="nav-link">Pidum</a></li>
+                    <li><a href="#" class="nav-link">Datun</a></li>
+                    <li><a href="#" class="nav-link">Barang Bukti</a></li>
+                    <li><a href="#" class="nav-link">Pembinaan</a></li>
+                    <li><a href="#" class="nav-link">Intelijen</a></li>
+                    <li><a href="#" class="nav-link">Pidsus</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link">Sarana</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" class="nav-link">Pos Pelayanan Hukum</a></li>
+                    <li><a href="#" class="nav-link">Klinik Kesehatan</a></li>
+                    <li><a href="#" class="nav-link">Perpustakaan</a></li>
+                    <li><a href="#" class="nav-link">Ruang Rapat</a></li>
+                    <li><a href="#" class="nav-link">Gedung Barang Bukti, Benda Sita dan Barang Rampasan</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link">Peraturan</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" class="nav-link">Instruksi Jaksa Agung</a></li>
+                    <li><a href="#" class="nav-link">Instruksi Presiden</a></li>
+                    <li><a href="#" class="nav-link">Keputusan Jaksa Agung</a></li>
+                    <li><a href="#" class="nav-link">Keputusan Menteri</a></li>
+                    <li><a href="#" class="nav-link">Keputusan Presiden</a></li>
+                    <li><a href="#" class="nav-link">Peraturan Lainnya</a></li>
+                    <li><a href="#" class="nav-link">Peraturan Pemerintah</a></li>
+                    <li><a href="#" class="nav-link">Undang-Undang</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link">Informasi</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#" class="nav-link">Pengaduan</a></li>
+                    <li><a href="#" class="nav-link">Kontak</a></li>
+                    <li><a href="#" class="nav-link">Berita</a></li>
+                    <li><a href="#" class="nav-link">Artikel</a></li>
+                    <li><a href="#" class="nav-link">Pengumuman</a></li>
+                    <li><a href="#" class="nav-link">Webmail</a></li>
+                    <li><a href="#" class="nav-link">Foto Kegiatan</a></li>
+                    <li><a href="#" class="nav-link">Video Kegiatan</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="nav-link">Kontak Kami</a></li>
+              </ul>
+            </nav>
+          </div>
 
-			<div class="custom_nav_container home_slider_nav_container">
-				<div class="custom_prev custom_prev_home_slider">
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						 width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12" xml:space="preserve">
-						<polyline fill="#FFFFFF" points="0,5.61 5.609,0 7,0 7,1.438 2.438,6 7,10.563 7,12 5.609,12 -0.002,6.39 "/>
-					</svg>
-				</div>
-		        <ul id="custom_dots" class="custom_dots custom_dots_home_slider">
-					<li class="custom_dot custom_dot_home_slider active"><span></span></li>
-					<li class="custom_dot custom_dot_home_slider"><span></span></li>
-					<li class="custom_dot custom_dot_home_slider"><span></span></li>
-				</ul>
-				<div class="custom_next custom_next_home_slider">
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						 width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12" xml:space="preserve">
-						<polyline fill="#FFFFFF" points="6.998,6.39 1.389,12 -0.002,12 -0.002,10.562 4.561,6 -0.002,1.438 -0.002,0 1.389,0 7,5.61 "/>
-					</svg>
-				</div>
-			</div>
+          <div class="toggle-button d-inline-block d-lg-none">
+            <a
+              href="#"
+              class="custom-site-menu-toggle py-5 js-menu-toggle text-black"
+              ><span class="custom-icon-menu h3"></span
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-		</div>
-	</div>
+    <div class="hero" style="background-image: url('<?=base_url()?>/template/visitor/images/hero_1.jpg')"></div>
 
 <?= $this->renderSection('content'); ?>
 
@@ -279,5 +358,8 @@
 <script src="<?=base_url()?>/template/visitor/plugins/masonry/masonry.js"></script>
 <script src="<?=base_url()?>/template/visitor/plugins/masonry/images_loaded.js"></script>
 <script src="<?=base_url()?>/template/visitor/js/custom.js"></script>
+
+<script src="<?=base_url()?>/template/visitor/js/jquery.sticky.js"></script>
+<script src="<?=base_url()?>/template/visitor/js/main.js"></script>
 </body>
 </html>
