@@ -115,7 +115,7 @@ class kasusModel extends Model
         return $this->dt->countAllResults();
     }
 
-    public function countket()
+    public function countKet()
     {
         $ket = ['Incraht'];
         $tbl_storage = $this->db->table($this->table);
@@ -129,8 +129,6 @@ class kasusModel extends Model
         $tbl_storage->where('keterangan', 'Incraht');
         return $tbl_storage->countAllResults();
     }
-
-
 
     public function get_id($id_kasus)
     {
@@ -177,10 +175,14 @@ class kasusModel extends Model
         return $query->getResultArray();
     }
 
-
     public function del_kasus($id_kasus)
     {
         $this->dt->where('id_kasus', $id_kasus);
         return $this->dt->delete();
+    }
+
+    public function add_excel($import)
+    {
+        $this->db->table('kasus')->insert($import);
     }
 }

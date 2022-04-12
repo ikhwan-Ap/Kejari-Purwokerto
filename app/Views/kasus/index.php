@@ -12,14 +12,26 @@
             </a>
             <ul class="dropdown-menu">
                 <a class="nav-link Umum" onclick="btnUmum()" href="#">Pidana Umum</a>
-                <a class="nav-link Khusus" href="#">Pidana Khusus</a>
-                <a class="nav-link Perdata" href="#">Perdata dan Tata Usaha Negara </a>
+                <a class="nav-link Khusus" onclick="btnKhusus()" href="#">Pidana Khusus</a>
+                <a class="nav-link Perdata" onclick="btnPerdata()" href="#">Perdata dan Tata Usaha Negara </a>
             </ul>
             <button class="btn btn-primary">
                 <i class="ion ion-ios-cloud-download"></i> Template
             </button>
         </div>
     </div>
+
+    <?php if (session()->getFlashdata('message') != null) :  ?>
+        <div class="alert alert-danger alert-dismissible show fade">
+            <div class="alert-body">
+                <button class="close" data-dismiss="alert">
+                    <span>×</span>
+                </button>
+                <?php echo session()->getFlashdata('message')  ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <div class="section-body">
         <div class="row">
             <div class="col">
@@ -68,7 +80,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Peringatan</h5>
+                    <h5 class="modal-title"></h5>
                     <button type="button" onclick="reset()" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -227,12 +239,43 @@
     </div>
 
 
+    <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modalImport">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php echo form_open_multipart('', ['class' => 'formImport']); ?>
+                    <div class="form-group">
+                        <label>Masukan File</label>
+                        <input type="file" class="form-control-file" name="file_excel" id="file_excel" accept=".xls,.xlsx">
+                        <div class="invalid-feedback errorFile">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger btn-sm btnImport">Tambah</button>
+                        <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Batal</button>
+                    </div>
+                    <?php echo form_close(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 </section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script>
     var save_method;
     var table;
+    var excel;
+
     $(document).ready(function() {
         table = $('#tableKasus').DataTable({
             "processing": true,
@@ -256,12 +299,97 @@
             table.draw();
         })
 
+
+        $('.btnImport').click(function(e) {
+            e.preventDefault();
+            let form = $('.formImport')[0];
+            let data = new FormData(form);
+            if (excel == 'umum') {
+                url = "<?= site_url('kasus/import_umum'); ?>";
+            }
+            if (excel == 'khusus') {
+                url = "<?= site_url('kasus/import_khusus'); ?>";
+            }
+            if (excel == 'perdata') {
+                url = "<?= site_url('kasus/import_perdata'); ?>";
+            }
+            Swal.fire({
+                title: 'Apakah anda akan Menginput?',
+                showDenyButton: true,
+                icon: 'warning',
+                confirmButtonText: 'Yakin?',
+                denyButtonText: `Kembali`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: data,
+                        enctype: 'multipart/form-data',
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        dataType: "json",
+                        beforeSend: function(e) {
+                            $('.btnImport').prop('disabled', 'disabled');
+                            $('.btnImport').html('<i class ="fa fa-spin fa-spinne"></i>');
+                        },
+                        complete: function(e) {
+                            $('.btnImport').removeAttr('disabled');
+                            $('.btnImport').html('Import');
+                        },
+                        success: function(response) {
+                            if (response.error) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error',
+                                    html: `Data File Harus Di isi/ Bukan Excel !!!`,
+                                }).then((result) => {
+                                    if (result.value) {
+
+                                    }
+                                })
+                            }
+                            if (response.sukses) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Berhasil',
+                                    html: `Data Berhasil Di tambahkan`,
+                                }).then((result) => {
+                                    if (result.value) {
+                                        $('#modalImport').modal('hide');
+                                        $("#file_excel").val("");
+                                        reload_table();
+                                    }
+                                })
+                            }
+                        }
+                    });
+                }
+            })
+        })
+
     });
 
 
     function btnUmum() {
-        $('')
+        excel = 'umum';
+        $('#modalImport').modal('show');
+        $('.modal-title').text('Import Data Pidana Umum');
     }
+
+    function btnKhusus() {
+        excel = 'khusus';
+        $('#modalImport').modal('show');
+        $('.modal-title').text('Import Data Pidana Khusus');
+    }
+
+    function btnPerdata() {
+        excel = 'perdata';
+        $('#modalImport').modal('show');
+        $('.modal-title').text('Import Data Perdata dan Tata Usaha Negara');
+    }
+
 
 
     function reload_table() {

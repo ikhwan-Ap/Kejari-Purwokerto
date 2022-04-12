@@ -4,11 +4,14 @@ namespace App\Controllers;
 
 use App\Models\kasusModel;
 use Config\Services;
+use CodeIgniter\API\ResponseTrait;
 
 class Kasus extends BaseController
 {
+    use ResponseTrait;
     public function __construct()
     {
+        helper('form');
         $this->kasus = new kasusModel();
     }
     public function index()
@@ -220,5 +223,141 @@ class Kasus extends BaseController
             ];
             echo json_encode($output);
         }
+    }
+
+    public function import_umum()
+    {
+
+        $file = $this->request->getFile('file_excel');
+        $ext = $file->getClientExtension();
+        // $validation = \Config\Services::validation();
+        if ($this->request->isAJAX()) {
+            if ($ext == 'xls') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else if ($ext == 'xlsx') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            } else {
+                return $this->setResponseFormat('json')->respond(['error' => 'Data Bukan Merupakan Excel']);
+            }
+
+            $spreadsheet = $reader->load($file);
+            $sheet = $spreadsheet->getActiveSheet()->toArray();
+            if ($sheet != null) {
+                foreach ($sheet as $x => $data) {
+                    if ($x == 0) {
+                        continue;
+                    }
+                    $import = [
+                        'tanggal' => date("Y-m-d", strtotime($data['1'])),
+                        'no_perkara' => $data['2'],
+                        'agenda' => $data['3'],
+                        'nama_jaksa' => $data['4'],
+                        'nama_terdakwa' => $data['5'],
+                        'nama_hakim' => $data['6'],
+                        'panitia_pengganti' => $data['7'],
+                        'kategori' => 'Pidana Umum',
+                        'keterangan' => '-',
+                    ];
+                    $this->kasus->add_excel($import);
+                }
+                $data = [
+                    'sukses' => 'Data Telah Berhasil Di Import'
+                ];
+                if ($data != null) {
+                    return $this->setResponseFormat('json')->respond(['sukses' => 'Sukses Bukan Merupakan Excel']);
+                }
+            }
+        }
+        json_encode($data);
+    }
+    public function import_khusus()
+    {
+
+        $file = $this->request->getFile('file_excel');
+        $ext = $file->getClientExtension();
+        // $validation = \Config\Services::validation();
+        if ($this->request->isAJAX()) {
+            if ($ext == 'xls') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else if ($ext == 'xlsx') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            } else {
+                return $this->setResponseFormat('json')->respond(['error' => 'Data Bukan Merupakan Excel']);
+            }
+
+            $spreadsheet = $reader->load($file);
+            $sheet = $spreadsheet->getActiveSheet()->toArray();
+            if ($sheet != null) {
+                foreach ($sheet as $x => $data) {
+                    if ($x == 0) {
+                        continue;
+                    }
+                    $import = [
+                        'tanggal' => date("Y-m-d", strtotime($data['1'])),
+                        'no_perkara' => $data['2'],
+                        'agenda' => $data['3'],
+                        'nama_jaksa' => $data['4'],
+                        'nama_terdakwa' => $data['5'],
+                        'nama_hakim' => $data['6'],
+                        'panitia_pengganti' => $data['7'],
+                        'kategori' => 'Pidana Khusus',
+                        'keterangan' => '-',
+                    ];
+                    $this->kasus->add_excel($import);
+                }
+                $data = [
+                    'sukses' => 'Data Telah Berhasil Di Import'
+                ];
+                if ($data != null) {
+                    return $this->setResponseFormat('json')->respond(['sukses' => 'Sukses Bukan Merupakan Excel']);
+                }
+            }
+        }
+        json_encode($data);
+    }
+    public function import_perdata()
+    {
+
+        $file = $this->request->getFile('file_excel');
+        $ext = $file->getClientExtension();
+        // $validation = \Config\Services::validation();
+        if ($this->request->isAJAX()) {
+            if ($ext == 'xls') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else if ($ext == 'xlsx') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            } else {
+                return $this->setResponseFormat('json')->respond(['error' => 'Data Bukan Merupakan Excel']);
+            }
+
+            $spreadsheet = $reader->load($file);
+            $sheet = $spreadsheet->getActiveSheet()->toArray();
+            if ($sheet != null) {
+                foreach ($sheet as $x => $data) {
+                    if ($x == 0) {
+                        continue;
+                    }
+                    $import = [
+                        'tanggal' => date("Y-m-d", strtotime($data['1'])),
+                        'no_perkara' => $data['2'],
+                        'agenda' => $data['3'],
+                        'nama_jaksa' => $data['4'],
+                        'nama_terdakwa' => $data['5'],
+                        'nama_hakim' => $data['6'],
+                        'panitia_pengganti' => $data['7'],
+                        'kategori' => 'Perdata dan Tata Usaha Negara',
+                        'keterangan' => '-',
+                    ];
+                    $this->kasus->add_excel($import);
+                }
+                $data = [
+                    'sukses' => 'Data Telah Berhasil Di Import'
+                ];
+                if ($data != null) {
+                    return $this->setResponseFormat('json')->respond(['sukses' => 'Sukses Bukan Merupakan Excel']);
+                }
+            }
+        }
+        json_encode($data);
     }
 }

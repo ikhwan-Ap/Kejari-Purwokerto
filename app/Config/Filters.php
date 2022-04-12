@@ -70,7 +70,13 @@ class Filters extends BaseConfig
         'isLoggedIn' => [
             'before' => [
                 'dashboard',
-                'dashboard/*'
+                'dashboard/*',
+                'kasus',
+                'kasus/*',
+                '/kasus',
+                'incraht',
+                'incraht/*',
+                '/incraht'
             ],
         ],
     ];
