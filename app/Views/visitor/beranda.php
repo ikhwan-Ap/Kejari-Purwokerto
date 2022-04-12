@@ -86,7 +86,7 @@
 								</ul>
 								<table class="table table-responsive table-bordered">
                   <thead>
-                    <tr>
+                    <tr class="table-light">
                       <th>Hari / Tanggal</th>
                       <th>Nama Terdakwa</th>
                       <th>Nama Jaksa</th>
@@ -94,13 +94,13 @@
                       <th>No. Perkara</th>
                       <th>Keterangan</th>
                     </tr>
-                    <tr>
-                      <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</td>
-                      <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</td>
-                      <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</td>
-                      <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</td>
-                      <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</td>
-                      <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</td>
+                    <tr class="table-light">
+                      <td><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</b></td>
+                      <td><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</b></td>
+                      <td><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</b></td>
+                      <td><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</b></td>
+                      <td><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</b></td>
+                      <td><b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam eius magni ratione odio assumenda nobis, repudiandae enim neque? In repellat quos obcaecati commodi illo animi sequi eius ea? Temporibus, neque?</b></td>
                     </tr>
                   </thead>
                 </table>
