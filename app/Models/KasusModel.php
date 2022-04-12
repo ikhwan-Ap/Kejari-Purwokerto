@@ -11,18 +11,18 @@ class kasusModel extends Model
     protected $primaryKey       = 'id_kasus';
     protected $allowedFields    =
     [
-        'nama_terdakwa', 'alamat_terdakwa', 'nama_jaksa', 'nama_hakim', 'nama_saksi',
-        'keterangan', 'no_perkara', 'jenis_perkara', 'kategori', 'tanggal'
+        'nama_terdakwa', 'nama_jaksa', 'nama_hakim', 'panitia_pengganti',
+        'keterangan', 'no_perkara', 'agenda', 'kategori', 'tanggal'
     ];
     protected $column_search = [
         'nama_terdakwa', 'nama_jaksa', 'nama_hakim',
-        'keterangan', 'no_perkara',  'keterangan', 'tanggal', 'kategori'
+        'keterangan', 'no_perkara', 'tanggal', 'kategori'
     ];
 
     protected $column_order =
     [
-        'nama_terdakwa', 'alamat_terdakwa', 'nama_jaksa', 'nama_hakim', 'nama_saksi',
-        'keterangan', 'no_perkara', 'jenis_perkara', 'kategori', 'tanggal'
+        'nama_terdakwa', 'nama_jaksa', 'nama_hakim', 'panitia_pengganti',
+        'keterangan', 'no_perkara', 'agenda', 'kategori', 'tanggal'
     ];
 
     protected $request;
@@ -134,7 +134,7 @@ class kasusModel extends Model
     {
         $builder = $this->db->table('kasus');
         $builder->select('*');
-        $builder->where('kategori', 'umum');
+        $builder->where('kategori', 'Pidana Umum');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -143,19 +143,20 @@ class kasusModel extends Model
     {
         $builder = $this->db->table('kasus');
         $builder->select('*');
-        $builder->where('kategori', 'khusus');
+        $builder->where('kategori', 'Pidana Khusus');
         $query = $builder->get();
         return $query->getResultArray();
     }
 
-    public function get_datun()
+    public function get_perdata()
     {
         $builder = $this->db->table('kasus');
         $builder->select('*');
-        $builder->where('kategori', 'datun');
+        $builder->where('kategori', 'Perdata Dan Tata Usaha Negara');
         $query = $builder->get();
         return $query->getResultArray();
     }
+
 
     public function del_kasus($id_kasus)
     {

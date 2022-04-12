@@ -19,7 +19,11 @@ class Kasus extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'alamat_terdakwa'       => [
+            'no_perkara'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'agenda'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -31,19 +35,11 @@ class Kasus extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'nama_saksi'       => [
+            'panitia_pengganti'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
             'keterangan'       => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'no_perkara'       => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'jenis_perkara'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],

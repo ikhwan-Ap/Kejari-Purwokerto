@@ -30,26 +30,24 @@ class Kasus extends BaseController
         if ($this->request->isAJAX()) {
             $nama_terdakwa = $this->request->getVar('nama_terdakwa');
             $no_perkara = $this->request->getVar('no_perkara');
-            $alamat = $this->request->getVar('alamat_terdakwa');
             $keterangan = $this->request->getVar('keterangan');
             $nama_hakim = $this->request->getVar('nama_hakim');
             $nama_jaksa = $this->request->getVar('nama_jaksa');
-            $nama_saksi = $this->request->getVar('nama_saksi');
+            $panitia_pengganti = $this->request->getVar('panitia_pengganti');
             $kategori = $this->request->getVar('kategori');
-            $jenis_perkara = $this->request->getVar('jenis_perkara');
+            $agenda = $this->request->getVar('agenda');
             $tanggal = $this->request->getVar('tanggal');
             $id_kasus = $this->request->getVar('id_kasus');
             $this->kasus->save([
                 'id_kasus' => $id_kasus,
                 'nama_terdakwa' => $nama_terdakwa,
                 'no_perkara' => $no_perkara,
-                'alamat_terdakwa' => $alamat,
                 'keterangan' => $keterangan,
                 'nama_hakim' => $nama_hakim,
                 'nama_jaksa' => $nama_jaksa,
-                'nama_saksi' => $nama_saksi,
+                'panitia_pengganti' => $panitia_pengganti,
                 'kategori' => $kategori,
-                'jenis_perkara' => $jenis_perkara,
+                'agenda' => $agenda,
                 'tanggal' => $tanggal
             ]);
 
@@ -87,13 +85,12 @@ class Kasus extends BaseController
         if ($this->request->isAJAX()) {
             $nama_terdakwa = $this->request->getVar('nama_terdakwa');
             $no_perkara = $this->request->getVar('no_perkara');
-            $alamat = $this->request->getVar('alamat_terdakwa');
             $keterangan = $this->request->getVar('keterangan');
             $nama_hakim = $this->request->getVar('nama_hakim');
             $nama_jaksa = $this->request->getVar('nama_jaksa');
-            $nama_saksi = $this->request->getVar('nama_saksi');
+            $panitia_pengganti = $this->request->getVar('panitia_pengganti');
             $kategori = $this->request->getVar('kategori');
-            $jenis_perkara = $this->request->getVar('jenis_perkara');
+            $agenda = $this->request->getVar('agenda');
             $tanggal = $this->request->getVar('tanggal');
             $valid = $this->validate([
                 'nama_terdakwa' => [
@@ -106,12 +103,6 @@ class Kasus extends BaseController
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'No Perkara Tidak Boleh Kosong',
-                    ],
-                ],
-                'alamat_terdakwa' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Alamat Tidak Boleh Kosong',
                     ],
                 ],
                 'keterangan' => [
@@ -132,10 +123,10 @@ class Kasus extends BaseController
                         'required' => 'Nama Jaksa Tidak Boleh Kosong',
                     ],
                 ],
-                'nama_saksi' => [
+                'panitia_pengganti' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required' => 'Nama Saksi Tidak Boleh Kosong',
+                        'required' => 'Panitia Pengganti Tidak Boleh Kosong',
                     ],
                 ],
                 'kategori' => [
@@ -144,10 +135,10 @@ class Kasus extends BaseController
                         'required' => 'Kategori Tidak Boleh Kosong',
                     ],
                 ],
-                'jenis_perkara' => [
+                'agenda' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required' => 'Jenis Perkara Tidak Boleh Kosong',
+                        'required' => 'Agenda Tidak Boleh Kosong',
                     ],
                 ],
                 'tanggal' => [
@@ -164,13 +155,12 @@ class Kasus extends BaseController
                     'error' => [
                         'errorNama' => $validation->getError('nama_terdakwa'),
                         'erorrNomor' => $validation->getError('no_perkara'),
-                        'errorAlamat' => $validation->getError('alamat_terdakwa'),
                         'errorKeterangan' => $validation->getError('keterangan'),
                         'errorHakim' => $validation->getError('nama_hakim'),
                         'errorJaksa' => $validation->getError('nama_jaksa'),
-                        'errorSaksi' => $validation->getError('nama_saksi'),
+                        'errorPengganti' => $validation->getError('panitia_pengganti'),
                         'errorKategori' => $validation->getError('kategori'),
-                        'errorJenis' => $validation->getError('jenis_perkara'),
+                        'errorAgenda' => $validation->getError('agenda'),
                         'errorTanggal' => $validation->getError('tanggal'),
                     ],
                 ];
@@ -178,13 +168,12 @@ class Kasus extends BaseController
                 $this->kasus->save([
                     'nama_terdakwa' => $nama_terdakwa,
                     'no_perkara' => $no_perkara,
-                    'alamat_terdakwa' => $alamat,
                     'keterangan' => $keterangan,
                     'nama_hakim' => $nama_hakim,
                     'nama_jaksa' => $nama_jaksa,
-                    'nama_saksi' => $nama_saksi,
+                    'panitia_pengganti' => $panitia_pengganti,
                     'kategori' => $kategori,
-                    'jenis_perkara' => $jenis_perkara,
+                    'agenda' => $agenda,
                     'tanggal' => $tanggal
                 ]);
                 $data = [
@@ -224,7 +213,7 @@ class Kasus extends BaseController
                     $no++,
                     $hasil->tanggal,
                     $hasil->no_perkara,
-                    $hasil->nama_saksi,
+                    $hasil->nama_terdakwa,
                     $hasil->nama_hakim,
                     $hasil->nama_jaksa,
                     $hasil->keterangan,

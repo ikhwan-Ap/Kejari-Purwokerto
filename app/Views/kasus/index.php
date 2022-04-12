@@ -22,12 +22,11 @@
                     <div class="card-header">
                         <h4>Data Kasus</h4>
                         <div class="card-header-action">
-                            <select name="kategori" id="filterKategori" class="form-control">
-                                <option value="" hidden>Filter</option>
-                                <option value="Umum">Umum</option>
-                                <option value="Khusus">Khusus</option>
-                                <option value="Datun">Datun</option>
-                                <option value="Buron">Buron</option>
+                            <select name="kategori" id="filterKategori" onclick="filterData()" class="form-control kategori">
+                                <option value="">Filter</option>
+                                <option value="Pidana Umum">Pidana Umum</option>
+                                <option value="Pidana Khusus">Pidana Khusus</option>
+                                <option value="Perdata Dan Tata Usaha Negara">Perdata Dan Tata Usaha Negara</option>
                             </select>
                         </div>
                     </div>
@@ -76,14 +75,14 @@
                                 <input type="hidden" value="" name="id_kasus" />
                                 <div class="row">
                                     <div class="form-group col-6">
-                                        <label for="nama_terdakwa">Nama Terdakwa</label>
-                                        <input id="nama_terdakwa" type="text" class="form-control" value="" name="nama_terdakwa">
-                                        <div class="invalid-feedback errorNama">
+                                        <label for="tanggal">Tanggal</label>
+                                        <input type="date" name="tanggal" id="tanggal" class="form-control" value="">
+                                    </div>
+                                    <div class="invalid-feedback errorTanggal">
 
-                                        </div>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label for="no_perkara">No Perkara</label>
+                                        <label for="no_perkara">Nomor Perkara</label>
                                         <input id="no_perkara" type="text" class="form-control" value="" name="no_perkara">
                                         <div class="invalid-feedback erorrNomor">
 
@@ -92,82 +91,62 @@
 
                                 </div>
 
-                                <div class="row">
-                                    <div class="form-group col keterangan">
-                                        <label for="keterangan">Keterangan</label>
-                                        <textarea id="keterangan" type="text" class="form-control" value="" name="keterangan">
-                                    </textarea>
-                                        <div class="invalid-feedback errorKeterangan">
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group col">
-                                        <label for="alamat_terdakwa">Alamat Terdakwa</label>
-                                        <input id="alamat_terdakwa" class="form-control" value="" name="alamat_terdakwa">
-                                        <tex class="invalid-feedback errorAlamat">
-
-                                    </div>
-                                    <div class="form-group col">
-                                        <label for="nama_saksi">Nama Saksi</label>
-                                        <input id="nama_saksi" class="form-control" value="" name="nama_saksi">
-                                        <tex class="invalid-feedback errorSaksi">
-
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group col">
-                                        <label for="jenis_perkara">Jenis Perkara</label>
-                                        <textarea id="jenis_perkara" type="jenis_perkara" class="form-control" value="" name="jenis_perkara">
-                                    </textarea>
-                                        <div class="invalid-feedback errorJenis">
-
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="row">
                                     <div class="form-group col-6">
-                                        <label for="nama_hakim">Nama Hakim</label>
-                                        <input id="nama_hakim" type="text" class="form-control" value="" name="nama_hakim">
-                                        <div class="invalid-feedback errorHakim">
+                                        <label for="agenda">Agenda</label>
+                                        <input id="agenda" type="text" class="form-control" value="" name="agenda">
+                                        <div class="invalid-feedback errorAgenda">
 
                                         </div>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label for="nama_jaksa">Nama Jaksa</label>
+                                        <label for="nama_jaksa">Penuntut Umum</label>
                                         <input id="nama_jaksa" type="text" class="form-control" value="" name="nama_jaksa">
                                         <div class="invalid-feedback errorJaksa">
 
                                         </div>
                                     </div>
-
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-6">
+                                        <label for="nama_terdakwa">Nama Terdakwa</label>
+                                        <input id="nama_terdakwa" type="text" class="form-control" value="" name="nama_terdakwa">
+                                        <div class="invalid-feedback errorNama">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="nama_hakim">Majelis Hakim</label>
+                                        <input id="nama_hakim" type="text" class="form-control" value="" name="nama_hakim">
+                                        <div class="invalid-feedback errorHakim">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label for="panitia_pengganti">Panitia Pengganti</label>
+                                        <input id="panitia_pengganti" type="text" class="form-control" value="" name="panitia_pengganti">
+                                        <div class="invalid-feedback errorPengganti">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
                                         <label for="kategori">Kategori</label>
                                         <select class="form-control" name="kategori" id="kategori">
                                             <option value="" hidden>== Kategori ==</option>
-                                            <option value="Umum">Umum</option>
-                                            <option value="Khusus">Khusus</option>
-                                            <option value="Datun">Datun</option>
-                                            <option value="Buron">Buron</option>
+                                            <option value="Pidana Umum">Pidana Umum</option>
+                                            <option value="Pidana Khusus">Pidana Khusus</option>
+                                            <option value="Perdata Dan Tata Usaha Negara">Perdata Dan Tata Usaha Negara</option>
                                         </select>
                                         <div class="invalid-feedback errorKategori">
 
                                         </div>
                                     </div>
-                                    <div class="form-group col-6">
-                                        <label for="tanggal">Tanggal</label>
-                                        <input type="date" name="tanggal" id="tanggal" class="form-control" value="">
-                                    </div>
-                                    <div class="invalid-feedback errorTanggal">
 
-                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -187,12 +166,12 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <h6 id="alamat">
+                                <h6 id="tgl">
 
                                 </h6>
                             </div>
                             <div class="col">
-                                <h6 id="tgl">
+                                <h6 id="agendaSidang">
 
                                 </h6>
                             </div>
@@ -211,22 +190,18 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <h6 id="saksi">
+                                <h6 id="pengganti">
 
                                 </h6>
                             </div>
-                            <div class="col">
-                                <h6 id="perkara">
-
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col">
                                 <h6 id="ket">
 
                                 </h6>
                             </div>
+                        </div>
+                        <div class="row">
+
 
                             <div class="col">
                                 <h6 id="kategori_terdakwa">
@@ -269,9 +244,10 @@
             }, ],
         });
 
-        $('#filterKategori').change(function() {
-            table.search(this.value).draw();
+        $('#filterKategori').click(function() {
+            table.draw();
         })
+
     });
 
     function reload_table() {
@@ -283,20 +259,18 @@
         $('#nama_terdakwa').removeClass('is-valid');
         $('#no_perkara').removeClass('is-invalid');
         $('#no_perkara').removeClass('is-valid');
-        $('#alamat_terdakwa').removeClass('is-invalid');
-        $('#alamat_terdakwa').removeClass('is-valid');
         $('#keterangan').removeClass('is-invalid');
         $('#keterangan').removeClass('is-valid');
         $('#nama_hakim').removeClass('is-invalid');
         $('#nama_hakim').removeClass('is-valid');
         $('#nama_jaksa').removeClass('is-invalid');
         $('#nama_jaksa').removeClass('is-valid');
-        $('#nama_saksi').removeClass('is-invalid');
-        $('#nama_saksi').removeClass('is-valid');
+        $('#panitia_pengganti').removeClass('is-invalid');
+        $('#panitia_pengganti').removeClass('is-valid');
         $('#tanggal').removeClass('is-invalid');
         $('#tanggal').removeClass('is-valid');
-        $('#jenis_perkara').removeClass('is-invalid');
-        $('#jenis_perkara').removeClass('is-valid');
+        $('#agenda').removeClass('is-invalid');
+        $('#agenda').removeClass('is-valid');
         $('#kategori').removeClass('is-invalid');
         $('#kategori').removeClass('is-valid');
     }
@@ -327,13 +301,12 @@
                 $('[name=id_kasus]').val(data.id_kasus);
                 $('[name=nama_terdakwa]').val(data.nama_terdakwa);
                 $('[name=no_perkara]').val(data.no_perkara);
-                $('[name=alamat_terdakwa]').val(data.alamat_terdakwa);
                 $('[name=keterangan]').val(data.keterangan);
                 $('[name=nama_hakim]').val(data.nama_hakim);
                 $('[name=nama_jaksa]').val(data.nama_jaksa);
-                $('[name=nama_saksi]').val(data.nama_saksi);
+                $('[name=panitia_pengganti]').val(data.panitia_pengganti);
                 $('[name=kategori]').val(data.kategori);
-                $('[name=jenis_perkara]').val(data.jenis_perkara);
+                $('[name=agenda]').val(data.agenda);
                 $('[name=tanggal]').val(data.tanggal);
                 $('#modalKasus').modal('show');
                 $('.modal-title').text('Edit Kasus');
@@ -380,13 +353,6 @@
                         $('#no_perkara').removeClass('is-invalid');
                         $('#no_perkara').addClass('is-valid');
                     }
-                    if (data.errorAlamat) {
-                        $('#alamat_terdakwa').addClass('is-invalid');
-                        $('.errorAlamat').html(data.errorAlamat);
-                    } else {
-                        $('#alamat_terdakwa').removeClass('is-invalid');
-                        $('#alamat_terdakwa').addClass('is-valid');
-                    }
                     if (data.errorHakim) {
                         $('#nama_hakim').addClass('is-invalid');
                         $('.errorHakim').html(data.errorHakim);
@@ -401,12 +367,12 @@
                         $('#nama_jaksa').removeClass('is-invalid');
                         $('#nama_jaksa').addClass('is-valid');
                     }
-                    if (data.errorSaksi) {
-                        $('#nama_saksi').addClass('is-invalid');
-                        $('.errorSaksi').html(data.errorSaksi);
+                    if (data.errorPengganti) {
+                        $('#panitia_pengganti').addClass('is-invalid');
+                        $('.errorPengganti').html(data.errorPengganti);
                     } else {
-                        $('#nama_saksi').removeClass('is-invalid');
-                        $('#nama_saksi').addClass('is-valid');
+                        $('#panitia_pengganti').removeClass('is-invalid');
+                        $('#panitia_pengganti').addClass('is-valid');
                     }
                     if (data.errorKeterangan) {
                         $('#keterangan').addClass('is-invalid');
@@ -422,12 +388,12 @@
                         $('#kategori').removeClass('is-invalid');
                         $('#kategori').addClass('is-valid');
                     }
-                    if (data.errorJenis) {
-                        $('#jenis_perkara').addClass('is-invalid');
-                        $('.errorJenis').html(data.errorJenis);
+                    if (data.errorAgenda) {
+                        $('#agenda').addClass('is-invalid');
+                        $('.errorAgenda').html(data.errorAgenda);
                     } else {
-                        $('#jenis_perkara').removeClass('is-invalid');
-                        $('#jenis_perkara').addClass('is-valid');
+                        $('#agenda').removeClass('is-invalid');
+                        $('#agenda').addClass('is-valid');
                     }
                     if (data.errorTanggal) {
                         $('#tanggal').addClass('is-invalid');
@@ -444,8 +410,9 @@
                         html: `Data Berhasil Di tambahkan`,
                     }).then((result) => {
                         if (result.value) {
-                            reload_table();
                             $('#modalKasus').modal('hide');
+                            $('#filterKategori').val("");
+                            reload_table();
                         }
                     })
                 }
@@ -519,13 +486,12 @@
             success: function(data) {
                 $('#nama').html("Nama terdakwa :" + data.nama_terdakwa);
                 $('#no').html("Nomor Perkara :" + data.no_perkara);
-                $('#alamat').html("Alamat :" + data.alamat_terdakwa);
                 $('#ket').html("Keterangan :" + data.keterangan);
                 $('#hakim').html("Nama Hakim :" + data.nama_hakim);
                 $('#jaksa').html("Nama Jaksa :" + data.nama_jaksa);
-                $('#saksi').html("Nama Saksi :" + data.nama_saksi);
+                $('#pengganti').html("Panitia Pengganti :" + data.panitia_pengganti);
                 $('#kategori_terdakwa').html("Kategori :" + data.kategori);
-                $('#perkara').html("Jenis Perkara :" + data.jenis_perkara);
+                $('#agendaSidang').html("Agenda :" + data.agenda);
                 $('#tgl').html("Tanggal :" + data.tanggal);
                 $('#modalKasus').modal('show');
                 $('.modal-title').text('Detail Kasus');

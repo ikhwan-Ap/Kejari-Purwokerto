@@ -14,7 +14,7 @@
                             <select name="kategori" id="filterKategori" class="form-control">
                                 <option value="">All</option>
                                 <option value="Umum">Umum</option>
-                                <option value="Khusus">Khusus</option>
+                                <optio value="Khusus">Khusus</optio>
                                 <option value="Datun">Datun</option>
                                 <option value="Buron">Buron</option>
                             </select>
@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h6 id="nama">
-
+                                        AA
                                     </h6>
                                 </div>
                                 <div class="col">
@@ -75,12 +75,12 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h6 id="alamat">
+                                    <h6 id="tgl">
 
                                     </h6>
                                 </div>
                                 <div class="col">
-                                    <h6 id="tgl">
+                                    <h6 id="agendaSidang">
 
                                     </h6>
                                 </div>
@@ -99,22 +99,18 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <h6 id="saksi">
+                                    <h6 id="pengganti">
 
                                     </h6>
                                 </div>
-                                <div class="col">
-                                    <h6 id="perkara">
-
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="row">
                                 <div class="col">
                                     <h6 id="ket">
 
                                     </h6>
                                 </div>
+                            </div>
+                            <div class="row">
+
 
                                 <div class="col">
                                     <h6 id="kategori_terdakwa">
@@ -173,13 +169,12 @@
             success: function(data) {
                 $('#nama').html("Nama terdakwa :" + data.nama_terdakwa);
                 $('#no').html("Nomor Perkara :" + data.no_perkara);
-                $('#alamat').html("Alamat :" + data.alamat_terdakwa);
                 $('#ket').html("Keterangan :" + data.keterangan);
                 $('#hakim').html("Nama Hakim :" + data.nama_hakim);
                 $('#jaksa').html("Nama Jaksa :" + data.nama_jaksa);
-                $('#saksi').html("Nama Saksi :" + data.nama_saksi);
+                $('#pengganti').html("Panitia Pengganti :" + data.panitia_pengganti);
                 $('#kategori_terdakwa').html("Kategori :" + data.kategori);
-                $('#perkara').html("Jenis Perkara :" + data.jenis_perkara);
+                $('#agendaSidang').html("Agenda :" + data.agenda);
                 $('#tgl').html("Tanggal :" + data.tanggal);
                 $('#modalIncraht').modal('show');
                 $('.modal-title').text('Detail Data Incraht');

@@ -11,14 +11,13 @@ class kasusSeeder extends Seeder
         $data = [
             [
                 'nama_terdakwa' => 'Superadmin',
-                'alamat_terdakwa' => 'Jl. Imam Bonkol RT 03 RW 02',
                 'nama_jaksa' => 'Izul, SH., MH',
                 'nama_hakim' => 'Zaenal, SH.,MH',
-                'nama_saksi' => 'Ibu Superadmin',
-                'keterangan' => 'Pemeriksaan Saksi',
+                'panitia_pengganti' => 'Ibu Superadmin',
+                'keterangan' => 'Incraht',
                 'no_perkara' => 'PMP 010203',
-                'jenis_perkara' => 'KDRT',
-                'kategori' => 'umum',
+                'Agenda' => 'KDRT',
+                'kategori' => 'Pidana Umum',
                 'tanggal' => '2022-07-07'
             ],
         ];

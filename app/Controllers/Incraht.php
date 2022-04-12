@@ -39,7 +39,7 @@ class Incraht extends BaseController
                     $no++,
                     $hasil->tanggal,
                     $hasil->no_perkara,
-                    $hasil->nama_saksi,
+                    $hasil->nama_terdakwa,
                     $hasil->nama_hakim,
                     $hasil->nama_jaksa,
                     $hasil->keterangan,
