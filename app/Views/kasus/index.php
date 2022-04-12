@@ -7,9 +7,14 @@
             <button class="btn btn-primary" onclick="addKasus()">
                 <i class="ion ion-plus-circled"></i> Tambah
             </button>
-            <button class="btn btn-primary" onclick="addKasus()">
+            <a href="#" class="btn btn-primary" data-toggle="dropdown">
                 <i class="ion ion-ios-cloud-upload"></i> Excel
-            </button>
+            </a>
+            <ul class="dropdown-menu">
+                <a class="nav-link Umum" onclick="btnUmum()" href="#">Pidana Umum</a>
+                <a class="nav-link Khusus" href="#">Pidana Khusus</a>
+                <a class="nav-link Perdata" href="#">Perdata dan Tata Usaha Negara </a>
+            </ul>
             <button class="btn btn-primary">
                 <i class="ion ion-ios-cloud-download"></i> Template
             </button>
@@ -222,6 +227,7 @@
     </div>
 
 
+
 </section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script>
@@ -251,6 +257,12 @@
         })
 
     });
+
+
+    function btnUmum() {
+        $('')
+    }
+
 
     function reload_table() {
         table.ajax.reload(null, false);

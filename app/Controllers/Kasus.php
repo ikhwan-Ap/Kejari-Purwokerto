@@ -214,8 +214,8 @@ class Kasus extends BaseController
                 ];
             }
             $output = [
-                'recordsTotal' => $this->kasus->countAll(),
-                'recordsFiltered' => $this->kasus->countFiltered(),
+                'recordsTotal' => $this->kasus->countKet(),
+                'recordsFiltered' => $this->kasus->countExcept(),
                 'data' => $row
             ];
             echo json_encode($output);

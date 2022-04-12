@@ -103,14 +103,34 @@ class kasusModel extends Model
     public function countFiltered()
     {
         $this->getDataTables();
+        $this->dt->where('keterangan', 'Incraht');
         return $this->dt->countAllResults();
+    }
+
+    public function countExcept()
+    {
+        $ket = ['Incraht'];
+        $this->getDataTables();
+        $this->dt->whereNotIn('keterangan', $ket);
+        return $this->dt->countAllResults();
+    }
+
+    public function countket()
+    {
+        $ket = ['Incraht'];
+        $tbl_storage = $this->db->table($this->table);
+        $tbl_storage->whereNotIn('keterangan', $ket);
+        return $tbl_storage->countAllResults();
     }
 
     public function countAll()
     {
         $tbl_storage = $this->db->table($this->table);
+        $tbl_storage->where('keterangan', 'Incraht');
         return $tbl_storage->countAllResults();
     }
+
+
 
     public function get_id($id_kasus)
     {
