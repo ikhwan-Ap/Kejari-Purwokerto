@@ -3,6 +3,9 @@
         <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
         </ul>
+        <div class="search-element">
+            <input class="form-control" placeholder="<?= date('d M Y'); ?>" readonly>
+        </div>
     </form>
     <ul class="navbar-nav navbar-right">
         <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
@@ -11,12 +14,6 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-title">Logged in 5 min ago</div>
-                <a href="features-profile.html" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> Profile
-                </a>
-                <a href="features-activities.html" class="dropdown-item has-icon">
-                    <i class="fas fa-bolt"></i> Activities
-                </a>
                 <button onclick="btnProfil( <?= session()->get('id'); ?>)" class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i> Settings
                 </button>

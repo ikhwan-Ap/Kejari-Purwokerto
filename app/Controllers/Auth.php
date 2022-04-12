@@ -10,6 +10,7 @@ class Auth extends BaseController
     {
         helper('form');
     }
+
     public function index()
     {
         if (session('username')) {
@@ -20,6 +21,7 @@ class Auth extends BaseController
             'title' => 'Login Admin',
         ]);
     }
+
     public function login()
     {
         $validation = \Config\Services::validation();
