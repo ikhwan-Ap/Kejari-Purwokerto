@@ -105,12 +105,6 @@ class Kasus extends BaseController
                         'required' => 'No Perkara Tidak Boleh Kosong',
                     ],
                 ],
-                'keterangan' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Keterangan Tidak Boleh Kosong',
-                    ],
-                ],
                 'nama_hakim' => [
                     'rules' => 'required',
                     'errors' => [
@@ -155,7 +149,6 @@ class Kasus extends BaseController
                     'error' => [
                         'errorNama' => $validation->getError('nama_terdakwa'),
                         'erorrNomor' => $validation->getError('no_perkara'),
-                        'errorKeterangan' => $validation->getError('keterangan'),
                         'errorHakim' => $validation->getError('nama_hakim'),
                         'errorJaksa' => $validation->getError('nama_jaksa'),
                         'errorPengganti' => $validation->getError('panitia_pengganti'),
@@ -168,7 +161,7 @@ class Kasus extends BaseController
                 $this->kasus->save([
                     'nama_terdakwa' => $nama_terdakwa,
                     'no_perkara' => $no_perkara,
-                    'keterangan' => $keterangan,
+                    'keterangan' => '-',
                     'nama_hakim' => $nama_hakim,
                     'nama_jaksa' => $nama_jaksa,
                     'panitia_pengganti' => $panitia_pengganti,

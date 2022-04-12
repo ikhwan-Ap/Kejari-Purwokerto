@@ -13,10 +13,9 @@
                         <div class="card-header-action">
                             <select name="kategori" id="filterKategori" class="form-control">
                                 <option value="">All</option>
-                                <option value="Umum">Umum</option>
-                                <optio value="Khusus">Khusus</optio>
-                                <option value="Datun">Datun</option>
-                                <option value="Buron">Buron</option>
+                                <option value="Pidana Umum">Pidana Umum</option>
+                                <option value="Pidana Khusus">Pidana Khusus</option>
+                                <option value="Perdata Dan Tata Usaha Negara">Perdata Dan Tata Usaha Negara</option>
                             </select>
                         </div>
                     </div>
