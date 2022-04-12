@@ -70,12 +70,24 @@ class kasusModel extends Model
 
     public function datatablesKasus()
     {
-        $ket = ['inchraft'];
+        $ket = ['Incraht'];
         $request = Services::request();
         $this->getDataTables();
         if ($request->getPost('length') != -1)
             $this->dt
                 ->whereNotIn('keterangan', $ket)
+                ->limit($request->getPost('length'), $request->getPost('start'));
+        $query = $this->dt->get();
+        return $query->getResult();
+    }
+
+    public function datatablesIncraht()
+    {
+        $request = Services::request();
+        $this->getDataTables();
+        if ($request->getPost('length') != -1)
+            $this->dt
+                ->where('keterangan', 'Incraht')
                 ->limit($request->getPost('length'), $request->getPost('start'));
         $query = $this->dt->get();
         return $query->getResult();

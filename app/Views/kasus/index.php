@@ -95,7 +95,7 @@
                                 <div class="row">
                                     <div class="form-group col">
                                         <label for="keterangan">Keterangan</label>
-                                        <textarea id="keterangan" type="text" class="form-control" value="" name="keterangan">
+                                        <textarea id="keterangan" type="text" class="form-control" value="" name="keterangan" readonly>
                                     </textarea>
                                         <div class="invalid-feedback errorKeterangan">
 
@@ -245,9 +245,6 @@
             </div>
         </div>
     </div>
-
-
-
 </section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script>
@@ -460,8 +457,8 @@
         })
 
         swalWithBootstrapButtons.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Apakah Anda Yakin?',
+            text: "Anda Akan Menghapus Data Ini!",
             icon: 'warning',
             reverseButtons: true,
             showCancelButton: true,
@@ -477,7 +474,7 @@
                         if (response.sukses) {
                             swalWithBootstrapButtons.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'Data Berhasil Di Hapus',
                                 'success'
                             ).then((result) => {
                                 if (result.value) {
@@ -494,7 +491,7 @@
             ) {
                 swalWithBootstrapButtons.fire(
                     'Cancelled',
-                    'Your imaginary file is safe :)',
+                    'Data Tidak Jadi Di Hapus :)',
                     'error'
                 )
             }
@@ -530,6 +527,56 @@
         });
     }
 
-    function incrahft(id_kasus) {}
+    function kasusSelesai(id_kasus) {
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Apakah Anda Yakin?',
+            text: "Data Ini Telah Selesai?",
+            icon: 'warning',
+            reverseButtons: true,
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Data Selesai ',
+            cancelButtonText: 'Tidak, Data Belum Selesai!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?= site_url('kasus/kasus_selesai/'); ?>/" + id_kasus,
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            swalWithBootstrapButtons.fire(
+                                'Deleted!',
+                                'Data Telah Selesai (Incraht)',
+                                'success'
+                            ).then((result) => {
+                                if (result.value) {
+                                    reload_table();
+                                }
+                            })
+                        }
+                    }
+                });
+
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Data Tidak Jadi Di Update :)',
+                    'error'
+                )
+            }
+        })
+    }
 </script>
 <?= $this->endsection(); ?>

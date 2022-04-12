@@ -35,6 +35,7 @@ $routes->get('/', 'Auth::index');
 $routes->get('/admin', 'Admin::index');
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLoggedIn']);
 $routes->get('/kasus', 'Kasus::index');
+$routes->get('/incraht', 'Incraht::index');
 // $routes->get('/login', 'Home::index');
 
 /*

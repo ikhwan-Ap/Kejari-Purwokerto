@@ -68,6 +68,19 @@ class Kasus extends BaseController
         ];
         echo json_encode($data);
     }
+
+    public function kasus_selesai($id_kasus)
+    {
+        $this->kasus->save([
+            'id_kasus' => $id_kasus,
+            'keterangan' => 'Incraht'
+        ]);
+        $data = [
+            'sukses' => 'Data Telah Berhasil Di Rubah(Selesai)'
+        ];
+        echo json_encode($data);
+    }
+
     public function tambah_kasus()
     {
         $validation = \Config\Services::validation();
@@ -202,6 +215,9 @@ class Kasus extends BaseController
                 </button>
                 <button type="button" class="btn btn-light" onclick="detailKasus('  . $hasil->id_kasus  . ')"title="DETAIL">
                         <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
+                </button>
+                <button type="button" class="btn btn-light" onclick="kasusSelesai('  . $hasil->id_kasus  . ')"title="Selesai">
+                        <span class="ion ion-checkmark-circled" data-pack="android" data-tags=""></span>
                 </button>
                 ';
                 $row[] = [
