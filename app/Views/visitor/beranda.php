@@ -17,12 +17,15 @@
 								<div class="grid clearfix">
 
 									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(<?=base_url()?>/template/visitor/images/post_12.jpg)"></div>
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">Pelayanan 1</a></div>
+									<a href="#">
+
+										<div class="card card_default card_small_with_background grid-item">
+											<div class="card_background" style="background-image:url(<?=base_url()?>/template/visitor/images/post_12.jpg)"></div>
+											<div class="card-body">
+												<div class="card-title card-title-small"><a href="post.html" style="display:block;">Pelayanan 1</a></div>
+											</div>
 										</div>
-									</div>
+									</a>
 
                   <!-- Small Card With Background -->
 									<div class="card card_default card_small_with_background grid-item">

@@ -8,4 +8,8 @@ class Home extends BaseController
     {
         return view('visitor/beranda');
     }
+    public function kontak()
+    {
+        return view('visitor/kontak');
+    }
 }
