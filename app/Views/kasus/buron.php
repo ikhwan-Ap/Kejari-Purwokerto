@@ -151,9 +151,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <h6 id="image_buron">
-
-                                </h6>
+                                <img src="" id="img_preview" alt="Image_buron" style="height: 65%; width:50%;">
                             </div>
                         </div>
                     </div>
@@ -229,7 +227,7 @@
                 $('#usia_buron').html("Usia :" + data.usia);
                 $('#jenis').html("jenis kelamin :" + data.jenis_kelamin);
                 $('#alamat').html("alamat :" + data.alamat_buron);
-                $('#image_buron').html("Image :" + data.image);
+                $('#img_preview').attr('src', '<?= base_url('uploads/buron'); ?>/' + data.image);
                 $('#modalBuron').modal('show');
                 $('.modal-title').text('Detail Buron');
             },
@@ -383,14 +381,12 @@
                         $('#alamat_buron').removeClass('is-invalid');
                         $('#alamat_buron').addClass('is-valid');
                     }
-                    if (save_method == 'add') {
-                        if (data.errorImage) {
-                            $('#image').addClass('is-invalid');
-                            $('.errorImage').html(data.errorImage);
-                        } else {
-                            $('#image').removeClass('is-invalid');
-                            $('#image').addClass('is-valid');
-                        }
+                    if (data.errorImage) {
+                        $('#image').addClass('is-invalid');
+                        $('.errorImage').html(data.errorImage);
+                    } else {
+                        $('#image').removeClass('is-invalid');
+                        $('#image').addClass('is-valid');
                     }
                 }
                 if (response.sukses) {
@@ -403,6 +399,7 @@
                             $('#modalBuron').modal('hide');
                             $('#filterJenis').val("");
                             reload_table();
+                            reset();
                         }
                     })
                 }

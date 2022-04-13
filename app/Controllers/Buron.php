@@ -74,23 +74,59 @@ class Buron extends BaseController
                         'errorUsia' => $validation->getError('usia'),
                         'errorJenis' => $validation->getError('jenis_kelamin'),
                         'errorAlamat' => $validation->getError('alamat_buron'),
-                        'errorImage' => $validation->getError('image'),
                     ],
                 ];
             } else {
-                $nama_image = $image->getRandomName();
-                $image->move('uploads/buron', $nama_image);
-                $this->buron->save([
-                    'id_buron' => $id_buron,
-                    'nama_buron' => $nama_buron,
-                    'jenis_kelamin' => $jenis_kelamin,
-                    'usia' => $usia,
-                    'image' => $nama_image,
-                    'alamat_buron' => $alamat_buron,
-                ]);
-                $data = [
-                    'sukses' => 'Data Buron Berhasil Di Tambahkan'
-                ];
+                if ($image != '') {
+                    $valid_img = $this->validate([
+                        'image' => [
+                            'rules' => 'uploaded[image]|max_size[image,1024]|is_image[image]
+                            |mime_in[image,image/jpg,image/jpeg,image/png]',
+                            'errors' => [
+                                'uploaded' => 'Gambar Buron Harus Di Isi !!!',
+                                'max_size' => 'Gambar Melebihi 1 mb',
+                                'mime_in' => 'Gambar harus png / jpg / jpeg!!',
+                                'is_image' => 'File Bukan Merupakan Gambar',
+                            ]
+                        ],
+                    ]);
+                    $nama_image = $image->getRandomName();
+                    $image->move('uploads/buron', $nama_image);
+                    if (!$valid_img) {
+                        $data = [
+                            'error' => [
+                                'errorImage' => $validation->getError('image'),
+                            ]
+                        ];
+                    } else {
+                        $buron = $this->buron->get_id($id_buron);
+                        $unlink = unlink('uploads/buron/' . $buron['image']);
+                        if ($unlink != null) {
+                            $this->buron->save([
+                                'id_buron' => $id_buron,
+                                'nama_buron' => $nama_buron,
+                                'jenis_kelamin' => $jenis_kelamin,
+                                'usia' => $usia,
+                                'image' => $nama_image,
+                                'alamat_buron' => $alamat_buron,
+                            ]);
+                            $data = [
+                                'sukses' => 'Data Buron Berhasil Di Tambahkan'
+                            ];
+                        }
+                    }
+                } else {
+                    $this->buron->save([
+                        'id_buron' => $id_buron,
+                        'nama_buron' => $nama_buron,
+                        'jenis_kelamin' => $jenis_kelamin,
+                        'usia' => $usia,
+                        'alamat_buron' => $alamat_buron,
+                    ]);
+                    $data = [
+                        'sukses' => 'Data Buron Berhasil Di Tambahkan'
+                    ];
+                }
             }
         }
         echo json_encode($data);
@@ -98,6 +134,8 @@ class Buron extends BaseController
 
     public function del_buron($id_buron)
     {
+        $buron = $this->buron->get_id($id_buron);
+        unlink('uploads/buron/' . $buron['image']);
         $this->buron->del_buron($id_buron);
         $data = [
             'sukses' => 'Data kasus berhasil di hapus'
