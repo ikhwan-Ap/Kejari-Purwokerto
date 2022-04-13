@@ -54,6 +54,10 @@ class Home extends BaseController
     {
         return view('visitor/info_perkara/tata_usaha');
     }
+    public function pidum()
+    {
+        return view('visitor/bidang/pidum');
+    }
 
     public function berita()
     {

@@ -138,7 +138,7 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Bidang</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Pidum</a></li>
+										<li><a href="<?=base_url()?>/home/pidum" class="nav-link">Pidum</a></li>
 										<li><a href="#" class="nav-link">Datun</a></li>
 										<li><a href="#" class="nav-link">Barang Bukti</a></li>
 										<li><a href="#" class="nav-link">Pembinaan</a></li>
