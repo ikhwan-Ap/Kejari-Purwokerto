@@ -35,4 +35,10 @@ class Home extends BaseController
     {
         return view('visitor/kontak');
     }
+
+    public function berita()
+    {
+        $data = $this->buron->get_last();
+        echo json_encode($data);
+    }
 }

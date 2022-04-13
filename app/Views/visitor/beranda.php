@@ -163,7 +163,7 @@
 
 						<div class="blog_section">
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
-								<div class="section_title">Berita Terbaru</div>
+								<div class="section_title berita">Berita Terbaru</div>
 							</div>
 							<div class="section_content">
 								<div class="grid clearfix">
@@ -372,9 +372,16 @@
 						var table = $('#umum').hide();
 						var table = $('#khusus').hide();
 						var table = $('#perdata').hide();
-
-
 					})
+
+					$.ajax({
+						type: "GET",
+						url: "<?= site_url('home/berita'); ?>",
+						dataType: "json",
+						success: function(data) {
+							$('.berita').html(data.nama_buron);
+						}
+					});
 
 					function btnJadwal() {
 						$('#jadwal').show();
