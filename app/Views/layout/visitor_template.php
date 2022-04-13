@@ -102,7 +102,7 @@
               <ul
                 class="custom-site-menu main-menu js-clone-nav mx-auto d-none d-lg-block"
               >
-                <li><a class="nav-link">Beranda</a></li>
+                <li><a href="<?=base_url()?>/home" class="nav-link">Beranda</a></li>
 								<li class="has-children">
                   <a href="#" class="nav-link">Profil</a>
                   <ul class="dropdown arrow-top">
@@ -181,7 +181,7 @@
                     <li><a href="#" class="nav-link">Video Kegiatan</a></li>
                   </ul>
                 </li>
-                <li><a href="#" class="nav-link">Kontak Kami</a></li>
+                <li><a href="<?=base_url()?>/home/kontak" class="nav-link">Kontak Kami</a></li>
               </ul>
             </nav>
           </div>
