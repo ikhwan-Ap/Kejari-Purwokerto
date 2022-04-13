@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Website Resmi Kejaksaan Negeri Purwokerto</title>
 	<meta charset="utf-8">
@@ -21,7 +20,6 @@
 </head>
 
 <body>
-
 	<script type='text/javascript'>
 		var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 		var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
@@ -81,17 +79,33 @@
 					</div>
 				</div>
 			</div>
+			<div class="" style="background-image: url('<?=base_url()?>/template/visitor/images/header.jpg')">
+				<div class="container">
+					<center><img class="hidden-sm hidden-xs text-left" style="display:block; padding:11px 0; margin-left:40px; margin-right:auto; width:auto; " src="<?=base_url()?>/template/visitor/images/logo_fix.png"></center>
+				</div>
+			</div>
+			<div class="toggle-button d-inline-block d-lg-none" style="top: 56px;right: 6px;position: absolute;">
+				<a href="#" class="custom-site-menu-toggle py-5 js-menu-toggle text-black" style="color:ghostwhite;"><span class="custom-icon-menu h3"></span></a>
+			</div>
 		</div>
-
-		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner">
+		
+		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner"
+		style="background-image: url('<?=base_url()?>/assets/img/forest.jpg'); background-position: center; margin-top: -8px;">
+		<div style="background-color: darkgreen;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.6;"></div>
 			<div class="container">
 				<div class="row align-items-center position-relative">
 					<div class="col-12">
 						<nav class="custom-site-navigation text-center mx-auto" role="navigation">
 							<ul class="custom-site-menu main-menu js-clone-nav mx-auto d-none d-lg-block">
-								<li><a href="<?= base_url() ?>/home" class="nav-link">Beranda</a></li>
+								<li><a href="<?= base_url() ?>/home" class="nav-link"><b>Beranda</b></a></li>
 								<li class="has-children">
-									<a href="#" class="nav-link">Profil</a>
+									<a href="#" class="nav-link"><b>Profil</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Sambutan Kejari Purwokerto</a></li>
 										<li><a href="#" class="nav-link">Visi dan Misi</a></li>
@@ -100,7 +114,7 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link">Reformasi Birokrasi</a>
+									<a href="#" class="nav-link"><b>Reformasi Birokrasi</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Survei Kepuasan Masyarakat</a></li>
 										<li><a href="#" class="nav-link">Layanan Kejaksaan Negeri Purwokerto</a></li>
@@ -113,16 +127,16 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link">Info Perkara</a>
+									<a href="#" class="nav-link"><b>Info Perkara</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Pidana Umum</a></li>
-										<li><a href="#" class="nav-link">Pidana Khusus</a></li>
-										<li><a href="#" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
-										<li><a href="#" class="nav-link">Jadwal Sidang</a></li>
+										<li><a href="<?=base_url()?>/home/pidana_umum" class="nav-link">Pidana Umum</a></li>
+										<li><a href="<?=base_url()?>/home/pidana_khusus" class="nav-link">Pidana Khusus</a></li>
+										<li><a href="<?=base_url()?>/home/tata_usaha" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
+										<li><a href="<?=base_url()?>/home/jadwal_sidang" class="nav-link">Jadwal Sidang</a></li>
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link">Bidang</a>
+									<a href="#" class="nav-link"><b>Bidang</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Pidum</a></li>
 										<li><a href="#" class="nav-link">Datun</a></li>
@@ -133,7 +147,7 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link">Sarana</a>
+									<a href="#" class="nav-link"><b>Sarana</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Pos Pelayanan Hukum</a></li>
 										<li><a href="#" class="nav-link">Klinik Kesehatan</a></li>
@@ -143,7 +157,7 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link">Peraturan</a>
+									<a href="#" class="nav-link"><b>Peraturan</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Instruksi Jaksa Agung</a></li>
 										<li><a href="#" class="nav-link">Instruksi Presiden</a></li>
@@ -156,7 +170,7 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link">Informasi</a>
+									<a href="#" class="nav-link"><b>Informasi</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Pengaduan</a></li>
 										<li><a href="#" class="nav-link">Kontak</a></li>
@@ -168,31 +182,23 @@
 										<li><a href="#" class="nav-link">Video Kegiatan</a></li>
 									</ul>
 								</li>
-								<li><a href="<?= base_url() ?>/home/kontak" class="nav-link">Kontak Kami</a></li>
+								<li><a href="<?= base_url() ?>/home/kontak" class="nav-link"><b>Kontak Kami</b></a></li>
 							</ul>
 						</nav>
 					</div>
 
-					<div class="toggle-button d-inline-block d-lg-none">
-						<a href="#" class="custom-site-menu-toggle py-5 js-menu-toggle text-black"><span class="custom-icon-menu h3"></span></a>
-					</div>
 				</div>
 			</div>
 		</header>
 
-		<div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/hero_1.jpg')"></div>
-
 		<?= $this->renderSection('content'); ?>
 
 		<!-- Sidebar -->
-
 		<div class="col-lg-3">
 			<div class="sidebar">
 				<div class="sidebar_background"></div>
 
 				<!-- Top Stories -->
-
-
 				<?php if (session()->get('nama_buron') != null) :  ?>
 					<div class="sidebar_section">
 						<div class="sidebar_title_container">
@@ -221,9 +227,7 @@
 					<a href="https://www.kejaksaan.go.id/pengaduan.php"><img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%"></a>
 				</div>
 
-
 				<!-- Future Events -->
-
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
 						<div class="sidebar_title">Agenda</div>
@@ -299,7 +303,7 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row row-lg-eq-height">
-				<div class="col-3">
+				<div class="col-md-3">
 					<div class="footer_content">
 						<p style="color: white; text-align: left;"><b>Kontak Informasi</b></p>
 						<p style="color: white; text-align: left;">Kejaksaan Negeri Purwokerto</p>
@@ -309,7 +313,7 @@
 						<p style="color: white; text-align: left;"><i class="fa fa-phone"></i> (0281) 635590</p>
 					</div>
 				</div>
-				<div class="col-3">
+				<div class="col-md-3">
 					<div class="footer_content">
 						<p style="color: white; text-align: left;"><b>Statistik</b></p>
 						<p style="color: white; text-align: left;">User Online : 3</p>
@@ -318,7 +322,7 @@
 						<p style="color: white; text-align: left;">Total Pengunjung : 31300</p>
 					</div>
 				</div>
-				<div class="col-3">
+				<div class="col-md-3">
 					<div class="footer_content">
 						<p style="color: white; text-align: left;"><b>Situs Terkait</b></p>
 						<p style="color: white; text-align: left;"><a style="color: white;" href="https://www.kejaksaan.go.id/"><i class="fa fa-globe"></i> Kejaksaan RI</a></p>
@@ -326,7 +330,7 @@
 						<p style="color: white; text-align: left;"><a style="color: white;" href="https://www.mahkamahagung.go.id/"><i class="fa fa-globe"></i> Mahkamah Agung</a></p>
 					</div>
 				</div>
-				<div class="col-3">
+				<div class="col-md-3">
 					<div class="footer_content">
 						<p style="color: white; text-align: left;"><b>Sosial Media</b></p>
 

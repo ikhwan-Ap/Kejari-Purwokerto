@@ -38,6 +38,23 @@ class Home extends BaseController
         return view('visitor/kontak');
     }
 
+    public function jadwal_sidang()
+    {
+        return view('visitor/info_perkara/jadwal_sidang');
+    }
+    public function pidana_khusus()
+    {
+        return view('visitor/info_perkara/pidana_khusus');
+    }
+    public function pidana_umum()
+    {
+        return view('visitor/info_perkara/pidana_umum');
+    }
+    public function tata_usaha()
+    {
+        return view('visitor/info_perkara/tata_usaha');
+    }
+
     public function berita()
     {
         $data = $this->buron->get_last();

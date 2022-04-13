@@ -1,6 +1,8 @@
 	<?= $this->extend('layout/visitor_template'); ?>
 	<?= $this->section('content'); ?>
 
+	<div class="hero" style="background-image: url('<?=base_url()?>/template/visitor/images/hero_1.jpg');"></div>
+
 	<!-- Page Content -->
 	<div class="page_content">
 

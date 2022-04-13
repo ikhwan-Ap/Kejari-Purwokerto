@@ -68,7 +68,6 @@ a:hover {
 }
 
 .top-bar {
-  padding: 0.5rem 0;
   background: #eee;
 }
 .top-bar a {
@@ -86,6 +85,7 @@ a:hover {
   .custom-site-navbar {
     padding-top: 3rem;
     padding-bottom: 3rem;
+    display: none;
   }
 }
 .custom-site-navbar .toggle-button {
@@ -171,7 +171,7 @@ a:hover {
   top: 100%;
   position: absolute;
   text-align: left;
-  border-top: 2px solid #007bff;
+  border-top: 2px solid #00923f;
   -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
   padding: 0px 0;
@@ -612,5 +612,8 @@ a:hover {
   .sticky-wrapper .shrink {
     padding-top: 30px !important;
     padding-bottom: 30px !important;
+  }
+  .sticky-wrapper {
+    display: none;
   }
 }
