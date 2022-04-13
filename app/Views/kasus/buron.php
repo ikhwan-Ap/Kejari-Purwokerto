@@ -8,6 +8,11 @@
                 <i class="ion ion-plus-circled"></i> Tambah
             </button>
         </div>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a href="<?= base_url('/dashboard'); ?>">Dashboard</a></div>
+            <div class="breadcrumb-item">Master Data</div>
+            <div class="breadcrumb-item">Buron</div>
+        </div>
     </div>
     <div class="section-body">
         <div class="row">

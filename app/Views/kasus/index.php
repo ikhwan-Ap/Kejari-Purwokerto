@@ -19,6 +19,11 @@
                 <i class="ion ion-ios-cloud-download"></i> Template
             </button>
         </div>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a href="<?= base_url('/dashboard'); ?>">Dashboard</a></div>
+            <div class="breadcrumb-item">Master Data</div>
+            <div class="breadcrumb-item">Kasus</div>
+        </div>
     </div>
 
     <?php if (session()->getFlashdata('message') != null) :  ?>

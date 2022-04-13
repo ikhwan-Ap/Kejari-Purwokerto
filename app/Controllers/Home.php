@@ -17,11 +17,13 @@ class Home extends BaseController
     public function index()
     {
         $buron = $this->buron->get_last();
-        session()->set([
-            'id_buron' => $buron['id_buron'],
-            'nama_buron' => $buron['nama_buron'],
-            'image' => $buron['image'],
-        ]);
+        if ($buron != null) {
+            session()->set([
+                'id_buron' => $buron['id_buron'],
+                'nama_buron' => $buron['nama_buron'],
+                'image' => $buron['image'],
+            ]);
+        }
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),

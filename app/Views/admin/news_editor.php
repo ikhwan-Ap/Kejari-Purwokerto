@@ -5,17 +5,17 @@
         <h1>Editor</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-            <div class="breadcrumb-item"><a href="#">Forms</a></div>
+            <div class="breadcrumb-item">Moduls</div>
             <div class="breadcrumb-item">Editor</div>
         </div>
     </div>
     <div class="row">
-        
-    </div>
-    <div class="section-body" id="app">
-        <h2 class="section-title">Editor Berita</h2>
-        <p class="section-lead">Halaman Kreasi Berita</p>
 
+    </div>
+    <div class="section-body" id="appBerita">
+        <div class="card-header">
+            <h4>Halaman Kreasi Berita</h4>
+        </div>
         <div class="row">
             <div class="col-12 col-md-8 col-sm-12">
                 <div class="card">
@@ -58,7 +58,7 @@
                                 <input name="file" type="file" multiple />
                             </div>
                         </form>
-                  </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,21 +92,21 @@
 <script src="<?= base_url(); ?>/assets/js/page/components-multiple-upload.js"></script>
 
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('#summernote-simple').summernote({
-      height: "300px",
-      styleWithSpan: false
+    $(document).ready(function() {
+        $('#summernote-simple').summernote({
+            height: "300px",
+            styleWithSpan: false
+        });
     });
-  }); 
-  const artikel = {
-      judul : 'Tulis Judul Berita',
-      penulis: 'Nama Berita'
+    const artikel = {
+        judul: 'Tulis Judul Berita',
+        penulis: 'Nama Berita'
 
-  }
-  const art = new Vue({
-      el:'#app',
-      data: artikel
-  })
+    }
+    const art = new Vue({
+        el: '#appBerita',
+        data: artikel
+    })
 </script>
 
 <?= $this->endsection(); ?>

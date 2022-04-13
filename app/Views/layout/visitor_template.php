@@ -192,13 +192,6 @@
 
 				<!-- Top Stories -->
 
-				<div class="sidebar_section">
-					<div class="sidebar_title_container">
-						<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
-					</div><br>
-					<img src="<?= base_url() ?>/template/visitor/images/kepala.jpg" alt="" width="100%">
-					<div class="sidebar_tit">aa</div>
-				</div>
 
 				<?php if (session()->get('nama_buron') != null) :  ?>
 					<div class="sidebar_section">
@@ -207,6 +200,14 @@
 						</div><br>
 						<img src="<?= base_url('/uploads/buron') ?>/<?php echo session()->get('image'); ?>" alt="" width="100%">
 						<div class="sidebar_title"><?php echo session()->get('nama_buron'); ?></div>
+					</div>
+				<?php else :  ?>
+					<div class="sidebar_section">
+						<div class="sidebar_title_container">
+							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
+						</div><br>
+						<img src="<?= base_url() ?>/template/visitor/images/kepala.jpg" alt="" width="100%">
+						<div class="sidebar_tit">aa</div>
 					</div>
 				<?php endif;  ?>
 
@@ -335,7 +336,8 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="copyright align-items-center justify-content-center" style="color: #FFFFFF;">
-						Copyright &copy;<script>
+						Copyright &copy;
+						<script>
 							document.write(new Date().getFullYear());
 						</script> Kejaksaan Negeri Purwokerto. All rights reserved
 					</div>
