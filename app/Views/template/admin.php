@@ -17,6 +17,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <!-- CSS Libraries -->
 
+    <link rel="stylesheet" href="<?= base_url() ?>/js/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/js/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/summernote-bs4.css">
+    
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/components.css">
@@ -64,6 +73,16 @@
 
     <!-- JS Libraies -->
 
+    <script src="<?= base_url() ?>/js/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>/js/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>/js/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
+
+    <script src="<?= base_url() ?>/assets/js/summernote-bs4.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="<?= base_url(); ?>/assets/js/stisla.js"></script>
+
+    <!-- JS Libraies -->
     <script src="<?= base_url() ?>/js/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>/js/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url() ?>/js/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
