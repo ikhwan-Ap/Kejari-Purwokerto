@@ -22,126 +22,46 @@ class Buron extends BaseController
         return view('kasus/buron', $data);
     }
 
-    public function get_id($id_kasus)
+    public function get_id($id_buron)
     {
-        $data = $this->kasus->get_id($id_kasus);
+        $data = $this->buron->get_id($id_buron);
         echo  json_encode($data);
     }
 
-    public function edit_kasus()
-    {
-        if ($this->request->isAJAX()) {
-            $nama_terdakwa = $this->request->getVar('nama_terdakwa');
-            $no_perkara = $this->request->getVar('no_perkara');
-            $keterangan = $this->request->getVar('keterangan');
-            $nama_hakim = $this->request->getVar('nama_hakim');
-            $nama_jaksa = $this->request->getVar('nama_jaksa');
-            $panitia_pengganti = $this->request->getVar('panitia_pengganti');
-            $kategori = $this->request->getVar('kategori');
-            $agenda = $this->request->getVar('agenda');
-            $tanggal = $this->request->getVar('tanggal');
-            $id_kasus = $this->request->getVar('id_kasus');
-            $this->kasus->save([
-                'id_kasus' => $id_kasus,
-                'nama_terdakwa' => $nama_terdakwa,
-                'no_perkara' => $no_perkara,
-                'keterangan' => $keterangan,
-                'nama_hakim' => $nama_hakim,
-                'nama_jaksa' => $nama_jaksa,
-                'panitia_pengganti' => $panitia_pengganti,
-                'kategori' => $kategori,
-                'agenda' => $agenda,
-                'tanggal' => $tanggal
-            ]);
-
-            $data = [
-                'sukses' => 'Data kasus berhasil di edit'
-            ];
-        }
-        echo json_encode($data);
-    }
-
-    public function del_kasus($id_kasus)
-    {
-        $this->kasus->del_kasus($id_kasus);
-        $data = [
-            'sukses' => 'Data kasus berhasil di hapus'
-        ];
-        echo json_encode($data);
-    }
-
-    public function kasus_selesai($id_kasus)
-    {
-        $this->kasus->save([
-            'id_kasus' => $id_kasus,
-            'keterangan' => 'Incraht'
-        ]);
-        $data = [
-            'sukses' => 'Data Telah Berhasil Di Rubah(Selesai)'
-        ];
-        echo json_encode($data);
-    }
-
-    public function tambah_kasus()
+    public function edit_buron()
     {
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
-            $nama_terdakwa = $this->request->getVar('nama_terdakwa');
-            $no_perkara = $this->request->getVar('no_perkara');
-            $keterangan = $this->request->getVar('keterangan');
-            $nama_hakim = $this->request->getVar('nama_hakim');
-            $nama_jaksa = $this->request->getVar('nama_jaksa');
-            $panitia_pengganti = $this->request->getVar('panitia_pengganti');
-            $kategori = $this->request->getVar('kategori');
-            $agenda = $this->request->getVar('agenda');
-            $tanggal = $this->request->getVar('tanggal');
+            $id_buron = $this->request->getVar('id_buron');
+            $image = $this->request->getFile('image');
+            $nama_buron = $this->request->getVar('nama_buron');
+            $usia = $this->request->getVar('usia');
+            $jenis_kelamin = $this->request->getVar('jenis_kelamin');
+            $alamat_buron = $this->request->getVar('alamat_buron');
+
             $valid = $this->validate([
-                'nama_terdakwa' => [
+                'nama_buron' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required' => 'Nama Terdakwa Tidak Boleh Kosong',
+                        'required' => 'Nama Buron Tidak Boleh Kosong',
                     ],
                 ],
-                'no_perkara' => [
+                'usia' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required' => 'No Perkara Tidak Boleh Kosong',
+                        'required' => 'Usia Tidak Boleh Kosong',
                     ],
                 ],
-                'nama_hakim' => [
+                'jenis_kelamin' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required' => 'Nama Hakim Tidak Boleh Kosong',
+                        'required' => 'Jenis Kelamin Tidak Boleh Kosong',
                     ],
                 ],
-                'nama_jaksa' => [
+                'alamat_buron' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required' => 'Nama Jaksa Tidak Boleh Kosong',
-                    ],
-                ],
-                'panitia_pengganti' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Panitia Pengganti Tidak Boleh Kosong',
-                    ],
-                ],
-                'kategori' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Kategori Tidak Boleh Kosong',
-                    ],
-                ],
-                'agenda' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Agenda Tidak Boleh Kosong',
-                    ],
-                ],
-                'tanggal' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Tanggal Perkara Tidak Boleh Kosong',
+                        'required' => 'Alamat Tidak Boleh Kosong',
                     ],
                 ],
 
@@ -150,30 +70,112 @@ class Buron extends BaseController
             if (!$valid) {
                 $data = [
                     'error' => [
-                        'errorNama' => $validation->getError('nama_terdakwa'),
-                        'erorrNomor' => $validation->getError('no_perkara'),
-                        'errorHakim' => $validation->getError('nama_hakim'),
-                        'errorJaksa' => $validation->getError('nama_jaksa'),
-                        'errorPengganti' => $validation->getError('panitia_pengganti'),
-                        'errorKategori' => $validation->getError('kategori'),
-                        'errorAgenda' => $validation->getError('agenda'),
-                        'errorTanggal' => $validation->getError('tanggal'),
+                        'errorNama' => $validation->getError('nama_buron'),
+                        'errorUsia' => $validation->getError('usia'),
+                        'errorJenis' => $validation->getError('jenis_kelamin'),
+                        'errorAlamat' => $validation->getError('alamat_buron'),
+                        'errorImage' => $validation->getError('image'),
                     ],
                 ];
             } else {
-                $this->kasus->save([
-                    'nama_terdakwa' => $nama_terdakwa,
-                    'no_perkara' => $no_perkara,
-                    'keterangan' => '-',
-                    'nama_hakim' => $nama_hakim,
-                    'nama_jaksa' => $nama_jaksa,
-                    'panitia_pengganti' => $panitia_pengganti,
-                    'kategori' => $kategori,
-                    'agenda' => $agenda,
-                    'tanggal' => $tanggal
+                $nama_image = $image->getRandomName();
+                $image->move('uploads/buron', $nama_image);
+                $this->buron->save([
+                    'id_buron' => $id_buron,
+                    'nama_buron' => $nama_buron,
+                    'jenis_kelamin' => $jenis_kelamin,
+                    'usia' => $usia,
+                    'image' => $nama_image,
+                    'alamat_buron' => $alamat_buron,
                 ]);
                 $data = [
-                    'sukses' => 'Data Berrow Di Tambahkan'
+                    'sukses' => 'Data Buron Berhasil Di Tambahkan'
+                ];
+            }
+        }
+        echo json_encode($data);
+    }
+
+    public function del_buron($id_buron)
+    {
+        $this->buron->del_buron($id_buron);
+        $data = [
+            'sukses' => 'Data kasus berhasil di hapus'
+        ];
+        echo json_encode($data);
+    }
+
+
+    public function tambah_buron()
+    {
+        $validation = \Config\Services::validation();
+        if ($this->request->isAJAX()) {
+            $image = $this->request->getFile('image');
+            $nama_buron = $this->request->getVar('nama_buron');
+            $usia = $this->request->getVar('usia');
+            $jenis_kelamin = $this->request->getVar('jenis_kelamin');
+            $alamat_buron = $this->request->getVar('alamat_buron');
+
+            $valid = $this->validate([
+                'nama_buron' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Nama Buron Tidak Boleh Kosong',
+                    ],
+                ],
+                'usia' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Usia Tidak Boleh Kosong',
+                    ],
+                ],
+                'jenis_kelamin' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Jenis Kelamin Tidak Boleh Kosong',
+                    ],
+                ],
+                'alamat_buron' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Alamat Tidak Boleh Kosong',
+                    ],
+                ],
+                'image' => [
+                    'rules' => 'uploaded[image]|max_size[image,1024]|is_image[image]
+                    |mime_in[image,image/jpg,image/jpeg,image/png]',
+                    'errors' => [
+                        'uploaded' => 'Image Pembayaran Harus Di Isi !!!',
+                        'max_size' => 'Gambar Melebihi 1 mb',
+                        'mime_in' => 'Gambar harus png / jpg / jpeg!!',
+                        'is_image' => 'File Bukan Merupakan Gambar',
+                    ]
+                ],
+
+            ]);
+
+            if (!$valid) {
+                $data = [
+                    'error' => [
+                        'errorNama' => $validation->getError('nama_buron'),
+                        'errorUsia' => $validation->getError('usia'),
+                        'errorJenis' => $validation->getError('jenis_kelamin'),
+                        'errorAlamat' => $validation->getError('alamat_buron'),
+                        'errorImage' => $validation->getError('image'),
+                    ],
+                ];
+            } else {
+                $nama_image = $image->getRandomName();
+                $image->move('uploads/buron', $nama_image);
+                $this->buron->save([
+                    'nama_buron' => $nama_buron,
+                    'jenis_kelamin' => $jenis_kelamin,
+                    'usia' => $usia,
+                    'image' => $nama_image,
+                    'alamat_buron' => $alamat_buron,
+                ]);
+                $data = [
+                    'sukses' => 'Data Buron Berhasil Di Tambahkan'
                 ];
             }
         }
@@ -200,7 +202,8 @@ class Buron extends BaseController
                 </button>
                 <button type="button" class="btn btn-light" onclick="detailBuron('  . $hasil->id_buron  . ')"title="DETAIL">
                         <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
-                </button>
+                </button>   
+                
                 ';
                 $row[] = [
                     $no++,

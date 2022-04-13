@@ -37,7 +37,6 @@ class buronModel extends Model
         $this->dt = $this->db->table($this->table);
     }
 
-
     private  function getDataTables()
     {
         $request = Services::request();
@@ -97,11 +96,11 @@ class buronModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function get_id($id_kasus)
+    public function get_id($id_buron)
     {
         $builder = $this->db->table('buron');
         $builder->select('*');
-        $builder->where('id_buron', $id_kasus);
+        $builder->where('id_buron', $id_buron);
         $query = $builder->get();
         return $query->getRowArray();
     }
