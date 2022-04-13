@@ -94,10 +94,11 @@
                                     <div class="form-group col-6">
                                         <label for="tanggal">Tanggal</label>
                                         <input type="date" name="tanggal" id="tanggal" class="form-control" value="">
-                                    </div>
-                                    <div class="invalid-feedback errorTanggal">
+                                        <div class="invalid-feedback errorTanggal">
 
+                                        </div>
                                     </div>
+
                                     <div class="form-group col-6">
                                         <label for="no_perkara">Nomor Perkara</label>
                                         <input id="no_perkara" type="text" class="form-control" value="" name="no_perkara">
@@ -275,7 +276,6 @@
     var save_method;
     var table;
     var excel;
-
     $(document).ready(function() {
         table = $('#tableKasus').DataTable({
             "processing": true,

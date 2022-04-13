@@ -110,4 +110,14 @@ class buronModel extends Model
         $this->dt->where('id_buron', $id_buron);
         return $this->dt->delete();
     }
+
+    public function get_last()
+    {
+        $builder = $this->db->table('buron');
+        $builder->select('*');
+        $builder->limit(1);
+        $builder->orderBy('id_buron', 'DESC');
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
 }

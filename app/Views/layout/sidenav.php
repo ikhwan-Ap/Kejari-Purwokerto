@@ -23,7 +23,7 @@
 
 
 
-            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Kepala Kejaksaan</span></a></li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                 <ul class="dropdown-menu">

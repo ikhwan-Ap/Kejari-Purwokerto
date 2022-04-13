@@ -83,6 +83,7 @@ class kasusModel extends Model
         if ($request->getPost('length') != -1)
             $this->dt
                 ->whereNotIn('keterangan', $ket)
+                ->limit(10)
                 ->limit($request->getPost('length'), $request->getPost('start'));
         $query = $this->dt->get();
         return $query->getResult();
@@ -153,6 +154,9 @@ class kasusModel extends Model
         $builder = $this->db->table('kasus');
         $builder->select('*');
         $builder->where('kategori', 'Pidana Umum');
+        $builder->where('keterangan', 'Incraht');
+        $builder->limit(6);
+        $builder->orderBy('id_kasus', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -162,6 +166,9 @@ class kasusModel extends Model
         $builder = $this->db->table('kasus');
         $builder->select('*');
         $builder->where('kategori', 'Pidana Khusus');
+        $builder->where('keterangan', 'Incraht');
+        $builder->limit(6);
+        $builder->orderBy('id_kasus', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -171,6 +178,19 @@ class kasusModel extends Model
         $builder = $this->db->table('kasus');
         $builder->select('*');
         $builder->where('kategori', 'Perdata Dan Tata Usaha Negara');
+        $builder->where('keterangan', 'Incraht');
+        $builder->limit(6);
+        $builder->orderBy('id_kasus', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+    public function get_jadwal()
+    {
+        $builder = $this->db->table('kasus');
+        $builder->select('*');
+        $builder->where('keterangan', '-');
+        $builder->limit(6);
+        $builder->orderBy('id_kasus', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }
