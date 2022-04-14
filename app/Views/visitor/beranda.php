@@ -134,7 +134,7 @@
 												<td><?= $informasi['no_perkara']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
-												<td><?= $informasi['agenda']; ?></td>
+												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
@@ -155,7 +155,7 @@
 												<td><?= $informasi['no_perkara']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
-												<td><?= $informasi['agenda']; ?></td>
+												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>

@@ -15,11 +15,11 @@ class News extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Editor Berita',
+            'title' => 'Berita',
         ];
         return view('admin/news_editor.php', $data);
     }
-    
+
     public function get_id($id_berita)
     {
         $data = $this->berita->get_id($id_berita);
@@ -65,7 +65,7 @@ class News extends BaseController
         //             ]
         //         ],
 
-            // ]);
+        // ]);
 
         //     if (!$valid) {
         //         $data = [
@@ -92,6 +92,6 @@ class News extends BaseController
         //         ];
         //     }
         // }
-        echo json_encode($data);
+        // echo json_encode($data);
     }
 }

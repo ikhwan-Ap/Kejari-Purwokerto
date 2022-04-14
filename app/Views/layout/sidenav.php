@@ -21,16 +21,27 @@
                 </ul>
             </li>
 
-
+            <li class="menu-header">Bidang</li>
             <li class="nav-item <?= ($title == "Bidang") ? 'active' : ''; ?>">
                 <a class="nav-link" href="/bidang"><i class="fas fa-users"></i> <span>Bidang</span></a>
             </li>
-            <li class="menu-header">Berita</li>
-            <li class="nav-item dropdown">
+            <li class="menu-header">Beranda</li>
+            <li class="nav-item dropdown <?= ($title == "Carousel" || $title == "Icon " || $title == 'Navbar') ? 'active' : ''; ?>">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Menu</span></a>
+                <ul class="dropdown-menu">
+                    <li class="<?= ($title == "Carousel") ? 'active' : ''; ?>"><a class="nav-link" href="#">Carousel</a></li>
+                    <li class="<?= ($title == "Icon") ? 'active' : ''; ?>"><a class="nav-link" href="#">Icon</a></li>
+                    <li class="<?= ($title == "Navbar") ? 'active' : ''; ?>"><a class="nav-link" href="#">Navbar</a></li>
+                </ul>
+            </li>
+            <li class="menu-header">Informasi</li>
+            <li class="nav-item dropdown <?= ($title == "Berita" || $title == "Visi/Misi" || $title == "Agenda" || $title == 'Pengumuman') ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Moduls</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="News">Editor Berita</a></li>
-                    <li><a class="nav-link" href="News">Editor Header</a></li>
+                    <li class="<?= ($title == "Agenda") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Agenda</a></li>
+                    <li class="<?= ($title == "Berita") ? 'active' : ''; ?>"><a class="nav-link" href="/News"> Berita</a></li>
+                    <li class="<?= ($title == "Pengumuman") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Pengumuman</a></li>
+                    <li class="<?= ($title == "Visi/Misi") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Visi/Misi</a></li>
                 </ul>
             </li>
             <li class="menu-header">Pages</li>
