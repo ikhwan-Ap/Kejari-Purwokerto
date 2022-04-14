@@ -22,8 +22,9 @@
             </li>
 
 
-
-            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Bidang</span></a></li>
+            <li class="nav-item <?= ($title == "Bidang") ? 'active' : ''; ?>">
+                <a class="nav-link" href="/bidang"><i class="fas fa-users"></i> <span>Bidang</span></a>
+            </li>
             <li class="menu-header">Berita</li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Moduls</span></a>

@@ -40,6 +40,8 @@ $routes->get('/buron', 'Buron::index');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
+// Bidang
+$routes->get('/bidang', 'Bidang::index');
 // $routes->get('/login', 'Home::index');
 
 /*
