@@ -25,6 +25,8 @@
     
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/summernote-bs4.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/dropzone.min.css">
+
     
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css">
@@ -77,6 +79,10 @@
     <script src="<?= base_url() ?>/js/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url() ?>/js/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
 
+
+    <script src="<?= base_url() ?>/js/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>/js/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>/js/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/summernote-bs4.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
