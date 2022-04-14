@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\kasusModel;
 use App\Models\buronModel;
+use App\Models\navbarModel;
 
 class Home extends BaseController
 {
@@ -12,6 +13,7 @@ class Home extends BaseController
     {
         $this->kasus  = new kasusModel();
         $this->buron  = new buronModel();
+        $this->header  = new navbarModel();
     }
 
     public function index()
@@ -30,8 +32,14 @@ class Home extends BaseController
             'perdata' => $this->kasus->get_perdata(),
             'umum' => $this->kasus->get_umum(),
             'khusus' => $this->kasus->get_khusus(),
+            'header' => $this->header->get_header(),
         ];
         return view('visitor/beranda', $data);
+    }
+    public function get_header()
+    {
+        $data = $this->header->get_header();
+        echo json_encode($data);
     }
     public function kontak()
     {

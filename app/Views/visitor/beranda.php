@@ -121,8 +121,7 @@
 											<th>Tanggal</th>
 											<th>No. Perkara</th>
 											<th>Nama Terdakwa</th>
-											<th>Identitas Terdakwa</th>
-											<th>Keterangan</th>
+											<th>Status</th>
 										</tr>
 									</thead>
 									<tbody id="umum">
@@ -133,7 +132,6 @@
 												<td><?= $informasi['tanggal']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
 												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
@@ -141,10 +139,10 @@
 									<thead id="th_khusus">
 										<tr style="font-weight:bold; color:black">
 											<th>No.</th>
+											<th>Tanggal</th>
 											<th>No. Perkara</th>
 											<th>Nama Terdakwa</th>
-											<th>Identitas Terdakwa</th>
-											<th>Keterangan</th>
+											<th>Status</th>
 										</tr>
 									</thead>
 									<tbody id="khusus">
@@ -152,9 +150,9 @@
 										foreach ($khusus as $informasi) : ?>
 											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
+												<td><?= $informasi['tanggal']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
 												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
@@ -163,8 +161,7 @@
 										<tr style="font-weight:bold; color:black">
 											<th>No.</th>
 											<th>No. Perkara</th>
-											<th>Nama Perkara</th>
-											<th>Identitas Terdakwa</th>
+											<th>Nama Terdakwa</th>
 											<th>Status</th>
 										</tr>
 									</thead>
@@ -174,8 +171,7 @@
 											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
-												<td><?= $informasi['agenda']; ?></td>
-												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
+												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>

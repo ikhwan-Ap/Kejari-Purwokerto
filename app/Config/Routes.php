@@ -42,6 +42,10 @@ $routes->get('/buron', 'Buron::index');
 $routes->get('/beranda', 'Home::index');
 // Bidang
 $routes->get('/bidang', 'Bidang::index');
+// Menu
+$routes->get('/header', 'Menu::index');
+$routes->get('/download', 'Menu::download');
+$routes->get('/icon', 'Menu::icon');
 // $routes->get('/login', 'Home::index');
 
 /*

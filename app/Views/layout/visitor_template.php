@@ -89,8 +89,7 @@
 				<a href="#" class="custom-site-menu-toggle py-5 js-menu-toggle text-black" style="color:ghostwhite;"><span class="custom-icon-menu h3"></span></a>
 			</div>
 		</div>
-
-		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner" style="background-image: url('<?= base_url() ?>/template/visitor/images/bgnav.png'); background-position:bottom; margin-top: -8px;">
+		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner" style="background-image: url('<?= base_url() ?>/navbar/<?= $header['img_navbar']; ?>'); background-position:bottom; margin-top: -8px;">
 			<div style="background-color: green; width: 100%;height: 100%; position: absolute;left: 0;top: 0;opacity: 0.5;"></div>
 			<div class="container">
 				<div class="row align-items-center position-relative">
