@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Website Resmi Kejaksaan Negeri Purwokerto</title>
 	<meta charset="utf-8">
@@ -79,25 +80,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="" style="background-image: url('<?=base_url()?>/template/visitor/images/header.jpg')">
+			<div class="" style="background-image: url('<?= base_url() ?>/template/visitor/images/header.jpg')">
 				<div class="container">
-					<center><img class="hidden-sm hidden-xs text-left" style="display:block; padding:11px 0; margin-left:40px; margin-right:auto; width:auto; " src="<?=base_url()?>/template/visitor/images/logo_fix.png"></center>
+					<center><img class="hidden-sm hidden-xs text-left" style="display:block; padding:11px 0; margin-left:40px; margin-right:auto; width:auto; " src="<?= base_url() ?>/template/visitor/images/logo_fix.png"></center>
 				</div>
 			</div>
 			<div class="toggle-button d-inline-block d-lg-none" style="top: 56px;right: 6px;position: absolute;">
 				<a href="#" class="custom-site-menu-toggle py-5 js-menu-toggle text-black" style="color:ghostwhite;"><span class="custom-icon-menu h3"></span></a>
 			</div>
 		</div>
-		
-		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner"
-		style="background-image: url('<?=base_url()?>/assets/img/forest.jpg'); background-position: center; margin-top: -8px;">
-		<div style="background-color: darkgreen;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.6;"></div>
+
+		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner" style="background-image: url('<?= base_url() ?>/template/visitor/images/bgnav.png'); background-position:bottom; margin-top: -8px;">
+			<div style="background-color: green; width: 100%;height: 100%; position: absolute;left: 0;top: 0;opacity: 0.5;"></div>
 			<div class="container">
 				<div class="row align-items-center position-relative">
 					<div class="col-12">
@@ -129,16 +123,16 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Info Perkara</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="<?=base_url()?>/home/pidana_umum" class="nav-link">Pidana Umum</a></li>
-										<li><a href="<?=base_url()?>/home/pidana_khusus" class="nav-link">Pidana Khusus</a></li>
-										<li><a href="<?=base_url()?>/home/tata_usaha" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
-										<li><a href="<?=base_url()?>/home/jadwal_sidang" class="nav-link">Jadwal Sidang</a></li>
+										<li><a href="<?= base_url() ?>/home/pidana_umum" class="nav-link">Pidana Umum</a></li>
+										<li><a href="<?= base_url() ?>/home/pidana_khusus" class="nav-link">Pidana Khusus</a></li>
+										<li><a href="<?= base_url() ?>/home/tata_usaha" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
+										<li><a href="<?= base_url() ?>/home/jadwal_sidang" class="nav-link">Jadwal Sidang</a></li>
 									</ul>
 								</li>
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Bidang</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="<?=base_url()?>/home/pidum" class="nav-link">Pidum</a></li>
+										<li><a href="<?= base_url() ?>/home/pidum" class="nav-link">Pidum</a></li>
 										<li><a href="#" class="nav-link">Datun</a></li>
 										<li><a href="#" class="nav-link">Barang Bukti</a></li>
 										<li><a href="#" class="nav-link">Pembinaan</a></li>

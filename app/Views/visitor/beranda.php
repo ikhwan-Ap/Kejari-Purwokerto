@@ -1,7 +1,7 @@
 	<?= $this->extend('layout/visitor_template'); ?>
 	<?= $this->section('content'); ?>
 
-	<div class="hero" style="background-image: url('<?=base_url()?>/template/visitor/images/hero_1.jpg');"></div>
+	<div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/hero_1.jpg');"></div>
 
 	<!-- Page Content -->
 	<div class="page_content">
@@ -77,21 +77,21 @@
 							<div class="section_content">
 								<ul class="nav nav-tabs">
 									<li class="nav-item">
-										<button onclick="btnJadwal()" class="nav-link active text-white" style="background-color: red; " aria-current="page">Jadwal Sidang</button>
+										<button onclick="btnJadwal()" class="nav-link btnA actived" aria-current="page">Jadwal Sidang</button>
 									</li>
 									<li class="nav-item">
-										<button onclick="btnUmum()" class="nav-link active text-white" style="background-color: red; " href="#">Info Perkara Umum</button>
+										<button onclick="btnUmum()" class="nav-link btnB" href="#">Info Perkara Umum</button>
 									</li>
 									<li class="nav-item">
-										<button onclick="btnKhusus()" class="nav-link text-white" style="background-color: purple; " href="#">Info Perkara Khusus</button>
+										<button onclick="btnKhusus()" class="nav-link btnC" href="#">Info Perkara Khusus</button>
 									</li>
 									<li class="nav-item">
-										<button onclick="btnPerdata()" class="nav-link text-white" style="background-color: gold;" href="#">Info Perkara Datun</button>
+										<button onclick="btnPerdata()" class="nav-link btnD" href="#">Info Perkara Datun</button>
 									</li>
 								</ul>
-								<table id="myTable" class="table table-responsive table-bordered">
-									<thead>
-										<tr>
+								<table id="myTable" class="table table-responsive table-bordered table-light" style="width: 100%;">
+									<thead id="th_jadwal">
+										<tr style="font-weight:bold; color:black">
 											<th hidden>no</th>
 											<th>Hari / Tanggal</th>
 											<th>Nama Terdakwa</th>
@@ -104,55 +104,78 @@
 									<tbody id="jadwal">
 										<?php $i = 1;
 										foreach ($jadwal as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td hidden><?= $i++; ?></td>
 												<td><?= $informasi['tanggal']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['nama_jaksa']; ?></td>
 												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
-												<td><?= $informasi['keterangan']; ?></td>
+												<td><?= $informasi['agenda']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
+									<thead id="th_umum">
+										<tr style="font-weight:bold; color:black">
+											<th>No.</th>
+											<th>Tanggal</th>
+											<th>No. Perkara</th>
+											<th>Nama Terdakwa</th>
+											<th>Identitas Terdakwa</th>
+											<th>Keterangan</th>
+										</tr>
+									</thead>
 									<tbody id="umum">
 										<?php $i = 1;
 										foreach ($umum as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
 												<td><?= $informasi['tanggal']; ?></td>
-												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td><?= $informasi['nama_jaksa']; ?></td>
-												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
-												<td><?= $informasi['keterangan']; ?></td>
+												<td><?= $informasi['nama_terdakwa']; ?></td>
+												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
+												<td><?= $informasi['agenda']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
+									<thead id="th_khusus">
+										<tr style="font-weight:bold; color:black">
+											<th>No.</th>
+											<th>No. Perkara</th>
+											<th>Nama Terdakwa</th>
+											<th>Identitas Terdakwa</th>
+											<th>Keterangan</th>
+										</tr>
+									</thead>
 									<tbody id="khusus">
 										<?php $i = 1;
 										foreach ($khusus as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
-												<td><?= $informasi['tanggal']; ?></td>
-												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td><?= $informasi['nama_jaksa']; ?></td>
-												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
-												<td><?= $informasi['keterangan']; ?></td>
+												<td><?= $informasi['nama_terdakwa']; ?></td>
+												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
+												<td><?= $informasi['agenda']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
+									<thead id="th_perdata">
+										<tr style="font-weight:bold; color:black">
+											<th>No.</th>
+											<th>No. Perkara</th>
+											<th>Nama Perkara</th>
+											<th>Identitas Terdakwa</th>
+											<th>Status</th>
+										</tr>
+									</thead>
 									<tbody id="perdata">
 										<?php $i = 1;
 										foreach ($perdata as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
-												<td><?= $informasi['tanggal']; ?></td>
-												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td><?= $informasi['nama_jaksa']; ?></td>
-												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
+												<td><?= $informasi['agenda']; ?></td>
+												<td>Jl. Candi Kalasan Selatan IV Kaveling 990 RT 006 RW 11, Kel. Kali Pancur, Kel. Ngaliyan Kota Semarang</td>
 												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
@@ -165,7 +188,7 @@
 
 						<div class="blog_section">
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
-								<div class="section_title berita">Berita Terbaru</div>
+								<div class="section_title">Berita Terbaru</div>
 							</div>
 							<div class="section_content">
 								<div class="grid clearfix">
@@ -412,5 +435,51 @@
 						$('#perdata').show();
 						$('#khusus').hide();
 					}
+
+					$(document).ready(function() {
+						$('#th_umum').hide();
+						$('#th_khusus').hide();
+						$('#th_perdata').hide();
+						$('.btnA').click(function() {
+							$(this).addClass('actived');
+							$('.btnB').removeClass('actived');
+							$('.btnC').removeClass('actived');
+							$('.btnD').removeClass('actived');
+							$('#th_jadwal').show();
+							$('#th_umum').hide();
+							$('#th_khusus').hide();
+							$('#th_perdata').hide();
+						});
+						$('.btnB').click(function() {
+							$(this).addClass('actived');
+							$('.btnA').removeClass('actived');
+							$('.btnC').removeClass('actived');
+							$('.btnD').removeClass('actived');
+							$('#th_jadwal').hide();
+							$('#th_umum').show();
+							$('#th_khusus').hide();
+							$('#th_perdata').hide();
+						});
+						$('.btnC').click(function() {
+							$(this).addClass('actived');
+							$('.btnB').removeClass('actived');
+							$('.btnA').removeClass('actived');
+							$('.btnD').removeClass('actived');
+							$('#th_jadwal').hide();
+							$('#th_umum').hide();
+							$('#th_khusus').show();
+							$('#th_perdata').hide();
+						});
+						$('.btnD').click(function() {
+							$(this).addClass('actived');
+							$('.btnB').removeClass('actived');
+							$('.btnC').removeClass('actived');
+							$('.btnA').removeClass('actived');
+							$('#th_jadwal').hide();
+							$('#th_umum').hide();
+							$('#th_perdata').show();
+							$('#th_khusus').hide();
+						});
+					});
 				</script>
 				<?= $this->endSection(); ?>
