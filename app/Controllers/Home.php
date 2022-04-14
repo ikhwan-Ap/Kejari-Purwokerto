@@ -14,6 +14,10 @@ class Home extends BaseController
         $this->kasus  = new kasusModel();
         $this->buron  = new buronModel();
         $this->header  = new navbarModel();
+        $header = $this->header->get_header();
+        session()->set([
+            'header' => $header['img_navbar']
+        ]);
     }
 
     public function index()

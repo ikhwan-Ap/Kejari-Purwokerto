@@ -211,7 +211,7 @@
 
 </section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<!-- Memisah File JS ke function lain dan di panggil disini  -->
+
 <script>
     var table;
 
