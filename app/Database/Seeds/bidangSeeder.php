@@ -13,7 +13,7 @@ class BidangSeeder extends Seeder
                 'nama_pengurus' => 'Izul Zaenal SH., MH., SS',
                 'jabatan_pengurus' => 'Jaksa Muda',
                 'nip' => '198110102006031001',
-                'kategori_bidang' => 'PIDUM',
+                'id_kategori' => '1',
                 'teks_bidang' => 'IZUL DAN ZAENAL KAMI ADALAH KAWAN SERAWAN',
                 'image_pengurus' => null
             ],

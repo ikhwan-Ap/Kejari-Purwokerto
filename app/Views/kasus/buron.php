@@ -218,6 +218,11 @@
         table.ajax.reload(null, false);
     }
 
+    function reset() {
+
+
+    }
+
     function detailBuron(id_buron) {
         $('#formBuron')[0].reset();
         $('.Foot').hide();
