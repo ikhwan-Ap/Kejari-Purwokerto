@@ -21,28 +21,23 @@
             <div class="card">
                 <div class="card-body">
                     <div class="section-body">
-
+                        <input type="text" name="id_bidang" value="" id="id_bidang" hidden>
                         <div class="form-group col">
                             <label for="nama_pengurus">Nama Pengurus</label>
                             <input type="text" class="form-control" name="nama_pengurus" id="nama_pengurus" placeholder="nama_pengurus">
                             <div class="invalid-feedback errorNama">
-
                             </div>
                         </div>
-
                         <div class="form-group col">
                             <label for="jabatan_pengurus">Jabatan Pengurus</label>
                             <input type="text" class="form-control" name="jabatan_pengurus" id="jabatan_pengurus" placeholder="jabatan_pengurus">
                             <div class="invalid-feedback errorJabatan">
-
                             </div>
                         </div>
-
                         <div class="form-group col">
                             <label for="nip">NIP</label>
                             <input type="number" name="nip" class="form-control" id="nip" placeholder="nip">
                             <div class="invalid-feedback errorNip">
-
                             </div>
                         </div>
                         <div class="form-group col">
@@ -97,12 +92,15 @@
                         </div>
                     </div>
                     <center> <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary">Unggah</button></center>
+                    <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Edit</button></center>
                 </div>
 
             </div>
         </div>
     </div>
     <?php form_close();  ?>
+
+
 
     <div class="section-body">
         <div class="row">
@@ -137,7 +135,6 @@
         </div>
     </div>
 
-
     <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modalBidang">
         <div class="modal-dialog modal-sm kategori_kecil" role="document">
             <div class="modal-content">
@@ -148,15 +145,14 @@
                     </button>
                 </div>
                 <div class="modal-body Del">
-                    <?php form_open('', ['id' => 'form_tambahKategori']) ?>
-                    <div class="form-group col">
-                        <label for="name">Kategori</label>
-                        <input type="text" name="nama_kategori" id="nama_kategori" value="" class="form-control">
-                        <div class="invalid-feedback errorKategori">
+                    <form action="#" id="formBidang" class="form-horizontal">
+                        <div class="form-group col">
+                            <label for="kategori">Kategori</label>
+                            <input type="text" name="nama_kategori" id="nama_kategori" value="" class="form-control">
+                            <div class="invalid-feedback errorKategori">
+                            </div>
                         </div>
-
-                    </div>
-                    <?php form_close();  ?>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" onclick="tambahKategori()" class="btn btn-primary Terima">Tambah</button>
@@ -175,7 +171,7 @@
                 <div class="modal-body Del">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped" id="sortable-table" style="width:100%">
+                            <table class="display" id="sortable-table" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -191,7 +187,7 @@
                                             <td><?= $no++; ?></td>
                                             <td><?= $informasi['nama_kategori']; ?></td>
                                             <td>
-                                                <button class="btn btn-danger" onclick="delKategori(<?= $informasi['id_kategori']; ?>)">
+                                                <button type="button" class="btn btn-danger" onclick="delKategori(<?= $informasi['id_kategori']; ?>)">
                                                     <span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">
                                                     </span>
                                                 </button>
@@ -209,6 +205,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 </section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -235,7 +234,22 @@
                 },
             }, ],
         });
+        $('#btnEdit').hide();
 
+        $('.summernote').summernote({
+            height: 300,
+            toolbar: [
+                ["style", ["bold", "italic", "underline", "clear"]],
+                ["fontname", ["fontname"]],
+                ["fontsize", ["fontsize"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["height", ["height"]],
+                ["insert", ["link", "imageList", "hr"]],
+
+            ],
+            dialogsInBody: true,
+        })
     });
 
     function cekKategori() {
@@ -246,7 +260,7 @@
     }
 
     function btnKategori() {
-        $('#form_tambahKategori')[0];
+        $('#formBidang')[0].reset();
         $('#modalBidang').modal('show');
         $('.modal-title').text('Tambah Kategori')
         $('.kategori_kecil').show();
@@ -305,6 +319,58 @@
         })
     }
 
+    function delBidang(id_bidang) {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Apakah Anda Yakin?',
+            text: "Anda Akan Menghapus Bidang Ini!",
+            icon: 'warning',
+            reverseButtons: true,
+            showCancelButton: true,
+            confirmButtonText: 'Yes, Hapus Data!',
+            cancelButtonText: 'Tidak',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?= site_url('bidang/delBidang/'); ?>" + id_bidang,
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            swalWithBootstrapButtons.fire(
+                                'Deleted!',
+                                'Bidang Berhasil Di Delete',
+                                'success'
+                            ).then((result) => {
+                                if (result.value) {
+                                    reload_table();
+                                }
+                            })
+                        }
+                    }
+                });
+
+
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Data Tidak Jadi Di Hapus :)',
+                    'error'
+                )
+            }
+        })
+    }
+
     function tambahKategori() {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
@@ -327,7 +393,7 @@
                 $.ajax({
                     type: "POST",
                     url: "<?= site_url('bidang/tambah_kategori'); ?>",
-                    data: $('#form_tambahKategori').serialize(),
+                    data: $('#formBidang').serialize(),
                     dataType: "json",
                     success: function(response) {
                         if (response.error) {
@@ -408,8 +474,10 @@
     }
 
     function save() {
+
         let form = $('#formBidang')[0];
         let data = new FormData(form);
+
         $.ajax({
             type: "POST",
             url: "<?= site_url('bidang/tambah_bidang') ?>",
@@ -482,6 +550,112 @@
                         if (result.value) {
                             resetForm();
                             reload_table();
+                        }
+                    })
+                }
+
+            }
+        });
+    }
+
+    function editBidang(id_bidang) {
+        var textareaValue = $('#teks_bidang').summernote('code');
+        $.ajax({
+            type: "GET",
+            url: "<?= site_url('bidang/get_id/'); ?>" + id_bidang,
+            dataType: "json",
+            success: function(data) {
+                $('#nama_pengurus').val(data.nama_pengurus);
+                $('#jabatan_pengurus').val(data.jabatan_pengurus);
+                $('#nip').val(data.nip);
+                $('[name=id_kategori]').val(data.id_kategori);
+                $('[name=id_bidang]').val(data.id_bidang);
+                $('#img_bidang').attr('src', '<?= base_url('uploads/bidang'); ?>/' + data.image_pengurus);
+                $("#teks_bidang").summernote('code', data.teks_bidang);
+                $('#btnEdit').show();
+                $('#btnSave').hide();
+            }
+        });
+    }
+
+    function edit() {
+        let form = $('#formBidang')[0];
+        let data = new FormData(form);
+
+        $.ajax({
+            type: "POST",
+            url: "<?= site_url('bidang/edit_bidang') ?>",
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            dataType: "json",
+            beforeSend: function() {
+                $('#btnEdit').prop('disabled', true);
+                $('#btnEdit').html('Loading');
+            },
+            complete: function() {
+                $('#btnEdit').prop('disabled', false);
+                $('#btnEdit').html('Unggah');
+            },
+            success: function(response) {
+                if (response.error) {
+                    let data = response.error
+                    if (data.errorNama) {
+                        $('#nama_pengurus').addClass('is-invalid');
+                        $('.errorNama').html(data.errorNama);
+                    } else {
+                        $('#nama_pengurus').removeClass('is-invalid');
+                        $('#nama_pengurus').addClass('is-valid');
+                    }
+                    if (data.errorJabatan) {
+                        $('#jabatan_pengurus').addClass('is-invalid');
+                        $('.errorJabatan').html(data.errorJabatan);
+                    } else {
+                        $('#jabatan_pengurus').removeClass('is-invalid');
+                        $('#jabatan_pengurus').addClass('is-valid');
+                    }
+                    if (data.errorNip) {
+                        $('#nip').addClass('is-invalid');
+                        $('.errorNip').html(data.errorNip);
+                    } else {
+                        $('#nip').removeClass('is-invalid');
+                        $('#nip').addClass('is-valid');
+                    }
+                    if (data.error_kategoriBidang) {
+                        $('#id_kategori').addClass('is-invalid');
+                        $('.error_kategoriBidang').html(data.error_kategoriBidang);
+                    } else {
+                        $('#id_kategori').removeClass('is-invalid');
+                        $('#id_kategori').addClass('is-valid');
+                    }
+                    if (data.errorImage) {
+                        $('#image_pengurus').addClass('is-invalid');
+                        $('.errorImage').html(data.errorImage);
+                    } else {
+                        $('#image_pengurus').removeClass('is-invalid');
+                        $('#image_pengurus').addClass('is-valid');
+                    }
+                    if (data.errorTeks) {
+                        $('#teks_bidang').addClass('is-invalid');
+                        $('.errorTeks').html(data.errorTeks);
+                    } else {
+                        $('#teks_bidang').removeClass('is-invalid');
+                        $('#teks_bidang').addClass('is-valid');
+                    }
+                }
+                if (response.sukses) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        html: `Data Berhasil Di tambahkan`,
+                    }).then((result) => {
+                        if (result.value) {
+                            resetForm();
+                            reload_table();
+                            $('#btnEdit').hide();
+                            $('#btnSave').show();
                         }
                     })
                 }

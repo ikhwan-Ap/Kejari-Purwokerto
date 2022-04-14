@@ -100,4 +100,15 @@ class bidangModel extends Model
         $this->dt->where('id_bidang', $id_bidang);
         return $this->dt->delete();
     }
+
+    public function get_id($id_bidang)
+    {
+        $this->dt
+            ->select('*')
+            ->select('kategori.nama_kategori', 'nama_kategori')
+            ->where('id_bidang', $id_bidang)
+            ->join('kategori', 'kategori.id_kategori = bidang.id_kategori');
+        $query = $this->dt->get();
+        return $query->getRowArray();
+    }
 }

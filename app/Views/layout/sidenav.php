@@ -30,6 +30,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Moduls</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="News">Editor Berita</a></li>
+                    <li><a class="nav-link" href="News">Editor Header</a></li>
                 </ul>
             </li>
             <li class="menu-header">Pages</li>
