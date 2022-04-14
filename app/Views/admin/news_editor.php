@@ -13,17 +13,17 @@ $year = $arr[0];
         <h1>Editor</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-            <div class="breadcrumb-item"><a href="#">Forms</a></div>
+            <div class="breadcrumb-item">Moduls</div>
             <div class="breadcrumb-item">Editor</div>
         </div>
     </div>
     <div class="row">
-        
-    </div>
-    <div class="section-body" >
-        <h2 class="section-title">Editor Berita</h2>
-        <p class="section-lead">Halaman Kreasi Berita</p>
 
+    </div>
+    <div class="section-body" id="appBerita">
+        <div class="card-header">
+            <h4>Halaman Kreasi Berita</h4>
+        </div>
         <div class="row">
             <div class="col-12 " title="halo">
                 <div class="card">
@@ -102,89 +102,22 @@ $year = $arr[0];
 <script src="<?= base_url(); ?>/assets/js/dropzone.min.js"></script>
 <script src="<?= base_url(); ?>/assets/js/page/components-multiple-upload.js"></script>
 
-<script>
-    function addBuron() {
-        save_method = 'add';
-        $('#formBuron')[0].reset();
-    }
-
-    function save() {
-        let form = $('#formBerita')[0];
-        let data = new FormData(form);
-
-        $.ajax({
-            type: "POST",
-            url: "<?= site_url('buron/tambah_buron'); ?>",
-            data: data,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            cache: false,
-            dataType: "json",
-            beforeSend: function() {
-                $('#btnSave').prop('disabled', true);
-                $('#btnSave').html('Tunggu');
-            },
-            complete: function() {
-                $('#btnSave').prop('disabled', false);
-                $('#btnSave').html('Simpan');
-            },
-            success: function(response) {
-                if (response.error) {
-                    let data = response.error;
-                    if (data.errorNama) {
-                        $('#nama_buron').addClass('is-invalid');
-                        $('.errorNama').html(data.errorNama);
-                    } else {
-                        $('#nama_buron').removeClass('is-invalid');
-                        $('#nama_buron').addClass('is-valid');
-                    }
-                    if (data.errorUsia) {
-                        $('#usia').addClass('is-invalid');
-                        $('.errorUsia').html(data.errorUsia);
-                    } else {
-                        $('#usia').removeClass('is-invalid');
-                        $('#usia').addClass('is-valid');
-                    }
-                    if (data.errorJenis) {
-                        $('#jenis_kelamin').addClass('is-invalid');
-                        $('.errorJenis').html(data.errorJenis);
-                    } else {
-                        $('#jenis_kelamin').removeClass('is-invalid');
-                        $('#jenis_kelamin').addClass('is-valid');
-                    }
-                    if (data.errorAlamat) {
-                        $('#alamat_buron').addClass('is-invalid');
-                        $('.errorAlamat').html(data.errorAlamat);
-                    } else {
-                        $('#alamat_buron').removeClass('is-invalid');
-                        $('#alamat_buron').addClass('is-valid');
-                    }
-                    if (data.errorImage) {
-                        $('#image').addClass('is-invalid');
-                        $('.errorImage').html(data.errorImage);
-                    } else {
-                        $('#image').removeClass('is-invalid');
-                        $('#image').addClass('is-valid');
-                    }
-                }
-                if (response.sukses) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil',
-                        html: `Data Berhasil Di tambahkan`,
-                    }).then((result) => {
-                        if (result.value) {
-                           window.location.reload();
-                        }
-                    })
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert('Error get data from ajax');
-            }
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#summernote-simple').summernote({
+            height: "300px",
+            styleWithSpan: false
         });
+    });
+    const artikel = {
+        judul: 'Tulis Judul Berita',
+        penulis: 'Nama Berita'
+
     }
+    const art = new Vue({
+        el: '#appBerita',
+        data: artikel
+    })
 </script>
 
 <?= $this->endsection(); ?>

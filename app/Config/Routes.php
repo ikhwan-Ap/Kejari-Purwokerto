@@ -33,7 +33,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Auth::index');
 $routes->get('/admin', 'Admin::index');
-$routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLoggedIn']);
+$routes->get('/kasus', 'Kasus::index');
+$routes->get('/incraht', 'Incraht::index');
+$routes->get('/buron', 'Buron::index');
+
+//Templating Companny
+$routes->get('/beranda', 'Home::index');
+// Bidang
+$routes->get('/bidang', 'Bidang::index');
 // $routes->get('/login', 'Home::index');
 
 /*
