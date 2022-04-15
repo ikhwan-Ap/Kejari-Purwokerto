@@ -50,6 +50,7 @@
 
                             <div class="form-group col-6">
                                 <?php echo form_open_multipart('', ['id' => 'formIcon']); ?>
+                                <input type="text" name="id_icon" id="id_icon" value="" hidden>
                                 <div class="dropzone" id="mydropzone">
                                     <div class="fallback">
                                         <input type="file" id="img_contact" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="img_contact">
@@ -79,6 +80,15 @@
             success: function(data) {
                 $('[name=id_icon_beranda]').val(data.id_icon);
                 $('#image').attr('src', '<?= base_url('icon-icon'); ?>/' + data.img_icon);
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "<?= site_url('menu/get_icon'); ?>",
+            dataType: "json",
+            success: function(data) {
+                $('[name=id_icon]').val(data.id_icon);
+                $('#image_contact').attr('src', '<?= base_url('icon-icon'); ?>/' + data.img_icon);
             }
         });
     })
@@ -133,6 +143,54 @@
                     } else {
                         $('#img_icon').removeClass('is-invalid');
                         $('#img_icon').addClass('is-valid');
+                    }
+                }
+                if (response.sukses) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        html: `Image Berhasil Di tambahkan`,
+                    }).then((result) => {
+                        if (result.value) {
+                            window.location.reload();
+                        }
+                    })
+                }
+
+            }
+        });
+    }
+
+    function save() {
+        let form = $('#formIcon')[0];
+        let data = new FormData(form);
+
+        $.ajax({
+            type: "POST",
+            url: "<?= site_url('menu/edit_icon') ?>",
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            dataType: "json",
+            beforeSend: function() {
+                $('#btnSave').prop('disabled', true);
+                $('#btnSave').html('Loading');
+            },
+            complete: function() {
+                $('#btnSave').prop('disabled', false);
+                $('#btnSave').html('Unggah');
+            },
+            success: function(response) {
+                if (response.error) {
+                    let data = response.error
+                    if (data.errorImage) {
+                        $('#img_contact').addClass('is-invalid');
+                        $('.errorImage').html(data.errorImage);
+                    } else {
+                        $('#img_contact').removeClass('is-invalid');
+                        $('#img_contact').addClass('is-valid');
                     }
                 }
                 if (response.sukses) {

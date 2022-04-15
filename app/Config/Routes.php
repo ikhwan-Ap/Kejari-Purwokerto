@@ -46,6 +46,7 @@ $routes->get('/bidang', 'Bidang::index');
 $routes->get('/header', 'Menu::index');
 $routes->get('/download', 'Menu::download');
 $routes->get('/icon', 'Menu::icon');
+$routes->get('/carousel', 'Menu::carousel');
 // $routes->get('/login', 'Home::index');
 
 /*

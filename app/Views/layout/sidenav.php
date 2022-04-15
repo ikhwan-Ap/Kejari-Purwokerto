@@ -29,9 +29,9 @@
             <li class="nav-item dropdown <?= ($title == "Carousel" || $title == "Icon" || $title == "Header") ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Menu</span></a>
                 <ul class="dropdown-menu">
-                    <li class="<?= ($title == "Carousel") ? 'active' : ''; ?>"><a class="nav-link" href="#">Carousel</a></li>
-                    <li class="<?= ($title == "Icon") ? 'active' : ''; ?>"><a class="nav-link" href="/icon">Icon</a></li>
+                    <li class="<?= ($title == "Carousel") ? 'active' : ''; ?>"><a class="nav-link" href="/carousel">Carousel</a></li>
                     <li class="<?= ($title == "Header") ? 'active' : ''; ?>"><a class="nav-link" href="/header">Header</a></li>
+                    <li class="<?= ($title == "Icon") ? 'active' : ''; ?>"><a class="nav-link" href="/icon">Icon</a></li>
                 </ul>
             </li>
             <li class="menu-header">Informasi</li>
