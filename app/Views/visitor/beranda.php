@@ -1,7 +1,33 @@
 	<?= $this->extend('layout/visitor_template'); ?>
 	<?= $this->section('content'); ?>
 
-	<div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/hero_1.jpg');"></div>
+	<!-- <div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/carousel.jpg');"></div> -->
+	<div id="carousel" class="carousel slide" data-ride="carousel" style="height: 665px;">
+		<ol class="carousel-indicators">
+			<li data-target="#carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel" data-slide-to="1"></li>
+			<li data-target="#carousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="<?= base_url() ?>/template/visitor/images/carousel.jpg" alt="First slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="<?= base_url() ?>/template/visitor/images/carousel.jpg" alt="Second slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="<?= base_url() ?>/template/visitor/images/carousel.jpg" alt="Third slide">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
 
 	<!-- Page Content -->
 	<div class="page_content">
@@ -89,7 +115,7 @@
 										<button onclick="btnPerdata()" class="nav-link btnD" href="#">Info Perkara Datun</button>
 									</li>
 								</ul>
-								<table id="myTable" class="table table-responsive table-bordered table-light" style="width: 100%;">
+								<table id="myTable" class="table table-bordered table-light" style="width: 100%;">
 									<thead id="th_jadwal">
 										<tr style="font-weight:bold; color:black">
 											<th hidden>no</th>

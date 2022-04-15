@@ -78,7 +78,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('menu/edit_header') ?>",
+            url: "<?= site_url('menu/tambah_header') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,

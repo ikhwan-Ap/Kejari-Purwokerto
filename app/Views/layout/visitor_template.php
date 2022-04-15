@@ -15,6 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/responsive.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/post.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/post_responsive.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/fonts/icomoon/style.css" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/css/style.css" />
@@ -197,8 +199,9 @@
 						<div class="sidebar_title_container">
 							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
 						</div><br>
-						<img src="<?= base_url('/uploads/buron') ?>/<?php echo session()->get('image'); ?>" alt="" width="100%">
-						<div class="sidebar_title"><?php echo session()->get('nama_buron'); ?></div>
+						<img src="<?= base_url() ?>/template/visitor/images/kepala.jpg" alt="" width="100%">
+						<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
+						<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:13px;">Lydia Dewi Diah Rahayu N, M.H.</div>
 					</div>
 				<?php else :  ?>
 					<div class="sidebar_section">
@@ -206,7 +209,7 @@
 							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
 						</div><br>
 						<img src="<?= base_url() ?>/template/visitor/images/kepala.jpg" alt="" width="100%">
-						<div class="sidebar_tit">aa</div>
+						<div class="sidebar_title"><?php echo session()->get('nama_buron'); ?></div>
 					</div>
 				<?php endif;  ?>
 
