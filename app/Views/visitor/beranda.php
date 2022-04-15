@@ -2,7 +2,7 @@
 	<?= $this->section('content'); ?>
 
 	<!-- <div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/carousel.jpg');"></div> -->
-	<div id="carousel" class="carousel slide" data-ride="carousel" style="height: 665px;">
+	<div id="carousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel" data-slide-to="1"></li>
