@@ -65,7 +65,7 @@ $year = $arr[0];
                         <div class="form-group row mb-4">
                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                             <div class="col-sm-12 col-md-7">
-                                <button class="btn btn-primary" id="save">Unggah</button>
+                                <button type="submit" class="btn btn-primary" id="btnSave" onclick="save()" >Unggah</button>
                             </div>
                         </div>
                     </div>
@@ -119,5 +119,59 @@ $year = $arr[0];
         data: artikel
     })
 </script>
+<script>
+    $(document).ready(function(){
+        var save_method;
+        
+        function addberita() {
+            save_method = 'add';
+            $('#formBerita')[0].reset();
+        }
+        
+        function save() {
+            let form = $('#formBerita')[0];
+            let data = new FormData(form);
 
+            $.ajax({
+                type: "POST",
+                url: "<?= site_url('buron/tambah_berita'); ?>",
+                data: data,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                cache: false,
+                dataType: "json",
+                beforeSend: function() {
+                    $('#btnSave').prop('disabled', true);
+                    $('#btnSave').html('Tunggu');
+                },
+                complete: function() {
+                    $('#btnSave').prop('disabled', false);
+                    $('#btnSave').html('Simpan');
+                },
+                success: function(response) {
+                    if (response.sukses) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            html: `Data Berhasil Di tambahkan`,
+                        }).then((result) => {
+                            if (result.value) {
+                                $('#modalBerita').modal('hide');
+                                $('#filterJenis').val("");
+                                reload_table();
+                                reset();
+                            }
+                        })
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Error get data from ajax');
+                }
+            });
+        }
+    
+    })
+
+</script>
 <?= $this->endsection(); ?>
