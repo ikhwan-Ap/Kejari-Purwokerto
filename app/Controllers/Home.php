@@ -6,6 +6,7 @@ use App\Models\kasusModel;
 use App\Models\buronModel;
 use App\Models\carouselModel;
 use App\Models\navbarModel;
+use App\Models\bidangModel;
 
 class Home extends BaseController
 {
@@ -15,13 +16,14 @@ class Home extends BaseController
         $this->kasus  = new kasusModel();
         $this->buron  = new buronModel();
         $this->header  = new navbarModel();
+        $this->bidang  = new bidangModel();
         $this->carousel = new carouselModel();
-        // $carousel  =
-        $carousel = $this->carousel->get_img();
-
         $header = $this->header->get_header();
+        $kejaksaan = $this->bidang->get_kejaksaan();
         session()->set([
-            'header' => $header['img_navbar']
+            'header' => $header['img_navbar'],
+            'jaksa' => $kejaksaan['image_pengurus'],
+            'nama_jaksa' => $kejaksaan['nama_pengurus']
         ]);
     }
 

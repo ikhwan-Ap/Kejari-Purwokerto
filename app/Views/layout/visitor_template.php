@@ -194,22 +194,14 @@
 				<div class="sidebar_background"></div>
 
 				<!-- Top Stories -->
-				<?php if (session()->get('nama_buron') != null) :  ?>
+				<?php if (session()->get('jaksa') != null) :  ?>
 					<div class="sidebar_section">
 						<div class="sidebar_title_container">
 							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
 						</div><br>
-						<img src="<?= base_url() ?>/template/visitor/images/kepala.jpg" alt="" width="100%">
+						<img src="<?= base_url() ?>/uploads/bidang/<?= session()->get('jaksa'); ?>" alt="" width="100%">
 						<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
-						<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:13px;">Lydia Dewi Diah Rahayu N, M.H.</div>
-					</div>
-				<?php else :  ?>
-					<div class="sidebar_section">
-						<div class="sidebar_title_container">
-							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
-						</div><br>
-						<img src="<?= base_url() ?>/template/visitor/images/kepala.jpg" alt="" width="100%">
-						<div class="sidebar_title"><?php echo session()->get('nama_buron'); ?></div>
+						<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:13px;"><?= session()->get('nama_jaksa'); ?></div>
 					</div>
 				<?php endif;  ?>
 
