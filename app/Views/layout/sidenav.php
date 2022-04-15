@@ -35,13 +35,13 @@
                 </ul>
             </li>
             <li class="menu-header">Informasi</li>
-            <li class="nav-item dropdown <?= ($title == "Berita" || $title == "Visi/Misi" || $title == "Agenda" || $title == 'Pengumuman') ? 'active' : ''; ?>">
+            <li class="nav-item dropdown <?= ($title == "Berita" || $title == "Visi Dan Misi" || $title == "Agenda" || $title == 'Pengumuman') ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Moduls</span></a>
                 <ul class="dropdown-menu">
                     <li class="<?= ($title == "Agenda") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Agenda</a></li>
                     <li class="<?= ($title == "Berita") ? 'active' : ''; ?>"><a class="nav-link" href="/News"> Berita</a></li>
                     <li class="<?= ($title == "Pengumuman") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Pengumuman</a></li>
-                    <li class="<?= ($title == "Visi/Misi") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Visi/Misi</a></li>
+                    <li class="<?= ($title == "Visi Dan Misi") ? 'active' : ''; ?>"><a class="nav-link" href="/visi_misi"> Visi Dan Misi</a></li>
                 </ul>
             </li>
             <li class="menu-header">Pages</li>

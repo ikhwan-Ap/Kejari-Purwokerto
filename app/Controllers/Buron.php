@@ -143,7 +143,6 @@ class Buron extends BaseController
         echo json_encode($data);
     }
 
-
     public function tambah_buron()
     {
         $validation = \Config\Services::validation();
