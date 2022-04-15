@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\kasusModel;
 use App\Models\buronModel;
+use App\Models\carouselModel;
 use App\Models\navbarModel;
 
 class Home extends BaseController
@@ -14,6 +15,10 @@ class Home extends BaseController
         $this->kasus  = new kasusModel();
         $this->buron  = new buronModel();
         $this->header  = new navbarModel();
+        $this->carousel = new carouselModel();
+        // $carousel  =
+        $carousel = $this->carousel->get_img();
+
         $header = $this->header->get_header();
         session()->set([
             'header' => $header['img_navbar']
@@ -37,6 +42,7 @@ class Home extends BaseController
             'umum' => $this->kasus->get_umum(),
             'khusus' => $this->kasus->get_khusus(),
             'header' => $this->header->get_header(),
+            'carousel' =>  $this->carousel->get_img(),
         ];
         return view('visitor/beranda', $data);
     }

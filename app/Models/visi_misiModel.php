@@ -33,4 +33,11 @@ class visi_misiModel extends Model
         $query = $this->dt->get();
         return $query->getRowArray();
     }
+
+    public function get_data()
+    {
+        $this->dt->select('*');
+        $query = $this->dt->get();
+        return $query->getRowArray();
+    }
 }

@@ -7,17 +7,22 @@
 			<li data-target="#carousel" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel" data-slide-to="1"></li>
 			<li data-target="#carousel" data-slide-to="2"></li>
+			<li data-target="#carousel" data-slide-to="3"></li>
 		</ol>
 		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img class="d-block w-100" src="<?= base_url() ?>/template/visitor/images/carousel.jpg" alt="First slide">
-			</div>
-			<div class="carousel-item">
-				<img class="d-block w-100" src="<?= base_url() ?>/template/visitor/images/carousel.jpg" alt="Second slide">
-			</div>
-			<div class="carousel-item">
-				<img class="d-block w-100" src="<?= base_url() ?>/template/visitor/images/carousel.jpg" alt="Third slide">
-			</div>
+
+			<?php $i = 0;
+			foreach ($carousel as $row) : ?>
+				<?php if ($i == 0) :  ?>
+					<?php $set = 'active'; ?>
+				<?php else :  ?>
+					<?php $set = ''; ?>
+				<?php endif; ?>
+				<div class='carousel-item <?php echo $set; ?>'>
+					<img class="d-block w-100" src="<?= base_url() ?>/img_carousel/<?= $row['image']; ?>">
+				</div>
+			<?php $i++;
+			endforeach ?>
 		</div>
 		<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>

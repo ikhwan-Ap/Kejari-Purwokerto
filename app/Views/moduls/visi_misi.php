@@ -9,7 +9,7 @@
             <div class="breadcrumb-item">Visi Dan Misi</div>
         </div>
     </div>
-    <?php echo form_open_multipart('', ['id' => 'formBidang']); ?>
+    <?php echo form_open_multipart('', ['id' => 'form_visiMisi']); ?>
     <div class="section-body">
         <div class="card-header">
             <h4>Detail Visi</h4>
@@ -19,11 +19,12 @@
                 <div class="card-body">
                     <div class="form-group row mb-4">
                         <div class="col-sm-12">
-                            <textarea class="summernote" value="" name="teks_bidang" id="teks_bidang"></textarea>
+                            <textarea class="summernote" value="" name="visi" id="visi"></textarea>
                         </div>
-                        <div class="invalid-feedback errorTeks">
+                        <div class="invalid-feedback errorVisi">
 
                         </div>
+                        <input type="text" value="" name="id_visiMisi" id="id_visiMisi" hidden>
                     </div>
                 </div>
 
@@ -37,14 +38,14 @@
                 <div class="card-body">
                     <div class="form-group row mb-4">
                         <div class="col-sm-12">
-                            <textarea class="summernote" value="" name="teks_bidang" id="teks_bidang"></textarea>
+                            <textarea class="summernote" value="" name="misi" id="misi"></textarea>
                         </div>
-                        <div class="invalid-feedback errorTeks">
+                        <div class="invalid-feedback errorMisi">
 
                         </div>
                     </div>
                     <center> <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary">Unggah</button></center>
-                    <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Edit</button></center>
+                    <!-- <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Edit</button></center> -->
                 </div>
 
             </div>
@@ -56,8 +57,6 @@
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 <script>
-    var table;
-
     $(document).ready(function() {
         $('#btnEdit').hide();
 
@@ -75,35 +74,27 @@
             ],
             dialogsInBody: true,
         })
+        $.ajax({
+            type: "GET",
+            url: "<?= site_url('visi_misi/get_data'); ?>",
+            dataType: "json",
+            success: function(data) {
+                $('#id_visiMisi').val(data.id);
+                $('#visi').summernote('code', data.visi);
+                $('#misi').summernote('code', data.misi);
+            }
+        });
+
     });
-
-
-
-    function resetForm() {
-        $('#image_pengurus').removeClass('is-invalid');
-        $('#image_pengurus').removeClass('is-valid');
-        $('input').val('').removeAttr('checked').removeAttr('selected')
-        $('select').val('').removeAttr('checked').removeAttr('selected');
-        $("#img_bidang").attr("src", '');
-        $(".summernote").summernote('code', '');
-        $('#nama_pengurus').removeClass('is-invalid');
-        $('#nama_pengurus').removeClass('is-valid');
-        $('#jabatan_pengurus').removeClass('is-invalid');
-        $('#jabatan_pengurus').removeClass('is-valid');
-        $('#nip').removeClass('is-invalid');
-        $('#nip').removeClass('is-valid');
-        $('#id_kategori').removeClass('is-invalid');
-        $('#id_kategori').removeClass('is-valid');
-    }
 
     function save() {
 
-        let form = $('#formBidang')[0];
+        let form = $('#form_visiMisi')[0];
         let data = new FormData(form);
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('bidang/tambah_bidang') ?>",
+            url: "<?= site_url('visi_misi/edit') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -121,58 +112,29 @@
             success: function(response) {
                 if (response.error) {
                     let data = response.error
-                    if (data.errorNama) {
-                        $('#nama_pengurus').addClass('is-invalid');
-                        $('.errorNama').html(data.errorNama);
+                    if (data.errorVisi) {
+                        $('#visi').addClass('is-invalid');
+                        $('.errorVisi').html(data.errorVisi);
                     } else {
-                        $('#nama_pengurus').removeClass('is-invalid');
-                        $('#nama_pengurus').addClass('is-valid');
+                        $('#visi').removeClass('is-invalid');
+                        $('#visi').addClass('is-valid');
                     }
-                    if (data.errorJabatan) {
-                        $('#jabatan_pengurus').addClass('is-invalid');
-                        $('.errorJabatan').html(data.errorJabatan);
+                    if (data.errorMisi) {
+                        $('#misi').addClass('is-invalid');
+                        $('.errorMisi').html(data.errorMisi);
                     } else {
-                        $('#jabatan_pengurus').removeClass('is-invalid');
-                        $('#jabatan_pengurus').addClass('is-valid');
-                    }
-                    if (data.errorNip) {
-                        $('#nip').addClass('is-invalid');
-                        $('.errorNip').html(data.errorNip);
-                    } else {
-                        $('#nip').removeClass('is-invalid');
-                        $('#nip').addClass('is-valid');
-                    }
-                    if (data.error_kategoriBidang) {
-                        $('#id_kategori').addClass('is-invalid');
-                        $('.error_kategoriBidang').html(data.error_kategoriBidang);
-                    } else {
-                        $('#id_kategori').removeClass('is-invalid');
-                        $('#id_kategori').addClass('is-valid');
-                    }
-                    if (data.errorImage) {
-                        $('#image_pengurus').addClass('is-invalid');
-                        $('.errorImage').html(data.errorImage);
-                    } else {
-                        $('#image_pengurus').removeClass('is-invalid');
-                        $('#image_pengurus').addClass('is-valid');
-                    }
-                    if (data.errorTeks) {
-                        $('#teks_bidang').addClass('is-invalid');
-                        $('.errorTeks').html(data.errorTeks);
-                    } else {
-                        $('#teks_bidang').removeClass('is-invalid');
-                        $('#teks_bidang').addClass('is-valid');
+                        $('#misi').removeClass('is-invalid');
+                        $('#misi').addClass('is-valid');
                     }
                 }
                 if (response.sukses) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Berhasil',
-                        html: `Data Berhasil Di tambahkan`,
+                        html: `Data Berhasil Di Ubah`,
                     }).then((result) => {
                         if (result.value) {
-                            resetForm();
-                            reload_table();
+                            window.location.reload();
                         }
                     })
                 }
@@ -199,8 +161,6 @@
                 $('#btnSave').hide();
             }
         });
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
     }
 
     function edit() {

@@ -102,4 +102,14 @@ class carouselModel extends Model
         $query = $this->dt->get();
         return $query->getRowArray();
     }
+
+    public function get_img()
+    {
+        $this->dt
+            ->select('*')
+            ->orderBy('id_carousel', 'DESC')
+            ->limit(4);
+        $query = $this->dt->get();
+        return $query->getResultArray();
+    }
 }
