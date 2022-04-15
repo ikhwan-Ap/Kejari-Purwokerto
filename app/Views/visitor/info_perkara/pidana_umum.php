@@ -8,13 +8,13 @@
         <div class="main_content">
           <div class="blog_section">
             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
-              <div class="section_title">Pidana Umum</div>
+              <div class="section_title"><?= $title['nama_kategori']; ?></div>
             </div>
             <div class="section_content">
-              
+
             </div>
           </div>
         </div>
       </div>
 
-<?= $this->endSection(); ?>
+      <?= $this->endSection(); ?>

@@ -7,6 +7,7 @@ use App\Models\buronModel;
 use App\Models\carouselModel;
 use App\Models\navbarModel;
 use App\Models\bidangModel;
+use App\Models\kategoriModel;
 
 class Home extends BaseController
 {
@@ -18,12 +19,16 @@ class Home extends BaseController
         $this->header  = new navbarModel();
         $this->bidang  = new bidangModel();
         $this->carousel = new carouselModel();
+        $this->kategori = new kategoriModel();
+
+
         $header = $this->header->get_header();
         $kejaksaan = $this->bidang->get_kejaksaan();
         session()->set([
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
-            'nama_jaksa' => $kejaksaan['nama_pengurus']
+            'nama_jaksa' => $kejaksaan['nama_pengurus'],
+            'kategori' => $this->kategori->get_kategori(),
         ]);
     }
 
@@ -45,6 +50,7 @@ class Home extends BaseController
             'khusus' => $this->kasus->get_khusus(),
             'header' => $this->header->get_header(),
             'carousel' =>  $this->carousel->get_img(),
+            'kategori' => $this->kategori->get_kategori(),
         ];
         return view('visitor/beranda', $data);
     }
@@ -66,10 +72,27 @@ class Home extends BaseController
     {
         return view('visitor/info_perkara/pidana_khusus');
     }
+
     public function pidana_umum()
     {
-        return view('visitor/info_perkara/pidana_umum');
+        $data = [
+            'kategori' => $this->kategori->get_kategori(),
+        ];
+        return view('visitor/info_perkara/pidana_umum', $data);
     }
+
+    public function bidang($id_bidang)
+    {
+        $bidang = $this->bidang->get_id($id_bidang);
+        $title = $this->bidang->get_title($id_bidang);
+        $data = [
+            'kategori' => $this->kategori->get_kategori(),
+            'title' => $title,
+            'bidang' => $bidang,
+        ];
+        return view('visitor/info_perkara/pidana_umum', $data);
+    }
+
     public function tata_usaha()
     {
         return view('visitor/info_perkara/tata_usaha');

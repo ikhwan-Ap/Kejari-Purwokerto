@@ -9,8 +9,8 @@
 			<li data-target="#carousel" data-slide-to="2"></li>
 			<li data-target="#carousel" data-slide-to="3"></li>
 		</ol>
-		<div class="carousel-inner">
 
+		<div class="carousel-inner">
 			<?php $i = 0;
 			foreach ($carousel as $row) : ?>
 				<?php if ($i == 0) :  ?>
@@ -24,6 +24,7 @@
 			<?php $i++;
 			endforeach ?>
 		</div>
+
 		<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
@@ -219,25 +220,30 @@
 							</div>
 							<div class="section_content">
 								<div class="grid clearfix">
-
-									<!-- Largest Card With Image -->
-									<div class="card card_largest_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_1.jpg" alt="https://unsplash.com/@cjtagupa">
-										<div class="card-body">
-											<div class="card-title"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<p class="card-text">Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card Without Image -->
-									<div class="card card_default card_small_no_image grid-item">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
+									<!-- Desending / Terbaru Yg akan Di Tampilkan-->
+									<?php $i = 0;
+									foreach ($carousel as $img) :  ?>
+										<?php if ($i == 0) : ?>
+											<?php $card = 'card_largest_with_image';  ?>
+											<div class="card <?= $card; ?> grid-item">
+												<img class="card-img-top" src="<?= base_url() ?>/img_carousel/<?= $img['image']; ?>" alt="https://unsplash.com/@cjtagupa">
+												<div class="card-body">
+													<div class="card-title"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+													<p class="card-text">Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
+													<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+												</div>
+											</div>
+										<?php else :  ?>
+											<?php $card = 'card_small_no_image' ?>
+											<div class="card card_default <?= $card; ?>  grid-item">
+												<div class="card-body">
+													<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+													<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+												</div>
+											</div>
+										<?php endif; ?>
+									<?php $i++;
+									endforeach; ?>
 									<!-- Small Card With Background -->
 									<div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="<?= base_url() ?>/template/visitor/images/post_4.jpg)"></div>
