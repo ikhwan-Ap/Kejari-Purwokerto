@@ -121,7 +121,7 @@
 										<button onclick="btnPerdata()" class="nav-link btnD" href="#">Info Perkara Datun</button>
 									</li>
 								</ul>
-								<table id="myTable" class="table table-bordered table-light" style="width: 100%;">
+								<table id="myTable" class="table table-responsive table-bordered table-light" style="width: 100%;">
 									<thead id="th_jadwal">
 										<tr style="font-weight:bold; color:black">
 											<th hidden>no</th>
@@ -316,7 +316,7 @@
 												<div class="playlist_background"></div>
 
 												<!-- Video -->
-												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'QhOFg_3RV5Q', mute:false, addRaster:true})">
+												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'www.youtube.com/watch?v=Uk2vMFIl26o', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/QhOFg_3RV5Q/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">

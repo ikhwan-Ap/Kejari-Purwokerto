@@ -8,7 +8,7 @@
         <div class="main_content">
           <div class="blog_section">
             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
-              <div class="section_title">Jadwal Sidang</div>
+              <div class="section_title">Pidana Umum</div>
             </div>
             <div class="section_content">
               <div class="table table-responsive table-bordered">
@@ -37,4 +37,4 @@
 
 
 
-<?= $this->endSection(); ?>
+      <?= $this->endSection(); ?>

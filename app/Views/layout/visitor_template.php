@@ -342,6 +342,26 @@
 			</div>
 		</div>
 	</footer>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<div class="floating-container">
+		<div class="floating-button"><img class="floating-icon" src="<?= base_url() ?>/template/visitor/images/icon.png" alt=""></div>
+		<div class="element-container">
+
+			<a href="google.com"> <span class="float-element tooltip-left">
+					<i class="material-icons">phone
+					</i> Call Center / Pengaduan / Layanan Hukum</a>
+			</span>
+			<span class="float-element">
+				<i class="material-icons">email
+				</i> Pengembalian Barang Bukti
+			</span>
+			<span class="float-element">
+				<i class="material-icons">chat</i> Pengambilan Tilang
+			</span>
+		</div>
+	</div>
+
 	</div>
 
 	<script src="<?= base_url() ?>/template/visitor/js/jquery-3.2.1.min.js"></script>
