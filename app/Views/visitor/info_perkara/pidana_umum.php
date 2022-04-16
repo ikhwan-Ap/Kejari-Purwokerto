@@ -12,6 +12,18 @@
             </div>
             <div class="section_content">
 
+              <div style="text-align:center">
+                <img src="<?= base_url() ?>/uploads/bidang/<?= $bidang['image_pengurus']; ?>" alt="" width="300px">
+
+                <p style="font-weight: bold; font-size:large;"><?= $bidang['nama_pengurus']; ?></p>
+                <p style="font-weight: bold; font-size:large;"><?= $bidang['jabatan_pengurus']; ?></p>
+                <p style="font-weight: bold; font-size:large;"><?= $bidang['nip']; ?></p>
+
+              </div>
+              <div>
+                <p><?= $bidang['teks_bidang']; ?></p>
+              </div>
+
             </div>
           </div>
         </div>

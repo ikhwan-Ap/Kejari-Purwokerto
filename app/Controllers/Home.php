@@ -10,9 +10,11 @@ use App\Models\bidangModel;
 use App\Models\iconModel;
 use App\Models\kategoriModel;
 use CodeIgniter\Session\Session;
+use CodeIgniter\API\ResponseTrait;
 
 class Home extends BaseController
 {
+    use ResponseTrait;
 
     public function __construct()
     {
@@ -98,6 +100,8 @@ class Home extends BaseController
         ];
         return view('visitor/info_perkara/pidana_umum', $data);
     }
+
+
 
     public function tata_usaha()
     {
