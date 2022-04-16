@@ -345,9 +345,9 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<div class="floating-container">
-		<div class="floating-button"><img class="floating-icon" src="<?= base_url() ?>/template/visitor/images/icon.png" alt=""></div>
+		<div class="floating-button"><img class="floating-icon" src="<?= base_url() ?>/icon-icon/<?= session()->get('icon'); ?>" alt=""></div>
 		<div class="element-container">
-
+			<!-- Buat Database untuk dinasmi,,,  -->
 			<a href="google.com"> <span class="float-element tooltip-left">
 					<i class="material-icons">phone
 					</i> Call Center / Pengaduan / Layanan Hukum</a>

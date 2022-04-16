@@ -7,7 +7,9 @@ use App\Models\buronModel;
 use App\Models\carouselModel;
 use App\Models\navbarModel;
 use App\Models\bidangModel;
+use App\Models\iconModel;
 use App\Models\kategoriModel;
+use CodeIgniter\Session\Session;
 
 class Home extends BaseController
 {
@@ -20,15 +22,18 @@ class Home extends BaseController
         $this->bidang  = new bidangModel();
         $this->carousel = new carouselModel();
         $this->kategori = new kategoriModel();
+        $this->icon = new iconModel();
 
 
         $header = $this->header->get_header();
         $kejaksaan = $this->bidang->get_kejaksaan();
+        $icon = $this->icon->get_icon();
         session()->set([
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
             'nama_jaksa' => $kejaksaan['nama_pengurus'],
             'kategori' => $this->kategori->get_kategori(),
+            'icon' => $icon['img_icon'],
         ]);
     }
 
@@ -52,6 +57,7 @@ class Home extends BaseController
             'carousel' =>  $this->carousel->get_img(),
             'kategori' => $this->kategori->get_kategori(),
         ];
+        // dd($coba);
         return view('visitor/beranda', $data);
     }
     public function get_header()
