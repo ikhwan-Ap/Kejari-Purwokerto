@@ -764,8 +764,8 @@ a > b {
   box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
 }
 .floating-icon {
-  left: -60px;
+  left: 0;
   position: absolute;
-  top: -40px;
-  width: 185px;
+  top: -50px;
+  width: 100px;
 }
