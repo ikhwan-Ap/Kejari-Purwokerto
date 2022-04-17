@@ -51,7 +51,6 @@
 								<div class="grid clearfix">
 
 									<!-- Small Card With Background -->
-<<<<<<< HEAD
 									<?php
 									$background = array(
 										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
@@ -76,18 +75,6 @@
 
 									<!-- Small Card With Background -->
 									<!-- <div class="card card_default card_small_with_background grid-item">
-=======
-
-									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 1</a></div>
-										</div>
-									</div>
-
-									<div class="card card_default card_small_with_background grid-item">
->>>>>>> 29708a29d53ba67602994b0d48abbcf4bb696793
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
@@ -95,28 +82,18 @@
 										</div>
 									</div> -->
 
-<<<<<<< HEAD
 									<!-- Small Card With Background -->
 									<!-- <div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
-=======
-									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post.jpg)"></div>
->>>>>>> 29708a29d53ba67602994b0d48abbcf4bb696793
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
 											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 3</a></div>
 										</div>
 									</div> -->
 
-<<<<<<< HEAD
 									<!-- Small Card With Background -->
 									<!-- <div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
-=======
-									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_4.jpg)"></div>
->>>>>>> 29708a29d53ba67602994b0d48abbcf4bb696793
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
 											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 4</a></div>
