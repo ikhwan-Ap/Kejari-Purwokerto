@@ -39,7 +39,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Moduls</span></a>
                 <ul class="dropdown-menu">
                     <li class="<?= ($title == "Agenda") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Agenda</a></li>
-                    <li class="<?= ($title == "Berita") ? 'active' : ''; ?>"><a class="nav-link" href="/News"> Berita</a></li>
+                    <li class="<?= ($title == "Berita") ? 'active' : ''; ?>"><a class="nav-link" href="/Berita"> Berita</a></li>
                     <li class="<?= ($title == "Pengumuman") ? 'active' : ''; ?>"><a class="nav-link" href="#"> Pengumuman</a></li>
                     <li class="<?= ($title == "Visi Dan Misi") ? 'active' : ''; ?>"><a class="nav-link" href="/visi_misi"> Visi Dan Misi</a></li>
                 </ul>
