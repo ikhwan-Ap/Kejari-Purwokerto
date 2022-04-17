@@ -112,7 +112,7 @@
 									<a href="#" class="nav-link"><b>Reformasi Birokrasi</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Survei Kepuasan Masyarakat</a></li>
-										<li><a href="#" class="nav-link">Layanan Kejaksaan Negeri Purwokerto</a></li>
+										<li><a href="<?= base_url() ?>/home/portal" class="nav-link" target="_blank">Layanan Kejaksaan Negeri Purwokerto</a></li>
 										<li><a href="#" class="nav-link">Moto Pelayanan</a></li>
 										<li><a href="#" class="nav-link">Maklumat Pelayanan</a></li>
 										<li><a href="#" class="nav-link">Agen Perubahan</a></li>
