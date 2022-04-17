@@ -1,7 +1,39 @@
 	<?= $this->extend('layout/visitor_template'); ?>
 	<?= $this->section('content'); ?>
 
-	<div class="hero" style="background-image: url('<?=base_url()?>/template/visitor/images/hero_1.jpg');"></div>
+	<!-- <div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/carousel.jpg');"></div> -->
+	<div id="carousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel" data-slide-to="1"></li>
+			<li data-target="#carousel" data-slide-to="2"></li>
+			<li data-target="#carousel" data-slide-to="3"></li>
+		</ol>
+
+		<div class="carousel-inner">
+			<?php $i = 0;
+			foreach ($carousel as $row) : ?>
+				<?php if ($i == 0) :  ?>
+					<?php $set = 'active'; ?>
+				<?php else :  ?>
+					<?php $set = ''; ?>
+				<?php endif; ?>
+				<div class='carousel-item <?php echo $set; ?>'>
+					<img class="d-block w-100" src="<?= base_url() ?>/img_carousel/<?= $row['image']; ?>">
+				</div>
+			<?php $i++;
+			endforeach ?>
+		</div>
+
+		<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
 
 	<!-- Page Content -->
 	<div class="page_content">
@@ -19,37 +51,53 @@
 								<div class="grid clearfix">
 
 									<!-- Small Card With Background -->
-									<a href="#">
+									<!-- <?php
+									$warna = "green"
+									$background = array(
+										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-										<div class="card card_default card_small_with_background grid-item">
-											<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
-											<div class="card-body">
-												<div class="card-title card-title-small"><a href="post.html" style="display:block;">Pelayanan 1</a></div>
+									);
+									$i = 0;
+									foreach ($carousel as $value) :
+									?>
+										<a href="#">
+
+											<div class="card card_default card_small_with_background grid-item">
+												<div class="card_background" style="background-image:url(<?= base_url() ?><?= $background[$i]; ?>"></div>
+												<div class="card-body">
+													<div class="card-title card-title-small"><a href="post.html" style="display:block;">Pelayanan 1</a></div>
+												</div>
 											</div>
-										</div>
-									</a>
+										</a>
+									<?php
+										$i++;
+									endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
+										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, white)"></div>
 										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">Pelayanan 2</a></div>
-										</div>
-									</div>
-
-									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">Pelayanan 3</a></div>
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
 										</div>
 									</div>
 
 									<!-- Small Card With Background -->
 									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
+										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, white))"></div>
 										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">Pelayanan 4</a></div>
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 3</a></div>
+										</div>
+									</div>
+
+									<!-- Small Card With Background -->
+									<div class="card card_default card_small_with_background grid-item">
+										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, white)"></div>
+										<div class="card-body">
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 4</a></div>
 										</div>
 									</div>
 								</div>
@@ -58,6 +106,11 @@
 					</div>
 				</div>
 			</div>
+			<p>
+				<a href="<?= base_url() ?>/home/portal">
+					<span class="label label-default">Selengkapnya...</span>
+				</a>
+			</p>
 		</div>
 
 		<div class="container">
@@ -77,21 +130,21 @@
 							<div class="section_content">
 								<ul class="nav nav-tabs">
 									<li class="nav-item">
-										<button onclick="btnJadwal()" class="nav-link active text-white" style="background-color: red; " aria-current="page">Jadwal Sidang</button>
+										<button onclick="btnJadwal()" class="nav-link btnA actived" aria-current="page">Jadwal Sidang</button>
 									</li>
 									<li class="nav-item">
-										<button onclick="btnUmum()" class="nav-link active text-white" style="background-color: red; " href="#">Info Perkara Umum</button>
+										<button onclick="btnUmum()" class="nav-link btnB" href="#">Info Perkara Umum</button>
 									</li>
 									<li class="nav-item">
-										<button onclick="btnKhusus()" class="nav-link text-white" style="background-color: purple; " href="#">Info Perkara Khusus</button>
+										<button onclick="btnKhusus()" class="nav-link btnC" href="#">Info Perkara Khusus</button>
 									</li>
 									<li class="nav-item">
-										<button onclick="btnPerdata()" class="nav-link text-white" style="background-color: gold;" href="#">Info Perkara Datun</button>
+										<button onclick="btnPerdata()" class="nav-link btnD" href="#">Info Perkara Datun</button>
 									</li>
 								</ul>
-								<table id="myTable" class="table table-responsive table-bordered">
-									<thead>
-										<tr>
+								<table id="myTable" class="table table-responsive table-bordered table-light" style="width: 100%;">
+									<thead id="th_jadwal">
+										<tr style="font-weight:bold; color:black">
 											<th hidden>no</th>
 											<th>Hari / Tanggal</th>
 											<th>Nama Terdakwa</th>
@@ -104,90 +157,134 @@
 									<tbody id="jadwal">
 										<?php $i = 1;
 										foreach ($jadwal as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td hidden><?= $i++; ?></td>
 												<td><?= $informasi['tanggal']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['nama_jaksa']; ?></td>
 												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
-												<td><?= $informasi['keterangan']; ?></td>
+												<td><?= $informasi['agenda']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
+									<thead id="th_umum">
+										<tr style="font-weight:bold; color:black">
+											<th>No.</th>
+											<th>Tanggal</th>
+											<th>No. Perkara</th>
+											<th>Nama Terdakwa</th>
+											<th>Status</th>
+										</tr>
+									</thead>
 									<tbody id="umum">
 										<?php $i = 1;
 										foreach ($umum as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
 												<td><?= $informasi['tanggal']; ?></td>
-												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td><?= $informasi['nama_jaksa']; ?></td>
-												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
+												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
+									<thead id="th_khusus">
+										<tr style="font-weight:bold; color:black">
+											<th>No.</th>
+											<th>Tanggal</th>
+											<th>No. Perkara</th>
+											<th>Nama Terdakwa</th>
+											<th>Status</th>
+										</tr>
+									</thead>
 									<tbody id="khusus">
 										<?php $i = 1;
 										foreach ($khusus as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
 												<td><?= $informasi['tanggal']; ?></td>
-												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td><?= $informasi['nama_jaksa']; ?></td>
-												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
+												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
+									<thead id="th_perdata">
+										<tr style="font-weight:bold; color:black">
+											<th>No.</th>
+											<th>No. Perkara</th>
+											<th>Nama Terdakwa</th>
+											<th>Status</th>
+										</tr>
+									</thead>
 									<tbody id="perdata">
 										<?php $i = 1;
 										foreach ($perdata as $informasi) : ?>
-											<tr>
+											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
-												<td><?= $informasi['tanggal']; ?></td>
-												<td><?= $informasi['nama_terdakwa']; ?></td>
-												<td><?= $informasi['nama_jaksa']; ?></td>
-												<td><?= $informasi['nama_hakim']; ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
+												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['keterangan']; ?></td>
 											</tr>
 										<?php endforeach; ?>
 									</tbody>
 								</table>
-
+								<p id="p_perdata">
+									<a href="<?= base_url() ?>/home/tata_usaha">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
+								<p id="p_khusus">
+									<a href="<?= base_url() ?>/home/pidana_khusus">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
+								<p id="p_umum">
+									<a href="<?= base_url() ?>/home/pidana_umum">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
+								<p id="p_jadwal">
+									<a href="<?= base_url() ?>/home/jadwal_sidang">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 						<!-- Blog Section - Don't Miss -->
 
 						<div class="blog_section">
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
-								<div class="section_title berita">Berita Terbaru</div>
+								<div class="section_title">Berita Terbaru</div>
 							</div>
 							<div class="section_content">
 								<div class="grid clearfix">
-
-									<!-- Largest Card With Image -->
-									<div class="card card_largest_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_1.jpg" alt="https://unsplash.com/@cjtagupa">
-										<div class="card-body">
-											<div class="card-title"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<p class="card-text">Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card Without Image -->
-									<div class="card card_default card_small_no_image grid-item">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
+									<!-- Desending / Terbaru Yg akan Di Tampilkan-->
+									<?php $i = 0;
+									$a = array('a', 'b', 'c', 'd');
+									foreach ($carousel as $img) :  ?>
+										<?php if ($i == 0) : ?>
+											<?php $card = 'card_largest_with_image';  ?>
+											<div class="card <?= $card; ?> grid-item">
+												<img class="card-img-top" src="<?= base_url() ?>/img_carousel/<?= $img['image']; ?>" alt="https://unsplash.com/@cjtagupa">
+												<div class="card-body">
+													<div class="card-title"><a href="post.html"><?php echo $a[$i]; ?> Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+													<p class="card-text">Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
+													<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+												</div>
+											</div>
+										<?php else :  ?>
+											<?php $card = 'card_small_no_image' ?>
+											<div class="card card_default <?= $card; ?>  grid-item">
+												<div class="card-body">
+													<div class="card-title card-title-small"><a href="post.html"><?= $a[$i]; ?> How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+													<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+												</div>
+											</div>
+										<?php endif; ?>
+									<?php $i++;
+									endforeach; ?>
 									<!-- Small Card With Background -->
 									<div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="<?= base_url() ?>/template/visitor/images/post_4.jpg)"></div>
@@ -260,7 +357,7 @@
 												<div class="playlist_background"></div>
 
 												<!-- Video -->
-												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'QhOFg_3RV5Q', mute:false, addRaster:true})">
+												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'www.youtube.com/watch?v=Uk2vMFIl26o', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/QhOFg_3RV5Q/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -412,5 +509,70 @@
 						$('#perdata').show();
 						$('#khusus').hide();
 					}
+
+					$(document).ready(function() {
+						$('#th_umum').hide();
+						$('#th_khusus').hide();
+						$('#th_perdata').hide();
+						$('#p_umum').hide();
+						$('#p_khusus').hide();
+						$('#p_perdata').hide();
+						$('.btnA').click(function() {
+							$(this).addClass('actived');
+							$('.btnB').removeClass('actived');
+							$('.btnC').removeClass('actived');
+							$('.btnD').removeClass('actived');
+							$('#th_jadwal').show();
+							$('#th_umum').hide();
+							$('#th_khusus').hide();
+							$('#th_perdata').hide();
+							$('#p_jadwal').show();
+							$('#p_umum').hide();
+							$('#p_khusus').hide();
+							$('#p_perdata').hide();
+						});
+						$('.btnB').click(function() {
+							$(this).addClass('actived');
+							$('.btnA').removeClass('actived');
+							$('.btnC').removeClass('actived');
+							$('.btnD').removeClass('actived');
+							$('#th_jadwal').hide();
+							$('#th_umum').show();
+							$('#th_khusus').hide();
+							$('#th_perdata').hide();
+							$('#p_jadwal').hide();
+							$('#p_umum').show();
+							$('#p_khusus').hide();
+							$('#p_perdata').hide();
+						});
+						$('.btnC').click(function() {
+							$(this).addClass('actived');
+							$('.btnB').removeClass('actived');
+							$('.btnA').removeClass('actived');
+							$('.btnD').removeClass('actived');
+							$('#th_jadwal').hide();
+							$('#th_umum').hide();
+							$('#th_khusus').show();
+							$('#th_perdata').hide();
+							$('#p_jadwal').hide();
+							$('#p_umum').hide();
+							$('#p_khusus').show();
+							$('#p_perdata').hide();
+						});
+						$('.btnD').click(function() {
+							$(this).addClass('actived');
+							$('.btnB').removeClass('actived');
+							$('.btnC').removeClass('actived');
+							$('.btnA').removeClass('actived');
+							$('#th_jadwal').hide();
+							$('#th_umum').hide();
+							$('#th_perdata').show();
+							$('#th_khusus').hide();
+							$('#p_jadwal').hide();
+							$('#p_umum').hide();
+							$('#p_perdata').show();
+							$('#p_khusus').hide();
+						});
+					});
 				</script>
 				<?= $this->endSection(); ?>
