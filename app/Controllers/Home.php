@@ -117,4 +117,9 @@ class Home extends BaseController
         $data = $this->buron->get_last();
         echo json_encode($data);
     }
+
+    public function portal()
+    {
+        return view('visitor/portal');
+    }
 }
