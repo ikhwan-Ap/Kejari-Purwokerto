@@ -71,12 +71,7 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'kontak',
-            'jadwal' => $this->kasus->get_jadwal(),
-            'perdata' => $this->kasus->get_perdata(),
-            'umum' => $this->kasus->get_umum(),
-            'khusus' => $this->kasus->get_khusus(),
             'header' => $this->header->get_header(),
-            'carousel' =>  $this->carousel->get_img(),
             'kategori' => $this->kategori->get_kategori(),
         ];
         return view('visitor/kontak', $data);
