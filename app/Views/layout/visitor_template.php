@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Demo project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/bootstrap4/bootstrap.min.css">
 	<link href="<?= base_url() ?>/template/visitor/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -115,7 +116,7 @@
 									<a href="#" class="nav-link"><b>Reformasi Birokrasi</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Survei Kepuasan Masyarakat</a></li>
-										<li><a href="#" class="nav-link">Layanan Kejaksaan Negeri Purwokerto</a></li>
+										<li><a href="<?= base_url() ?>/home/portal" class="nav-link" target="_blank">Layanan Kejaksaan Negeri Purwokerto</a></li>
 										<li><a href="#" class="nav-link">Moto Pelayanan</a></li>
 										<li><a href="#" class="nav-link">Maklumat Pelayanan</a></li>
 										<li><a href="#" class="nav-link">Agen Perubahan</a></li>

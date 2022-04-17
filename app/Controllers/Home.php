@@ -66,7 +66,12 @@ class Home extends BaseController
     }
     public function kontak()
     {
-        return view('visitor/kontak');
+        $data = [
+            'title' => 'kontak',
+            'header' => $this->header->get_header(),
+            'kategori' => $this->kategori->get_kategori(),
+        ];
+        return view('visitor/kontak', $data);
     }
 
     public function jadwal_sidang()
