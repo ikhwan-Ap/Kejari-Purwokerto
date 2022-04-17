@@ -37,6 +37,7 @@ $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLoggedIn']);
 $routes->get('/kasus', 'Kasus::index');
 $routes->get('/incraht', 'Incraht::index');
 $routes->get('/buron', 'Buron::index');
+$routes->get('/berita', 'Berita::index');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
