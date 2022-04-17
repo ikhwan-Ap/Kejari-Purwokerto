@@ -28,3 +28,8 @@
 .hid-form {
     display: none;
 }
+
+.md-sm {
+    width: 75%;
+    display: inline-block;
+}
