@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\beritaModel;
 use Config\Services;
+use CodeIgniter\API\ResponseTrait;
 
 class Berita extends BaseController {
     public function __construct() {
@@ -24,11 +25,11 @@ class Berita extends BaseController {
 
     public function tambah_berita() {
 
-        dd($this->request->getVar());
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
+
             $judul_berita = $this->request->getVar('judul_berita');
-            $text = $this->request->getVar('text');
+            $teks_berita = $this->request->getVar('teks_berita');
             $tanggal = $this->request->getVar('tanggal');
             $img_berita = $this->request->getFile('img_berita');
 
@@ -39,7 +40,7 @@ class Berita extends BaseController {
                         'required' => 'Judul Tidak Boleh Kosong',
                     ],
                 ],
-                'text' => [
+                'teks_berita' => [
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'Isi Berita Tidak Boleh Kosong',
@@ -51,9 +52,9 @@ class Berita extends BaseController {
                         'required' => 'Tanggal Tidak Boleh Kosong',
                     ],
                 ],
-                'image' => [
-                    'rules' => 'uploaded[image]|max_size[image,1024]|is_image[image]
-                    |mime_in[image,image/jpg,image/jpeg,image/png]',
+                'img_berita' => [
+                    'rules' => 'uploaded[img_berita]|max_size[img_berita,1024]|is_image[img_berita]
+                    |mime_in[img_berita,image/jpg,image/jpeg,image/png]',
                     'errors' => [
                         'uploaded' => 'Image Gambar Harus Di Isi !',
                         'max_size' => 'Gambar Melebihi 1 mb',
@@ -67,38 +68,39 @@ class Berita extends BaseController {
             if (!$valid) {
                 $data = [
                     'error' => [
-                        'errorNama' => $validation->getError('nama_buron'),
-                        'errorUsia' => $validation->getError('usia'),
-                        'errorImage' => $validation->getError('image'),
+                        'errorJudul' => $validation->getError('judul_berita'),
+                        'errorTanggal' => $validation->getError('tanggal'),
+                        'errorImage' => $validation->getError('img_berita'),
                     ],
                 ];
             } else {
-                $nama_image = $image->getRandomName();
-                $image->move('uploads/berita', $nama_image);
+                $nama_image = $img_berita->getRandomName();
+                $img_berita->move('uploads/berita', $nama_image);
                 $this->berita->save([
                     'judul_berita' => $judul_berita,
                     'tanggal' => $tanggal,
-                    'image' => $nama_image,
+                    'teks_berita' => $teks_berita,
+                    'img_berita' => $nama_image,
                 ]);
                 $data = [
-                    'sukses' => 'Data Berita Berhasil Di Tambahkan'
+                    'sukses' => 'Data Berita Berhasil Ditambahkan'
                 ];
             }
         }
         echo json_encode($data);
     }
 
-    public function del_berita($id_berita)    {
+    public function delBerita($id_berita) {
         $berita = $this->berita->get_id($id_berita);
-        unlink('uploads/berita/' . $berita['image']);
+        unlink('uploads/berita/' . $berita['img_berita']);
         $this->berita->del_berita($id_berita);
         $data = [
-            'sukses' => 'Berita berhasil di hapus'
+            'sukses' => 'Data Berita Berhasil Dihapus'
         ];
         echo json_encode($data);
     }
 
-    public function getBerita()    {
+    public function getBerita() {
 
         $this->berita = new beritaModel();
         $request = Services::request();
@@ -109,21 +111,21 @@ class Berita extends BaseController {
             $no = 1;
             foreach ($list as $hasil) {
                 $action = '
-                <button type="button" onclick="delBuron(' . $hasil->id_berita . ')" class="btn btn-danger" title="DELETE">
+                <button type="button" onclick="delBerita(' . $hasil->id_berita . ')" class="btn btn-danger" title="DELETE" id="del'.$hasil->id_berita.'">
                     <span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">
                     </span>
                 </button>
-                <button type="button" class="btn btn-light" onclick="editBuron( ' . $hasil->id_berita . ' )" title="EDIT">
+                <button type="button" class="btn btn-light" onclick="editBerita( ' . $hasil->id_berita . ' )" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
-                <button type="button" class="btn btn-light" onclick="detailBuron('  . $hasil->id_berita  . ')"title="DETAIL">
-                        <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
-                </button>   
+                <a href="//" class="btn btn-light" title="DETAIL">   
+                <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
+                </a>
                 
                 ';
                 $row[] = [
                     $no++,
-                    $hasil->image,
+                    $hasil->img_berita,
                     $hasil->judul_berita,
                     $hasil->tanggal,
                     $action,
@@ -136,6 +138,76 @@ class Berita extends BaseController {
             ];
             echo json_encode($output);
         }
+    }
+    
+    public function editBerita() {
+        $validation = \Config\Services::validation();
+        if ($this->request->isAJAX()) {
+            $id_berita = $this->request->getVar('id_berita');
+
+            $judul_berita = $this->request->getVar('judul_berita');
+            $tanggal = $this->request->getVar('tanggal');
+            $img_berita = $this->request->getFile('img_berita');
+            $teks_berita = $this->request->getVar('teks_berita');
+
+            $valid = $this->validate([
+                'judul_berita' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Judul Berita Tidak Boleh Kosong!!'
+                    ],
+                ],
+                'tanggal' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Tanggal Tidak Boleh Kosong!!'
+                    ],
+                ],
+                'teks_berita' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Isi Berita Tidak Boleh Kosong!!'
+                    ],
+                ],
+                'img_berita' => [
+                    'rules' => 'uploaded[img_berita]|max_size[img_berita,1024]|is_image[img_berita]
+                    |mime_in[img_berita,image/jpg,image/jpeg,image/png]',
+                    'errors' => [
+                        'uploaded' => 'Image Gambar Harus Di Isi !',
+                        'max_size' => 'Gambar Melebihi 1 mb',
+                        'mime_in' => 'Gambar harus png / jpg / jpeg !',
+                        'is_image' => 'File Bukan Merupakan Gambar',
+                    ]
+                ],
+
+            ]);
+
+            if (!$valid) {
+                $data = [
+                    'error' => [
+                        'errorJudul' => $validation->getError('judul_berita'),
+                        'errorTanggal' => $validation->getError('tanggal'),
+                        'errorImage' => $validation->getError('img_berita'),
+                    ],
+                ];
+            } else {
+                $id_baru = $this->berita->get_id($id_berita);
+                // $unlink = unlink('uploads/berita/' . $berita['img_berita']);
+                $nama_image = $img_berita->getRandomName();
+                $img_berita->move('uploads/berita', $nama_image);
+                $this->berita->update($id_baru, [
+                    'judul_berita' => $judul_berita,
+                    'tanggal' => $tanggal,
+                    'img_berita' => $nama_image,
+                    'teks_berita' => $teks_berita,
+                ]);
+                $data = [
+                    'sukses' => 'Data Berita Berhasil Diperbarui'
+                ];
+            }                 
+            
+        }
+        echo json_encode($data);
     }
 
 }

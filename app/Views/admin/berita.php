@@ -3,32 +3,105 @@
 
 <?php
 $date = date('Y-m-d');
-$arr = explode("-",$date);
+$arr = explode("-", $date);
 $tgl = $arr[2];
 $mon = date('F');
-$year = $arr[0]; 
+$year = $arr[0];
 ?>
 
 <section class="section">
     <div class="section-header">
-        <h1>Editor Berita</h1>
+        <h1>Berita</h1>
         <div class="col">
-            <button class="btn btn-primary" onclick="addBerita()">
-                <i class="ion ion-plus-circled"></i> Buat Baru
+            <button class="btn btn-primary" onclick="showForm()" id="btnOpen">
+                Buat Berita <i class="ion ion-plus-circled"></i>
+            </button>
+            <button class="btn btn-danger" onclick="hideForm()" id="btnClose">
+                Tutup Form <i class="ion ion-close-circled"></i>
             </button>
         </div>
+
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="<?= base_url('/dashboard'); ?>">Dashboard</a></div>
-            <div class="breadcrumb-item">Modul</div>
+            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+            <div class="breadcrumb-item">Moduls</div>
             <div class="breadcrumb-item">Berita</div>
         </div>
     </div>
+    <?php echo form_open_multipart('', ['id' => 'formBerita']); ?>
+    <div class="row col-12 hid-form" id="form-top">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="section-body">
+                        <input type="text" name="id_berita" value="" id="id_berita" hidden>
+                        <div class="form-group col p-right">
+                            <label for="tanggal">Tanggal</label>
+                            <input type="text" class="form-control" name="tanggal" id="tanggal" placeholder="" value=<?= $date ?> hidden>
+                            <p class="inline-space" ><?= $tgl.' '.$mon.' '.$year ?></p>
+                            <div class="invalid-feedback errorTanggal">
+                            </div>
+                        </div>
+                        <div class="form-group col">
+                            <label for="judul_berita">Judul Berita</label>
+                            <input type="text" class="form-control" name="judul_berita" id="judul_berita" placeholder="">
+                            <div class="invalid-feedback errorJudul">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="col">
+                <div class="card-body">
+                    <div class="section-body">
+                        <div class="form-group">
+                            <div class="dropzone" id="mydropzone">
+                                <div class="fallback">
+                                    <input type="file" id="img_berita" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="img_berita" hidden>
+                                    <div style="height: 210px; width: 200px">
+                                        <img src="" id="image_berita" alt="Preview Image" style="width: 200px; height:200px; visibility: hidden">
+                                    </div>
+                                    <div class="invalid-feedback errorImage"></div>
+                                    <label for="img_berita" class="btn btn-primary">Pilih Gambar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-body hid-form" id="form-bot">
+        <div class="card-header">
+            <h4>Isi Berita</h4>
+        </div>
+        <div class="card">
+            <div class="col">
+                <div class="card-body">
+                    <div class="form-group row mb-4">
+                        <div class="col-sm-12">
+                            <textarea class="summernote" value="" name="teks_berita" id="teks_berita"></textarea>
+                        </div>
+                        <div class="invalid-feedback errorTeks">
+
+                        </div>
+                    </div>
+                    <center> <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary">Unggah</button></center>
+                    <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Edit</button></center>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <?php form_close();  ?>
+
     <div class="section-body">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Daftar Berita</h4>
+                        <h4>Berita</h4>
                     </div>
 
                     <div class="card-body">
@@ -37,8 +110,10 @@ $year = $arr[0];
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Judul</th>
+                                        <th>Image</th>
+                                        <th>Judul Berita</th>
                                         <th>Tanggal</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,107 +127,12 @@ $year = $arr[0];
         </div>
     </div>
 
-    <div class="modal fade" data-backdrop="false" role="dialog" id="modalBerita">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"></h5>
-                    <button type="button" onclick="reset()" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body form_berita">
-                    <?php echo form_open_multipart('', ['id' => 'formBerita']); ?>
-                    <div class="card-body Proses">
-                        <input type="hidden" value="" name="id_berita" />
-                        <div class="row">
-                            <div class="form-group col-12">
-                                <label for="tanggal" class="col-form-label text-md-left col-4 col-md-3">Tanggal</label>
-                                <div id="tanggal" value="<?= $date ?>" class="col-8 pl-0" style="display:inline-block">
-                                    <p><?= $tgl.' '.$mon.' '.$year ?></p>
-                                </div>
-                            </div>
-                            <div class="form-group col-12">
-                                <label for="judul_berita" class="col-form-label text-md-left col-4 col-md-3">Judul</label>
-                                <input type="text" name="judul_berita" id="judul_berita" class="col-8 form-control" value="" style="display:inline-block">
-                                <div class="invalid-feedback errorNama">
-                                </div>
-                            </div>
-                            <div class="form-group col-12">
-                                <label class="col-form-label text-md-left col-4 col-md-3">Isi Berita</label>
-                                <div class="form control">
-                                    <textarea class="summernote-simple" name="isi_berita" id="isi_berita" class="form-control" value=""></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-4">
-                            <div class="card" style="left: 25%;">
-                                <div class="card-header">
-                                    <h4>Pilih Gambar</h4>
-                                </div>
-                                <div class="card-body">
-                                    <form action="#" class="dropzone" id="mydropzone">
-                                        <div class="fallback">
-                                            <input id="image" type="file" value="" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="image">
-                                            <div class="invalid-feedback errorImage">
-                                        </div>
-                                    </form
-                            </div>
-                        </div>
-                        <div class="row">
-<!--  
-                        <div class="preview">
-                            <img src="" id="img_buron" alt="Placeholder" style="width: 30%; height:50%;">
-                        </div> -->
-
-                    </div>
-                    <?php echo form_close(); ?>
-                    <div class="card-body Detail">
-                        <div class="row">
-                            <div class="col">
-                                <h6 id="judul_berita">
-                                    AA
-                                </h6>
-                            </div>
-                            <div class="col">
-                                <h6 id="tanggal">
-
-                                </h6>
-                            </div>
-                        </div>
-                        <!-- <div class="row">
-                            <div class="col">
-                                <h6 id="jenis">
-
-                                </h6>
-                            </div>
-                            <div class="col">
-                                <h6 id="alamat">
-
-                                </h6>
-                            </div>
-                        </div> -->
-
-                        <div class="row">
-                            <div class="col">
-                                <img src="" id="img_preview" alt="Image_Berita" style="height: 65%; width:50%;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer Foot">
-                    <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
-                    <button type="button" class="btn btn-light" onclick="reset()" data-dismiss="modal">Tidak</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
 <script>
-    var save_method;
     var table;
+
     $(document).ready(function() {
         table = $('#Berita').DataTable({
             "processing": true,
@@ -162,19 +142,32 @@ $year = $arr[0];
             "ajax": {
                 "url": "<?= site_url('berita/getBerita'); ?>",
                 "type": "POST",
-                "data": function(data) {
-                    data.id_berita = 1;
-                }
-
             },
             "columnDefs": [{
-                "targets": [0],
-                "orderable" : false
-            }]
+                "targets": 1,
+                "data": "img",
+                "render": function(url, type, full) {
+                    var img = '<img height="150px" width="auto" src="<?= base_url('uploads/berita'); ?>/' + full[1] + '"/>';
+                    return img;
+                },
+            }, ],
         });
+        $('#btnEdit').hide();
+        $('#btnClose').hide();
+        $('#judul_berita').focus();
+        $('.summernote').summernote({
+            height: 300,
+            toolbar: [
+                ["style", ["bold", "italic", "underline", "clear"]],
+                ["fontname", ["fontname"]],
+                ["fontsize", ["fontsize"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["height", ["height"]],
+                ["insert", ["link", "imageList", "hr"]],
 
-        $('#filterJenis').change(function() {
-            table.draw();
+            ],
+            dialogsInBody: true,
         })
     });
 
@@ -184,36 +177,27 @@ $year = $arr[0];
         if (file) {
             var reader = new FileReader();
             reader.onload = function() {
-                $("#img_buron").attr("src", reader.result);
+                $("#image_berita").attr("src", reader.result);
+                $("#image_berita").css("visibility", "visible");
             }
             reader.readAsDataURL(file);
         }
     }
 
-    function reload_table() {
-        table.ajax.reload(null, false);
+    function showForm() {
+        $("#form-top").css("display", "flex");
+        $("#form-bot").show();
+        $("#btnClose").show();
+        $("#btnOpen").hide();
+        $('#judul_berita').focus();
+
     }
 
-    function detailBerita(id_berita) {
-        $('#formBerita')[0].reset();
-        $('.Foot').hide();
-        $('.Proses').hide();
-        $('.Detail').show();
-        $.ajax({
-            url: "<?= site_url('berita/get_id/'); ?>" + id_berita,
-            type: "GET",
-            dataType: "json",
-            success: function(data) {
-                $('#judul_berita').html("Judul Berita :" + data.judul_berita);
-                $('#tanggal').html("Tanggal :" + data.tanggal);
-                $('#img_preview').attr('src', '<?= base_url('uploads/berita'); ?>/' + data.image);
-                $('#modalBerita').modal('show');
-                $('.modal-title').text('Detail Berita');
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert('Error get data from ajax');
-            }
-        });
+    function hideForm() {
+        $("#form-top").hide();
+        $("#form-bot").hide();
+        $("#btnClose").hide();
+        $("#btnOpen").show();
     }
 
     function delBerita(id_berita) {
@@ -227,27 +211,29 @@ $year = $arr[0];
 
         swalWithBootstrapButtons.fire({
             title: 'Apakah Anda Yakin?',
-            text: "Anda Akan Menghapus Data Ini!",
+            text: "Anda Akan Menghapus Berita Ini!",
             icon: 'warning',
             reverseButtons: true,
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
+            confirmButtonText: 'Ya, Hapus Data!',
+            cancelButtonText: 'Tidak',
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('berita/del_berita/'); ?>" + id_berita,
+                    url: "<?= site_url('berita/delBerita/'); ?>" + id_berita,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
                             swalWithBootstrapButtons.fire(
                                 'Deleted!',
-                                'Data Berhasil Di Hapus',
+                                'Berita Berhasil Di Hapus',
                                 'success'
                             ).then((result) => {
                                 if (result.value) {
                                     reload_table();
+                                    $('#del'+id).parent().parent().remove();
+
                                 }
                             })
                         }
@@ -260,30 +246,46 @@ $year = $arr[0];
             ) {
                 swalWithBootstrapButtons.fire(
                     'Cancelled',
-                    'Data Tidak Jadi Di Hapus :)',
+                    'Data Tidak Jadi Dihapus :P',
                     'error'
                 )
             }
         })
     }
 
-    function addBerita() {
-        save_method = 'add';
-        $('#formBerita')[0].reset();
-        $('#modalBerita').modal('show');
-        $('.modal-title').text('Tambah Berita Terbaru');
-        $('.Foot').show();
-        $('.Proses').show();
-        $('.Detail').hide();
+    function reload_table() {
+        table.ajax.reload(null, false);
+    }
+
+    function modalReset() {
+        $('#kategori').removeClass('is-invalid');
+        $('#kategori').removeClass('is-valid');
+    }
+
+    function resetForm() {
+        $('#img_berita').removeClass('is-invalid');
+        $('#img_berita').removeClass('is-valid');
+        $("#image_berita").attr("src", '');
+        $("#image_berita").css("visibility", "hidden");
+        $('input').val('').removeAttr('checked').removeAttr('selected')
+        $('select').val('').removeAttr('checked').removeAttr('selected');
+        $(".summernote").summernote('code', '');
+        $('#judul_berita').removeClass('is-invalid');
+        $('#judul_berita').removeClass('is-valid');
+        $('#tanggal').removeClass('is-invalid');
+        $('#tanggal').removeClass('is-valid');
+        hideForm()
+
     }
 
     function save() {
+
         let form = $('#formBerita')[0];
         let data = new FormData(form);
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('berita/tambah_berita'); ?>",
+            url: "<?= site_url('berita/tambah_berita') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -292,36 +294,44 @@ $year = $arr[0];
             dataType: "json",
             beforeSend: function() {
                 $('#btnSave').prop('disabled', true);
-                $('#btnSave').html('Tunggu');
+                $('#btnSave').html('Loading');
             },
             complete: function() {
                 $('#btnSave').prop('disabled', false);
-                $('#btnSave').html('Simpan');
+                $('#btnSave').html('Unggah');
             },
             success: function(response) {
                 if (response.error) {
-                    let data = response.error;
-                    if (data.errorNama) {
-                        $('#nama_buron').addClass('is-invalid');
-                        $('.errorNama').html(data.errorNama);
+                    let data = response.error
+                    if (data.errorJudul) {
+                        $('#judul_berita').addClass('is-invalid');
+                        $('#judul_berita').attr('autofocus', true);
+                        $('.errorJudul').html(data.errorJudul);
                     } else {
-                        $('#nama_buron').removeClass('is-invalid');
-                        $('#nama_buron').addClass('is-valid');
+                        $('#judul_berita').removeClass('is-invalid');
+                        $('#judul_berita').addClass('is-valid');
                     }
-                    if (data.errorUsia) {
-                        $('#usia').addClass('is-invalid');
-                        $('.errorUsia').html(data.errorUsia);
+                    if (data.errorTanggal) {
+                        $('#tanggal').addClass('is-invalid');
+                        $('.errorTanggal').html(data.errorTanggal);
                     } else {
-                        $('#usia').removeClass('is-invalid');
-                        $('#usia').addClass('is-valid');
+                        $('#tanggal').removeClass('is-invalid');
+                        $('#tanggal').addClass('is-valid');
                     }
-                    
                     if (data.errorImage) {
-                        $('#image').addClass('is-invalid');
+                        $('#img_berita').addClass('is-invalid');
+                        $('#img_berita').attr('autofocus', true);
                         $('.errorImage').html(data.errorImage);
                     } else {
-                        $('#image').removeClass('is-invalid');
-                        $('#image').addClass('is-valid');
+                        $('#img_berita').removeClass('is-invalid');
+                        $('#img_berita').addClass('is-valid');
+                    }
+                    if (data.errorTeks) {
+                        $('#teks_berita').addClass('is-invalid');
+                        $('.errorTeks').html(data.errorTeks);
+                    } else {
+                        $('#teks_berita').removeClass('is-invalid');
+                        $('#teks_berita').addClass('is-valid');
                     }
                 }
                 if (response.sukses) {
@@ -331,32 +341,114 @@ $year = $arr[0];
                         html: `Data Berhasil Di tambahkan`,
                     }).then((result) => {
                         if (result.value) {
-                            $('#modalBuron').modal('hide');
-                            $('#filterJenis').val("");
+                            resetForm();
                             reload_table();
-                            reset();
                         }
                     })
                 }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert('Error get data from ajax');
+
             }
         });
     }
 
-    function reload_table() {
-        table.ajax.reload(null, false);
+    function editBerita(id_berita) {
+        var textareaValue = $('#teks_berita').summernote('code');
+        $.ajax({
+            type: "GET",
+            url: "<?= site_url('berita/get_id/'); ?>" + id_berita,
+            dataType: "json",
+            success: function(data) {
+                showForm();
+                $('#judul_berita').val(data.judul_berita);
+                $('#tanggal').val(data.tanggal);
+                $('[name=id_berita]').val(data.id_berita);
+                $('#image_berita').attr('src', '<?= base_url('uploads/berita'); ?>/' + data.img_berita);
+                $('#image_berita').css("visibility", "visible")
+                $("#teks_berita").summernote('code', data.teks_berita);
+                $('#btnEdit').show();
+                $('#btnSave').hide();
+                $('#judul_berita').focus();
+
+            }
+        });
     }
 
-    function reset() {
-        $("#img_berita").attr("src", '');
-        $('#judul_berita').removeClass('is-invalid');
-        $('#judul_berita').removeClass('is-valid');
-        $('#tanggal').removeClass('is-invalid');
-        $('#tanggal').removeClass('is-valid');
-        $('#image').removeClass('is-invalid');
-        $('#image').removeClass('is-valid');
+    function edit() {
+        let form = $('#formBerita')[0];
+        let data = new FormData(form);
+
+        $.ajax({
+            type: "POST",
+            url: "<?= site_url('berita/editBerita') ?>",
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            dataType: "json",
+            beforeSend: function() {
+                $('#btnEdit').prop('disabled', true);
+                $('#btnEdit').html('Loading');
+            },
+            complete: function() {
+                $('#btnEdit').prop('disabled', false);
+                $('#btnEdit').html('Ubah');
+            },
+            success: function(response) {
+                if (response.error) {
+                    console.log("respon = ", response);
+                    let data = response.error
+                    if (data.errorJudul) {
+                        $('#judul_berita').addClass('is-invalid');
+                        $('.errorJudul').html(data.errorJudul);
+                        $('#judul_berita').focus();
+                    } else {
+                        $('#judul_berita').removeClass('is-invalid');
+                        $('#judul_berita').addClass('is-valid');
+                    }
+                    if (data.errorTanggal) {
+                        $('#tanggal').addClass('is-invalid');
+                        $('.errorTanggal').html(data.errorTanggal);
+                    } else {
+                        $('#tanggal').removeClass('is-invalid');
+                        $('#tanggal').addClass('is-valid');
+                    }
+                    if (data.errorImage) {
+                        $('#img_berita').addClass('is-invalid');
+                        $('.errorImage').html(data.errorImage);
+                        $('#judul_berita').focus();
+                    } else {
+                        $('#img_berita').removeClass('is-invalid');
+                        $('#img_berita').addClass('is-valid');
+                    }
+                    if (data.errorTeks) {
+                        $('#teks_berita').addClass('is-invalid');
+                        $('.errorTeks').html(data.errorTeks);
+                    } else {
+                        $('#teks_berita').removeClass('is-invalid');
+                        $('#teks_berita').addClass('is-valid');
+                    }
+                }
+                if (response.sukses) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        html: `Data Berhasil Di tambahkan`,
+                    }).then((result) => {
+                        console.log("hasil sukses ", result);
+                        if (result.value) {
+                            resetForm();
+                            reload_table();
+                            $('#btnEdit').hide();
+                            $('#btnSave').show();
+                            hideForm();
+                        }
+                    })
+                }
+
+            }
+        });
     }
 </script>
+
 <?= $this->endsection(); ?>
