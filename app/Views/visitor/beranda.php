@@ -51,6 +51,7 @@
 								<div class="grid clearfix">
 
 									<!-- Small Card With Background -->
+<<<<<<< HEAD
 									<?php
 									$background = array(
 										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
@@ -75,25 +76,50 @@
 
 									<!-- Small Card With Background -->
 									<!-- <div class="card card_default card_small_with_background grid-item">
+=======
+
+									<div class="card card_default card_small_with_background grid-item">
+										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
+										<div class="card-body">
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 1</a></div>
+										</div>
+									</div>
+
+									<div class="card card_default card_small_with_background grid-item">
+>>>>>>> 29708a29d53ba67602994b0d48abbcf4bb696793
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
 										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">Pelayanan 2</a></div>
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
 										</div>
 									</div> -->
 
+<<<<<<< HEAD
 									<!-- Small Card With Background -->
 									<!-- <div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
+=======
+									<div class="card card_default card_small_with_background grid-item">
+										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post.jpg)"></div>
+>>>>>>> 29708a29d53ba67602994b0d48abbcf4bb696793
 										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">Pelayanan 3</a></div>
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 3</a></div>
 										</div>
 									</div> -->
 
+<<<<<<< HEAD
 									<!-- Small Card With Background -->
 									<!-- <div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
+=======
+									<div class="card card_default card_small_with_background grid-item">
+										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_4.jpg)"></div>
+>>>>>>> 29708a29d53ba67602994b0d48abbcf4bb696793
 										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">Pelayanan 4</a></div>
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 4</a></div>
 										</div>
 									</div> -->
 								</div>
@@ -102,6 +128,11 @@
 					</div>
 				</div>
 			</div>
+			<p>
+				<a href="<?= base_url() ?>/home/portal">
+					<span class="label label-default">Selengkapnya...</span>
+				</a>
+			</p>
 		</div>
 
 		<div class="container">
@@ -221,7 +252,26 @@
 										<?php endforeach; ?>
 									</tbody>
 								</table>
-
+								<p id="p_perdata">
+									<a href="<?= base_url() ?>/home/tata_usaha">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
+								<p id="p_khusus">
+									<a href="<?= base_url() ?>/home/pidana_khusus">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
+								<p id="p_umum">
+									<a href="<?= base_url() ?>/home/pidana_umum">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
+								<p id="p_jadwal">
+									<a href="<?= base_url() ?>/home/jadwal_sidang">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 						<!-- Blog Section - Don't Miss -->
@@ -486,6 +536,9 @@
 						$('#th_umum').hide();
 						$('#th_khusus').hide();
 						$('#th_perdata').hide();
+						$('#p_umum').hide();
+						$('#p_khusus').hide();
+						$('#p_perdata').hide();
 						$('.btnA').click(function() {
 							$(this).addClass('actived');
 							$('.btnB').removeClass('actived');
@@ -495,6 +548,10 @@
 							$('#th_umum').hide();
 							$('#th_khusus').hide();
 							$('#th_perdata').hide();
+							$('#p_jadwal').show();
+							$('#p_umum').hide();
+							$('#p_khusus').hide();
+							$('#p_perdata').hide();
 						});
 						$('.btnB').click(function() {
 							$(this).addClass('actived');
@@ -505,6 +562,10 @@
 							$('#th_umum').show();
 							$('#th_khusus').hide();
 							$('#th_perdata').hide();
+							$('#p_jadwal').hide();
+							$('#p_umum').show();
+							$('#p_khusus').hide();
+							$('#p_perdata').hide();
 						});
 						$('.btnC').click(function() {
 							$(this).addClass('actived');
@@ -515,6 +576,10 @@
 							$('#th_umum').hide();
 							$('#th_khusus').show();
 							$('#th_perdata').hide();
+							$('#p_jadwal').hide();
+							$('#p_umum').hide();
+							$('#p_khusus').show();
+							$('#p_perdata').hide();
 						});
 						$('.btnD').click(function() {
 							$(this).addClass('actived');
@@ -525,6 +590,10 @@
 							$('#th_umum').hide();
 							$('#th_perdata').show();
 							$('#th_khusus').hide();
+							$('#p_jadwal').hide();
+							$('#p_umum').hide();
+							$('#p_perdata').show();
+							$('#p_khusus').hide();
 						});
 					});
 				</script>

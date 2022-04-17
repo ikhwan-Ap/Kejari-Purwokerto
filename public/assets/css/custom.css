@@ -6,3 +6,25 @@
  */
 
 /*# sourceMappingURL=custom.css.map */
+
+
+.p-right > .inline-space{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.p-right {
+    float: right;
+    top: -3px;
+    position: relative;
+    margin-bottom: 0px;
+    width: fit-content;
+}
+
+.prev-img {
+    display: block;
+}
+
+.hid-form {
+    display: none;
+}

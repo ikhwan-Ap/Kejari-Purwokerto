@@ -89,6 +89,11 @@ class Home extends BaseController
         return view('visitor/info_perkara/pidana_umum', $data);
     }
 
+    public function tata_usaha()
+    {
+        return view('visitor/info_perkara/tata_usaha');
+    }
+
     public function bidang($id_bidang)
     {
         $bidang = $this->bidang->get_id($id_bidang);
@@ -103,10 +108,6 @@ class Home extends BaseController
 
 
 
-    public function tata_usaha()
-    {
-        return view('visitor/info_perkara/tata_usaha');
-    }
     public function pidum()
     {
         return view('visitor/bidang/pidum');
@@ -116,5 +117,10 @@ class Home extends BaseController
     {
         $data = $this->buron->get_last();
         echo json_encode($data);
+    }
+
+    public function portal()
+    {
+        return view('visitor/portal');
     }
 }

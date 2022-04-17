@@ -49,14 +49,12 @@
                                 <?php endforeach;  ?>
                             </select>
                             <div class="invalid-feedback error_kategoriBidang">
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="card">
             <div class="col">
                 <div class="card-body">
