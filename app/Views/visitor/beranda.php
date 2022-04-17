@@ -48,22 +48,18 @@
 								<div class="section_title">Pelayanan</div>
 							</div>
 							<div class="section_content" style="margin-bottom: 20px;">
-								<p style="text-align: left;">
-									<a href="<?= base_url() ?>/home/portal" class="btn btn-succes">
-										<span class="label label-default">Selengkapnya...</span>
-									</a>
-								</p>
-								<div class="grid clearfix">
-									<?php
-									$warna = 'green';
-									$background = array(
-										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-									);
-									$i = 0;
-									foreach ($carousel as $value) :
-									?>
+								<div class="grid clearfix">
+									<!-- <?php
+											$warna = 'green';
+											$background = array(
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+
+											);
+											$i = 0;
+											foreach ($carousel as $value) :
+											?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -74,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-										$i++;
-									endforeach;  ?>
+												$i++;
+											endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 
@@ -83,32 +79,44 @@
 										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm" ><a href="#">Pelayanan 1</a></div>
+											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 1</a></div>
 										</div>
 									</div>
 
-                  					<div class="card card_default card_small_with_background grid-item md-sm">
+									<div class="card card_default card_small_with_background grid-item md-sm">
 										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm" ><a href="#">Pelayanan 2</a></div>
+											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 2</a></div>
 										</div>
 									</div>
 
-                  					<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
+									<div class="card card_default card_small_with_background grid-item md-sm">
+										<div class="card_background" style="background-image: linear-gradient(45deg, yellow, red)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm" ><a href="#">Pelayanan 3</a></div>
+											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 3</a></div>
+										</div>
+									</div>
+									<div class="card card_default card_small_with_background grid-item md-sm">
+										<div class="card_background" style="background-image: linear-gradient(45deg, #FD0000, lightgreen)"></div>
+										<div class="card-body">
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 3</a></div>
 										</div>
 									</div>
 								</div>
+								<p style="text-align: left;">
+									<a href="<?= base_url() ?>/home/portal" class="btn btn-succes">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 
 		<div class="container">
