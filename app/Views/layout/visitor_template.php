@@ -54,6 +54,9 @@
 		setInterval(startTime, 500);
 	</script>
 
+
+
+
 	<div class="super_container">
 		<div class="custom-site-mobile-menu custom-site-navbar-target">
 			<div class="custom-site-mobile-menu-header">
@@ -134,14 +137,9 @@
 									<a href="#" class="nav-link"><b>Bidang</b></a>
 									<ul class="dropdown arrow-top">
 										<?php $i = 0;
-										foreach ($kategori as $row) : ?>
+										foreach ($_SESSION['kategori']  as $row) : ?>
 											<input type="text" name="id_bidang" id="id_bidang" value="<?= $row['id_bidang']; ?>" hidden>
 											<li><a href="<?= base_url() ?>/bidang_view/<?= $row['id_bidang']; ?>" class="nav-link"><?= $row['nama_kategori']; ?></a></li>
-											<!-- <li><a href="#" class="nav-link">Datun</a></li>
-										<li><a href="#" class="nav-link">Barang Bukti</a></li>
-										<li><a href="#" class="nav-link">Pembinaan</a></li>
-										<li><a href="#" class="nav-link">Intelijen</a></li>
-										<li><a href="#" class="nav-link">Pidsus</a></li> -->
 										<?php $i++;
 										endforeach; ?>
 									</ul>
@@ -172,7 +170,9 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Informasi</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Pengaduan</a></li>
+										<li>
+											< a href="#" class="nav-link">Pengaduan</>
+										</li>
 										<li><a href="#" class="nav-link">Kontak</a></li>
 										<li><a href="#" class="nav-link">Berita</a></li>
 										<li><a href="#" class="nav-link">Artikel</a></li>

@@ -26,15 +26,14 @@ class Home extends BaseController
         $this->kategori = new kategoriModel();
         $this->icon = new iconModel();
 
-
         $header = $this->header->get_header();
         $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
+        $_SESSION['kategori'] =  $this->kategori->get_kategori();
         session()->set([
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
             'nama_jaksa' => $kejaksaan['nama_pengurus'],
-            'kategori' => $this->kategori->get_kategori(),
             'icon' => $icon['img_icon'],
         ]);
     }
@@ -57,9 +56,7 @@ class Home extends BaseController
             'khusus' => $this->kasus->get_khusus(),
             'header' => $this->header->get_header(),
             'carousel' =>  $this->carousel->get_img(),
-            'kategori' => $this->kategori->get_kategori(),
         ];
-        // dd($coba);
         return view('visitor/beranda', $data);
     }
     public function get_header()
@@ -83,10 +80,8 @@ class Home extends BaseController
 
     public function pidana_umum()
     {
-        $data = [
-            'kategori' => $this->kategori->get_kategori(),
-        ];
-        return view('visitor/info_perkara/pidana_umum', $data);
+
+        return view('visitor/info_perkara/pidana_umum');
     }
 
     public function tata_usaha()
@@ -99,7 +94,6 @@ class Home extends BaseController
         $bidang = $this->bidang->get_id($id_bidang);
         $title = $this->bidang->get_title($id_bidang);
         $data = [
-            'kategori' => $this->kategori->get_kategori(),
             'title' => $title,
             'bidang' => $bidang,
         ];
