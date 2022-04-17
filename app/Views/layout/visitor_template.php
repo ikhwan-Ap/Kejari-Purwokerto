@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Website Resmi Kejaksaan Negeri Purwokerto</title>
 	<meta charset="utf-8">
@@ -14,6 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/responsive.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/post.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/post_responsive.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/fonts/icomoon/style.css" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/css/style.css" />
@@ -79,25 +82,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="" style="background-image: url('<?=base_url()?>/template/visitor/images/header.jpg')">
+			<div class="" style="background-image: url('<?= base_url() ?>/template/visitor/images/header.jpg')">
 				<div class="container">
-					<center><img class="hidden-sm hidden-xs text-left" style="display:block; padding:11px 0; margin-left:40px; margin-right:auto; width:auto; " src="<?=base_url()?>/template/visitor/images/logo_fix.png"></center>
+					<center><img class="hidden-sm hidden-xs text-left" style="display:block; padding:11px 0; margin-left:40px; margin-right:auto; width:auto; " src="<?= base_url() ?>/template/visitor/images/logo_fix.png"></center>
 				</div>
 			</div>
 			<div class="toggle-button d-inline-block d-lg-none" style="top: 56px;right: 6px;position: absolute;">
 				<a href="#" class="custom-site-menu-toggle py-5 js-menu-toggle text-black" style="color:ghostwhite;"><span class="custom-icon-menu h3"></span></a>
 			</div>
 		</div>
-		
-		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner"
-		style="background-image: url('<?=base_url()?>/assets/img/forest.jpg'); background-position: center; margin-top: -8px;">
-		<div style="background-color: darkgreen;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.6;"></div>
+		<header class="custom-site-navbar js-sticky-header custom-site-navbar-target" role="banner" style="background-image: url('<?= base_url() ?>/navbar/<?= session()->get('header'); ?>'); background-position:bottom; margin-top: -8px;">
+			<div style="background-color: green; width: 100%;height: 100%; position: absolute;left: 0;top: 0;opacity: 0.5;"></div>
 			<div class="container">
 				<div class="row align-items-center position-relative">
 					<div class="col-12">
@@ -117,7 +112,7 @@
 									<a href="#" class="nav-link"><b>Reformasi Birokrasi</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Survei Kepuasan Masyarakat</a></li>
-										<li><a href="#" class="nav-link">Layanan Kejaksaan Negeri Purwokerto</a></li>
+										<li><a href="<?= base_url() ?>/home/portal" class="nav-link" target="_blank">Layanan Kejaksaan Negeri Purwokerto</a></li>
 										<li><a href="#" class="nav-link">Moto Pelayanan</a></li>
 										<li><a href="#" class="nav-link">Maklumat Pelayanan</a></li>
 										<li><a href="#" class="nav-link">Agen Perubahan</a></li>
@@ -129,21 +124,26 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Info Perkara</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="<?=base_url()?>/home/pidana_umum" class="nav-link">Pidana Umum</a></li>
-										<li><a href="<?=base_url()?>/home/pidana_khusus" class="nav-link">Pidana Khusus</a></li>
-										<li><a href="<?=base_url()?>/home/tata_usaha" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
-										<li><a href="<?=base_url()?>/home/jadwal_sidang" class="nav-link">Jadwal Sidang</a></li>
+										<li><a href="<?= base_url() ?>/home/pidana_umum" class="nav-link">Pidana Umum</a></li>
+										<li><a href="<?= base_url() ?>/home/pidana_khusus" class="nav-link">Pidana Khusus</a></li>
+										<li><a href="<?= base_url() ?>/home/tata_usaha" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
+										<li><a href="<?= base_url() ?>/home/jadwal_sidang" class="nav-link">Jadwal Sidang</a></li>
 									</ul>
 								</li>
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Bidang</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="<?=base_url()?>/home/pidum" class="nav-link">Pidum</a></li>
-										<li><a href="#" class="nav-link">Datun</a></li>
+										<?php $i = 0;
+										foreach ($kategori as $row) : ?>
+											<input type="text" name="id_bidang" id="id_bidang" value="<?= $row['id_bidang']; ?>" hidden>
+											<li><a href="<?= base_url() ?>/bidang_view/<?= $row['id_bidang']; ?>" class="nav-link"><?= $row['nama_kategori']; ?></a></li>
+											<!-- <li><a href="#" class="nav-link">Datun</a></li>
 										<li><a href="#" class="nav-link">Barang Bukti</a></li>
 										<li><a href="#" class="nav-link">Pembinaan</a></li>
 										<li><a href="#" class="nav-link">Intelijen</a></li>
-										<li><a href="#" class="nav-link">Pidsus</a></li>
+										<li><a href="#" class="nav-link">Pidsus</a></li> -->
+										<?php $i++;
+										endforeach; ?>
 									</ul>
 								</li>
 								<li class="has-children">
@@ -199,21 +199,14 @@
 				<div class="sidebar_background"></div>
 
 				<!-- Top Stories -->
-				<?php if (session()->get('nama_buron') != null) :  ?>
+				<?php if (session()->get('jaksa') != null) :  ?>
 					<div class="sidebar_section">
 						<div class="sidebar_title_container">
 							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
 						</div><br>
-						<img src="<?= base_url('/uploads/buron') ?>/<?php echo session()->get('image'); ?>" alt="" width="100%">
-						<div class="sidebar_title"><?php echo session()->get('nama_buron'); ?></div>
-					</div>
-				<?php else :  ?>
-					<div class="sidebar_section">
-						<div class="sidebar_title_container">
-							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
-						</div><br>
-						<img src="<?= base_url() ?>/template/visitor/images/kepala.jpg" alt="" width="100%">
-						<div class="sidebar_tit">aa</div>
+						<img src="<?= base_url() ?>/uploads/bidang/<?= session()->get('jaksa'); ?>" alt="" width="100%">
+						<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
+						<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:13px;"><?= session()->get('nama_jaksa'); ?></div>
 					</div>
 				<?php endif;  ?>
 
@@ -349,6 +342,26 @@
 			</div>
 		</div>
 	</footer>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<div class="floating-container">
+		<div class="floating-button"><img class="floating-icon" src="<?= base_url() ?>/icon-icon/<?= session()->get('icon'); ?>" alt=""></div>
+		<div class="element-container">
+			<!-- Buat Database untuk dinasmi,,,  -->
+			<a href="google.com"> <span class="float-element tooltip-left">
+					<i class="material-icons">phone
+					</i> Call Center / Pengaduan / Layanan Hukum</a>
+			</span>
+			<span class="float-element">
+				<i class="material-icons">email
+				</i> Pengembalian Barang Bukti
+			</span>
+			<span class="float-element">
+				<i class="material-icons">chat</i> Pengambilan Tilang
+			</span>
+		</div>
+	</div>
+
 	</div>
 
 	<script src="<?= base_url() ?>/template/visitor/js/jquery-3.2.1.min.js"></script>

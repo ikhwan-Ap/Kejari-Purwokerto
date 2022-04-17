@@ -111,4 +111,26 @@ class bidangModel extends Model
         $query = $this->dt->get();
         return $query->getRowArray();
     }
+
+    public function get_title($id_bidang)
+    {
+        $this->dt
+            ->select('nama_kategori')
+            ->select('kategori.nama_kategori', 'nama_kategori')
+            ->where('id_bidang', $id_bidang)
+            ->join('kategori', 'kategori.id_kategori = bidang.id_kategori');
+        $query = $this->dt->get();
+        return $query->getRowArray();
+    }
+
+    public function get_kejaksaan()
+    {
+        $builder = $this->db->table('bidang');
+        $builder->where('nama_kategori', 'Kepala Kejaksaan');
+        $builder->join('kategori', 'kategori.id_kategori=bidang.id_kategori');
+        $builder->limit(1);
+        $builder->orderBy('id_bidang', 'DESC');
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
 }

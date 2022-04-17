@@ -6,24 +6,29 @@ use App\Models\beritaModel;
 use Config\Services;
 use CodeIgniter\API\ResponseTrait;
 
-class Berita extends BaseController {
-    public function __construct() {
+class Berita extends BaseController
+{
+    public function __construct()
+    {
         helper('form');
         $this->berita = new beritaModel();
     }
-    public function index() {
+    public function index()
+    {
         $data = [
-            'title' => 'Editor Berita',
+            'title' => 'Berita',
         ];
         return view('admin/berita.php', $data);
     }
-    
-    public function get_id($id_berita) {
+
+    public function get_id($id_berita)
+    {
         $data = $this->berita->get_id($id_berita);
         echo  json_encode($data);
     }
 
-    public function tambah_berita() {
+    public function tambah_berita()
+    {
 
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
@@ -90,7 +95,8 @@ class Berita extends BaseController {
         echo json_encode($data);
     }
 
-    public function delBerita($id_berita) {
+    public function delBerita($id_berita)
+    {
         $berita = $this->berita->get_id($id_berita);
         unlink('uploads/berita/' . $berita['img_berita']);
         $this->berita->del_berita($id_berita);
@@ -100,7 +106,8 @@ class Berita extends BaseController {
         echo json_encode($data);
     }
 
-    public function getBerita() {
+    public function getBerita()
+    {
 
         $this->berita = new beritaModel();
         $request = Services::request();
@@ -111,7 +118,7 @@ class Berita extends BaseController {
             $no = 1;
             foreach ($list as $hasil) {
                 $action = '
-                <button type="button" onclick="delBerita(' . $hasil->id_berita . ')" class="btn btn-danger" title="DELETE" id="del'.$hasil->id_berita.'">
+                <button type="button" onclick="delBerita(' . $hasil->id_berita . ')" class="btn btn-danger" title="DELETE" id="del' . $hasil->id_berita . '">
                     <span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">
                     </span>
                 </button>
@@ -139,8 +146,9 @@ class Berita extends BaseController {
             echo json_encode($output);
         }
     }
-    
-    public function editBerita() {
+
+    public function editBerita()
+    {
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
             $id_berita = $this->request->getVar('id_berita');
@@ -204,10 +212,8 @@ class Berita extends BaseController {
                 $data = [
                     'sukses' => 'Data Berita Berhasil Diperbarui'
                 ];
-            }                 
-            
+            }
         }
         echo json_encode($data);
     }
-
 }

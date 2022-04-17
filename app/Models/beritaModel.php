@@ -9,14 +9,11 @@ class beritaModel extends Model
 {
     protected $table            = 'berita';
     protected $primaryKey       = 'id_berita';
-    protected $request;
-    protected $order = ['id_berita' => 'DESC'];
-    protected $db;
-    protected $dt;
     protected $allowedFields    =
     [
         'judul_berita', 'tanggal', 'img_berita', 'teks_berita'
     ];
+    protected $order = ['id_berita' => 'DESC'];
     protected $column_search = [
         'judul_berita', 'tanggal',
     ];
@@ -25,6 +22,9 @@ class beritaModel extends Model
     [
         'judul_berita', 'tanggal', 'img_berita',
     ];
+    protected $request;
+    protected $db;
+    protected $dt;
 
 
     public function __construct()
@@ -40,7 +40,8 @@ class beritaModel extends Model
         return $this->dt->delete();
     }
 
-    private  function getDataTables() {
+    private  function getDataTables()
+    {
         $request = Services::request();
         $i = 0;
         $this->dt;
@@ -71,7 +72,8 @@ class beritaModel extends Model
         }
     }
 
-    public function datatablesBerita() {
+    public function datatablesBerita()
+    {
         $request = Services::request();
         $this->getDataTables();
         if ($request->getPost('length') != -1)

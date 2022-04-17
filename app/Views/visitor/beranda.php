@@ -52,7 +52,7 @@
 
 									<!-- Small Card With Background -->
 									<?php
-									$warna = "green";
+                  $warna = 'green';
 									$background = array(
 										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
@@ -75,27 +75,28 @@
 									endforeach;  ?>
 
 									<!-- Small Card With Background -->
+
 									<div class="card card_default card_small_with_background grid-item md-sm">
+										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
+										<div class="card-body">
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 1</a></div>
+										</div>
+									</div> -->
+
+                  <div class="card card_default card_small_with_background grid-item md-sm">
 										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
 											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
 										</div>
-									</div> -->
-
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 3</a></div>
-										</div>
 									</div>
 
-									<div class="card card_default card_small_with_background grid-item md-sm">
+                  <div class="card card_default card_small_with_background grid-item md-sm">
 										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 4</a></div>
+											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
 										</div>
 									</div>
 								</div>

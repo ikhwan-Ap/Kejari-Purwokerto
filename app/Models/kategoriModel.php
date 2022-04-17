@@ -38,4 +38,20 @@ class kategoriModel extends Model
         $this->dt->where('id_kategori', $id_kategori);
         return $this->dt->delete();
     }
+
+    public function get_kategori()
+    {
+        $not = ['Kepala kejaksaan'];
+        $builder = $this->db->table('kategori');
+        $builder->select('*');
+        $builder->select('kategori.nama_kategori', 'nama_kategori');
+        $builder->selectMax('bidang.id_bidang', 'id_bidang');
+        $builder->orderBy('id_bidang', 'DESC');
+        $builder->groupBy('bidang.id_kategori');
+        $builder->whereNotIn('nama_kategori', $not);
+        $builder->where('bidang.id_kategori IS NOT NULL', null, false);
+        $builder->join('bidang', 'bidang.id_kategori = kategori.id_kategori', 'LEFT');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }
