@@ -47,12 +47,15 @@
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
 								<div class="section_title">Pelayanan</div>
 							</div>
-							<div class="section_content">
+							<div class="section_content" style="margin-bottom: 20px;">
+								<p style="text-align: left;">
+									<a href="<?= base_url() ?>/home/portal" class="btn btn-succes">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 								<div class="grid clearfix">
-
-									<!-- Small Card With Background -->
 									<?php
-                  $warna = 'green';
+									$warna = 'green';
 									$background = array(
 										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
@@ -80,23 +83,23 @@
 										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 1</a></div>
-										</div>
-									</div> -->
-
-                  <div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
+											<div class="card-title card-title-small md-sm" ><a href="#">Pelayanan 1</a></div>
 										</div>
 									</div>
 
-                  <div class="card card_default card_small_with_background grid-item md-sm">
+                  					<div class="card card_default card_small_with_background grid-item md-sm">
 										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
 										<div class="card-body">
 											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
+											<div class="card-title card-title-small md-sm" ><a href="#">Pelayanan 2</a></div>
+										</div>
+									</div>
+
+                  					<div class="card card_default card_small_with_background grid-item md-sm">
+										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
+										<div class="card-body">
+											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+											<div class="card-title card-title-small md-sm" ><a href="#">Pelayanan 3</a></div>
 										</div>
 									</div>
 								</div>
@@ -105,11 +108,7 @@
 					</div>
 				</div>
 			</div>
-			<p>
-				<a href="<?= base_url() ?>/home/portal">
-					<span class="label label-default">Selengkapnya...</span>
-				</a>
-			</p>
+			
 		</div>
 
 		<div class="container">
