@@ -51,39 +51,51 @@
 								<div class="grid clearfix">
 
 									<!-- Small Card With Background -->
-									<a href="#">
+									<?php
+									$background = array(
+										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-										<div class="card card_default card_small_with_background grid-item">
-											<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
-											<div class="card-body">
-												<div class="card-title card-title-small"><a href="post.html" style="display:block;">Pelayanan 1</a></div>
+									);
+									$i = 0;
+									foreach ($carousel as $value) :
+									?>
+										<a href="#">
+
+											<div class="card card_default card_small_with_background grid-item">
+												<div class="card_background" style="background-image:url(<?= base_url() ?><?= $background[$i]; ?>"></div>
+												<div class="card-body">
+													<div class="card-title card-title-small"><a href="post.html" style="display:block;">Pelayanan 1</a></div>
+												</div>
 											</div>
-										</div>
-									</a>
+										</a>
+									<?php
+										$i++;
+									endforeach;  ?>
 
 									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
+									<!-- <div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
 										<div class="card-body">
 											<div class="card-title card-title-small"><a href="post.html">Pelayanan 2</a></div>
 										</div>
-									</div>
+									</div> -->
 
 									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
+									<!-- <div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
 										<div class="card-body">
 											<div class="card-title card-title-small"><a href="post.html">Pelayanan 3</a></div>
 										</div>
-									</div>
+									</div> -->
 
 									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
+									<!-- <div class="card card_default card_small_with_background grid-item">
 										<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
 										<div class="card-body">
 											<div class="card-title card-title-small"><a href="post.html">Pelayanan 4</a></div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -222,13 +234,14 @@
 								<div class="grid clearfix">
 									<!-- Desending / Terbaru Yg akan Di Tampilkan-->
 									<?php $i = 0;
+									$a = array('a', 'b', 'c', 'd');
 									foreach ($carousel as $img) :  ?>
 										<?php if ($i == 0) : ?>
 											<?php $card = 'card_largest_with_image';  ?>
 											<div class="card <?= $card; ?> grid-item">
 												<img class="card-img-top" src="<?= base_url() ?>/img_carousel/<?= $img['image']; ?>" alt="https://unsplash.com/@cjtagupa">
 												<div class="card-body">
-													<div class="card-title"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+													<div class="card-title"><a href="post.html"><?php echo $a[$i]; ?> Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
 													<p class="card-text">Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
 													<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
 												</div>
@@ -237,7 +250,7 @@
 											<?php $card = 'card_small_no_image' ?>
 											<div class="card card_default <?= $card; ?>  grid-item">
 												<div class="card-body">
-													<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+													<div class="card-title card-title-small"><a href="post.html"><?= $a[$i]; ?> How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
 													<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
 												</div>
 											</div>

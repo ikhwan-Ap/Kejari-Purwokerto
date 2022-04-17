@@ -344,40 +344,65 @@ class Menu extends BaseController
             $nama_carousel = $this->request->getVar('nama_carousel');
             $id_carousel = $this->request->getVar('id_carousel');
             $image = $this->request->getFile('image');
-            if ($image != '') {
-                $valid_img = $this->validate([
-                    'image' => [
-                        'rules' => 'uploaded[image]|max_size[image,1024]|is_image[image]
+            $valid = $this->validate([
+                'nama_carousel' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Nama Gambar/Carousel Harus Di Isi !!',
+                    ]
+                ],
+            ]);
+
+            if (!$valid) {
+                $data = [
+                    'error' => [
+                        'errorNama' => $validation->getError('nama_carousel'),
+                    ]
+                ];
+            } else {
+                if ($image != '') {
+                    $valid_img = $this->validate([
+                        'image' => [
+                            'rules' => 'uploaded[image]|max_size[image,1024]|is_image[image]
                         |mime_in[image,image/jpg,image/jpeg,image/png]',
-                        'errors' => [
-                            'uploaded' => 'Image  Harus Di Isi !!!',
-                            'max_size' => 'Gambar Melebihi 1 mb',
-                            'mime_in' => 'Gambar harus png / jpg / jpeg!!',
-                            'is_image' => 'File Bukan Merupakan Gambar',
-                        ]
-                    ],
-                ]);
-                $nama_image = $image->getRandomName();
-                $image->move('img_carousel', $nama_image);
-                if (!$valid_img) {
-                    $data = [
-                        'error' => [
-                            'errorImage' => $validation->getError('image'),
+                            'errors' => [
+                                'uploaded' => 'Image  Harus Di Isi !!!',
+                                'max_size' => 'Gambar Melebihi 1 mb',
+                                'mime_in' => 'Gambar harus png / jpg / jpeg!!',
+                                'is_image' => 'File Bukan Merupakan Gambar',
+                            ]
                         ],
-                    ];
-                } else {
-                    $carousel = $this->carousel->get_id($id_carousel);
-                    $unlink = unlink('img_carousel/' . $carousel['image']);
-                    if ($unlink != null) {
-                        $this->carousel->save([
-                            'id_carousel' => $id_carousel,
-                            'nama_carousel' => $nama_carousel,
-                            'image' => $nama_image,
-                        ]);
+                    ]);
+                    $nama_image = $image->getRandomName();
+                    $image->move('img_carousel', $nama_image);
+                    if (!$valid_img) {
                         $data = [
-                            'sukses' => 'Data Bidang Berhasil Di Unggah'
+                            'error' => [
+                                'errorImage' => $validation->getError('image'),
+                            ],
                         ];
+                    } else {
+                        $carousel = $this->carousel->get_id($id_carousel);
+                        $unlink = unlink('img_carousel/' . $carousel['image']);
+                        if ($unlink != null) {
+                            $this->carousel->save([
+                                'id_carousel' => $id_carousel,
+                                'nama_carousel' => $nama_carousel,
+                                'image' => $nama_image,
+                            ]);
+                            $data = [
+                                'sukses' => 'Data Bidang Berhasil Di Unggah'
+                            ];
+                        }
                     }
+                } else {
+                    $this->carousel->save([
+                        'id_carousel' => $id_carousel,
+                        'nama_carousel' => $nama_carousel,
+                    ]);
+                    $data = [
+                        'sukses' => 'Data Bidang Berhasil Di Unggah'
+                    ];
                 }
             }
         }
