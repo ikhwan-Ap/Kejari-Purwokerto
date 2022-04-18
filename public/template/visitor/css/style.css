@@ -769,3 +769,16 @@ a > b {
   top: -50px;
   width: 100px;
 }
+
+.tgl_agenda {
+  color: #000;
+}
+
+.isi_agenda {
+  font-weight: bold;
+  color: #000;
+}
+
+hr {
+  outline: auto;
+}

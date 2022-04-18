@@ -221,70 +221,59 @@
 					<a href="https://www.kejaksaan.go.id/pengaduan.php"><img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%"></a>
 				</div>
 
+				<div class="sidebar_section future_events">
+					<div class="sidebar_title_container">
+						<div class="sidebar_title">Pengumuman</div>
+					</div><br>
+					<!-- Future Events Post -->
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+				</div>
+
 				<!-- Future Events -->
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
 						<div class="sidebar_title">Agenda</div>
 					</div><br>
 					<!-- Future Events Post -->
-					<div class="side_post">
-						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">13</div>
-									<div class="event_month">apr</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Pencanangan Zona Integritas Wilayah Bebas dari Korupsi (WBK) menuju Wilayah Birokrasi Bersih Melayani (WBBM)</div>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<!-- Future Events Post -->
-					<div class="side_post">
-						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">27</div>
-									<div class="event_month">apr</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Bakti Sosial Peduli & Berbagi Pada Dunia</div>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<!-- Future Events Post -->
-					<div class="side_post">
-						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">02</div>
-									<div class="event_month">may</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Temu Sapa Wartawan Pada Kejaksaan Negeri Denpasar</div>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<!-- Future Events Post -->
-					<div class="side_post">
-						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">09</div>
-									<div class="event_month">may</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Silaturahmi Ke Walikota Dan Wakil Walikota Denpasar Beserta Jajaran</div>
-								</div>
-							</div>
-						</a>
-					</div>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">Bakti Sosial Peduli & Berbagi Pada Dunia</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">Bakti Sosial Peduli & Berbagi Pada Dunia</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">Bakti Sosial Peduli & Berbagi Pada Dunia</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">Bakti Sosial Peduli & Berbagi Pada Dunia</div>
+					</a>
+					<hr>
 				</div>
 			</div>
 		</div>
