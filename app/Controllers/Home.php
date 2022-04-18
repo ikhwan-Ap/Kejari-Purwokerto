@@ -32,8 +32,7 @@ class Home extends BaseController
         $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
-        $visi = $this->visi_misi->get_visi();
-        $misi = $this->visi_misi->get_misi();
+
         session()->set([
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
@@ -46,6 +45,7 @@ class Home extends BaseController
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $buron = $this->buron->get_last();
+        $_SESSION['kategori'] =  $this->kategori->get_kategori();
         if ($buron != null) {
             session()->set([
                 'id_buron' => $buron['id_buron'],
@@ -110,8 +110,6 @@ class Home extends BaseController
         return view('visitor/info_perkara/pidana_umum', $data);
     }
 
-
-
     public function pidum()
     {
         return view('visitor/bidang/pidum');
@@ -121,6 +119,15 @@ class Home extends BaseController
     {
         $data = $this->buron->get_last();
         echo json_encode($data);
+    }
+    public function visi_misi()
+    {
+        $data = [
+            'title' => 'Visi dan Misi',
+            'visi' => $this->visi_misi->get_visi(),
+            'misi' => $this->visi_misi->get_misi(),
+        ];
+        return view('visitor/profil/visi_misi', $data);
     }
 
     public function portal()

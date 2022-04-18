@@ -41,6 +41,7 @@ $routes->get('/berita', 'Berita::index');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
+$routes->get('/visi-misi', 'Home::visi_misi');
 // Bidang
 $routes->get('/bidang', 'Bidang::index');
 // Menu
