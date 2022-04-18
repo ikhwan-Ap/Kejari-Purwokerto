@@ -50,7 +50,7 @@ $routes->get('/icon', 'Menu::icon');
 $routes->get('/carousel', 'Menu::carousel');
 // $routes->get('/login', 'Home::index');
 //Moduls_bidang
-$routes->get('visi_misi', 'Visi_misi::index');
+$routes->get('/visi_misi', 'Visi_misi::index');
 $routes->get('/bidang_view/(:any)', 'Home::bidang/$1');
 $routes->get('/agenda', 'Modul::index');
 
