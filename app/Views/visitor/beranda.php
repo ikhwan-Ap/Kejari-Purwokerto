@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-											$warna = 'green';
-											$background = array(
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												$warna = 'green';
+												$background = array(
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-											);
-											$i = 0;
-											foreach ($carousel as $value) :
-											?>
+												);
+												$i = 0;
+												foreach ($carousel as $value) :
+												?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-												$i++;
-											endforeach;  ?> -->
+													$i++;
+												endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 
@@ -106,8 +106,9 @@
 										</div>
 									</div>
 								</div>
-								<p style="text-align: left;">
-									<a href="<?= base_url() ?>/home/portal" class="btn btn-succes">
+								<br>
+								<p>
+									<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
@@ -237,22 +238,22 @@
 									</tbody>
 								</table>
 								<p id="p_perdata">
-									<a href="<?= base_url() ?>/home/tata_usaha">
+									<a href="<?= base_url() ?>/home/tata_usaha" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
 								<p id="p_khusus">
-									<a href="<?= base_url() ?>/home/pidana_khusus">
+									<a href="<?= base_url() ?>/home/pidana_khusus" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
 								<p id="p_umum">
-									<a href="<?= base_url() ?>/home/pidana_umum">
+									<a href="<?= base_url() ?>/home/pidana_umum" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
 								<p id="p_jadwal">
-									<a href="<?= base_url() ?>/home/jadwal_sidang">
+									<a href="<?= base_url() ?>/home/jadwal_sidang" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>

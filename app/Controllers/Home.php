@@ -81,22 +81,41 @@ class Home extends BaseController
 
     public function jadwal_sidang()
     {
-        return view('visitor/info_perkara/jadwal_sidang');
+        $data = [
+            'title' => 'kontak',
+            'header' => $this->header->get_header(),
+            'kategori' => $this->kategori->get_kategori(),
+        ];
+        return view('visitor/info_perkara/jadwal_sidang', $data);
     }
     public function pidana_khusus()
     {
-        return view('visitor/info_perkara/pidana_khusus');
+        $data = [
+            'title' => 'kontak',
+            'header' => $this->header->get_header(),
+            'kategori' => $this->kategori->get_kategori(),
+        ];
+        return view('visitor/info_perkara/pidana_khusus', $data);
     }
 
     public function pidana_umum()
     {
-
-        return view('visitor/info_perkara/pidana_umum');
+        $data = [
+            'title' => 'kontak',
+            'header' => $this->header->get_header(),
+            'kategori' => $this->kategori->get_kategori(),
+        ];
+        return view('visitor/info_perkara/pidana_umum', $data);
     }
 
     public function tata_usaha()
     {
-        return view('visitor/info_perkara/tata_usaha');
+        $data = [
+            'title' => 'kontak',
+            'header' => $this->header->get_header(),
+            'kategori' => $this->kategori->get_kategori(),
+        ];
+        return view('visitor/info_perkara/tata_usaha', $data);
     }
 
     public function bidang($id_bidang)
@@ -107,12 +126,7 @@ class Home extends BaseController
             'title' => $title,
             'bidang' => $bidang,
         ];
-        return view('visitor/info_perkara/pidana_umum', $data);
-    }
-
-    public function pidum()
-    {
-        return view('visitor/bidang/pidum');
+        return view('visitor/bidang', $data);
     }
 
     public function berita()

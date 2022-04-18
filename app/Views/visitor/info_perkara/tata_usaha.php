@@ -8,11 +8,11 @@
         <div class="main_content">
           <div class="blog_section">
             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
-              <div class="section_title">Pidana Umum</div>
+              <div class="section_title">Perdata dan Tata Usaha Negara</div>
             </div>
             <div class="section_content">
 
-              <table class="table table-bordered table-light">
+              <table class="table table-responsive table-bordered table-light">
                 <thead>
                   <tr style=" font-weight:bold; color:black">
                     <th>no</th>

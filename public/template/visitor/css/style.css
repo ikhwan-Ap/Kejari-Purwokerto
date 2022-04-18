@@ -782,3 +782,8 @@ a > b {
 hr {
   outline: auto;
 }
+
+.misi li {
+  list-style-type: disc;
+  margin-left: 15px;
+}
