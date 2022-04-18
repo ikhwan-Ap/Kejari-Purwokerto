@@ -84,7 +84,6 @@
 
 <script>
     var table;
-
     $(document).ready(function() {
         table = $('#Bidang').DataTable({
             "processing": true,

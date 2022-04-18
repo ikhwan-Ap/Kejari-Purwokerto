@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\agendaModel;
+use App\Models\arsip_fotoModel;
 use App\Models\kasusModel;
 use App\Models\buronModel;
 use App\Models\carouselModel;
@@ -29,12 +31,16 @@ class Home extends BaseController
         $this->visi_misi = new visi_misiModel();
         $this->icon = new iconModel();
         $this->pelayanan = new pelayananModel();
+        $this->agenda = new agendaModel();
+        $this->foto = new arsip_fotoModel();
+        helper('form');
 
         $header = $this->header->get_header();
         $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
-
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['foto'] = $this->foto->get_foto();
         session()->set([
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
@@ -46,6 +52,8 @@ class Home extends BaseController
     public function index()
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['foto'] = $this->foto->get_foto();
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),

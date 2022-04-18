@@ -33,6 +33,7 @@ class Modul extends BaseController
         return view('moduls/pelayanan', $data);
     }
 
+
     public function get_id($id_agenda)
     {
         $data = $this->agenda->get_id($id_agenda);
@@ -69,12 +70,12 @@ class Modul extends BaseController
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
             $id_agenda = $this->request->getVar('id_agenda');
-            $judul_agenda = $this->request->getVar('judul_agenda');
+            $nama_agenda = $this->request->getVar('nama_agenda');
             $tanggal_agenda = $this->request->getVar('tanggal_agenda');
             $teks_agenda = $this->request->getVar('teks_agenda');
 
             $valid = $this->validate([
-                'judul_agenda' => [
+                'nama_agenda' => [
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'Judul Agenda Harus Di Isi'
@@ -97,7 +98,7 @@ class Modul extends BaseController
             if (!$valid) {
                 $data = [
                     'error' => [
-                        'errorAgenda' => $validation->getError('judul_agenda'),
+                        'errorAgenda' => $validation->getError('nama_agenda'),
                         'errorTanggal' => $validation->getError('tanggal_agenda'),
                         'errorTeks' => $validation->getError('teks_agenda'),
                     ],
@@ -105,7 +106,7 @@ class Modul extends BaseController
             } else {
                 $this->agenda->save([
                     'id_agenda' => $id_agenda,
-                    'judul_agenda' => $judul_agenda,
+                    'nama_agenda' => $nama_agenda,
                     'teks_agenda' => $teks_agenda,
                     'tanggal_agenda' => $tanggal_agenda,
                 ]);
@@ -120,12 +121,12 @@ class Modul extends BaseController
     {
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
-            $judul_agenda = $this->request->getVar('judul_agenda');
+            $nama_agenda = $this->request->getVar('nama_agenda');
             $tanggal_agenda = $this->request->getVar('tanggal_agenda');
             $teks_agenda = $this->request->getVar('teks_agenda');
 
             $valid = $this->validate([
-                'judul_agenda' => [
+                'nama_agenda' => [
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'Judul Agenda Harus Di Isi'
@@ -148,14 +149,14 @@ class Modul extends BaseController
             if (!$valid) {
                 $data = [
                     'error' => [
-                        'errorAgenda' => $validation->getError('judul_agenda'),
+                        'errorAgenda' => $validation->getError('nama_agenda'),
                         'errorTanggal' => $validation->getError('tanggal_agenda'),
                         'errorTeks' => $validation->getError('teks_agenda'),
                     ],
                 ];
             } else {
                 $this->agenda->save([
-                    'judul_agenda' => $judul_agenda,
+                    'nama_agenda' => $nama_agenda,
                     'teks_agenda' => $teks_agenda,
                     'tanggal_agenda' => $tanggal_agenda,
                 ]);
@@ -403,7 +404,7 @@ class Modul extends BaseController
                 ';
                 $row[] = [
                     $no++,
-                    $hasil->judul_agenda,
+                    $hasil->nama_agenda,
                     $hasil->tanggal_agenda,
                     $action,
                 ];

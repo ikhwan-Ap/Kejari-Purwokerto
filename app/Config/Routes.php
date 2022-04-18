@@ -56,6 +56,8 @@ $routes->get('/carousel', 'Menu::carousel');
 $routes->get('/visi_misi', 'Visi_misi::index');
 $routes->get('/agenda', 'Modul::index');
 $routes->get('/pelayanan', 'Modul::pelayanan');
+// 
+$routes->get('/arsip_foto', 'Arsip::index');
 
 
 /*

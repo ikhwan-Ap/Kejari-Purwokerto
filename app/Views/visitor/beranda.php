@@ -421,71 +421,68 @@
 									<div class="row">
 										<div class="MultiCarousel" data-items="1,2,3,3" data-slide="1" id="MultiCarousel" data-interval="1000">
 											<div class="MultiCarousel-inner">
-												<div class="item">
-													<div class="pad15">
-														<img src="<?= base_url() ?>/template/visitor/images/post_6.jpg" alt="" width="100%">
-														<p><i class="fa fa-clock-o"></i> 25 April 2022</p>
-														<p style="font-weight: bold;">Selamat Hari Raya Nyepi Tahun Baru Saka 1944</p>
+												<?php $i = 0;
+												foreach ($_SESSION['foto'] as $data) :
+												?>
+													<div class="item">
+														<div class="pad15" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)">
+															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%">
+															<p><i class="fa fa-clock-o"></i> <?= $data['tanggal_arsip_foto']; ?></p>
+															<p style="font-weight: bold;"><?= $data['nama_arsip_foto']; ?></p>
+														</div>
 													</div>
-												</div>
-												<div class="item">
-													<div class="pad15">
-														<img src="<?= base_url() ?>/template/visitor/images/post_6.jpg" alt="" width="100%">
-														<p><i class="fa fa-clock-o"></i> 25 April 2022</p>
-														<p style="font-weight: bold;">Selamat Hari Raya Nyepi Tahun Baru Saka 1944</p>
-													</div>
-												</div>
-												<div class="item">
-													<div class="pad15">
-														<img src="<?= base_url() ?>/template/visitor/images/post_6.jpg" alt="" width="100%">
-														<p><i class="fa fa-clock-o"></i> 25 April 2022</p>
-														<p style="font-weight: bold;">Selamat Hari Raya Nyepi Tahun Baru Saka 1944</p>
-													</div>
-												</div>
-												<div class="item">
-													<div class="pad15">
-														<img src="<?= base_url() ?>/template/visitor/images/post_6.jpg" alt="" width="100%">
-														<p><i class="fa fa-clock-o"></i> 25 April 2022</p>
-														<p style="font-weight: bold;">Selamat Hari Raya Nyepi Tahun Baru Saka 1944</p>
-													</div>
-												</div>
-												<div class="item">
-													<div class="pad15">
-														<img src="<?= base_url() ?>/template/visitor/images/post_6.jpg" alt="" width="100%">
-														<p><i class="fa fa-clock-o"></i> 25 April 2022</p>
-														<p style="font-weight: bold;">Selamat Hari Raya Nyepi Tahun Baru Saka 1944</p>
-													</div>
-												</div>
-												<div class="item">
-													<div class="pad15">
-														<img src="<?= base_url() ?>/template/visitor/images/post_6.jpg" alt="" width="100%">
-														<p><i class="fa fa-clock-o"></i> 25 April 2022</p>
-														<p style="font-weight: bold;">Selamat Hari Raya Nyepi Tahun Baru Saka 1944</p>
-													</div>
-												</div>
-
+												<?php $i++;
+												endforeach; ?>
 											</div>
 											<button class="carousel-control-prev-icon leftLst"></button>
 											<button class="carousel-control-next-icon rightLst"></button>
 										</div>
 									</div>
 								</div>
-<<<<<<< HEAD
 
-								<div class="grid clearfix">
+								<div class="modal fade" data-backdrop="false" role="dialog" id="modalFoto">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title"></h5>
+												<button type="button" onclick="reset()" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">×</span>
+												</button>
+											</div>
+											<div class="modal-body form_kasus">
+												<div class="card-body Proses ">
+													<div class="card-body Method">
+														<input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
+														<div class="card">
+															<div class="col">
+																<div class="card-body">
+																	<div class="section-body">
+																		<div class="form-group">
+																			<div class="dropzone" id="mydropzone">
+																				<div class="fallback">
+																					<img src="" id="image" alt="Preview Image" style="width: 280px; height:280px;">
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
 
-									<!-- Default Card With Background -->
-									<div class="card card_default card_default_with_background grid-item"></div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer Foot">
+										</div>
+									</div>
 								</div>
-=======
-								<p>
-									<a href="#" target="_blank" class="btn btn-success">
-										<span class="label label-default">Selengkapnya...</span>
-									</a>
-								</p>
+							</div>
 
+							<div class="grid clearfix">
 
->>>>>>> d7f41156af13498cd25573d4103ab34870cbed9a
+								<!-- Default Card With Background -->
+								<div class="card card_default card_default_with_background grid-item"></div>
 							</div>
 						</div>
 					</div>
@@ -499,16 +496,20 @@
 						var table = $('#umum').hide();
 						var table = $('#khusus').hide();
 						var table = $('#perdata').hide();
+
+						$.ajax({
+							type: "GET",
+							url: "<?= site_url('home/berita'); ?>",
+							dataType: "json",
+							success: function(data) {
+								$('.berita').html(data.nama_buron);
+							}
+						});
+
+						$('#modalFoto').modal('hide');
 					})
 
-					$.ajax({
-						type: "GET",
-						url: "<?= site_url('home/berita'); ?>",
-						dataType: "json",
-						success: function(data) {
-							$('.berita').html(data.nama_buron);
-						}
-					});
+
 
 					function btnJadwal() {
 						$('#jadwal').show();
@@ -536,6 +537,20 @@
 						$('#umum').hide();
 						$('#perdata').show();
 						$('#khusus').hide();
+					}
+
+					function cekFoto(id_arsip_foto) {
+						$.ajax({
+							type: "GET",
+							url: "<?= site_url('arsip/get_id'); ?>/" + id_arsip_foto,
+							dataType: "json",
+							success: function(data) {
+								$('#id_arsip_foto').val(data.id_arsip_foto);
+								$('#image').attr('src', '<?= base_url('img_arsip/foto'); ?>/' + data.img_arsip_foto);
+								$('#modalFoto').modal('show');
+								$('.modal-title').text('Foto Galeri');
+							}
+						});
 					}
 
 					$(document).ready(function() {
