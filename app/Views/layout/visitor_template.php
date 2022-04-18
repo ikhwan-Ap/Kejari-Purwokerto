@@ -107,7 +107,7 @@
 									<a href="#" class="nav-link"><b>Profil</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Sambutan Kejari Purwokerto</a></li>
-										<li><a href="#" class="nav-link">Visi dan Misi</a></li>
+										<li><a href="/visi-misi" class="nav-link">Visi dan Misi</a></li>
 										<li><a href="#" class="nav-link">Kegiatan IAD Purwokerto</a></li>
 										<li><a href="#" class="nav-link">Perintah Harian Jaksa Agung RI</a></li>
 									</ul>

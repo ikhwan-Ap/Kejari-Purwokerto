@@ -41,6 +41,7 @@ class Home extends BaseController
     public function index()
     {
         $buron = $this->buron->get_last();
+        $_SESSION['kategori'] =  $this->kategori->get_kategori();
         if ($buron != null) {
             session()->set([
                 'id_buron' => $buron['id_buron'],
@@ -105,8 +106,6 @@ class Home extends BaseController
         return view('visitor/info_perkara/pidana_umum', $data);
     }
 
-
-
     public function pidum()
     {
         return view('visitor/bidang/pidum');
@@ -116,6 +115,14 @@ class Home extends BaseController
     {
         $data = $this->buron->get_last();
         echo json_encode($data);
+    }
+    public function visi_misi()
+    {
+        $data = [
+            'title' => 'Visi dan Misi',
+            'visi' => '',
+        ];
+        return view('visitor/profil/visi_misi');
     }
 
     public function portal()
