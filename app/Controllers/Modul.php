@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\agendaModel;
+use App\Models\pelayananModel;
 use Config\Services;
 
 class Modul extends BaseController
@@ -12,6 +13,7 @@ class Modul extends BaseController
         helper('form');
         helper('url');
         $this->agenda = new agendaModel();
+        $this->pelayanan = new pelayananModel();
     }
 
     public function index()
@@ -21,6 +23,14 @@ class Modul extends BaseController
             'title' => 'Agenda',
         ];
         return view('moduls/agenda', $data);
+    }
+
+    public function pelayanan()
+    {
+        $data = [
+            'title' => 'Pelayanan',
+        ];
+        return view('moduls/pelayanan', $data);
     }
 
     public function get_id($id_agenda)
@@ -141,6 +151,44 @@ class Modul extends BaseController
         echo json_encode($data);
     }
 
+    public function getPelayanan()
+    {
+
+        $this->pelayanan = new pelayananModel();
+        $request = Services::request();
+        if ($request->getMethod(true) == 'POST') {
+            $list = $this->pelayanan->datatablesPelayanan();
+            $row = array();
+            $no = $request->getPost('start');
+            $no = 1;
+            foreach ($list as $hasil) {
+                $action = '
+                <button type="button" onclick="delAgenda(' . $hasil->id_pelayanan . ')" class="btn btn-danger" title="DELETE">
+                    <span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">
+                    </span>
+                </button>
+                <button type="button" class="btn btn-light" onclick="editAgenda( ' . $hasil->id_pelayanan . ' )" title="EDIT">
+                     <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
+                </button>
+                ';
+                $row[] = [
+                    $no++,
+                    $hasil->nama_pelayanan,
+                    $hasil->url_pelayanan,
+                    $hasil->img_pelayanan,
+                    $hasil->warna_pelayanan,
+                    $hasil->gradiasi_pelayanan,
+                    $action,
+                ];
+            }
+            $output = [
+                'recordsTotal' => $this->agenda->countAll(),
+                'recordsFiltered' => $this->agenda->countFiltered(),
+                'data' => $row
+            ];
+            echo json_encode($output);
+        }
+    }
     public function getAgenda()
     {
 

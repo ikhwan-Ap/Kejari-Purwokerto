@@ -9,22 +9,20 @@
           <div class="post_body">
             <div class="blog_section" style="margin-top:15px">
               <div style="color: black; font-weight: bolder; font-size: x-large; text-align: center;">
-                Visi dan Misi
+                <?= $title; ?>
               </div>
               <div class="section_panel d-flex flex-row align-items-center justify-content-start">
                 <div class="section_title" style="text-align: center;">Visi</div>
               </div>
               <div class="section_content" style="color: black; padding-top: 20px;">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, maxime. Ipsam laboriosam ex aperiam, animi quaerat perspiciatis repudiandae? Recusandae assumenda odio quasi ex accusantium impedit, tenetur fuga soluta a ipsam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, corrupti? Tenetur, consectetur? Officiis ducimus ad hic quam minus dolores, unde ratione vero voluptatum aliquid sint maiores. Dolore sit earum mollitia.
+                <?= $visi['visi']; ?>
               </div>
               <br>
               <div class="section_panel d-flex flex-row align-items-center justify-content-start">
                 <div class="section_title" style="text-align: center;">Misi</div>
               </div>
               <div class="section_content" style="color: black; padding-top: 20px;">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, maxime. Ipsam laboriosam ex aperiam, animi quaerat perspiciatis repudiandae? Recusandae assumenda odio quasi ex accusantium impedit, tenetur fuga soluta a ipsam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, corrupti? Tenetur, consectetur? Officiis ducimus ad hic quam minus dolores, unde ratione vero voluptatum aliquid sint maiores. Dolore sit earum mollitia.
+                <?= $misi['misi']; ?>
               </div>
             </div>
           </div>
