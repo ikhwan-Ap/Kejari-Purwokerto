@@ -213,14 +213,17 @@
 
 				<!-- Advertising 2 -->
 				<br>
-				<div class="sidebar_section">
-					<a href="https://www.lapor.go.id/"><img src="<?= base_url() ?>/template/visitor/images/lapor.jpg" alt="" width="100%"></a>
-				</div>
+				<a href="https://www.lapor.go.id/">
+					<div class="sidebar_section">
+						<img src="<?= base_url() ?>/template/visitor/images/lapor.jpg" alt="" width="100%" />
+					</div>
+				</a>
 				<br>
-				<div class="sidebar_section">
-					<a href="https://www.kejaksaan.go.id/pengaduan.php"><img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%"></a>
-				</div>
-
+				<a href="https://www.kejaksaan.go.id/pengaduan.php">
+					<div class="sidebar_section">
+						<img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%">
+					</div>
+				</a>
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
 						<div class="sidebar_title">Pengumuman</div>

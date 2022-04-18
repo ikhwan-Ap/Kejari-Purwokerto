@@ -729,6 +729,7 @@ a > b {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .floating-container .float-element {
   position: relative;
   display: block;
