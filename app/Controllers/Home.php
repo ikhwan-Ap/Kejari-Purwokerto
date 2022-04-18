@@ -44,6 +44,7 @@ class Home extends BaseController
 
     public function index()
     {
+        $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $buron = $this->buron->get_last();
         if ($buron != null) {
             session()->set([
