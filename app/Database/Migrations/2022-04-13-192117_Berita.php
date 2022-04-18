@@ -19,7 +19,7 @@ class Berita extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'text'       => [
+            'teks_berita'       => [
                 'type'       => 'mediumtext',
             ],
             'tanggal'       => [

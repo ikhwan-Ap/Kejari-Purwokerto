@@ -55,9 +55,6 @@
 		setInterval(startTime, 500);
 	</script>
 
-
-
-
 	<div class="super_container">
 		<div class="custom-site-mobile-menu custom-site-navbar-target">
 			<div class="custom-site-mobile-menu-header">
@@ -199,17 +196,23 @@
 
 				<!-- Top Stories -->
 				<?php if (session()->get('jaksa') != null) :  ?>
-					<div class="sidebar_section">
+					<div class="sidebar_section kepala_kejaksaan">
 						<div class="sidebar_title_container">
-							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
+							<div class="sidebar_title" style="text-align: center;">Kepala Kejaksaan Negeri Purwokerto</div>
 						</div><br>
 						<img src="<?= base_url() ?>/uploads/bidang/<?= session()->get('jaksa'); ?>" alt="" width="100%">
-						<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
+						<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top: -40px;margin-left: -10px;width: 110%;">
 						<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:13px;"><?= session()->get('nama_jaksa'); ?></div>
 					</div>
 				<?php endif;  ?>
 
 				<!-- Advertising 2 -->
+				<br>
+				<a href="https://www.lapor.go.id/">
+					<div class="sidebar_section icon">
+						<img src="<?= base_url() ?>/template/visitor/images/lapor.jpg" alt="" width="100%">
+					</div>
+				</a>
 				<br>
 				<a href="https://www.lapor.go.id/">
 					<div class="sidebar_section">
@@ -224,8 +227,9 @@
 				</a>
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
-						<div class="sidebar_title">Pengumuman</div>
-					</div><br>
+						<div class="sidebar_title" style="text-align: center;">Pengumuman</div>
+					</div>
+					<hr>
 					<!-- Future Events Post -->
 					<a href="post.html">
 						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
@@ -252,8 +256,9 @@
 				<!-- Future Events -->
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
-						<div class="sidebar_title">Agenda</div>
-					</div><br>
+						<div class="sidebar_title" style="text-align: center;">Agenda</div>
+					</div>
+					<hr>
 					<!-- Future Events Post -->
 					<a href="post.html">
 						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>

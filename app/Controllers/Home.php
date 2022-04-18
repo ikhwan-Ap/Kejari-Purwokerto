@@ -46,15 +46,6 @@ class Home extends BaseController
     public function index()
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
-        $buron = $this->buron->get_last();
-        $_SESSION['kategori'] =  $this->kategori->get_kategori();
-        if ($buron != null) {
-            session()->set([
-                'id_buron' => $buron['id_buron'],
-                'nama_buron' => $buron['nama_buron'],
-                'image' => $buron['image'],
-            ]);
-        }
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),
@@ -123,6 +114,7 @@ class Home extends BaseController
 
     public function bidang($id_bidang)
     {
+        $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $bidang = $this->bidang->get_id($id_bidang);
         $title = $this->bidang->get_title($id_bidang);
         $data = [

@@ -385,7 +385,7 @@
 												</div>
 
 												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
+												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/qlI7GAHnMfM/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -400,6 +400,12 @@
 										</div>
 									</div>
 								</div>
+								<br>
+								<p>
+									<a href="#" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 
@@ -463,22 +469,23 @@
 											<button class="carousel-control-next-icon rightLst"></button>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-12 text-center">
-											<br /><br /><br />
-											<hr />
-											<p>Settings</p>
-											<p>Change data items for xs,sm,md and lg display items respectively. Ex:data-items="1,3,5,6"</p>
-											<p>Change data slide for slides per click Ex:data-slide="1"</p>
-										</div>
-									</div>
 								</div>
+<<<<<<< HEAD
 
 								<div class="grid clearfix">
 
 									<!-- Default Card With Background -->
 									<div class="card card_default card_default_with_background grid-item"></div>
 								</div>
+=======
+								<p>
+									<a href="#" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
+
+
+>>>>>>> d7f41156af13498cd25573d4103ab34870cbed9a
 							</div>
 						</div>
 					</div>
