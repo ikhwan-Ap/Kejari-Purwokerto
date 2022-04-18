@@ -400,6 +400,12 @@
 										</div>
 									</div>
 								</div>
+								<br>
+								<p>
+									<a href="#" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 
