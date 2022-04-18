@@ -221,6 +221,33 @@
 					<a href="https://www.kejaksaan.go.id/pengaduan.php"><img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%"></a>
 				</div>
 
+				<div class="sidebar_section future_events">
+					<div class="sidebar_title_container">
+						<div class="sidebar_title">Pengumuman</div>
+					</div><br>
+					<!-- Future Events Post -->
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+				</div>
+
 				<!-- Future Events -->
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
@@ -247,7 +274,6 @@
 						<div class="isi_agenda">Bakti Sosial Peduli & Berbagi Pada Dunia</div>
 					</a>
 					<hr>
-
 				</div>
 			</div>
 		</div>
