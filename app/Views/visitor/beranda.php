@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-											$warna = 'green';
-											$background = array(
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												$warna = 'green';
+												$background = array(
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-											);
-											$i = 0;
-											foreach ($carousel as $value) :
-											?>
+												);
+												$i = 0;
+												foreach ($carousel as $value) :
+												?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-												$i++;
-											endforeach;  ?> -->
+													$i++;
+												endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 									<?php $i = 0;
@@ -448,9 +448,6 @@
 						</div>
 					</div>
 					<br><br>
-					<!-- <div class="load_more">
-						<div id="load_more" class="load_more_button text-center trans_200">Load More</div>
-					</div> -->
 				</div>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
