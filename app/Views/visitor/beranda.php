@@ -75,36 +75,46 @@
 
 									<!-- Small Card With Background -->
 
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 1</a></div>
+									<a href="#">
+										<div class="card card_default card_small_with_background grid-item md-sm">
+											<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
+											<div class="card-body">
+												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 1</div>
+											</div>
 										</div>
-									</div>
+									</a>
 
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 2</a></div>
+									<a href="">
+										<div class="card card_default card_small_with_background grid-item md-sm">
+											<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
+											<div class="card-body">
+												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 2</div>
+											</div>
 										</div>
-									</div>
+									</a>
 
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, yellow, red)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 3</a></div>
+									<a href="">
+										<div class="card card_default card_small_with_background grid-item md-sm">
+											<div class="card_background" style="background-image: linear-gradient(45deg, yellow, red)"></div>
+											<div class="card-body">
+												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 3</div>
+											</div>
 										</div>
-									</div>
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, #FD0000, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 3</a></div>
+									</a>
+
+									<a href="">
+										<div class="card card_default card_small_with_background grid-item md-sm">
+											<div class="card_background" style="background-image: linear-gradient(45deg, #FD0000, lightgreen)"></div>
+											<div class="card-body">
+												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
+												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 4</div>
+											</div>
 										</div>
-									</div>
+									</a>
+
 								</div>
 								<br>
 								<p>
@@ -364,7 +374,7 @@
 												<div class="playlist_background"></div>
 
 												<!-- Video -->
-												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'www.youtube.com/watch?v=Uk2vMFIl26o', mute:false, addRaster:true})">
+												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/QhOFg_3RV5Q/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -377,7 +387,7 @@
 												</div>
 
 												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: '_me2yfR7Jfk', mute:false, addRaster:true})">
+												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/_me2yfR7Jfk/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -390,7 +400,7 @@
 												</div>
 
 												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: '8ArAnXLbFck', mute:false, addRaster:true})">
+												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/8ArAnXLbFck/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -403,7 +413,7 @@
 												</div>
 
 												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'qlI7GAHnMfM', mute:false, addRaster:true})">
+												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/qlI7GAHnMfM/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
