@@ -171,9 +171,7 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Informasi</b></a>
 									<ul class="dropdown arrow-top">
-										<li>
-											< a href="#" class="nav-link">Pengaduan</>
-										</li>
+										<li><a href="#" class="nav-link">Pengaduan</a></li>
 										<li><a href="#" class="nav-link">Kontak</a></li>
 										<li><a href="#" class="nav-link">Berita</a></li>
 										<li><a href="#" class="nav-link">Artikel</a></li>
