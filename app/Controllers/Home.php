@@ -9,6 +9,7 @@ use App\Models\navbarModel;
 use App\Models\bidangModel;
 use App\Models\iconModel;
 use App\Models\kategoriModel;
+use App\Models\visi_misiModel;
 use CodeIgniter\Session\Session;
 use CodeIgniter\API\ResponseTrait;
 
@@ -24,12 +25,15 @@ class Home extends BaseController
         $this->bidang  = new bidangModel();
         $this->carousel = new carouselModel();
         $this->kategori = new kategoriModel();
+        $this->visi_misi = new visi_misiModel();
         $this->icon = new iconModel();
 
         $header = $this->header->get_header();
         $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
+        $visi = $this->visi_misi->get_visi();
+        $misi = $this->visi_misi->get_misi();
         session()->set([
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
