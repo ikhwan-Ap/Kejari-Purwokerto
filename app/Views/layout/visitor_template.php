@@ -171,9 +171,7 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Informasi</b></a>
 									<ul class="dropdown arrow-top">
-										<li>
-											< a href="#" class="nav-link">Pengaduan</>
-										</li>
+										<li><a href="#" class="nav-link">Pengaduan</a></li>
 										<li><a href="#" class="nav-link">Kontak</a></li>
 										<li><a href="#" class="nav-link">Berita</a></li>
 										<li><a href="#" class="nav-link">Artikel</a></li>
@@ -213,13 +211,17 @@
 
 				<!-- Advertising 2 -->
 				<br>
-				<div class="sidebar_section">
-					<a href="https://www.lapor.go.id/"><img src="<?= base_url() ?>/template/visitor/images/lapor.jpg" alt="" width="100%"></a>
-				</div>
+				<a href="https://www.lapor.go.id/">
+					<div class="sidebar_section">
+						<img src="<?= base_url() ?>/template/visitor/images/lapor.jpg" alt="" width="100%">
+					</div>
+				</a>
 				<br>
-				<div class="sidebar_section">
-					<a href="https://www.kejaksaan.go.id/pengaduan.php"><img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%"></a>
-				</div>
+				<a href="https://www.kejaksaan.go.id/pengaduan.php">
+					<div class="sidebar_section">
+						<img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%">
+					</div>
+				</a>
 
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
