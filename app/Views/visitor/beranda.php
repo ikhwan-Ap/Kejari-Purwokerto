@@ -463,51 +463,14 @@
 											<button class="carousel-control-next-icon rightLst"></button>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-12 text-center">
-											<br /><br /><br />
-											<hr />
-											<p>Settings</p>
-											<p>Change data items for xs,sm,md and lg display items respectively. Ex:data-items="1,3,5,6"</p>
-											<p>Change data slide for slides per click Ex:data-slide="1"</p>
-										</div>
-									</div>
 								</div>
-
-								<div class="grid clearfix">
-
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_10.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">ASKaty Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
+								<p>
+									<a href="#" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 
 
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_15.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">KZXaty Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_14.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-
-									<!-- Default Card With Background -->
-									<div class="card card_default card_default_with_background grid-item"></div>
-								</div>
 							</div>
 						</div>
 					</div>
