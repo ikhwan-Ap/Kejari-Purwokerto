@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-												$warna = 'green';
-												$background = array(
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+											$warna = 'green';
+											$background = array(
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-												);
-												$i = 0;
-												foreach ($carousel as $value) :
-												?>
+											);
+											$i = 0;
+											foreach ($carousel as $value) :
+											?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,51 +70,23 @@
 											</div>
 										</a>
 									<?php
-													$i++;
-												endforeach;  ?> -->
+												$i++;
+											endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
-
-									<a href="#">
-										<div class="card card_default card_small_with_background grid-item md-sm">
-											<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-											<div class="card-body">
-												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 1</div>
+									<?php $i = 0;
+									foreach ($pelayanan as $data) :  ?>
+										<a href="<?= $data['url_pelayanan']; ?>">
+											<div class="card card_default card_small_with_background grid-item md-sm">
+												<div class="card_background" style="background-image: linear-gradient(45deg, <?= $data['warna_pelayanan']; ?>, <?= $data['gradiasi_pelayanan']; ?>)"></div>
+												<div class="card-body">
+													<img style="display: inline;" src="<?= base_url() ?>/img_pelayanan/<?= $data['img_pelayanan']; ?>" alt="" width="20%">
+													<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;"><?= $data['nama_pelayanan']; ?></div>
+												</div>
 											</div>
-										</div>
-									</a>
-
-									<a href="">
-										<div class="card card_default card_small_with_background grid-item md-sm">
-											<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-											<div class="card-body">
-												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 2</div>
-											</div>
-										</div>
-									</a>
-
-									<a href="">
-										<div class="card card_default card_small_with_background grid-item md-sm">
-											<div class="card_background" style="background-image: linear-gradient(45deg, yellow, red)"></div>
-											<div class="card-body">
-												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 3</div>
-											</div>
-										</div>
-									</a>
-
-									<a href="">
-										<div class="card card_default card_small_with_background grid-item md-sm">
-											<div class="card_background" style="background-image: linear-gradient(45deg, #FD0000, lightgreen)"></div>
-											<div class="card-body">
-												<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-												<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;">Pelayanan 4</div>
-											</div>
-										</div>
-									</a>
-
+										</a>
+									<?php $i++;
+									endforeach; ?>
 								</div>
 								<br>
 								<p>

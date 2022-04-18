@@ -10,6 +10,7 @@ use App\Models\bidangModel;
 use App\Models\iconModel;
 use App\Models\kategoriModel;
 use App\Models\visi_misiModel;
+use App\Models\pelayananModel;
 use CodeIgniter\Session\Session;
 use CodeIgniter\API\ResponseTrait;
 
@@ -27,6 +28,7 @@ class Home extends BaseController
         $this->kategori = new kategoriModel();
         $this->visi_misi = new visi_misiModel();
         $this->icon = new iconModel();
+        $this->pelayanan = new pelayananModel();
 
         $header = $this->header->get_header();
         $kejaksaan = $this->bidang->get_kejaksaan();
@@ -61,6 +63,7 @@ class Home extends BaseController
             'khusus' => $this->kasus->get_khusus(),
             'header' => $this->header->get_header(),
             'carousel' =>  $this->carousel->get_img(),
+            'pelayanan' => $this->pelayanan->get_data(),
         ];
         return view('visitor/beranda', $data);
     }

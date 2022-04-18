@@ -538,6 +538,8 @@
                         $('#teks_bidang').removeClass('is-invalid');
                         $('#teks_bidang').addClass('is-valid');
                     }
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
                 }
                 if (response.sukses) {
                     Swal.fire({
@@ -546,6 +548,8 @@
                         html: `Data Berhasil Di tambahkan`,
                     }).then((result) => {
                         if (result.value) {
+                            document.body.scrollTop = 1000;
+                            document.documentElement.scrollTop = 1000;
                             resetForm();
                             reload_table();
                         }
