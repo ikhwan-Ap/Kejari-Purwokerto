@@ -8,6 +8,9 @@
         <div class="main_content">
           <div class="post_body">
             <div class="blog_section" style="margin-top:15px">
+              <div class="content_title">
+                Visi dan Misi
+              </div>
               <div class="section_panel d-flex flex-row align-items-center justify-content-start">
                 <div class="section_title">Visi</div>
               </div>

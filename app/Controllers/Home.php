@@ -32,8 +32,7 @@ class Home extends BaseController
         $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
-        $visi = $this->visi_misi->get_visi();
-        $misi = $this->visi_misi->get_misi();
+
         session()->set([
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
@@ -124,9 +123,10 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'Visi dan Misi',
-            'visi' => '',
+            'visi' => $this->visi_misi->get_visi(),
+            'misi' => $this->visi_misi->get_misi(),
         ];
-        return view('visitor/profil/visi_misi');
+        return view('visitor/profil/visi_misi', $data);
     }
 
     public function portal()
