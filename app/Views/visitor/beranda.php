@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-												$warna = 'green';
-												$background = array(
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+											$warna = 'green';
+											$background = array(
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-												);
-												$i = 0;
-												foreach ($carousel as $value) :
-												?>
+											);
+											$i = 0;
+											foreach ($carousel as $value) :
+											?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-													$i++;
-												endforeach;  ?> -->
+												$i++;
+											endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 									<?php $i = 0;
@@ -475,35 +475,6 @@
 								</div>
 
 								<div class="grid clearfix">
-
-									<!-- Small Card With Image -->
-									<!-- <div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_10.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">ASKaty Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div> -->
-
-
-									<!-- Small Card With Image -->
-									<!-- <div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_15.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">KZXaty Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div> -->
-
-									<!-- Small Card With Image -->
-									<!-- <div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_14.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div> -->
-
 
 									<!-- Default Card With Background -->
 									<div class="card card_default card_default_with_background grid-item"></div>
