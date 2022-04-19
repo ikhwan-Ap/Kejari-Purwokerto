@@ -175,11 +175,7 @@
 											<a href="#" class="nav-link">Pengaduan</a>
 										</li>
 										<li><a href="#" class="nav-link">Kontak</a></li>
-<<<<<<< HEAD
-										<li><a href="<?= base_url() ?>/berita_tentang/3" class="nav-link">Berita</a></li>
-=======
 										<li><a href="<?= base_url() ?>/berita_tentang/1" class="nav-link">Berita</a></li>
->>>>>>> ae813a9fcb956930c8b72d41d648c98abd72f6a0
 										<li><a href="#" class="nav-link">Artikel</a></li>
 										<li><a href="#" class="nav-link">Pengumuman</a></li>
 										<li><a href="#" class="nav-link">Webmail</a></li>
