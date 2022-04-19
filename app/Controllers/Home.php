@@ -27,7 +27,7 @@ class Home extends BaseController
         $this->buron  = new buronModel();
         $this->header  = new navbarModel();
         $this->bidang  = new bidangModel();
-        $this->berita  = new beritaModel();
+        $this->bidang  = new beritaModel();
         $this->carousel = new carouselModel();
         $this->kategori = new kategoriModel();
         $this->visi_misi = new visi_misiModel();
