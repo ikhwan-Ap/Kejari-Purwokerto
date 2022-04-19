@@ -41,6 +41,9 @@ $routes->get('/berita', 'Berita::index');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
+$routes->get('/visi-misi', 'Home::visi_misi');
+//Navbar Company
+$routes->get('/bidang_view/(:any)', 'Home::bidang/$1');
 // Bidang
 $routes->get('/bidang', 'Bidang::index');
 // Menu
@@ -49,11 +52,17 @@ $routes->get('/download', 'Menu::download');
 $routes->get('/icon', 'Menu::icon');
 $routes->get('/carousel', 'Menu::carousel');
 // $routes->get('/login', 'Home::index');
-//Moduls_bidang
-$routes->get('visi_misi', 'Visi_misi::index');
-$routes->get('/bidang_view/(:any)', 'Home::bidang/$1');
+//Moduls    
+$routes->get('/visi_misi', 'Visi_misi::index');
 $routes->get('/agenda', 'Modul::index');
+
 //Berita
+$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1' );
+
+$routes->get('/pelayanan', 'Modul::pelayanan');
+// 
+$routes->get('/arsip_foto', 'Arsip::index');
+
 $routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1' );
 
 /*

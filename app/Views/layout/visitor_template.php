@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Demo project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="<?= base_url(); ?>/assets/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/styles/bootstrap4/bootstrap.min.css">
 	<link href="<?= base_url() ?>/template/visitor/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/template/visitor/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -53,6 +54,9 @@
 		}
 		setInterval(startTime, 500);
 	</script>
+
+
+
 
 	<div class="super_container">
 		<div class="custom-site-mobile-menu custom-site-navbar-target">
@@ -103,7 +107,7 @@
 									<a href="#" class="nav-link"><b>Profil</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Sambutan Kejari Purwokerto</a></li>
-										<li><a href="#" class="nav-link">Visi dan Misi</a></li>
+										<li><a href="/visi-misi" class="nav-link">Visi dan Misi</a></li>
 										<li><a href="#" class="nav-link">Kegiatan IAD Purwokerto</a></li>
 										<li><a href="#" class="nav-link">Perintah Harian Jaksa Agung RI</a></li>
 									</ul>
@@ -134,14 +138,9 @@
 									<a href="#" class="nav-link"><b>Bidang</b></a>
 									<ul class="dropdown arrow-top">
 										<?php $i = 0;
-										foreach ($kategori as $row) : ?>
+										foreach ($_SESSION['kategori']  as $row) : ?>
 											<input type="text" name="id_bidang" id="id_bidang" value="<?= $row['id_bidang']; ?>" hidden>
 											<li><a href="<?= base_url() ?>/bidang_view/<?= $row['id_bidang']; ?>" class="nav-link"><?= $row['nama_kategori']; ?></a></li>
-											<!-- <li><a href="#" class="nav-link">Datun</a></li>
-										<li><a href="#" class="nav-link">Barang Bukti</a></li>
-										<li><a href="#" class="nav-link">Pembinaan</a></li>
-										<li><a href="#" class="nav-link">Intelijen</a></li>
-										<li><a href="#" class="nav-link">Pidsus</a></li> -->
 										<?php $i++;
 										endforeach; ?>
 									</ul>
@@ -172,7 +171,9 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Informasi</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Pengaduan</a></li>
+										<li>
+											<a href="#" class="nav-link">Pengaduan</a>
+										</li>
 										<li><a href="#" class="nav-link">Kontak</a></li>
 										<li><a href="<?= base_url() ?>/berita_tentang/3" class="nav-link">Berita</a></li>
 										<li><a href="#" class="nav-link">Artikel</a></li>
@@ -212,12 +213,42 @@
 
 				<!-- Advertising 2 -->
 				<br>
-				<div class="sidebar_section">
-					<a href="https://www.lapor.go.id/"><img src="<?= base_url() ?>/template/visitor/images/lapor.jpg" alt="" width="100%"></a>
-				</div>
+				<a href="https://www.lapor.go.id/">
+					<div class="sidebar_section">
+						<img src="<?= base_url() ?>/template/visitor/images/lapor.jpg" alt="" width="100%" />
+					</div>
+				</a>
 				<br>
-				<div class="sidebar_section">
-					<a href="https://www.kejaksaan.go.id/pengaduan.php"><img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%"></a>
+				<a href="https://www.kejaksaan.go.id/pengaduan.php">
+					<div class="sidebar_section">
+						<img src="<?= base_url() ?>/template/visitor/images/laporkan.jpg" alt="" width="100%">
+					</div>
+				</a>
+				<div class="sidebar_section future_events">
+					<div class="sidebar_title_container">
+						<div class="sidebar_title">Pengumuman</div>
+					</div><br>
+					<!-- Future Events Post -->
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
+					<a href="post.html">
+						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
+						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
+					</a>
+					<hr>
 				</div>
 
 				<!-- Future Events -->
@@ -226,64 +257,16 @@
 						<div class="sidebar_title">Agenda</div>
 					</div><br>
 					<!-- Future Events Post -->
-					<div class="side_post">
+					<?php
+					$i = 0;
+					foreach ($_SESSION['agenda'] as $data) : ?>
 						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">13</div>
-									<div class="event_month">apr</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Pencanangan Zona Integritas Wilayah Bebas dari Korupsi (WBK) menuju Wilayah Birokrasi Bersih Melayani (WBBM)</div>
-								</div>
-							</div>
+							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tanggal_agenda']; ?></div>
+							<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
 						</a>
-					</div>
-
-					<!-- Future Events Post -->
-					<div class="side_post">
-						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">27</div>
-									<div class="event_month">apr</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Bakti Sosial Peduli & Berbagi Pada Dunia</div>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<!-- Future Events Post -->
-					<div class="side_post">
-						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">02</div>
-									<div class="event_month">may</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Temu Sapa Wartawan Pada Kejaksaan Negeri Denpasar</div>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<!-- Future Events Post -->
-					<div class="side_post">
-						<a href="post.html">
-							<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">09</div>
-									<div class="event_month">may</div>
-								</div>
-								<div class="side_post_content">
-									<div class="side_post_title">Silaturahmi Ke Walikota Dan Wakil Walikota Denpasar Beserta Jajaran</div>
-								</div>
-							</div>
-						</a>
-					</div>
+						<hr>
+					<?php $i++;
+					endforeach; ?>
 				</div>
 			</div>
 		</div>

@@ -5,26 +5,26 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Config\Services;
 
-class agendaModel extends Model
+class pelayananModel extends Model
 {
-    protected $table            = 'agenda';
-    protected $primaryKey       = 'id_agenda';
+    protected $table            = 'pelayanan';
+    protected $primaryKey       = 'id_pelayanan';
     protected $allowedFields    =
     [
-        'nama_agenda', 'tanggal_agenda', 'teks_agenda'
+        'nama_pelayanan', 'url_pelayanan', 'img_pelayanan', 'warna_pelayanan', 'gradiasi_pelayanan'
     ];
     protected $column_search = [
-        'nama_agenda', 'tanggal_agenda'
+        'nama_pelayanan', 'url_pelayanan'
     ];
 
     protected $column_order =
     [
-        'nama_agenda', 'tanggal_agenda'
+        'nama_pelayanan', 'url_pelayanan'
     ];
 
 
     protected $request;
-    protected $order = ['id_agenda' => 'DESC'];
+    protected $order = ['id_pelayanan' => 'DESC'];
     protected $db;
     protected $dt;
 
@@ -67,7 +67,7 @@ class agendaModel extends Model
     }
 
 
-    public function datatablesAgenda()
+    public function datatablesPelayanan()
     {
         $request = Services::request();
         $this->getDataTables();
@@ -91,49 +91,26 @@ class agendaModel extends Model
     }
 
 
-    public function del_agenda($id_agenda)
+    public function del_pelayanan($id_pelayanan)
     {
-        $this->dt->where('id_agenda', $id_agenda);
+        $this->dt->where('id_pelayanan', $id_pelayanan);
         return $this->dt->delete();
     }
 
-    public function get_id($id_agenda)
+    public function get_id($id_pelayanan)
     {
         $this->dt
             ->select('*')
-            ->where('id_agenda', $id_agenda);
+            ->where('id_pelayanan', $id_pelayanan);
         $query = $this->dt->get();
         return $query->getRowArray();
     }
 
-    public function get_title($id_bidang)
+    public function get_data()
     {
-        $this->dt
-            ->select('nama_kategori')
-            ->select('kategori.nama_kategori', 'nama_kategori')
-            ->where('id_bidang', $id_bidang)
-            ->join('kategori', 'kategori.id_kategori = bidang.id_kategori');
-        $query = $this->dt->get();
-        return $query->getRowArray();
-    }
-
-    public function get_kejaksaan()
-    {
-        $builder = $this->db->table('bidang');
-        $builder->where('nama_kategori', 'Kepala Kejaksaan');
-        $builder->join('kategori', 'kategori.id_kategori=bidang.id_kategori');
-        $builder->limit(1);
-        $builder->orderBy('id_bidang', 'DESC');
-        $query = $builder->get();
-        return $query->getRowArray();
-    }
-
-    public function get_agenda()
-    {
-        $builder = $this->db->table('agenda');
+        $builder = $this->db->table('pelayanan');
         $builder->select('*');
         $builder->limit(4);
-        $builder->orderBy('tanggal_agenda', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
     }

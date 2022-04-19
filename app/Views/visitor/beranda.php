@@ -47,20 +47,19 @@
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
 								<div class="section_title">Pelayanan</div>
 							</div>
-							<div class="section_content">
+							<div class="section_content" style="margin-bottom: 20px;">
+
 								<div class="grid clearfix">
+									<!-- <?php
+											$warna = 'green';
+											$background = array(
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-									<!-- Small Card With Background -->
-									<?php
-                  $warna = 'green';
-									$background = array(
-										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-										'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-
-									);
-									$i = 0;
-									foreach ($carousel as $value) :
-									?>
+											);
+											$i = 0;
+											foreach ($carousel as $value) :
+											?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -71,52 +70,37 @@
 											</div>
 										</a>
 									<?php
-										$i++;
-									endforeach;  ?>
+												$i++;
+											endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 1</a></div>
-										</div>
-									</div> -->
-
-                  <div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
-										</div>
-									</div>
-
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small md-sm"><a href="#">Pelayanan 3</a></div>
-										</div>
-									</div>
-									<div class="card card_default card_small_with_background grid-item md-sm">
-										<div class="card_background" style="background-image: linear-gradient(45deg, <?= $warna ?>, lightgreen)"></div>
-										<div class="card-body">
-											<img style="display: inline;" src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="20%">
-											<div class="card-title card-title-small" style="display: inline;"><a href="#">Pelayanan 2</a></div>
-										</div>
-									</div>
+									<?php $i = 0;
+									foreach ($pelayanan as $data) :  ?>
+										<a href="<?= $data['url_pelayanan']; ?>" target="_blank">
+											<div class="card card_default card_small_with_background grid-item md-sm">
+												<div class="card_background" style="background-image: linear-gradient(45deg, <?= $data['warna_pelayanan']; ?>, <?= $data['gradiasi_pelayanan']; ?>)"></div>
+												<div class="card-body">
+													<img style="display: inline;" src="<?= base_url() ?>/img_pelayanan/<?= $data['img_pelayanan']; ?>" alt="" width="20%">
+													<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;"><?= $data['nama_pelayanan']; ?></div>
+												</div>
+											</div>
+										</a>
+									<?php $i++;
+									endforeach; ?>
 								</div>
+								<br>
+								<p>
+									<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<p>
-				<a href="<?= base_url() ?>/home/portal">
-					<span class="label label-default">Selengkapnya...</span>
-				</a>
-			</p>
+
 		</div>
 
 		<div class="container">
@@ -237,22 +221,22 @@
 									</tbody>
 								</table>
 								<p id="p_perdata">
-									<a href="<?= base_url() ?>/home/tata_usaha">
+									<a href="<?= base_url() ?>/home/tata_usaha" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
 								<p id="p_khusus">
-									<a href="<?= base_url() ?>/home/pidana_khusus">
+									<a href="<?= base_url() ?>/home/pidana_khusus" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
 								<p id="p_umum">
-									<a href="<?= base_url() ?>/home/pidana_umum">
+									<a href="<?= base_url() ?>/home/pidana_umum" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
 								<p id="p_jadwal">
-									<a href="<?= base_url() ?>/home/jadwal_sidang">
+									<a href="<?= base_url() ?>/home/jadwal_sidang" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
@@ -363,7 +347,7 @@
 												<div class="playlist_background"></div>
 
 												<!-- Video -->
-												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'www.youtube.com/watch?v=Uk2vMFIl26o', mute:false, addRaster:true})">
+												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/QhOFg_3RV5Q/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -376,7 +360,7 @@
 												</div>
 
 												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: '_me2yfR7Jfk', mute:false, addRaster:true})">
+												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/_me2yfR7Jfk/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -389,7 +373,7 @@
 												</div>
 
 												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: '8ArAnXLbFck', mute:false, addRaster:true})">
+												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/8ArAnXLbFck/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -402,7 +386,7 @@
 												</div>
 
 												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'qlI7GAHnMfM', mute:false, addRaster:true})">
+												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'n_N8hB7CoPk', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/qlI7GAHnMfM/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -417,6 +401,12 @@
 										</div>
 									</div>
 								</div>
+								<br>
+								<p>
+									<a href="#" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 
@@ -427,47 +417,77 @@
 								<div class="section_title">Foto Galeri</div>
 							</div>
 							<div class="section_content">
-								<div class="grid clearfix">
 
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_10.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">ASKaty Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+								<div class="container">
+									<div class="row">
+										<div class="MultiCarousel" data-items="1,2,3,3" data-slide="1" id="MultiCarousel" data-interval="1000">
+											<div class="MultiCarousel-inner">
+												<?php $i = 0;
+												foreach ($_SESSION['foto'] as $data) :
+												?>
+													<div class="item">
+														<div class="pad15" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)">
+															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%">
+															<p><i class="fa fa-clock-o"></i> <?= $data['tanggal_arsip_foto']; ?></p>
+															<p style="font-weight: bold;"><?= $data['nama_arsip_foto']; ?></p>
+														</div>
+													</div>
+												<?php $i++;
+												endforeach; ?>
+											</div>
+											<button class="carousel-control-prev-icon leftLst"></button>
+											<button class="carousel-control-next-icon rightLst"></button>
 										</div>
 									</div>
-
-
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_15.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">KZXaty Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="<?= base_url() ?>/template/visitor/images/post_14.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-
-									<!-- Default Card With Background -->
-									<div class="card card_default card_default_with_background grid-item"></div>
 								</div>
+
+								<div class="modal fade" data-backdrop="false" role="dialog" id="modalFoto">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title"></h5>
+												<button type="button" onclick="reset()" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">×</span>
+												</button>
+											</div>
+											<div class="modal-body form_kasus">
+												<div class="card-body Proses ">
+													<div class="card-body Method">
+														<input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
+														<div class="card">
+															<div class="col">
+																<div class="card-body">
+																	<div class="section-body">
+																		<div class="form-group">
+																			<div class="dropzone" id="mydropzone">
+																				<div class="fallback">
+																					<img src="" id="image" alt="Preview Image" style="width: 280px; height:280px;">
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer Foot">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="grid clearfix">
+
+								<!-- Default Card With Background -->
+								<div class="card card_default card_default_with_background grid-item"></div>
 							</div>
 						</div>
 					</div>
 					<br><br>
-					<!-- <div class="load_more">
-						<div id="load_more" class="load_more_button text-center trans_200">Load More</div>
-					</div> -->
 				</div>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -477,16 +497,20 @@
 						var table = $('#umum').hide();
 						var table = $('#khusus').hide();
 						var table = $('#perdata').hide();
+
+						$.ajax({
+							type: "GET",
+							url: "<?= site_url('home/berita'); ?>",
+							dataType: "json",
+							success: function(data) {
+								$('.berita').html(data.nama_buron);
+							}
+						});
+
+						$('#modalFoto').modal('hide');
 					})
 
-					$.ajax({
-						type: "GET",
-						url: "<?= site_url('home/berita'); ?>",
-						dataType: "json",
-						success: function(data) {
-							$('.berita').html(data.nama_buron);
-						}
-					});
+
 
 					function btnJadwal() {
 						$('#jadwal').show();
@@ -514,6 +538,20 @@
 						$('#umum').hide();
 						$('#perdata').show();
 						$('#khusus').hide();
+					}
+
+					function cekFoto(id_arsip_foto) {
+						$.ajax({
+							type: "GET",
+							url: "<?= site_url('arsip/get_id'); ?>/" + id_arsip_foto,
+							dataType: "json",
+							success: function(data) {
+								$('#id_arsip_foto').val(data.id_arsip_foto);
+								$('#image').attr('src', '<?= base_url('img_arsip/foto'); ?>/' + data.img_arsip_foto);
+								$('#modalFoto').modal('show');
+								$('.modal-title').text('Foto Galeri');
+							}
+						});
 					}
 
 					$(document).ready(function() {
@@ -579,6 +617,108 @@
 							$('#p_perdata').show();
 							$('#p_khusus').hide();
 						});
+					});
+
+					$(document).ready(function() {
+						var itemsMainDiv = ('.MultiCarousel');
+						var itemsDiv = ('.MultiCarousel-inner');
+						var itemWidth = "";
+
+						$('.leftLst, .rightLst').click(function() {
+							var condition = $(this).hasClass("leftLst");
+							if (condition)
+								click(0, this);
+							else
+								click(1, this)
+						});
+
+						ResCarouselSize();
+						$(window).resize(function() {
+							ResCarouselSize();
+						});
+
+						//this function define the size of the items
+						function ResCarouselSize() {
+							var incno = 0;
+							var dataItems = ("data-items");
+							var itemClass = ('.item');
+							var id = 0;
+							var btnParentSb = '';
+							var itemsSplit = '';
+							var sampwidth = $(itemsMainDiv).width();
+							var bodyWidth = $('body').width();
+							$(itemsDiv).each(function() {
+								id = id + 1;
+								var itemNumbers = $(this).find(itemClass).length;
+								btnParentSb = $(this).parent().attr(dataItems);
+								itemsSplit = btnParentSb.split(',');
+								$(this).parent().attr("id", "MultiCarousel" + id);
+
+
+								if (bodyWidth >= 1200) {
+									incno = itemsSplit[3];
+									itemWidth = sampwidth / incno;
+								} else if (bodyWidth >= 992) {
+									incno = itemsSplit[2];
+									itemWidth = sampwidth / incno;
+								} else if (bodyWidth >= 768) {
+									incno = itemsSplit[1];
+									itemWidth = sampwidth / incno;
+								} else {
+									incno = itemsSplit[0];
+									itemWidth = sampwidth / incno;
+								}
+								$(this).css({
+									'transform': 'translateX(0px)',
+									'width': itemWidth * itemNumbers
+								});
+								$(this).find(itemClass).each(function() {
+									$(this).outerWidth(itemWidth);
+								});
+
+								$(".leftLst").addClass("over");
+								$(".rightLst").removeClass("over");
+
+							});
+						}
+
+
+						//this function used to move the items
+						function ResCarousel(e, el, s) {
+							var leftBtn = ('.leftLst');
+							var rightBtn = ('.rightLst');
+							var translateXval = '';
+							var divStyle = $(el + ' ' + itemsDiv).css('transform');
+							var values = divStyle.match(/-?[\d\.]+/g);
+							var xds = Math.abs(values[4]);
+							if (e == 0) {
+								translateXval = parseInt(xds) - parseInt(itemWidth * s);
+								$(el + ' ' + rightBtn).removeClass("over");
+
+								if (translateXval <= itemWidth / 2) {
+									translateXval = 0;
+									$(el + ' ' + leftBtn).addClass("over");
+								}
+							} else if (e == 1) {
+								var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+								translateXval = parseInt(xds) + parseInt(itemWidth * s);
+								$(el + ' ' + leftBtn).removeClass("over");
+
+								if (translateXval >= itemsCondition - itemWidth / 2) {
+									translateXval = itemsCondition;
+									$(el + ' ' + rightBtn).addClass("over");
+								}
+							}
+							$(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+						}
+
+						//It is used to get some elements from btn
+						function click(ell, ee) {
+							var Parent = "#" + $(ee).parent().attr("id");
+							var slide = $(Parent).attr("data-slide");
+							ResCarousel(ell, Parent, slide);
+						}
+
 					});
 				</script>
 				<?= $this->endSection(); ?>

@@ -17,9 +17,9 @@
                     <div class="section-body">
                         <input type="text" name="id_agenda" value="" id="id_agenda" hidden>
                         <div class="form-group col">
-                            <label for="judul_agenda">Judul Agenda</label>
-                            <input type="text" class="form-control" name="judul_agenda" id="judul_agenda" placeholder="Judul Agenda">
-                            <div class="invalid-feedback errorJudul">
+                            <label for="nama_agenda">Nama Agenda</label>
+                            <input type="text" class="form-control" name="nama_agenda" id="nama_agenda" placeholder="Nama Agenda">
+                            <div class="invalid-feedback errorAgenda">
                             </div>
                         </div>
                         <div class="form-group col">
@@ -73,7 +73,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Judul Agenda</th>
+                                        <th>Nama Agenda</th>
                                         <th>Tanggal</th>
                                         <th>Action</th>
                                     </tr>
@@ -187,8 +187,8 @@
     function resetForm() {
         $('input').val('').removeAttr('checked').removeAttr('selected')
         $(".summernote").summernote('code', '');
-        $('#judul_agenda').removeClass('is-invalid');
-        $('#judul_agenda').removeClass('is-valid');
+        $('#nama_agenda').removeClass('is-invalid');
+        $('#nama_agenda').removeClass('is-valid');
         $('#tanggal_agenda').removeClass('is-invalid');
         $('#tanggal_agenda').removeClass('is-valid');
         $('#tanggal_agenda').removeClass('is-invalid');
@@ -220,12 +220,12 @@
             success: function(response) {
                 if (response.error) {
                     let data = response.error
-                    if (data.errorJudul) {
-                        $('#judul_agenda').addClass('is-invalid');
-                        $('.errorJudul').html(data.errorJudul);
+                    if (data.errorAgenda) {
+                        $('#nama_agenda').addClass('is-invalid');
+                        $('.errorAgenda').html(data.errorAgenda);
                     } else {
-                        $('#judul_agenda').removeClass('is-invalid');
-                        $('#judul_agenda').addClass('is-valid');
+                        $('#nama_agenda').removeClass('is-invalid');
+                        $('#nama_agenda').addClass('is-valid');
                     }
                     if (data.errorTanggal) {
                         $('#tanggal_agenda').addClass('is-invalid');
@@ -265,7 +265,7 @@
             url: "<?= site_url('modul/get_id/'); ?>" + id_agenda,
             dataType: "json",
             success: function(data) {
-                $('#judul_agenda').val(data.judul_agenda);
+                $('#nama_agenda').val(data.nama_agenda);
                 $('#tanggal_agenda').val(data.tanggal_agenda);
                 $("#teks_agenda").summernote('code', data.teks_agenda);
                 $('#id_agenda').val(data.id_agenda);
@@ -301,12 +301,12 @@
             success: function(response) {
                 if (response.error) {
                     let data = response.error
-                    if (data.errorJudul) {
-                        $('#judul_agenda').addClass('is-invalid');
-                        $('.errorJudul').html(data.errorJudul);
+                    if (data.errorAgenda) {
+                        $('#nama_agenda').addClass('is-invalid');
+                        $('.errorAgenda').html(data.errorAgenda);
                     } else {
-                        $('#judul_agenda').removeClass('is-invalid');
-                        $('#judul_agenda').addClass('is-valid');
+                        $('#nama_agenda').removeClass('is-invalid');
+                        $('#nama_agenda').addClass('is-valid');
                     }
                     if (data.errorTanggal) {
                         $('#tanggal_agenda').addClass('is-invalid');

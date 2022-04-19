@@ -729,6 +729,7 @@ a > b {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .floating-container .float-element {
   position: relative;
   display: block;
@@ -768,4 +769,46 @@ a > b {
   position: absolute;
   top: -50px;
   width: 100px;
+}
+
+.tgl_agenda {
+  color: #000;
+}
+
+.isi_agenda {
+  font-weight: bold;
+  color: #000;
+}
+
+hr {
+  outline: auto;
+}
+
+.misi li {
+  list-style-type: disc;
+  margin-left: 15px;
+}
+
+.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+.MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+.MultiCarousel .MultiCarousel-inner .item { float: left; width: 100%;}
+.MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+.MultiCarousel .leftLst { left:0; }
+.MultiCarousel .rightLst { right:0; }
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+
+.future_events{
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid gray;
+  margin-bottom: -40px;
+}
+
+.kepala_kejaksaan{
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: -5px;
 }
