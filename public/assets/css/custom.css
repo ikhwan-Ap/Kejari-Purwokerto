@@ -33,3 +33,40 @@
     width: 75%;
     display: inline-block;
 }
+
+.section_header::after {
+    display: block;
+    position: relative;
+    bottom: -36px;
+    margin: auto;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    content: "";
+}
+
+.section_header {
+    font-family: Popins, sans-serif;
+    line-height: 1.4;
+    font-size: 32px;
+    font-weight: 600;
+    color: #000000;
+    word-wrap: break-word;
+    padding-bottom: 10px;
+    width: fit-content;
+    max-width: 600px;
+    margin: auto;
+    -webkit-transform: translateY(3px);
+    -moz-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    transform: translateY(3px);
+}
+
+.main_section {
+    font-family: Popins, sans-serif;
+    line-height: 1.5;
+    text-align: justify !important;
+    font-size: 0px;
+    line-height: 27px;
+}

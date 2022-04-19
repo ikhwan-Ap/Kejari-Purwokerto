@@ -13,22 +13,19 @@ class Berita extends BaseController
         helper('form');
         $this->berita = new beritaModel();
     }
-    public function index()
-    {
+    public function index() {
         $data = [
             'title' => 'Berita',
         ];
         return view('admin/berita.php', $data);
     }
 
-    public function get_id($id_berita)
-    {
+    public function get_id($id_berita) {
         $data = $this->berita->get_id($id_berita);
         echo  json_encode($data);
     }
 
-    public function tambah_berita()
-    {
+    public function tambah_berita() {
 
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
@@ -122,7 +119,7 @@ class Berita extends BaseController
                     <span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">
                     </span>
                 </button>
-                <button type="button" class="btn btn-light" onclick="editBerita( ' . $hasil->id_berita . ' )" title="EDIT">
+                <button type="button" class="btn btn-light" onclick="editBerita(' . $hasil->id_berita . ')" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
                 <a href="//" class="btn btn-light" title="DETAIL">   
@@ -152,6 +149,7 @@ class Berita extends BaseController
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
             $id_berita = $this->request->getVar('id_berita');
+            $berita = $this->berita->get_id($id_berita);
 
             $judul_berita = $this->request->getVar('judul_berita');
             $tanggal = $this->request->getVar('tanggal');
@@ -200,7 +198,7 @@ class Berita extends BaseController
                 ];
             } else {
                 $id_baru = $this->berita->get_id($id_berita);
-                // $unlink = unlink('uploads/berita/' . $berita['img_berita']);
+                $unlink = unlink('uploads/berita/' . $berita['img_berita']);
                 $nama_image = $img_berita->getRandomName();
                 $img_berita->move('uploads/berita', $nama_image);
                 $this->berita->update($id_baru, [

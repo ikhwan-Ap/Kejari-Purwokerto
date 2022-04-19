@@ -55,10 +55,15 @@ $routes->get('/carousel', 'Menu::carousel');
 //Moduls    
 $routes->get('/visi_misi', 'Visi_misi::index');
 $routes->get('/agenda', 'Modul::index');
+
+//Berita
+$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1' );
+
 $routes->get('/pelayanan', 'Modul::pelayanan');
 // 
 $routes->get('/arsip_foto', 'Arsip::index');
 
+$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1' );
 
 /*
  * --------------------------------------------------------------------

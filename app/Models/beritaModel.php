@@ -92,6 +92,14 @@ class beritaModel extends Model
         return $query->getRowArray();
     }
 
+    public function getJudul($id_berita){
+        $this->dt
+            ->select('judul_berita')
+            ->where('id_berita', $id_berita);
+        $query = $this->dt->get();
+        return $query->getRowArray();
+    }
+
     public function countFiltered()
     {
         $this->getDataTables();
@@ -103,4 +111,5 @@ class beritaModel extends Model
         $tbl_storage = $this->db->table($this->table);
         return $tbl_storage->countAllResults();
     }
+
 }

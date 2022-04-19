@@ -6,6 +6,7 @@ use App\Models\agendaModel;
 use App\Models\arsip_fotoModel;
 use App\Models\kasusModel;
 use App\Models\buronModel;
+use App\Models\beritaModel;
 use App\Models\carouselModel;
 use App\Models\navbarModel;
 use App\Models\bidangModel;
@@ -26,6 +27,7 @@ class Home extends BaseController
         $this->buron  = new buronModel();
         $this->header  = new navbarModel();
         $this->bidang  = new bidangModel();
+        $this->bidang  = new beritaModel();
         $this->carousel = new carouselModel();
         $this->kategori = new kategoriModel();
         $this->visi_misi = new visi_misiModel();
@@ -42,6 +44,7 @@ class Home extends BaseController
         $_SESSION['agenda'] = $this->agenda->get_agenda();
         $_SESSION['foto'] = $this->foto->get_foto();
         session()->set([
+            'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
             'jaksa' => $kejaksaan['image_pengurus'],
             'nama_jaksa' => $kejaksaan['nama_pengurus'],
@@ -129,6 +132,21 @@ class Home extends BaseController
             'title' => $title,
             'bidang' => $bidang,
         ];
+          return view('visitor/info_perkara/pidana_umum', $data);
+    }
+
+    public function berita_view($id_berita) {
+        $berita = $this->berita->get_id($id_berita);
+        $title = $this->berita->getJudul($id_berita);
+        $data = [
+            'judul' => $title,
+            'berita' => $berita,
+        ];
+        return view('visitor/berita/berita_tentang', $data);
+    }
+
+    public function pidum()
+    {
         return view('visitor/bidang', $data);
     }
 

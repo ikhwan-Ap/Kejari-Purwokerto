@@ -74,6 +74,7 @@
 											endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
+
 									<?php $i = 0;
 									foreach ($pelayanan as $data) :  ?>
 										<a href="<?= $data['url_pelayanan']; ?>" target="_blank">
