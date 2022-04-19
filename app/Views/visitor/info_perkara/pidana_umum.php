@@ -25,7 +25,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $no = 1;
+                  <?php $no = 1 + (10 * ($page - 1));
                   foreach ($umum as $data) : ?>
                     <tr style="font-weight:bold; color:black">
                       <th><?= $no++; ?></th>

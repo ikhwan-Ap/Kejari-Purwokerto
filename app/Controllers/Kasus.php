@@ -239,7 +239,6 @@ class Kasus extends BaseController
             } else {
                 return $this->setResponseFormat('json')->respond(['error' => 'Data Bukan Merupakan Excel']);
             }
-
             $spreadsheet = $reader->load($file);
             $sheet = $spreadsheet->getActiveSheet()->toArray();
             if ($sheet != null) {
