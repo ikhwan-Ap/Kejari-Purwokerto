@@ -31,13 +31,8 @@ function day($day)
 
 $tgl = strtotime($berita['tanggal']);
 $hari = day(date('l', $tgl));
-<<<<<<< HEAD
-$bulan = date(',d F Y', $tgl);
-$tanggal = $hari . $bulan;
-=======
 $bulan = date(', F Y', $tgl);
-$tanggal = $hari.$bulan;
->>>>>>> aa46912abbf5611edc3f251d66fdea0b90551b1d
+$tanggal = $hari . $bulan;
 ?>
 
 <div class="page_content">
