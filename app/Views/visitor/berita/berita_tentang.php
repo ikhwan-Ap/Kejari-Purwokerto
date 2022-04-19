@@ -28,10 +28,53 @@ function day($day){
   }
 }
 
+function mon($mon){
+  switch ($mon) {
+      case 'January':
+          return 'Januari';
+          break;
+      case 'February':
+          return 'Februari';
+          break;
+      case 'March':
+          return 'Maret';
+          break;
+      case 'April':
+          return 'April';
+          break;
+      case 'May':
+          return 'Mei';
+          break;
+      case 'June':
+          return 'Juni';
+          break;
+      case 'July':
+          return 'Juli';
+          break;
+      case 'August':
+          return 'Agustus';
+          break;
+      case 'September':
+          return 'September';
+          break;
+      case 'October':
+          return 'Oktober';
+          break;
+      case 'November':
+          return 'November';
+          break;
+      case 'December':
+          return 'Desember';
+          break;
+  }
+}
+
 $tgl = strtotime($berita['tanggal']);
 $hari = day(date('l', $tgl));
-$bulan = date(', F Y', $tgl);
-$tanggal = $hari.$bulan;
+$mon = mon(date('F', $tgl));
+$d = date(', d ', $tgl);
+$th = date(' Y', $tgl);
+$tanggal = $hari.$d.$mon.$th;
 ?>
 
 <div class="page_content">
