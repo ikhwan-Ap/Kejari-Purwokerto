@@ -65,8 +65,16 @@
 
 .main_section {
     font-family: Popins, sans-serif;
-    line-height: 1.5;
     text-align: justify !important;
     font-size: 0px;
+    width: 600px;
+    margin: auto;
+    line-height: 1.5;
     line-height: 27px;
+}
+
+.panel_content {
+    max-width: 740px;
+    border-radius: 10px;
+    margin: 1.5em 0;
 }

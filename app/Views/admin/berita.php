@@ -88,7 +88,7 @@ $year = $arr[0];
                         </div>
                     </div>
                     <center> <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary">Unggah</button></center>
-                    <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Edit</button></center>
+                    <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Ubah</button></center>
                 </div>
 
             </div>
@@ -110,10 +110,10 @@ $year = $arr[0];
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Image</th>
+                                        <th>Gambar</th>
                                         <th>Judul Berita</th>
                                         <th>Tanggal</th>
-                                        <th>Action</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -134,6 +134,7 @@ $year = $arr[0];
     var table;
 
     $(document).ready(function() {
+
         table = $('#Berita').DataTable({
             "processing": true,
             "serverSide": true,
@@ -169,6 +170,8 @@ $year = $arr[0];
             ],
             dialogsInBody: true,
         })
+        $('#teks_berita').summernote('code', '<b>Kejaksaan Negeri Purwokerto – </b> ');
+
     });
 
     function previewFile(input) {
@@ -353,7 +356,7 @@ $year = $arr[0];
 
     function editBerita(id_berita) {
         console.log("u r here");
-        var textareaValue = $('#teks_berita').summernote('code');
+        var textareaValue = $('#teks_berita').summernote('code',);
         $.ajax({
             type: "GET",
             url: "<?= site_url('berita/get_id/'); ?>" + id_berita,
@@ -374,7 +377,6 @@ $year = $arr[0];
     }
 
     function edit() {
-        console.log("now u r here");
         let form = $('#formBerita')[0];
         let data = new FormData(form);
 
@@ -397,7 +399,6 @@ $year = $arr[0];
             },
             success: function(response) {
                 if (response.error) {
-                    console.log("respon = ", response);
                     let data = response.error
                     if (data.errorJudul) {
                         $('#judul_berita').addClass('is-invalid');
@@ -436,7 +437,6 @@ $year = $arr[0];
                         title: 'Berhasil',
                         html: `Data Berhasil Di tambahkan`,
                     }).then((result) => {
-                        console.log("hasil sukses ", result);
                         if (result.value) {
                             resetForm();
                             reload_table();
