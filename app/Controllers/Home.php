@@ -132,10 +132,11 @@ class Home extends BaseController
             'title' => $title,
             'bidang' => $bidang,
         ];
-          return view('visitor/info_perkara/pidana_umum', $data);
+        return view('visitor/info_perkara/pidana_umum', $data);
     }
 
-    public function berita_view($id_berita) {
+    public function berita_view($id_berita)
+    {
         $berita = $this->berita->get_id($id_berita);
         $title = $this->berita->getJudul($id_berita);
         $data = [
@@ -147,7 +148,7 @@ class Home extends BaseController
 
     public function pidum()
     {
-        return view('visitor/bidang', $data);
+        return view('visitor/bidang');
     }
 
     public function berita()

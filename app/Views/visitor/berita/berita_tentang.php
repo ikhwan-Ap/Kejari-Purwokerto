@@ -2,36 +2,37 @@
 <?= $this->section('content'); ?>
 <?php
 
-function day($day){
+function day($day)
+{
   switch ($day) {
-      case 'Sunday':
-          return 'Minggu';
-          break;
-      case 'Monday':
-          return 'Senin';
-          break;
-      case 'Tuesday':
-          return 'Selasa';
-          break;
-      case 'Wednesday':
-          return 'Rabu';
-          break;
-      case 'Thursday':
-          return 'Kamis';
-          break;
-      case 'Friday':
-          return 'Jumat';
-          break;
-      case 'Saturday':
-          return 'Sabtu';
-          break;
+    case 'Sunday':
+      return 'Minggu';
+      break;
+    case 'Monday':
+      return 'Senin';
+      break;
+    case 'Tuesday':
+      return 'Selasa';
+      break;
+    case 'Wednesday':
+      return 'Rabu';
+      break;
+    case 'Thursday':
+      return 'Kamis';
+      break;
+    case 'Friday':
+      return 'Jumat';
+      break;
+    case 'Saturday':
+      return 'Sabtu';
+      break;
   }
 }
 
 $tgl = strtotime($berita['tanggal']);
 $hari = day(date('l', $tgl));
 $bulan = date(',d F Y', $tgl);
-$tanggal = $hari.$bulan;
+$tanggal = $hari . $bulan;
 ?>
 
 <div class="page_content">
@@ -59,4 +60,4 @@ $tanggal = $hari.$bulan;
         </div>
       </div>
 
-<?= $this->endSection(); ?>
+      <?= $this->endSection(); ?>
