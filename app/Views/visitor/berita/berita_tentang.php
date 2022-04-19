@@ -87,18 +87,18 @@ $tanggal = $hari . $d . $mon . $th;
       <div class="col-lg-9">
         <div class="main_content">
           <div class="blog_section">
-            <div class="section_panel flex-row align-items-center justify-content-start">
+            <div class="section_panel flex-row align-items-center justify-content-start" style="text-align: center">
               <div class="section_header"><?= $berita['judul_berita']; ?></div>
               <div class=""><?= $tanggal; ?></div>
             </div>
             <div class="section_content">
 
               <div style="text-align:center">
-                <img src="<?= base_url() ?>/uploads/berita/<?= $berita['img_berita']; ?>" alt="" width="300px">
+                <img src="<?= base_url() ?>/uploads/berita/<?= $berita['img_berita']; ?>" alt="" class="panel_content">
 
               </div>
               <div class="main_section">
-                <p><?= $berita['tanggal'] ?><?= $berita['teks_berita']; ?></p>
+                <p><?= $berita['teks_berita']; ?></p>
               </div>
 
             </div>

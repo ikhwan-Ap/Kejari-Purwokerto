@@ -64,9 +64,17 @@
 }
 
 .main_section {
+    margin: auto;
+    width: 600px;
     font-family: Popins, sans-serif;
     line-height: 1.5;
     text-align: justify !important;
     font-size: 0px;
     line-height: 27px;
+}
+
+.panel_content {
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 1.5em 0;
 }

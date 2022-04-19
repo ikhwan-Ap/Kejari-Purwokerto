@@ -169,6 +169,7 @@ $year = $arr[0];
             ],
             dialogsInBody: true,
         })
+        $('.summernote').summernote('code', '<b>Kejaksaan Negeri Purwokerto –</b>')
     });
 
     function previewFile(input) {
@@ -413,14 +414,6 @@ $year = $arr[0];
                     } else {
                         $('#tanggal').removeClass('is-invalid');
                         $('#tanggal').addClass('is-valid');
-                    }
-                    if (data.errorImage) {
-                        $('#img_berita').addClass('is-invalid');
-                        $('.errorImage').html(data.errorImage);
-                        $('#judul_berita').focus();
-                    } else {
-                        $('#img_berita').removeClass('is-invalid');
-                        $('#img_berita').addClass('is-valid');
                     }
                     if (data.errorTeks) {
                         $('#teks_berita').addClass('is-invalid');
