@@ -190,4 +190,10 @@ class Home extends BaseController
         ];
         return view('visitor/portal', $data);
     }
+
+    public function agenda()
+    {
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        return view('visitor/agenda');
+    }
 }
