@@ -352,6 +352,7 @@ $year = $arr[0];
     }
 
     function editBerita(id_berita) {
+        console.log("u r here");
         var textareaValue = $('#teks_berita').summernote('code');
         $.ajax({
             type: "GET",
@@ -368,12 +369,12 @@ $year = $arr[0];
                 $('#btnEdit').show();
                 $('#btnSave').hide();
                 $('#judul_berita').focus();
-
             }
         });
     }
 
     function edit() {
+        console.log("now u r here");
         let form = $('#formBerita')[0];
         let data = new FormData(form);
 

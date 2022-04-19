@@ -53,6 +53,8 @@ $routes->get('/carousel', 'Menu::carousel');
 $routes->get('visi_misi', 'Visi_misi::index');
 $routes->get('/bidang_view/(:any)', 'Home::bidang/$1');
 $routes->get('/agenda', 'Modul::index');
+//Berita
+$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1' );
 
 /*
  * --------------------------------------------------------------------
