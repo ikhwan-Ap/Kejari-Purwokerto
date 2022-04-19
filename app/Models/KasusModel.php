@@ -205,4 +205,13 @@ class kasusModel extends Model
     {
         $this->db->table('kasus')->insert($import);
     }
+
+    public function get_pidum()
+    {
+        $umum = $this->db->table('kasus');
+        $umum->where('kategori', 'Pidana Umum');
+        $umum->where('keterangan', 'Incraht');
+        $umum->orderBy('id_kasus', 'DESC');
+        return $umum;
+    }
 }

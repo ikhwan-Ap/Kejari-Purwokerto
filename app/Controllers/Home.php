@@ -27,7 +27,7 @@ class Home extends BaseController
         $this->buron  = new buronModel();
         $this->header  = new navbarModel();
         $this->bidang  = new bidangModel();
-        $this->bidang  = new beritaModel();
+        $this->berita  = new beritaModel();
         $this->carousel = new carouselModel();
         $this->kategori = new kategoriModel();
         $this->visi_misi = new visi_misiModel();
@@ -86,10 +86,15 @@ class Home extends BaseController
 
     public function jadwal_sidang()
     {
+        $jadwal = $this->kasus;
+        $jadwal->where('keterangan', '-');
+        $jadwal->orderBy('id_kasus', 'DESC');
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
+            'jadwal' => $jadwal->paginate(10),
+            'pager' => $jadwal->pager,
         ];
         return view('visitor/info_perkara/jadwal_sidang', $data);
     }
@@ -105,10 +110,16 @@ class Home extends BaseController
 
     public function pidana_umum()
     {
+        $umum = $this->kasus;
+        $umum->where('kategori', 'Pidana Umum');
+        $umum->where('keterangan', 'Incraht');
+        $umum->orderBy('id_kasus', 'DESC');
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
+            'umum' => $umum->paginate(10),
+            'pager' => $umum->pager,
         ];
         return view('visitor/info_perkara/pidana_umum', $data);
     }
