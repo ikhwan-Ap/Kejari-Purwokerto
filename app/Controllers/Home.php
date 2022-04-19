@@ -179,6 +179,10 @@ class Home extends BaseController
 
     public function portal()
     {
-        return view('visitor/portal');
+        $data = [
+            'title' => 'Portal Pelayanan',
+            'pelayanan' => $this->pelayanan->get_data(),
+        ];
+        return view('visitor/portal', $data);
     }
 }

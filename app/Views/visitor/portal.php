@@ -26,38 +26,29 @@
 </head>
 
 <body>
+	<div style="text-align: left; margin-left:15px">
+		<a href="<?= base_url() ?>/home" class="btn btn-danger">&#60; Kembali</a>
+	</div>
 	<img src="<?= base_url() ?>/template/visitor/images/logoportal.png" alt=""><br><br>
 	<h1 style="color: black; font-size: xx-large; font-weight: bolder;">Portal Layanan Kejari Purwokerto</h1>
 	<hr>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
-				<div class="card card_default card_small_with_background grid-item" style="width: inherit;">
-					<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_12.jpg)"></div>
-					<div class="card-body">
-						<img src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="10%">
-						<div class="card-title card-title-small"><a href="#">Pelayanan 1</a></div>
-					</div>
+			<?php $i = 0;
+			foreach ($pelayanan as $data) :  ?>
+				<div class="col-md-4">
+					<a href="<?= $data['url_pelayanan']; ?>">
+						<div class="card card_default card_small_with_background grid-item" style="width: 100%;">
+							<div class="card_background" style="background-image: linear-gradient(45deg, <?= $data['warna_pelayanan']; ?>, <?= $data['gradiasi_pelayanan']; ?>)"></div>
+							<div class="card-body">
+								<img src="<?= base_url() ?>/img_pelayanan/<?= $data['img_pelayanan']; ?>" alt="" width="10%">
+								<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;"><?= $data['nama_pelayanan']; ?></div>
+							</div>
+						</div>
+					</a>
 				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="card card_default card_small_with_background grid-item" style="width: inherit;">
-					<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_4.jpg)"></div>
-					<div class="card-body">
-						<img src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="10%">
-						<div class="card-title card-title-small"><a href="#">Pelayanan 1</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="card card_default card_small_with_background grid-item" style="width: inherit;">
-					<div class="card_background" style="background-image:url(<?= base_url() ?>/template/visitor/images/post_6.jpg)"></div>
-					<div class="card-body">
-						<img src="<?= base_url() ?>/template/visitor/images/icon.png" alt="" width="10%">
-						<div class="card-title card-title-small"><a href="#">Pelayanan 1</a></div>
-					</div>
-				</div>
-			</div>
+			<?php $i++;
+			endforeach; ?>
 
 		</div>
 	</div>

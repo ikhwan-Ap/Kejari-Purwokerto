@@ -2,7 +2,7 @@
 	<?= $this->section('content'); ?>
 
 	<!-- <div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/carousel.jpg');"></div> -->
-	<div id="carousel" class="carousel slide" data-ride="carousel">
+	<div id="carousel" class="carousel slide" data-ride="carousel" style="height: 720px;">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel" data-slide-to="1"></li>
@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-											$warna = 'green';
-											$background = array(
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												$warna = 'green';
+												$background = array(
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-											);
-											$i = 0;
-											foreach ($carousel as $value) :
-											?>
+												);
+												$i = 0;
+												foreach ($carousel as $value) :
+												?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-												$i++;
-											endforeach;  ?> -->
+													$i++;
+												endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 
@@ -427,7 +427,7 @@
 												?>
 													<div class="item">
 														<div class="pad15" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)">
-															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%">
+															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%" height="150px">
 															<p><i class="fa fa-clock-o"></i> <?= $data['tanggal_arsip_foto']; ?></p>
 															<p style="font-weight: bold;"><?= $data['nama_arsip_foto']; ?></p>
 														</div>
@@ -440,6 +440,12 @@
 										</div>
 									</div>
 								</div>
+
+								<p>
+									<a href="#" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 
 								<div class="modal fade" data-backdrop="false" role="dialog" id="modalFoto">
 									<div class="modal-dialog modal-lg">
@@ -454,19 +460,9 @@
 												<div class="card-body Proses ">
 													<div class="card-body Method">
 														<input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
-														<div class="card">
-															<div class="col">
-																<div class="card-body">
-																	<div class="section-body">
-																		<div class="form-group">
-																			<div class="dropzone" id="mydropzone">
-																				<div class="fallback">
-																					<img src="" id="image" alt="Preview Image" style="width: 280px; height:280px;">
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
+														<div class="dropzone" id="mydropzone">
+															<div class="fallback">
+																<img src="" id="image" alt="Preview Image" style="width: 100%;">
 															</div>
 														</div>
 													</div>
