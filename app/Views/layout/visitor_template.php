@@ -100,7 +100,7 @@
 			<div class="container">
 				<div class="row align-items-center position-relative">
 					<div class="col-12">
-						<nav class="custom-site-navigation text-center mx-auto" role="navigation">
+						<nav class="custom-site-navigation text-center mx-auto" style="margin-left: 0;" role="navigation">
 							<ul class="custom-site-menu main-menu js-clone-nav mx-auto d-none d-lg-block">
 								<li><a href="<?= base_url() ?>/home" class="nav-link"><b>Beranda</b></a></li>
 								<li class="has-children">
@@ -183,6 +183,7 @@
 										<li><a href="#" class="nav-link">Video Kegiatan</a></li>
 									</ul>
 								</li>
+								<li><a href="<?= base_url() ?>/home/portal" class="nav-link"><b>Pelayanan</b></a></li>
 								<li><a href="<?= base_url() ?>/home/kontak" class="nav-link"><b>Kontak Kami</b></a></li>
 							</ul>
 						</nav>
