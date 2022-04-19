@@ -64,11 +64,11 @@
 }
 
 .main_section {
+    line-height: 1.5;
+    font-family: Popins, sans-serif;
+    text-align: justify !important;
     margin: auto;
     width: 600px;
-    font-family: Popins, sans-serif;
-    line-height: 1.5;
-    text-align: justify !important;
     font-size: 0px;
     line-height: 27px;
 }
