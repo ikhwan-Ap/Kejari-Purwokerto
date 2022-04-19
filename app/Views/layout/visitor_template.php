@@ -175,7 +175,7 @@
 											<a href="#" class="nav-link">Pengaduan</a>
 										</li>
 										<li><a href="#" class="nav-link">Kontak</a></li>
-										<li><a href="<?= base_url() ?>/berita_tentang/7" class="nav-link">Berita</a></li>
+										<li><a href="<?= base_url() ?>/berita_tentang/3" class="nav-link">Berita</a></li>
 										<li><a href="#" class="nav-link">Artikel</a></li>
 										<li><a href="#" class="nav-link">Pengumuman</a></li>
 										<li><a href="#" class="nav-link">Webmail</a></li>
@@ -262,7 +262,7 @@
 					foreach ($_SESSION['agenda'] as $data) : ?>
 						<a href="post.html">
 							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tanggal_agenda']; ?></div>
-							<div class="isi_agenda"><?= $data['judul_agenda']; ?></div>
+							<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
 						</a>
 						<hr>
 					<?php $i++;

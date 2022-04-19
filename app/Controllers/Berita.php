@@ -179,6 +179,7 @@ class Berita extends BaseController
                     'rules' => 'uploaded[img_berita]|max_size[img_berita,1024]|is_image[img_berita]
                     |mime_in[img_berita,image/jpg,image/jpeg,image/png]',
                     'errors' => [
+                        'uploaded' => 'Image Gambar Harus Di Isi !',
                         'max_size' => 'Gambar Melebihi 1 mb',
                         'mime_in' => 'Gambar harus png / jpg / jpeg !',
                         'is_image' => 'File Bukan Merupakan Gambar',
