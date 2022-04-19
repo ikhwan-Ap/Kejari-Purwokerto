@@ -89,12 +89,15 @@ class Home extends BaseController
         $jadwal = $this->kasus;
         $jadwal->where('keterangan', '-');
         $jadwal->orderBy('id_kasus', 'DESC');
+        $page = $this->request->getVar('page') ?
+            $this->request->getVar('page') : 1;
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
             'jadwal' => $jadwal->paginate(10),
             'pager' => $jadwal->pager,
+            'page' => $page,
         ];
         return view('visitor/info_perkara/jadwal_sidang', $data);
     }
@@ -114,12 +117,14 @@ class Home extends BaseController
         $umum->where('kategori', 'Pidana Umum');
         $umum->where('keterangan', 'Incraht');
         $umum->orderBy('id_kasus', 'DESC');
+        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
             'umum' => $umum->paginate(10),
             'pager' => $umum->pager,
+            'page' => $page,
         ];
         return view('visitor/info_perkara/pidana_umum', $data);
     }

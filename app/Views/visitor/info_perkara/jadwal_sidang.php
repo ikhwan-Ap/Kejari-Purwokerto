@@ -11,7 +11,6 @@
               <div class="section_title">Jadwal Sidang</div>
             </div>
             <div class="section_content">
-
               <table class="table table-responsive table-bordered table-light">
                 <thead>
                   <tr style=" font-weight:bold; color:black">
@@ -25,7 +24,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $no = 1;
+                  <?php $no = 1 + (10 * ($page - 1));
                   foreach ($jadwal as $data) : ?>
                     <tr style="font-weight:bold; color:black">
                       <th><?= $no++; ?></th>
