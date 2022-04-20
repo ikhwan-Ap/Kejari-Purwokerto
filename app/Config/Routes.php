@@ -38,8 +38,9 @@ $routes->get('/kasus', 'Kasus::index');
 $routes->get('/incraht', 'Incraht::index');
 $routes->get('/buron', 'Buron::index');
 $routes->get('/berita', 'Berita::index');
+// Get Beranda
 $routes->get('/beranda/agenda', 'Home::agenda');
-
+$routes->get('/beranda/agenda/(:any)', 'Home::get_agenda/$1');
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
 $routes->get('/visi-misi', 'Home::visi_misi');
@@ -52,6 +53,7 @@ $routes->get('/header', 'Menu::index');
 $routes->get('/download', 'Menu::download');
 $routes->get('/icon', 'Menu::icon');
 $routes->get('/carousel', 'Menu::carousel');
+$routes->get('/banner', 'Banner::index');
 // $routes->get('/login', 'Home::index');
 //Moduls    
 $routes->get('/visi_misi', 'Visi_misi::index');
@@ -61,10 +63,9 @@ $routes->get('/agenda', 'Modul::index');
 $routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1');
 
 $routes->get('/pelayanan', 'Modul::pelayanan');
-// 
+//Arsip
 $routes->get('/arsip_foto', 'Arsip::index');
-
-$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1');
+$routes->get('/struktur', 'Struktur::index');
 
 /*
  * --------------------------------------------------------------------
