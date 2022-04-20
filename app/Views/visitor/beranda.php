@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-												$warna = 'green';
-												$background = array(
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+											$warna = 'green';
+											$background = array(
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-												);
-												$i = 0;
-												foreach ($carousel as $value) :
-												?>
+											);
+											$i = 0;
+											foreach ($carousel as $value) :
+											?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-													$i++;
-												endforeach;  ?> -->
+												$i++;
+											endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 
@@ -430,7 +430,7 @@
 										<div class="modal-content">
 											<div class="modal-header">
 												<h5 class="modal-title"></h5>
-												<button type="button" onclick="reset()" class="close" data-dismiss="modal" aria-label="Close">
+												<button type="button" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
 													<span aria-hidden="true">×</span>
 												</button>
 											</div>
@@ -440,7 +440,7 @@
 														<input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
 														<div class="dropzone" id="mydropzone">
 															<div class="fallback">
-																<img src="" id="image" alt="Preview Image" style="width: 100%;">
+																<img src="" id="image" alt="Preview Image" style="width: 100%; ">
 															</div>
 														</div>
 													</div>

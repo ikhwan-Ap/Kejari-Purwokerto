@@ -11,7 +11,6 @@
               <div class="section_title">Pidana Umum</div>
             </div>
             <div class="section_content">
-
               <table class="table table-bordered table-light">
                 <thead>
                   <tr style=" font-weight:bold; color:black">
