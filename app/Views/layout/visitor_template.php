@@ -252,7 +252,7 @@
 					<?php
 					$i = 0;
 					foreach ($_SESSION['agenda'] as $data) : ?>
-						<a href="post.html">
+						<a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
 							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tanggal_agenda']; ?></div>
 							<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
 						</a>

@@ -153,7 +153,7 @@ class Home extends BaseController
             'title' => $title,
             'bidang' => $bidang,
         ];
-        return view('visitor/info_perkara/pidana_umum', $data);
+        return view('visitor/bidang', $data);
     }
 
     public function berita_view($id_berita)
