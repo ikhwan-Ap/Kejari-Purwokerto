@@ -154,7 +154,7 @@ class Berita extends BaseController
             $judul_berita = $this->request->getVar('judul_berita');
             $tanggal = $this->request->getVar('tanggal');
             $teks_berita = $this->request->getVar('teks_berita');
-            if $this->request->getFile('img_berita') {
+            if ($this->request->getFile('img_berita')) {
                 $img_berita = $this->request->getFile('img_berita');
 
                 $valid = $this->validate([
@@ -208,10 +208,13 @@ class Berita extends BaseController
                             'required' => 'Isi Berita Tidak Boleh Kosong!!'
                         ],
                     ],
+                    'img_berita' => [
+                        'errors' => 'o'
+                    ]
     
                 ]);
             }
-
+            
             if (!$valid) {
                 $data = [
                     'error' => [
@@ -221,19 +224,34 @@ class Berita extends BaseController
                     ],
                 ];
             } else {
-                $id_baru = $this->berita->get_id($id_berita);
-                $unlink = unlink('uploads/berita/' . $berita['img_berita']);
-                $nama_image = $img_berita->getRandomName();
-                $img_berita->move('uploads/berita', $nama_image);
-                $this->berita->update($id_baru, [
-                    'judul_berita' => $judul_berita,
-                    'tanggal' => $tanggal,
-                    'img_berita' => $nama_image,
-                    'teks_berita' => $teks_berita,
-                ]);
-                $data = [
-                    'sukses' => 'Data Berita Berhasil Diperbarui'
-                ];
+                if (data['errorImage'] == 'o'){
+
+                    $id_baru = $this->berita->get_id($id_berita);
+                    $this->berita->update($id_baru, [
+                        'judul_berita' => $judul_berita,
+                        'tanggal' => $tanggal,
+                        'teks_berita' => $teks_berita,
+                    ]);
+                    $data = [
+                        'sukses' => 'Data Berita Berhasil Diperbarui'
+                    ];
+                }
+                else {
+                    
+                    $id_baru = $this->berita->get_id($id_berita);
+                    // $unlink = unlink('uploads/berita/' . $berita['img_berita']);
+                    $nama_image = $img_berita->getRandomName();
+                    $img_berita->move('uploads/berita', $nama_image);
+                    $this->berita->update($id_baru, [
+                        'judul_berita' => $judul_berita,
+                        'tanggal' => $tanggal,
+                        'img_berita' => $nama_image,
+                        'teks_berita' => $teks_berita,
+                    ]);
+                    $data = [
+                        'sukses' => 'Data Berita Berhasil Diperbarui'
+                    ];
+                }
             }
         }
         echo json_encode($data);
