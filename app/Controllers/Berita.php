@@ -154,6 +154,7 @@ class Berita extends BaseController
         if ($this->request->isAJAX()) {
             $id_berita = $this->request->getVar('id_berita');
             $berita = $this->berita->get_id($id_berita);
+            $img_berita = $this->request->getFile('img_berita');
             $judul_berita = $this->request->getVar('judul_berita');
             $tanggal = $this->request->getVar('tanggal');
             $teks_berita = $this->request->getVar('teks_berita');
