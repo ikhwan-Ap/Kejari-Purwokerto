@@ -38,6 +38,7 @@ $routes->get('/kasus', 'Kasus::index');
 $routes->get('/incraht', 'Incraht::index');
 $routes->get('/buron', 'Buron::index');
 $routes->get('/berita', 'Berita::index');
+$routes->get('/beranda/agenda', 'Home::agenda');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
@@ -57,13 +58,13 @@ $routes->get('/visi_misi', 'Visi_misi::index');
 $routes->get('/agenda', 'Modul::index');
 
 //Berita
-$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1' );
+$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1');
 
 $routes->get('/pelayanan', 'Modul::pelayanan');
 // 
 $routes->get('/arsip_foto', 'Arsip::index');
 
-$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1' );
+$routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1');
 
 /*
  * --------------------------------------------------------------------
