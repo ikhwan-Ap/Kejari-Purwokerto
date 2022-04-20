@@ -112,19 +112,7 @@
 										<li><a href="#" class="nav-link">Perintah Harian Jaksa Agung RI</a></li>
 									</ul>
 								</li>
-								<li class="has-children">
-									<a href="#" class="nav-link"><b>Reformasi Birokrasi</b></a>
-									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Survei Kepuasan Masyarakat</a></li>
-										<li><a href="<?= base_url() ?>/home/portal" class="nav-link" target="_blank">Layanan Kejaksaan Negeri Purwokerto</a></li>
-										<li><a href="#" class="nav-link">Moto Pelayanan</a></li>
-										<li><a href="#" class="nav-link">Maklumat Pelayanan</a></li>
-										<li><a href="#" class="nav-link">Agen Perubahan</a></li>
-										<li><a href="#" class="nav-link">Komitmen Bersama</a></li>
-										<li><a href="#" class="nav-link">Bukti Dukung</a></li>
-										<li><a href="#" class="nav-link">Buku Profil Kejari Purwokerto</a></li>
-									</ul>
-								</li>
+
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Info Perkara</b></a>
 									<ul class="dropdown arrow-top">
@@ -251,7 +239,7 @@
 					</a>
 					<hr>
 					<p>
-						<a href="#" class="btn btn-secondary btn-sm">
+						<a href="#" class="btn btn-secondary btn-sm btn-sidebar">
 							<span class="">Selengkapnya...</span>
 						</a>
 					</p>
@@ -274,7 +262,7 @@
 					<?php $i++;
 					endforeach; ?>
 					<p>
-						<a href="<?= base_url() ?>/home/agenda" class="btn btn-secondary btn-sm">
+						<a href="<?= base_url() ?>/home/agenda" class="btn btn-secondary btn-sm btn-sidebar">
 							<span class="">Selengkapnya...</span>
 						</a>
 					</p>

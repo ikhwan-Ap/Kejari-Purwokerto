@@ -186,7 +186,7 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'Portal Pelayanan',
-            'pelayanan' => $this->pelayanan->get_data(),
+            'pelayanan' => $this->pelayanan->findAll(),
         ];
         return view('visitor/portal', $data);
     }
