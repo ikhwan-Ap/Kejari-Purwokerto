@@ -206,7 +206,7 @@
 				<?php foreach ($_SESSION['banner'] as $data) :  ?>
 					<a href="<?= $data['url_banner']; ?>">
 						<div class="sidebar_section">
-							<img src="<?= base_url() ?>/uploads/banner/<?= $data['img_banner']; ?>" alt="" width="100%" />
+							<img src="<?= base_url() ?>/uploads/banner/<?= $data['img_banner']; ?>" alt="" width="100%" height="135px" style="border: 3px solid gray; border-radius: 10px;" />
 						</div>
 					</a>
 					<br>
@@ -252,7 +252,7 @@
 					<?php
 					$i = 0;
 					foreach ($_SESSION['agenda'] as $data) : ?>
-						<a href="post.html">
+						<a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
 							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tanggal_agenda']; ?></div>
 							<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
 						</a>

@@ -13,19 +13,22 @@ class Berita extends BaseController
         helper('form');
         $this->berita = new beritaModel();
     }
-    public function index() {
+    public function index()
+    {
         $data = [
             'title' => 'Berita',
         ];
         return view('admin/berita.php', $data);
     }
 
-    public function get_id($id_berita) {
+    public function get_id($id_berita)
+    {
         $data = $this->berita->get_id($id_berita);
         echo  json_encode($data);
     }
 
-    public function tambah_berita() {
+    public function tambah_berita()
+    {
 
         $validation = \Config\Services::validation();
         if ($this->request->isAJAX()) {
@@ -154,7 +157,7 @@ class Berita extends BaseController
             $judul_berita = $this->request->getVar('judul_berita');
             $tanggal = $this->request->getVar('tanggal');
             $teks_berita = $this->request->getVar('teks_berita');
-            if $this->request->getFile('img_berita') {
+            if ($this->request->getFile('img_berita')) {
                 $img_berita = $this->request->getFile('img_berita');
 
                 $valid = $this->validate([
@@ -185,10 +188,9 @@ class Berita extends BaseController
                             'is_image' => 'File Bukan Merupakan Gambar',
                         ]
                     ],
-    
+
                 ]);
-            }
-            else {
+            } else {
                 $valid = $this->validate([
                     'judul_berita' => [
                         'rules' => 'required',
@@ -208,7 +210,7 @@ class Berita extends BaseController
                             'required' => 'Isi Berita Tidak Boleh Kosong!!'
                         ],
                     ],
-    
+
                 ]);
             }
 
