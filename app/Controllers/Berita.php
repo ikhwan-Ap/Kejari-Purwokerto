@@ -153,39 +153,64 @@ class Berita extends BaseController
 
             $judul_berita = $this->request->getVar('judul_berita');
             $tanggal = $this->request->getVar('tanggal');
-            $img_berita = $this->request->getFile('img_berita');
             $teks_berita = $this->request->getVar('teks_berita');
+            if $this->request->getFile('img_berita') {
+                $img_berita = $this->request->getFile('img_berita');
 
-            $valid = $this->validate([
-                'judul_berita' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Judul Berita Tidak Boleh Kosong!!'
+                $valid = $this->validate([
+                    'judul_berita' => [
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => 'Judul Berita Tidak Boleh Kosong!!'
+                        ],
                     ],
-                ],
-                'tanggal' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Tanggal Tidak Boleh Kosong!!'
+                    'tanggal' => [
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => 'Tanggal Tidak Boleh Kosong!!'
+                        ],
                     ],
-                ],
-                'teks_berita' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Isi Berita Tidak Boleh Kosong!!'
+                    'teks_berita' => [
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => 'Isi Berita Tidak Boleh Kosong!!'
+                        ],
                     ],
-                ],
-                'img_berita' => [
-                    'rules' => 'max_size[img_berita,1024]|is_image[img_berita]
-                    |mime_in[img_berita,image/jpg,image/jpeg,image/png]',
-                    'errors' => [
-                        'max_size' => 'Gambar Melebihi 1 mb',
-                        'mime_in' => 'Gambar harus png / jpg / jpeg !',
-                        'is_image' => 'File Bukan Merupakan Gambar',
-                    ]
-                ],
-
-            ]);
+                    'img_berita' => [
+                        'rules' => 'max_size[img_berita,1024]|is_image[img_berita]
+                        |mime_in[img_berita,image/jpg,image/jpeg,image/png]',
+                        'errors' => [
+                            'max_size' => 'Gambar Melebihi 1 mb',
+                            'mime_in' => 'Gambar harus png / jpg / jpeg !',
+                            'is_image' => 'File Bukan Merupakan Gambar',
+                        ]
+                    ],
+    
+                ]);
+            }
+            else {
+                $valid = $this->validate([
+                    'judul_berita' => [
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => 'Judul Berita Tidak Boleh Kosong!!'
+                        ],
+                    ],
+                    'tanggal' => [
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => 'Tanggal Tidak Boleh Kosong!!'
+                        ],
+                    ],
+                    'teks_berita' => [
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => 'Isi Berita Tidak Boleh Kosong!!'
+                        ],
+                    ],
+    
+                ]);
+            }
 
             if (!$valid) {
                 $data = [

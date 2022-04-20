@@ -78,3 +78,24 @@
     border-radius: 10px;
     margin: 1.5em 0;
 }
+
+@media (min-width: 576px){
+
+    .main_section {
+        width: 100%;
+        max-width: 510px;
+    }
+    .panel_content {
+        width: 100%;
+        max-width: 510px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .main_section {
+        width: 100%;
+    }
+    .panel_content {
+        width: 100%;
+    }
+}
