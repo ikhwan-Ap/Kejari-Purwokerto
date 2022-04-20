@@ -38,6 +38,7 @@ $routes->get('/kasus', 'Kasus::index');
 $routes->get('/incraht', 'Incraht::index');
 $routes->get('/buron', 'Buron::index');
 $routes->get('/berita', 'Berita::index');
+$routes->get('/beranda/agenda', 'Home::agenda');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
