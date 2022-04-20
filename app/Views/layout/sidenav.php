@@ -24,9 +24,10 @@
                 <a class="nav-link" href="/bidang"><i class="fas fa-users"></i> <span>Bidang</span></a>
             </li>
             <li class="menu-header">Beranda</li>
-            <li class="nav-item dropdown <?= ($title == "Carousel" || $title == "Icon" || $title == "Header") ? 'active' : ''; ?>">
+            <li class="nav-item dropdown <?= ($title == "Banner" || $title == "Carousel" || $title == "Icon" || $title == "Header") ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Menu</span></a>
                 <ul class="dropdown-menu">
+                    <li class="<?= ($title == "Banner") ? 'active' : ''; ?>"><a class="nav-link" href="/banner">Banner</a></li>
                     <li class="<?= ($title == "Carousel") ? 'active' : ''; ?>"><a class="nav-link" href="/carousel">Carousel</a></li>
                     <li class="<?= ($title == "Header") ? 'active' : ''; ?>"><a class="nav-link" href="/header">Header</a></li>
                     <li class="<?= ($title == "Icon") ? 'active' : ''; ?>"><a class="nav-link" href="/icon">Icon</a></li>
@@ -44,10 +45,11 @@
                 </ul>
             </li>
             <li class="menu-header">Arsip</li>
-            <li class="nav-item dropdown <?= ($title == "Foto" || $title == "Video" || $title == "Struktur") ? 'active' : ''; ?>">
+            <li class="nav-item dropdown <?= ($title == "Foto" || $title == "File" || $title == "Video" || $title == "Struktur") ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Arsip</span></a>
                 <ul class="dropdown-menu">
                     <li class="<?= ($title == "Foto") ? 'active' : ''; ?>"><a class="nav-link" href="/arsip_foto">Foto</a></li>
+                    <li class="<?= ($title == "File") ? 'active' : ''; ?>"><a class="nav-link" href="/arsip_file">File</a></li>
                     <li class="<?= ($title == "Struktur") ? 'active' : ''; ?>"><a class="nav-link" href="/struktur">Struktur</a></li>
                     <li class="<?= ($title == "Video") ? 'active' : ''; ?>"><a class="nav-link" href="/arsip_video">Video</a></li>
                 </ul>

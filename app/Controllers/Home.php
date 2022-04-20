@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\agendaModel;
 use App\Models\arsip_fotoModel;
+use App\Models\bannerModel;
 use App\Models\kasusModel;
 use App\Models\buronModel;
 use App\Models\beritaModel;
@@ -35,6 +36,7 @@ class Home extends BaseController
         $this->pelayanan = new pelayananModel();
         $this->agenda = new agendaModel();
         $this->foto = new arsip_fotoModel();
+        $this->banner = new bannerModel();
         helper('form');
 
         $header = $this->header->get_header();
@@ -43,6 +45,7 @@ class Home extends BaseController
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
         $_SESSION['foto'] = $this->foto->get_foto();
+        $_SESSION['banner'] = $this->banner->get_banner();
         session()->set([
             'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
@@ -57,6 +60,7 @@ class Home extends BaseController
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
         $_SESSION['foto'] = $this->foto->get_foto();
+        $_SESSION['banner'] = $this->banner->get_banner();
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),
@@ -66,6 +70,7 @@ class Home extends BaseController
             'header' => $this->header->get_header(),
             'carousel' =>  $this->carousel->get_img(),
             'pelayanan' => $this->pelayanan->get_data(),
+            'banner' => $this->banner->get_banner(),
         ];
         return view('visitor/beranda', $data);
     }
@@ -194,6 +199,24 @@ class Home extends BaseController
     public function agenda()
     {
         $_SESSION['agenda'] = $this->agenda->get_agenda();
-        return view('visitor/agenda');
+        $agenda =  $this->agenda;
+        $agenda->orderBy('tanggal_agenda', 'DESC');
+        $data = [
+            'title' => 'Agenda',
+            'agenda' => $agenda->paginate(10),
+            'pager' => $agenda->pager,
+        ];
+        return view('visitor/agenda', $data);
+    }
+
+    public function get_agenda($id_agenda)
+    {
+        $get_agenda = $this->agenda->get_id($id_agenda);
+        $data =
+            [
+                'title' => 'Agenda',
+                'agenda' => $get_agenda,
+            ];
+        dd($data);
     }
 }
