@@ -250,6 +250,11 @@
 						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
 					</a>
 					<hr>
+					<p>
+						<a href="#" class="btn btn-secondary btn-sm">
+							<span class="">Selengkapnya...</span>
+						</a>
+					</p>
 				</div>
 
 				<!-- Future Events -->
@@ -268,6 +273,11 @@
 						<hr>
 					<?php $i++;
 					endforeach; ?>
+					<p>
+						<a href="<?= base_url() ?>/home/agenda" class="btn btn-secondary btn-sm">
+							<span class="">Selengkapnya...</span>
+						</a>
+					</p>
 				</div>
 			</div>
 		</div>
