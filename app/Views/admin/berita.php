@@ -151,6 +151,7 @@ $year = $arr[0];
                 },
             }, ],
         });
+
         $('#btnEdit').hide();
         $('#btnClose').hide();
         $('#judul_berita').focus();

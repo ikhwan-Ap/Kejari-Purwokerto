@@ -265,6 +265,58 @@
 						</a>
 					</p>
 				</div>
+
+				<div class="sidebar_section future_events">
+					<div class="sidebar_title_container">
+						<div class="sidebar_title">Daftar Pencarian Orang</div>
+					</div><br>
+					<!-- Future Events Post -->
+
+					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<?php
+							$i = 0;
+							foreach ($_SESSION['buron'] as $data) :
+							?>
+								<?php if ($i == 0) : ?>
+									<?php $carousel = 'active'; ?>
+									<div class="carousel-item dpo <?= $carousel; ?>">
+										<img src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
+										<p><?= $data['nama_buron']; ?></p>
+										<p><?= $data['jenis_kelamin']; ?></p>
+										<p><?= $data['usia']; ?></p>
+										<p><?= $data['alamat_buron']; ?></p>
+									</div>
+								<?php else : ?>
+									<?php $carousel = ''; ?>
+									<div class="carousel-item dpo <?= $carousel; ?>">
+										<img src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
+										<p><?= $data['nama_buron']; ?></p>
+										<p><?= $data['jenis_kelamin']; ?></p>
+										<p><?= $data['usia']; ?></p>
+										<p><?= $data['alamat_buron']; ?></p>
+									</div>
+								<?php endif; ?>
+							<?php $i++;
+							endforeach; ?>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+
+					<br>
+					<!-- <p>
+						<a href="#" class="btn btn-secondary btn-sm btn-sidebar">
+							<span class="">Selengkapnya...</span>
+						</a>
+					</p> -->
+				</div>
 			</div>
 		</div>
 	</div>

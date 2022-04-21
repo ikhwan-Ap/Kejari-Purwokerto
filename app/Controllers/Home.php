@@ -36,6 +36,7 @@ class Home extends BaseController
         $this->pelayanan = new pelayananModel();
         $this->agenda = new agendaModel();
         $this->foto = new arsip_fotoModel();
+        $this->buron = new buronModel();
         $this->banner = new bannerModel();
         helper('form');
 
@@ -46,6 +47,7 @@ class Home extends BaseController
         $_SESSION['agenda'] = $this->agenda->get_agenda();
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
+        $_SESSION['buron'] = $this->buron->get_buron();
         session()->set([
             'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
@@ -61,6 +63,7 @@ class Home extends BaseController
         $_SESSION['agenda'] = $this->agenda->get_agenda();
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
+        $_SESSION['buron'] = $this->buron->get_buron();
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),
@@ -118,6 +121,8 @@ class Home extends BaseController
 
     public function pidana_umum()
     {
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['banner'] = $this->banner->get_banner();
         $umum = $this->kasus;
         $umum->where('kategori', 'Pidana Umum');
         $umum->where('keterangan', 'Incraht');
