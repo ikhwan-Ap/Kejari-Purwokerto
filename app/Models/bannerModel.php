@@ -19,7 +19,7 @@ class bannerModel extends Model
 
     protected $column_order =
     [
-        'nama_banner', 'url_banner'
+        'id_banner', 'id_banner', 'nama_banner', 'url_banner', 'id_banner'
     ];
 
 

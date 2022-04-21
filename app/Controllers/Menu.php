@@ -482,4 +482,9 @@ class Menu extends BaseController
             echo json_encode($output);
         }
     }
+
+    public function download_file($img)
+    {
+        return $this->response->download("uploads/struktur/$img", null);
+    }
 }

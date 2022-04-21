@@ -19,7 +19,7 @@ class arsip_fotoModel extends Model
 
     protected $column_order =
     [
-        'nama_arsip_foto', 'tanggal_arsip_foto'
+        'id_arsip_foto', 'id_arsip_foto', 'nama_arsip_foto', 'tanggal_arsip_foto', 'id_arsip_foto'
     ];
 
 

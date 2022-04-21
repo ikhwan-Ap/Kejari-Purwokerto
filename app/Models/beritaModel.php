@@ -20,7 +20,7 @@ class beritaModel extends Model
 
     protected $column_order =
     [
-        'judul_berita', 'tanggal', 'img_berita',
+        'id_berita', 'id_berita', 'judul_berita', 'tanggal', 'id_berita'
     ];
     protected $request;
     protected $db;
@@ -92,7 +92,8 @@ class beritaModel extends Model
         return $query->getRowArray();
     }
 
-    public function getJudul($id_berita){
+    public function getJudul($id_berita)
+    {
         $this->dt
             ->select('judul_berita')
             ->where('id_berita', $id_berita);
@@ -111,5 +112,4 @@ class beritaModel extends Model
         $tbl_storage = $this->db->table($this->table);
         return $tbl_storage->countAllResults();
     }
-
 }
