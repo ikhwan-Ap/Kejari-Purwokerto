@@ -37,7 +37,7 @@ $year = $arr[0];
                         <div class="form-group col p-right">
                             <label for="tanggal">Tanggal</label>
                             <input type="text" class="form-control" name="tanggal" id="tanggal" placeholder="" value=<?= $date ?> hidden>
-                            <p class="inline-space" ><?= $tgl.' '.$mon.' '.$year ?></p>
+                            <p class="inline-space"><?= $tgl . ' ' . $mon . ' ' . $year ?></p>
                             <div class="invalid-feedback errorTanggal">
                             </div>
                         </div>
@@ -132,7 +132,6 @@ $year = $arr[0];
 
 <script>
     var table;
-
     $(document).ready(function() {
         table = $('#Berita').DataTable({
             "processing": true,
@@ -233,7 +232,7 @@ $year = $arr[0];
                             ).then((result) => {
                                 if (result.value) {
                                     reload_table();
-                                    $('#del'+id).parent().parent().remove();
+                                    $('#del' + id).parent().parent().remove();
 
                                 }
                             })
