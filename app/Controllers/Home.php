@@ -167,11 +167,6 @@ class Home extends BaseController
         return view('visitor/berita/berita_tentang', $data);
     }
 
-    public function pidum()
-    {
-        return view('visitor/bidang');
-    }
-
     public function berita()
     {
         $data = $this->buron->get_last();
@@ -217,6 +212,6 @@ class Home extends BaseController
                 'title' => 'Agenda',
                 'agenda' => $get_agenda,
             ];
-        dd($data);
+        return view('visitor/detail_agenda', $data);
     }
 }
