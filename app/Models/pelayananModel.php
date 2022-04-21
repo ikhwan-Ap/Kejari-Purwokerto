@@ -19,7 +19,7 @@ class pelayananModel extends Model
 
     protected $column_order =
     [
-        'nama_pelayanan', 'url_pelayanan'
+        'id_pelayanan', 'nama_pelayanan', 'url_pelayanan', 'id_pelayanan', 'warna_pelayanan', 'gradiasi_pelayanan', 'id_pelayanan'
     ];
 
 

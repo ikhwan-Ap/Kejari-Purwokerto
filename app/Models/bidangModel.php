@@ -15,13 +15,12 @@ class bidangModel extends Model
         'image_pengurus', 'teks_bidang'
     ];
     protected $column_search = [
-        'nama_pengurus', 'jabatan_pengurus', 'nip', 'id_kategori',
+        'nama_pengurus', 'jabatan_pengurus', 'nip', 'bidang.id_kategori', 'nama_kategori'
     ];
 
     protected $column_order =
     [
-        'nama_pengurus', 'jabatan_pengurus', 'nip', 'id_kategori', 'image_pengurus',
-        'nama_kategori'
+        'id_bidang', 'id_bidang', 'nip', 'nama_pengurus', 'jabatan_pengurus', 'nama_kategori', 'id_bidang'
     ];
 
 
@@ -41,6 +40,7 @@ class bidangModel extends Model
     private  function getDataTables()
     {
         $request = Services::request();
+        $this->dt->select('*');
         $this->dt->join('kategori', 'kategori.id_kategori = bidang.id_kategori', 'left');
         $i = 0;
         foreach ($this->column_search as $item) {

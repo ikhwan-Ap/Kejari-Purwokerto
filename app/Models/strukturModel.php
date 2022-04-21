@@ -14,12 +14,12 @@ class strukturModel extends Model
         'nama_struktur', 'img_struktur'
     ];
     protected $column_search = [
-        'nama_struktur'
+        'nama_struktur', 'img_struktur'
     ];
 
     protected $column_order =
     [
-        'nama_struktur'
+        'id_struktur', 'img_strukur', 'nama_struktur', 'id_struktur'
     ];
 
 

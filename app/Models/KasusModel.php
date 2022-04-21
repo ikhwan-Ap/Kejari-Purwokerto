@@ -21,8 +21,8 @@ class kasusModel extends Model
 
     protected $column_order =
     [
-        'nama_terdakwa', 'nama_jaksa', 'nama_hakim', 'panitia_pengganti',
-        'keterangan', 'no_perkara', 'agenda', 'kategori', 'tanggal'
+        'id_kasus', 'tanggal', 'no_perkara', 'nama_terdakwa', 'nama_hakim', 'nama_jaksa',
+        'keterangan', 'id_kasus',
     ];
 
     protected $request;

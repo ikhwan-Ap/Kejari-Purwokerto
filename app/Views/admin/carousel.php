@@ -21,7 +21,7 @@
                         <input type="text" name="id_carousel" value="" id="id_carousel" hidden>
                         <div class="form-group col">
                             <label for="nama_carousel">Nama Gambar/Carousel</label>
-                            <input type="color" class="form-control" name="nama_carousel" id="nama_carousel" placeholder="Nama Gambar/Carousel">
+                            <input type="text" class="form-control" name="nama_carousel" id="nama_carousel" placeholder="Nama Gambar/Carousel">
                             <div class="invalid-feedback errorNama">
                             </div>
                         </div>
@@ -95,13 +95,6 @@
                 "type": "POST",
             },
             "columnDefs": [{
-                "targets": 1,
-                "data": "color",
-                "render": function(url, type, full) {
-                    var color = '<badge style="background-color:' + full[1] + ';padding: 15px 32px;"/>';
-                    return color;
-                },
-            }, {
                 "targets": 2,
                 "data": "img",
                 "render": function(url, type, full) {

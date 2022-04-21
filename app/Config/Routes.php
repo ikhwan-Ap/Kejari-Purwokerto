@@ -58,6 +58,7 @@ $routes->get('/banner', 'Banner::index');
 //Moduls    
 $routes->get('/visi_misi', 'Visi_misi::index');
 $routes->get('/agenda', 'Modul::index');
+$routes->get('/profil', 'Profil::index');
 
 //Berita
 $routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1');
@@ -67,6 +68,8 @@ $routes->get('/pelayanan', 'Modul::pelayanan');
 $routes->get('/arsip_foto', 'Arsip::index');
 $routes->get('/struktur', 'Struktur::index');
 
+// Donwload
+$routes->get('/download_file/(:any)', 'Menu::download_file/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

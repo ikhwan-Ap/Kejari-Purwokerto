@@ -39,6 +39,17 @@ class kategoriModel extends Model
         return $this->dt->delete();
     }
 
+    public function cek_kategori()
+    {
+        $builder = $this->db->table('kategori');
+        $builder->select('*');
+        $builder->where('bidang.id_kategori', null, false);
+        $builder->orderBy('kategori.id_kategori', 'DESC');
+        $builder->join('bidang', 'bidang.id_kategori=kategori.id_kategori', 'LEFT');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
     public function get_kategori()
     {
         $not = ['Kepala kejaksaan'];

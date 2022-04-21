@@ -5,26 +5,26 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Config\Services;
 
-class agendaModel extends Model
+class profilModel extends Model
 {
-    protected $table            = 'agenda';
-    protected $primaryKey       = 'id_agenda';
+    protected $table            = 'profil';
+    protected $primaryKey       = 'id_profil';
     protected $allowedFields    =
     [
-        'nama_agenda', 'tanggal_agenda', 'teks_agenda'
+        'id_kategori_profil', 'img_profil', 'teks_profil'
     ];
     protected $column_search = [
-        'nama_agenda', 'tanggal_agenda'
+        'profil.id_kategori_profil',
     ];
 
     protected $column_order =
     [
-        'id_agenda', 'nama_agenda', 'tanggal_agenda', 'id_agenda'
+        'id_profil', 'img_profil', 'nama_kategori_profil', 'id_profil'
     ];
 
 
     protected $request;
-    protected $order = ['id_agenda' => 'DESC'];
+    protected $order = ['id_profil' => 'DESC'];
     protected $db;
     protected $dt;
 
@@ -39,11 +39,14 @@ class agendaModel extends Model
     private  function getDataTables()
     {
         $request = Services::request();
+        $this->dt->select('*');
+        $this->dt->join('kategori_profil', 'kategori_profil.id_kategori_profil = profil.id_kategori_profil', 'left');
         $i = 0;
         foreach ($this->column_search as $item) {
             if ($request->getPost('search')['value']) {
                 if ($i === 0) {
                     $this->dt->groupStart();
+                    $this->dt->select('kategori_profil.nama_kategori_profil', 'nama_kategori_profil');
                     $this->dt->like($item, $request->getPost('search')['value']);
                 } else {
 
@@ -67,7 +70,7 @@ class agendaModel extends Model
     }
 
 
-    public function datatablesAgenda()
+    public function datatablesProfil()
     {
         $request = Services::request();
         $this->getDataTables();
@@ -91,50 +94,42 @@ class agendaModel extends Model
     }
 
 
-    public function del_agenda($id_agenda)
+    public function del_profil($id_profil)
     {
-        $this->dt->where('id_agenda', $id_agenda);
+        $this->dt->where('id_profil', $id_profil);
         return $this->dt->delete();
     }
 
-    public function get_id($id_agenda)
+    public function get_id($id_profil)
     {
         $this->dt
             ->select('*')
-            ->where('id_agenda', $id_agenda);
+            ->select('kategori_profil.nama_kategori_profil', 'nama_kategori_profil')
+            ->where('id_profil', $id_profil)
+            ->join('kategori_profil', 'kategori_profil.id_kategori_profil = profil.id_kategori_profil');
         $query = $this->dt->get();
         return $query->getRowArray();
     }
 
-    public function get_title($id_bidang)
+    public function get_title($id_profil)
     {
         $this->dt
-            ->select('nama_kategori')
-            ->select('kategori.nama_kategori', 'nama_kategori')
-            ->where('id_bidang', $id_bidang)
-            ->join('kategori', 'kategori.id_kategori = bidang.id_kategori');
+            ->select('nama_kategori_profil')
+            ->select('kategori_profil.nama_kategori_profil', 'nama_kategori_profil')
+            ->where('id_profil', $id_profil)
+            ->join('kategori', 'kategori.id_kategori_profil = profil.id_kategori_profil');
         $query = $this->dt->get();
         return $query->getRowArray();
     }
 
     public function get_kejaksaan()
     {
-        $builder = $this->db->table('bidang');
-        $builder->where('nama_kategori', 'Kepala Kejaksaan');
-        $builder->join('kategori', 'kategori.id_kategori=bidang.id_kategori');
+        $builder = $this->db->table('profil');
+        $builder->where('nama_kategori_profil', 'Kepala Kejaksaan');
+        $builder->join('kategori_profil', 'kategori_profil.id_kategori_profil=profil.id_kategori_profil');
         $builder->limit(1);
-        $builder->orderBy('id_bidang', 'DESC');
+        $builder->orderBy('id_profil', 'DESC');
         $query = $builder->get();
         return $query->getRowArray();
-    }
-
-    public function get_agenda()
-    {
-        $builder = $this->db->table('agenda');
-        $builder->select('*');
-        $builder->limit(4);
-        $builder->orderBy('tanggal_agenda', 'DESC');
-        $query = $builder->get();
-        return $query->getResultArray();
     }
 }

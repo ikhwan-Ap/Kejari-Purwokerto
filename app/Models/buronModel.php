@@ -20,8 +20,7 @@ class buronModel extends Model
 
     protected $column_order =
     [
-        'nama_buron', 'alamat_buron', 'usia', 'jenis_kelamin',
-        'image'
+        'id_buron', 'id_buron', 'nama_buron', 'usia', 'jenis_kelamin', 'alamat_buron', 'id_buron'
     ];
 
     protected $request;
