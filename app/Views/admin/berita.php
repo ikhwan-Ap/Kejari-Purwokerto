@@ -35,8 +35,8 @@ $year = $arr[0];
                     <div class="section-body">
                         <input type="text" name="id_berita" value="" id="id_berita" hidden>
                         <div class="form-group col p-right">
-                            <label for="tanggal">Tanggal</label>
-                            <input type="text" class="form-control" name="tanggal" id="tanggal" placeholder="" value=<?= $date ?> hidden>
+                            <label for="tanggal" class="md-sm5">Tanggal</label>
+                            <input type="text" id="tanggal" class="form-control" name="tanggal" placeholder="" value="<?= $date ?>">
                             <p class="inline-space" ><?= $tgl.' '.$mon.' '.$year ?></p>
                             <div class="invalid-feedback errorTanggal">
                             </div>
@@ -169,7 +169,7 @@ $year = $arr[0];
             ],
             dialogsInBody: true,
         })
-        $('.summernote').summernote('code', '<b>Kejaksaan Negeri Purwokerto –</b>')
+        $('.summernote').summernote('code', '<b>Kejaksaan Negeri Purwokerto –</b>');
     });
 
     function previewFile(input) {
@@ -191,7 +191,89 @@ $year = $arr[0];
         $("#btnClose").show();
         $("#btnOpen").hide();
         $('#judul_berita').focus();
+        var date = $('#tanggal').val();
+        console.log('hai : ', date, $('#tanggal').val());
+        resetForm();
+    }
 
+    function save() {
+
+        console.log('dat :', $('#tanggal').val());
+        // console.log('dat2s :', date);
+        let form = $('#formBerita')[0];
+        let data = new FormData(form);
+        console.log(date);
+
+        $.ajax({
+            type: "POST",
+            url: "<?= site_url('berita/tambah_berita') ?>",
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            dataType: "json",
+            beforeSend: function() {
+                $('#tanggal').val(date);
+                console.log('up : ', $('#tanggal').val());
+                $('#btnSave').prop('disabled', true);
+                $('#btnSave').html('Loading');
+            },
+            complete: function() {
+                $('#btnSave').prop('0led', false);
+                $('#btnSave').html('Unggah');
+            },
+            success: function(response) {
+                console.log('res : ', $('#tanggal').val());
+                if (response.error) {
+                    let data = response.error
+                    if (data.errorJudul) {
+                        $('#judul_berita').addClass('is-invalid');
+                        $('#judul_berita').attr('autofocus', true);
+                        $('.errorJudul').html(data.errorJudul);
+                    } else {
+                        $('#judul_berita').removeClass('is-invalid');
+                        $('#judul_berita').addClass('is-valid');
+                    }
+                    if (data.errorTanggal) {
+                        $('#tanggal').addClass('is-invalid');
+                        $('.errorTanggal').html(data.errorTanggal);
+                    } else {
+                        $('#tanggal').removeClass('is-invalid');
+                        $('#tanggal').addClass('is-valid');
+                    }
+                    if (data.errorImage) {
+                        $('#img_berita').addClass('is-invalid');
+                        $('#img_berita').attr('autofocus', true);
+                        $('.errorImage').html(data.errorImage);
+                    } else {
+                        $('#img_berita').removeClass('is-invalid');
+                        $('#img_berita').addClass('is-valid');
+                    }
+                    if (data.errorTeks) {
+                        $('#teks_berita').addClass('is-invalid');
+                        $('.errorTeks').html(data.errorTeks);
+                    } else {
+                        $('#teks_berita').removeClass('is-invalid');
+                        $('#teks_berita').addClass('is-valid');
+                    }
+                }
+                if (response.sukses) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        html: `Data Berhasil Ditambahkan`,
+                    }).then((result) => {
+                        if (result.value) {
+                            // resetForm();
+                            // reload_table();
+                            // hideForm();
+                        }
+                    })
+                }
+
+            }
+        });
     }
 
     function hideForm() {
@@ -258,11 +340,6 @@ $year = $arr[0];
         table.ajax.reload(null, false);
     }
 
-    function modalReset() {
-        $('#kategori').removeClass('is-invalid');
-        $('#kategori').removeClass('is-valid');
-    }
-
     function resetForm() {
         $('#img_berita').removeClass('is-invalid');
         $('#img_berita').removeClass('is-valid');
@@ -275,81 +352,7 @@ $year = $arr[0];
         $('#judul_berita').removeClass('is-valid');
         $('#tanggal').removeClass('is-invalid');
         $('#tanggal').removeClass('is-valid');
-        hideForm()
 
-    }
-
-    function save() {
-
-        let form = $('#formBerita')[0];
-        let data = new FormData(form);
-
-        $.ajax({
-            type: "POST",
-            url: "<?= site_url('berita/tambah_berita') ?>",
-            data: data,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            cache: false,
-            dataType: "json",
-            beforeSend: function() {
-                $('#btnSave').prop('disabled', true);
-                $('#btnSave').html('Loading');
-            },
-            complete: function() {
-                $('#btnSave').prop('disabled', false);
-                $('#btnSave').html('Unggah');
-            },
-            success: function(response) {
-                if (response.error) {
-                    let data = response.error
-                    if (data.errorJudul) {
-                        $('#judul_berita').addClass('is-invalid');
-                        $('#judul_berita').attr('autofocus', true);
-                        $('.errorJudul').html(data.errorJudul);
-                    } else {
-                        $('#judul_berita').removeClass('is-invalid');
-                        $('#judul_berita').addClass('is-valid');
-                    }
-                    if (data.errorTanggal) {
-                        $('#tanggal').addClass('is-invalid');
-                        $('.errorTanggal').html(data.errorTanggal);
-                    } else {
-                        $('#tanggal').removeClass('is-invalid');
-                        $('#tanggal').addClass('is-valid');
-                    }
-                    if (data.errorImage) {
-                        $('#img_berita').addClass('is-invalid');
-                        $('#img_berita').attr('autofocus', true);
-                        $('.errorImage').html(data.errorImage);
-                    } else {
-                        $('#img_berita').removeClass('is-invalid');
-                        $('#img_berita').addClass('is-valid');
-                    }
-                    if (data.errorTeks) {
-                        $('#teks_berita').addClass('is-invalid');
-                        $('.errorTeks').html(data.errorTeks);
-                    } else {
-                        $('#teks_berita').removeClass('is-invalid');
-                        $('#teks_berita').addClass('is-valid');
-                    }
-                }
-                if (response.sukses) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil',
-                        html: `Data Berhasil Di tambahkan`,
-                    }).then((result) => {
-                        if (result.value) {
-                            resetForm();
-                            reload_table();
-                        }
-                    })
-                }
-
-            }
-        });
     }
 
     function editBerita(id_berita) {
