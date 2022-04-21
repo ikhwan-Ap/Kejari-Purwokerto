@@ -815,3 +815,13 @@ hr {
 .btn-sidebar:hover {
   background-color: green;
 }
+
+.dpo{
+  text-align: center;
+}
+
+.dpo>p {
+  text-align: left;
+  margin: 0;
+  font-size: small;
+}

@@ -265,6 +265,54 @@
 						</a>
 					</p>
 				</div>
+
+				<div class="sidebar_section future_events">
+					<div class="sidebar_title_container">
+						<div class="sidebar_title">Daftar Pencarian Orang</div>
+					</div><br>
+					<!-- Future Events Post -->
+
+					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item dpo active">
+								<img src="<?= base_url() ?>/icon-icon/coba.jpg" alt="">
+								<p>Ikhwan Arifin</p>
+								<p>Jenis Kelamin: Laki-laki</p>
+								<p>Usia: 25</p>
+								<p>Alamat: Serang</p>
+							</div>
+							<div class="carousel-item dpo">
+								<img src="<?= base_url() ?>/icon-icon/coba.jpg" alt="">
+								<p>Ikhwan Arifin</p>
+								<p>Jenis Kelamin: Laki-laki</p>
+								<p>Usia: 25</p>
+								<p>Alamat: Serang</p>
+							</div>
+							<div class="carousel-item dpo">
+								<img src="<?= base_url() ?>/icon-icon/coba.jpg" alt="">
+								<p>Ikhwan Arifin</p>
+								<p>Jenis Kelamin: Laki-laki</p>
+								<p>Usia: 25</p>
+								<p>Alamat: Serang</p>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+
+					<br>
+					<!-- <p>
+						<a href="#" class="btn btn-secondary btn-sm btn-sidebar">
+							<span class="">Selengkapnya...</span>
+						</a>
+					</p> -->
+				</div>
 			</div>
 		</div>
 	</div>

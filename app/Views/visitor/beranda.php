@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-											$warna = 'green';
-											$background = array(
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												$warna = 'green';
+												$background = array(
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-											);
-											$i = 0;
-											foreach ($carousel as $value) :
-											?>
+												);
+												$i = 0;
+												foreach ($carousel as $value) :
+												?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-												$i++;
-											endforeach;  ?> -->
+													$i++;
+												endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 
@@ -298,12 +298,13 @@
 
 									<!-- Default Card No Image -->
 
-									<div class="card card_default card_default_no_image grid-item">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-										</div>
-									</div>
-								</div>
+									<div class="card card_default card_default_no_image grid-item"></div>
+								</div><br>
+								<p>
+									<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 

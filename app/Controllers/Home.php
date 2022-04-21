@@ -118,6 +118,8 @@ class Home extends BaseController
 
     public function pidana_umum()
     {
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['banner'] = $this->banner->get_banner();
         $umum = $this->kasus;
         $umum->where('kategori', 'Pidana Umum');
         $umum->where('keterangan', 'Incraht');
