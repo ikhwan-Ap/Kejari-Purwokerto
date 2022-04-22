@@ -99,4 +99,14 @@ class pengumumanModel extends Model
         $this->dt->where('id_pengumuman', $id_pengumuman);
         return $this->dt->delete();
     }
+
+    public function get_pengumuman()
+    {
+        $builder = $this->db->table('pengumuman');
+        $builder->select('*');
+        $builder->limit(4);
+        $builder->orderBy('tgl_pengumuman', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }

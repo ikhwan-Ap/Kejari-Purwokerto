@@ -216,26 +216,16 @@
 						<div class="sidebar_title">Pengumuman</div>
 					</div><br>
 					<!-- Future Events Post -->
-					<a href="post.html">
-						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
-						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
-					</a>
-					<hr>
-					<a href="post.html">
-						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
-						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
-					</a>
-					<hr>
-					<a href="post.html">
-						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
-						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
-					</a>
-					<hr>
-					<a href="post.html">
-						<div class="tgl_agenda"><i class="fa fa-calendar"></i> 13 April 2021</div>
-						<div class="isi_agenda">LELANG BARANG RAMPASAN NEGARA</div>
-					</a>
-					<hr>
+					<?php
+					$i = 0;
+					foreach ($_SESSION['pengumuman'] as $data) : ?>
+						<a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
+							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tgl_pengumuman']; ?></div>
+							<div class="isi_agenda"><?= $data['nama_pengumuman']; ?></div>
+						</a>
+						<hr>
+					<?php $i++;
+					endforeach; ?>
 					<p>
 						<a href="#" class="btn btn-secondary btn-sm btn-sidebar">
 							<span class="">Selengkapnya...</span>

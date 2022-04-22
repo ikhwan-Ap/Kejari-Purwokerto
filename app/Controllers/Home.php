@@ -15,6 +15,7 @@ use App\Models\iconModel;
 use App\Models\kategoriModel;
 use App\Models\visi_misiModel;
 use App\Models\pelayananModel;
+use App\Models\pengumumanModel;
 use CodeIgniter\Session\Session;
 use CodeIgniter\API\ResponseTrait;
 
@@ -34,6 +35,7 @@ class Home extends BaseController
         $this->visi_misi = new visi_misiModel();
         $this->icon = new iconModel();
         $this->pelayanan = new pelayananModel();
+        $this->pengumuman = new pengumumanModel();
         $this->agenda = new agendaModel();
         $this->foto = new arsip_fotoModel();
         $this->buron = new buronModel();
@@ -45,6 +47,7 @@ class Home extends BaseController
         $icon = $this->icon->get_icon();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['pengumuman'] = $this->pengumuman->get_pengumuman();
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
         $_SESSION['buron'] = $this->buron->get_buron();
@@ -61,6 +64,7 @@ class Home extends BaseController
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['pengumuman'] = $this->pengumuman->get_pengumuman();
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
         $_SESSION['buron'] = $this->buron->get_buron();
