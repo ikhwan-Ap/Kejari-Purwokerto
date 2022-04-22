@@ -43,6 +43,7 @@ class kategoriModel extends Model
     {
         $builder = $this->db->table('kategori');
         $builder->select('*');
+        $builder->select('kategori.id_kategori', 'id_kategori');
         $builder->where('bidang.id_kategori', null, false);
         $builder->orderBy('kategori.id_kategori', 'DESC');
         $builder->join('bidang', 'bidang.id_kategori=kategori.id_kategori', 'LEFT');

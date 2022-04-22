@@ -34,14 +34,16 @@
                 </ul>
             </li>
             <li class="menu-header">Informasi</li>
-            <li class="nav-item dropdown <?= ($title == "Berita" || $title == "Profil" || $title == "Visi Dan Misi" || $title == "Pelayanan" || $title == "Agenda" || $title == 'Pengumuman') ? 'active' : ''; ?>">
+            <li class="nav-item dropdown <?= ($title == "Berita" || $title == "Profil" || $title == "Visi Dan Misi" || $title == "Pelayanan" ||
+                                                $title == "Peraturan" || $title == "Agenda" || $title == 'Pengumuman') ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Moduls</span></a>
                 <ul class="dropdown-menu">
                     <li class="<?= ($title == "Agenda") ? 'active' : ''; ?>"><a class="nav-link" href="/agenda">Agenda</a></li>
                     <li class="<?= ($title == "Berita") ? 'active' : ''; ?>"><a class="nav-link" href="/berita">Berita</a></li>
                     <li class="<?= ($title == "Profil") ? 'active' : ''; ?>"><a class="nav-link" href="/profil">Profil</a></li>
                     <li class="<?= ($title == "Pelayanan") ? 'active' : ''; ?>"><a class="nav-link" href="/pelayanan">Pelayanan</a></li>
-                    <li class="<?= ($title == "Pengumuman") ? 'active' : ''; ?>"><a class="nav-link" href="#">Pengumuman</a></li>
+                    <li class="<?= ($title == "Pengumuman") ? 'active' : ''; ?>"><a class="nav-link" href="/pengumuman">Pengumuman</a></li>
+                    <li class="<?= ($title == "Peraturan") ? 'active' : ''; ?>"><a class="nav-link" href="/peraturan">Peraturan</a></li>
                     <li class="<?= ($title == "Visi Dan Misi") ? 'active' : ''; ?>"><a class="nav-link" href="/visi_misi"> Visi Dan Misi</a></li>
                 </ul>
             </li>

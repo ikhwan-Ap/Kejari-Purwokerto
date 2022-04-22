@@ -42,6 +42,7 @@ class kategori_profilModel extends Model
     {
         $builder = $this->db->table('kategori_profil');
         $builder->select('*');
+        $builder->select('kategori_profil.id_kategori_profil', 'id_kategori_profil');
         $builder->where('profil.id_kategori_profil', null, false);
         $builder->orderBy('kategori_profil.id_kategori_profil', 'DESC');
         $builder->join('profil', 'profil.id_kategori_profil=kategori_profil.id_kategori_profil', 'LEFT');
