@@ -97,13 +97,13 @@ class Home extends BaseController
         $jadwal = $this->kasus;
         $jadwal->where('keterangan', '-');
         $jadwal->orderBy('id_kasus', 'DESC');
-        $page = $this->request->getVar('page') ?
-            $this->request->getVar('page') : 1;
+        $page = $this->request->getVar('page_jadwal') ?
+            $this->request->getVar('page_jad') : 1;
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
-            'jadwal' => $jadwal->paginate(10),
+            'jadwal' => $jadwal->paginate(10, 'jadwal'),
             'pager' => $jadwal->pager,
             'page' => $page,
         ];

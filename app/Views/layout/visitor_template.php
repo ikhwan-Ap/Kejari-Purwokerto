@@ -281,7 +281,7 @@
 								<?php if ($i == 0) : ?>
 									<?php $carousel = 'active'; ?>
 									<div class="carousel-item dpo <?= $carousel; ?>">
-										<img src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
+										<img width="100%" src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
 										<p><?= $data['nama_buron']; ?></p>
 										<p><?= $data['jenis_kelamin']; ?></p>
 										<p><?= $data['usia']; ?></p>
@@ -290,7 +290,7 @@
 								<?php else : ?>
 									<?php $carousel = ''; ?>
 									<div class="carousel-item dpo <?= $carousel; ?>">
-										<img src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
+										<img width="100%" src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
 										<p><?= $data['nama_buron']; ?></p>
 										<p><?= $data['jenis_kelamin']; ?></p>
 										<p><?= $data['usia']; ?></p>
