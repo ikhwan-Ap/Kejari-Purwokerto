@@ -5,26 +5,25 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Config\Services;
 
-class buronModel extends Model
+class pengumumanModel extends Model
 {
-    protected $table            = 'buron';
-    protected $primaryKey       = 'id_buron';
+    protected $table            = 'pengumuman';
+    protected $primaryKey       = 'id_pengumuman';
     protected $allowedFields    =
     [
-        'nama_buron', 'alamat_buron', 'usia', 'jenis_kelamin',
-        'image'
+        'nama_pengumuman', 'teks_pengumuman', 'tgl_pengumuman', 'file_pengumuman',
     ];
     protected $column_search = [
-        'nama_buron', 'alamat_buron', 'usia', 'jenis_kelamin',
+        'nama_pengumuman', 'tgl_pengumuman', 'file_pengumuman',
     ];
 
     protected $column_order =
     [
-        'id_buron', 'id_buron', 'nama_buron', 'usia', 'jenis_kelamin', 'alamat_buron', 'id_buron'
+        'id_pengumuman', 'nama_pengumuman', 'tgl_pengumuman', 'file_pengumuman', 'id_pengumuman'
     ];
 
     protected $request;
-    protected $order = ['id_buron' => 'DESC'];
+    protected $order = ['id_pengumuman' => 'DESC'];
     protected $db;
     protected $dt;
 
@@ -35,6 +34,7 @@ class buronModel extends Model
         $this->db = db_connect();
         $this->dt = $this->db->table($this->table);
     }
+
 
     private  function getDataTables()
     {
@@ -55,11 +55,6 @@ class buronModel extends Model
                 }
                 $i++;
             }
-            if ($request->getPost('jenis_kelamin') == '') {
-                $request->getPost('jenis_kelamin') == '';
-            } else {
-                $this->dt->orLike($item, $request->getPost('jenis_kelamin'));
-            }
             if ($request->getPost('order')) {
                 $this->dt->orderBy(
                     $this->column_order[$request->getPost('order')['0']['column']],
@@ -71,8 +66,7 @@ class buronModel extends Model
             }
         }
     }
-
-    public function datatablesBuron()
+    public function datatablesPengumuman()
     {
         $request = Services::request();
         $this->getDataTables();
@@ -82,51 +76,37 @@ class buronModel extends Model
         $query = $this->dt->get();
         return $query->getResult();
     }
-
     public function countFiltered()
     {
         $this->getDataTables();
         return $this->dt->countAllResults();
     }
-
     public function countAll()
     {
         $tbl_storage = $this->db->table($this->table);
         return $tbl_storage->countAllResults();
     }
-
-    public function get_id($id_buron)
+    public function get_id($id_pengumuman)
     {
-        $builder = $this->db->table('buron');
+        $builder = $this->db->table('pengumuman');
         $builder->select('*');
-        $builder->where('id_buron', $id_buron);
+        $builder->where('id_pengumuman', $id_pengumuman);
         $query = $builder->get();
         return $query->getRowArray();
     }
-
-    public function del_buron($id_buron)
+    public function del_pengumuman($id_pengumuman)
     {
-        $this->dt->where('id_buron', $id_buron);
+        $this->dt->where('id_pengumuman', $id_pengumuman);
         return $this->dt->delete();
     }
 
-    public function get_buron()
+    public function get_pengumuman()
     {
-        $builder = $this->db->table('buron');
+        $builder = $this->db->table('pengumuman');
         $builder->select('*');
         $builder->limit(4);
-        $builder->orderBy('id_buron', 'DESC');
+        $builder->orderBy('tgl_pengumuman', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
-    }
-
-    public function get_last()
-    {
-        $builder = $this->db->table('buron');
-        $builder->select('*');
-        $builder->limit(1);
-        $builder->orderBy('id_buron', 'DESC');
-        $query = $builder->get();
-        return $query->getRowArray();
     }
 }

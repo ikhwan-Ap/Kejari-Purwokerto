@@ -16,6 +16,7 @@ use App\Models\iconModel;
 use App\Models\kategoriModel;
 use App\Models\visi_misiModel;
 use App\Models\pelayananModel;
+use App\Models\pengumumanModel;
 use CodeIgniter\Session\Session;
 use CodeIgniter\API\ResponseTrait;
 
@@ -36,8 +37,10 @@ class Home extends BaseController
         $this->visi_misi = new visi_misiModel();
         $this->icon = new iconModel();
         $this->pelayanan = new pelayananModel();
+        $this->pengumuman = new pengumumanModel();
         $this->agenda = new agendaModel();
         $this->foto = new arsip_fotoModel();
+        $this->buron = new buronModel();
         $this->banner = new bannerModel();
         helper('form');
 
@@ -46,8 +49,10 @@ class Home extends BaseController
         $icon = $this->icon->get_icon();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['pengumuman'] = $this->pengumuman->get_pengumuman();
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
+        $_SESSION['buron'] = $this->buron->get_buron();
         session()->set([
             'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
@@ -61,8 +66,10 @@ class Home extends BaseController
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['pengumuman'] = $this->pengumuman->get_pengumuman();
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
+        $_SESSION['buron'] = $this->buron->get_buron();
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),
@@ -96,13 +103,13 @@ class Home extends BaseController
         $jadwal = $this->kasus;
         $jadwal->where('keterangan', '-');
         $jadwal->orderBy('id_kasus', 'DESC');
-        $page = $this->request->getVar('page') ?
-            $this->request->getVar('page') : 1;
+        $page = $this->request->getVar('page_jadwal') ?
+            $this->request->getVar('page_jadwal') : 1;
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
-            'jadwal' => $jadwal->paginate(10),
+            'jadwal' => $jadwal->paginate(10, 'jadwal'),
             'pager' => $jadwal->pager,
             'page' => $page,
         ];
@@ -110,26 +117,40 @@ class Home extends BaseController
     }
     public function pidana_khusus()
     {
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['banner'] = $this->banner->get_banner();
+        $khusus = $this->kasus;
+        $khusus->where('kategori', 'Pidana Khusus');
+        $khusus->where('keterangan', 'Incraht');
+        $khusus->orderBy('id_kasus', 'DESC');
+        $page = $this->request->getVar('page_khusus') ?
+            $this->request->getVar('page_khusus') : 1;
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
+            'khusus' => $khusus->paginate(10, 'khusus'),
+            'pager' => $khusus->pager,
+            'page' => $page,
         ];
         return view('visitor/info_perkara/pidana_khusus', $data);
     }
 
     public function pidana_umum()
     {
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['banner'] = $this->banner->get_banner();
         $umum = $this->kasus;
         $umum->where('kategori', 'Pidana Umum');
         $umum->where('keterangan', 'Incraht');
         $umum->orderBy('id_kasus', 'DESC');
-        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $page = $this->request->getVar('page_umum') ?
+            $this->request->getVar('page_umum') : 1;
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
-            'umum' => $umum->paginate(10),
+            'umum' => $umum->paginate(10, 'umum'),
             'pager' => $umum->pager,
             'page' => $page,
         ];
@@ -138,10 +159,21 @@ class Home extends BaseController
 
     public function tata_usaha()
     {
+        $_SESSION['agenda'] = $this->agenda->get_agenda();
+        $_SESSION['banner'] = $this->banner->get_banner();
+        $datun = $this->kasus;
+        $datun->where('kategori', 'Perdata Dan Tata Usaha Negara');
+        $datun->where('keterangan', 'Incraht');
+        $datun->orderBy('id_kasus', 'DESC');
+        $page = $this->request->getVar('page_datun') ?
+            $this->request->getVar('page_datun') : 1;
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
+            'datun' => $datun->paginate(10, 'datun'),
+            'pager' => $datun->pager,
+            'page' => $page,
         ];
         return view('visitor/info_perkara/tata_usaha', $data);
     }

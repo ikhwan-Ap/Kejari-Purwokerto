@@ -5,26 +5,26 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Config\Services;
 
-class buronModel extends Model
+class peraturanModel extends Model
 {
-    protected $table            = 'buron';
-    protected $primaryKey       = 'id_buron';
+    protected $table            = 'peraturan';
+    protected $primaryKey       = 'id_peraturan';
     protected $allowedFields    =
     [
-        'nama_buron', 'alamat_buron', 'usia', 'jenis_kelamin',
-        'image'
+        'id_kategori_peraturan', 'file_peraturan', 'nama_peraturan'
     ];
     protected $column_search = [
-        'nama_buron', 'alamat_buron', 'usia', 'jenis_kelamin',
+        'peraturan.id_kategori_peraturan', 'file_peraturan', 'nama_peraturan'
     ];
 
     protected $column_order =
     [
-        'id_buron', 'id_buron', 'nama_buron', 'usia', 'jenis_kelamin', 'alamat_buron', 'id_buron'
+        'id_peraturan', 'file_peraturan', 'nama_kategori_peraturan', 'id_peraturan'
     ];
 
+
     protected $request;
-    protected $order = ['id_buron' => 'DESC'];
+    protected $order = ['id_peraturan' => 'DESC'];
     protected $db;
     protected $dt;
 
@@ -39,26 +39,23 @@ class buronModel extends Model
     private  function getDataTables()
     {
         $request = Services::request();
-
-
+        $this->dt->select('*');
+        $this->dt->join('kategori_peraturan', 'kategori_peraturan.id_kategori_peraturan = peraturan.id_kategori_peraturan', 'left');
         $i = 0;
         foreach ($this->column_search as $item) {
             if ($request->getPost('search')['value']) {
                 if ($i === 0) {
                     $this->dt->groupStart();
+                    $this->dt->select('kategori_peraturan.nama_kategori_peraturan', 'nama_kategori_peraturan');
                     $this->dt->like($item, $request->getPost('search')['value']);
                 } else {
+
                     $this->dt->orLike($item, $request->getPost('search')['value']);
                 }
                 if (count($this->column_search)  - 1 == $i) {
                     $this->dt->groupEnd();
                 }
                 $i++;
-            }
-            if ($request->getPost('jenis_kelamin') == '') {
-                $request->getPost('jenis_kelamin') == '';
-            } else {
-                $this->dt->orLike($item, $request->getPost('jenis_kelamin'));
             }
             if ($request->getPost('order')) {
                 $this->dt->orderBy(
@@ -72,7 +69,8 @@ class buronModel extends Model
         }
     }
 
-    public function datatablesBuron()
+
+    public function datatablesPeraturan()
     {
         $request = Services::request();
         $this->getDataTables();
@@ -95,38 +93,32 @@ class buronModel extends Model
         return $tbl_storage->countAllResults();
     }
 
-    public function get_id($id_buron)
-    {
-        $builder = $this->db->table('buron');
-        $builder->select('*');
-        $builder->where('id_buron', $id_buron);
-        $query = $builder->get();
-        return $query->getRowArray();
-    }
 
-    public function del_buron($id_buron)
+    public function del_peraturan($id_peraturan)
     {
-        $this->dt->where('id_buron', $id_buron);
+        $this->dt->where('id_peraturan', $id_peraturan);
         return $this->dt->delete();
     }
 
-    public function get_buron()
+    public function get_id($id_peraturan)
     {
-        $builder = $this->db->table('buron');
-        $builder->select('*');
-        $builder->limit(4);
-        $builder->orderBy('id_buron', 'DESC');
-        $query = $builder->get();
-        return $query->getResultArray();
+        $this->dt
+            ->select('*')
+            ->select('kategori_peraturan.nama_kategori_peraturan', 'nama_kategori_peraturan')
+            ->where('id_peraturan', $id_peraturan)
+            ->join('kategori_peraturan', 'kategori_peraturan.id_kategori_peraturan = peraturan.id_kategori_peraturan');
+        $query = $this->dt->get();
+        return $query->getRowArray();
     }
 
-    public function get_last()
+    public function get_title($id_peraturan)
     {
-        $builder = $this->db->table('buron');
-        $builder->select('*');
-        $builder->limit(1);
-        $builder->orderBy('id_buron', 'DESC');
-        $query = $builder->get();
+        $this->dt
+            ->select('nama_kategori_peraturan')
+            ->select('kategori_peraturan.nama_kategori_peraturan', 'nama_kategori_peraturan')
+            ->where('id_peraturan', $id_peraturan)
+            ->join('kategori', 'kategori.id_kategori_peraturan = peraturan.id_kategori_peraturan');
+        $query = $this->dt->get();
         return $query->getRowArray();
     }
 }

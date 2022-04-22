@@ -298,12 +298,13 @@
 
 									<!-- Default Card No Image -->
 
-									<div class="card card_default card_default_no_image grid-item">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-										</div>
-									</div>
-								</div>
+									<div class="card card_default card_default_no_image grid-item"></div>
+								</div><br>
+								<p>
+									<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">
+										<span class="label label-default">Selengkapnya...</span>
+									</a>
+								</p>
 							</div>
 						</div>
 

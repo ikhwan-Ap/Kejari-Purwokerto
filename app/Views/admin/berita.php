@@ -160,6 +160,7 @@ $year = $arr[0];
                 },
             }, ],
         });
+
         $('#btnEdit').hide();
         $('#btnClose').hide();
         $('#judul_berita').focus();
@@ -177,7 +178,7 @@ $year = $arr[0];
             ],
             dialogsInBody: true,
         })
-        $('.summernote').summernote('code', '<b>Kejaksaan Negeri Purwokerto –</b>');
+        $('.summernote').summernote('code', '<b>Kejaksaan Negeri Purwokerto –</b>')
     });
 
     function previewFile(input) {
@@ -317,7 +318,7 @@ $year = $arr[0];
                             ).then((result) => {
                                 if (result.value) {
                                     reload_table();
-                                    $('#del'+id).parent().parent().remove();
+                                    $('#del' + id).parent().parent().remove();
 
                                 }
                             })
@@ -342,6 +343,11 @@ $year = $arr[0];
         table.ajax.reload(null, false);
     }
 
+    function modalReset() {
+        $('#kategori').removeClass('is-invalid');
+        $('#kategori').removeClass('is-valid');
+    }
+
     function resetForm() {
         $('#img_berita').removeClass('is-invalid');
         $('#img_berita').removeClass('is-valid');
@@ -354,6 +360,7 @@ $year = $arr[0];
         $('#judul_berita').removeClass('is-valid');
         $('#tanggal').removeClass('is-invalid');
         $('#tanggal').removeClass('is-valid');
+        hideForm()
 
     }
 

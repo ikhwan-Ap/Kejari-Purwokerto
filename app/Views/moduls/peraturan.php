@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Profil</h1>
+        <h1>Peraturan</h1>
         <div class="col">
             <button class="btn btn-primary" onclick="btnKategori()">
                 Kategori <i class="ion ion-plus-circled"></i>
@@ -10,77 +10,54 @@
             <button class="btn btn-primary" onclick="cekKategori()">
                 Cek Kategori <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
             </button>
-            <button class="btn btn-primary" id="showProfil" onclick="showProfil()">
-                Profil <i class="ion ion-plus-circled"></i>
+            <button class="btn btn-primary" id="showPeraturan" onclick="showPeraturan()">
+                Peraturan <i class="ion ion-plus-circled"></i>
             </button>
             <button class="btn btn-danger" id="btnClose" onclick="btnClose()">
                 Close Form <i class="ion ion-close-circled"></i>
             </button>
         </div>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item">Profil</div>
+            <div class="breadcrumb-item">Peraturan</div>
         </div>
     </div>
-    <?php echo form_open_multipart('', ['id' => 'formProfil']); ?>
+    <?php echo form_open_multipart('', ['id' => 'formPeraturan']); ?>
     <div class="row">
         <div class="col">
             <div class="card">
                 <div class="card-body">
                     <div class="section-body">
-                        <input type="text" name="id_profil" value="" id="id_profil" hidden>
+                        <input type="text" name="id_peraturan" value="" id="id_peraturan" hidden>
                         <div class="form-group col">
-                            <label for="nip">Kategori</label>
-                            <select class="form-control" name="id_kategori_profil" id="id_kategori_profil">
+                            <label for="kategori">Kategori</label>
+                            <select class="form-control" name="id_kategori_peraturan" id="id_kategori_peraturan">
                                 <option value="" hidden>Pilih Kategori</option>
                                 <?php foreach ($data_kategori as $kategori) :  ?>
-                                    <option value="<?= $kategori['id_kategori_profil']; ?>"><?= $kategori['nama_kategori_profil']; ?></option>
+                                    <option value="<?= $kategori['id_kategori_peraturan']; ?>"><?= $kategori['nama_kategori_peraturan']; ?></option>
                                 <?php endforeach;  ?>
                             </select>
-                            <div class="invalid-feedback error_kategoriProfil">
+                            <div class="invalid-feedback error_kategoriPeraturan">
+                            </div>
+                        </div>
+                        <div class="form-group col">
+                            <label for="nama_peraturan">Nama Peraturan</label>
+                            <input type="text" name="nama_peraturan" class="form-control" id="nama_peraturan" value="">
+                            <div class="invalid-feedback errorNama">
+
+                            </div>
+                        </div>
+                        <div class="form-group col">
+                            <label for="file_peraturan">File Peraturan</label>
+                            <input type="file" id="file_peraturan" accept=".pdf" class="form-control" name="file_peraturan">
+                            <div class="invalid-feedback errorFile">
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="col">
-                <div class="card-body">
-                    <div class="section-body">
-                        <div class="form-group">
-                            <div class="dropzone" id="mydropzone">
-                                <div class="fallback">
-                                    <input type="file" id="img_profil" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="img_profil">
-                                    <img src="" id="image" alt="Preview Image" style="width: 280px; height:280px;">
-                                    <div class="invalid-feedback errorImage">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section-body">
-        <div class="card-header">
-            <h4>Detail Bidang</h4>
-        </div>
-        <div class="card">
-            <div class="col">
-                <div class="card-body">
-                    <div class="form-group row mb-4">
-                        <div class="col-sm-12">
-                            <textarea class="summernote" value="" name="teks_profil" id="teks_profil"></textarea>
-                        </div>
-                        <div class="invalid-feedback errorTeks">
 
-                        </div>
-                    </div>
-                    <center> <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary">Unggah</button></center>
-                    <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Edit</button></center>
-                </div>
-
+                <center> <button type="submit" id="btnSave" onclick="save()" class="btn btn-primary">Unggah</button></center>
+                <center> <button type="submit" id="btnEdit" onclick="edit()" class="btn btn-primary">Edit</button></center>
             </div>
         </div>
     </div>
@@ -90,7 +67,7 @@
 
 
 
-<div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modalProfil">
+<div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modalPeraturan">
     <div class="modal-dialog modal-sm kategori_kecil" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -100,10 +77,10 @@
                 </button>
             </div>
             <div class="modal-body Del">
-                <form action="#" id="formProfil" class="form-horizontal">
+                <form action="#" id="formPeraturan" class="form-horizontal">
                     <div class="form-group col">
                         <label for="kategori">Kategori</label>
-                        <input type="text" name="nama_kategori_profil" id="nama_kategori_profil" value="" class="form-control">
+                        <input type="text" name="nama_kategori_peraturan" id="nama_kategori_peraturan" value="" class="form-control">
                         <div class="invalid-feedback errorKategori">
                         </div>
                     </div>
@@ -137,12 +114,12 @@
                             <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($kategori_profil as $kategori) : ?>
+                                foreach ($kategori_peraturan as $kategori) : ?>
                                     <tr>
                                         <td><?= $no++; ?></td>
-                                        <td><?= $kategori['nama_kategori_profil']; ?></td>
+                                        <td><?= $kategori['nama_kategori_peraturan']; ?></td>
                                         <td>
-                                            <button type="button" class="btn btn-danger" onclick="delKategori(<?= $kategori['id_kategori_profil']; ?>)">
+                                            <button type="button" class="btn btn-danger" onclick="delKategori(<?= $kategori['id_kategori_peraturan']; ?>)">
                                                 <span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">
                                                 </span>
                                             </button>
@@ -165,17 +142,18 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <h4>Bidang</h4>
+                    <h4>Peraturan</h4>
                 </div>
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="display" id="Profil" style="width:100%">
+                        <table class="display" id="Peraturan" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Image</th>
+                                    <th>File</th>
                                     <th>Kategori</th>
+                                    <th>Nama Peraturan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -196,27 +174,25 @@
     var table;
 
     $(document).ready(function() {
-        table = $('#Profil').DataTable({
+        table = $('#Peraturan').DataTable({
             "processing": true,
             "serverSide": true,
             'destroy': true,
             "order": [],
             "ajax": {
-                "url": "<?= site_url('profil/getProfil'); ?>",
+                "url": "<?= site_url('peraturan/getPeraturan'); ?>",
                 "type": "POST",
             },
             "columnDefs": [{
                 "targets": 1,
-                "data": "img",
                 "render": function(url, type, full) {
-                    var img = '<img height="50%" width="50%" src="<?= base_url('uploads/profil'); ?>/' + full[1] + '"/>';
-                    return img;
+                    return '<a href="/download_peraturan/' + full[1] + '" target="_blank">Download</a>';
                 },
             }, ],
         });
         $('#btnClose').hide();
         $('#btnEdit').hide();
-        $('#formProfil').hide();
+        $('#formPeraturan').hide();
         $('#Profil').show();
 
         $('.summernote').summernote({
@@ -235,36 +211,36 @@
         })
     });
 
-    function showProfil() {
-        $('#formProfil').show();
-        $('#showProfil').hide();
+    function showPeraturan() {
+        $('#formPeraturan').show();
+        $('#showPeraturan').hide();
         $('#btnClose').show();
     }
 
     function btnClose() {
-        $('#formProfil').hide();
-        $('#showProfil').show();
+        $('#formPeraturan').hide();
+        $('#showPeraturan').show();
         $('#btnClose').hide();
         resetForm();
     }
 
 
     function cekKategori() {
-        $('#modalProfil').modal('show');
+        $('#modalPeraturan').modal('show');
         $('.modal-title').text('Data Kategori')
         $('.kategori_kecil').hide();
         $('.kategori_besar').show();
     }
 
     function btnKategori() {
-        $('#formProfil')[0].reset();
-        $('#modalProfil').modal('show');
+        $('#formPeraturan')[0].reset();
+        $('#modalPeraturan').modal('show');
         $('.modal-title').text('Tambah Kategori')
         $('.kategori_kecil').show();
         $('.kategori_besar').hide();
     }
 
-    function delKategori(id_kategori_profil) {
+    function delKategori(id_kategori_peraturan) {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -285,7 +261,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('profil/del_kategori_profil/'); ?>" + id_kategori_profil,
+                    url: "<?= site_url('peraturan/del_kategori_peraturan/'); ?>" + id_kategori_peraturan,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -316,7 +292,7 @@
         })
     }
 
-    function delProfil(id_profil) {
+    function delPeraturan(id_peraturan) {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -337,13 +313,13 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('profil/delProfil/'); ?>" + id_profil,
+                    url: "<?= site_url('peraturan/delPeraturan/'); ?>" + id_peraturan,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
                             swalWithBootstrapButtons.fire(
                                 'Deleted!',
-                                'Profil Berhasil Di Delete',
+                                'Peraturan Berhasil Di Delete',
                                 'success'
                             ).then((result) => {
                                 if (result.value) {
@@ -390,18 +366,18 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('profil/tambah_kategori_profil'); ?>",
-                    data: $('#formProfil').serialize(),
+                    url: "<?= site_url('peraturan/tambah_kategori_peraturan'); ?>",
+                    data: $('#formPeraturan').serialize(),
                     dataType: "json",
                     success: function(response) {
                         if (response.error) {
                             let data = response.error
                             if (data.errorKategori) {
-                                $('#nama_kategori_profil').addClass('is-invalid');
+                                $('#nama_kategori_peraturan').addClass('is-invalid');
                                 $('.errorKategori').html(data.errorKategori);
                             } else {
-                                $('#nama_kategori_profil').removeClass('is-invalid');
-                                $('#nama_kategori_profil').addClass('is-valid');
+                                $('#nama_kategori_peraturan').removeClass('is-invalid');
+                                $('#nama_kategori_peraturan').addClass('is-valid');
                             }
                         }
                         if (response.sukses) {
@@ -411,7 +387,7 @@
                                 'success'
                             ).then((result) => {
                                 if (result.value) {
-                                    $('#modalProfil').modal('hide');
+                                    $('#modalPeraturan').modal('hide');
                                     window.location.reload();
                                 }
                             })
@@ -438,21 +414,10 @@
     }
 
     function modalReset() {
-        $('#kategori').removeClass('is-invalid');
-        $('#kategori').removeClass('is-valid');
+        $('#nama_kategori_peraturan').removeClass('is-invalid');
+        $('#nama_kategori_peraturan').removeClass('is-valid');
     }
 
-    function previewFile(input) {
-        var file = $("input[type=file]").get(0).files[0];
-
-        if (file) {
-            var reader = new FileReader();
-            reader.onload = function() {
-                $("#image").attr("src", reader.result);
-            }
-            reader.readAsDataURL(file);
-        }
-    }
 
     function resetForm() {
         $('#img_profil').removeClass('is-invalid');
@@ -461,18 +426,18 @@
         $('select').val('').removeAttr('checked').removeAttr('selected');
         $("#image").attr("src", '');
         $(".summernote").summernote('code', '');
-        $('#id_kategori_profil').removeClass('is-invalid');
-        $('#id_kategori_profil').removeClass('is-valid');
+        $('#id_kategori_peraturan').removeClass('is-invalid');
+        $('#id_kategori_peraturan').removeClass('is-valid');
     }
 
     function save() {
 
-        let form = $('#formProfil')[0];
+        let form = $('#formPeraturan')[0];
         let data = new FormData(form);
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('profil/tambah_profil') ?>",
+            url: "<?= site_url('peraturan/tambah_peraturan') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -490,26 +455,26 @@
             success: function(response) {
                 if (response.error) {
                     let data = response.error
-                    if (data.error_kategoriProfil) {
-                        $('#id_kategori_profil').addClass('is-invalid');
-                        $('.error_kategoriProfil').html(data.error_kategoriProfil);
+                    if (data.error_kategoriPeraturan) {
+                        $('#id_kategori_peraturan').addClass('is-invalid');
+                        $('.error_kategoriPeraturan').html(data.error_kategoriPeraturan);
                     } else {
-                        $('#id_kategori_profil').removeClass('is-invalid');
-                        $('#id_kategori_profil').addClass('is-valid');
+                        $('#id_kategori_peraturan').removeClass('is-invalid');
+                        $('#id_kategori_peraturan').addClass('is-valid');
                     }
-                    if (data.errorImage) {
-                        $('#img_profil').addClass('is-invalid');
-                        $('.errorImage').html(data.errorImage);
+                    if (data.errorFile) {
+                        $('#file_peraturan').addClass('is-invalid');
+                        $('.errorFile').html(data.errorFile);
                     } else {
-                        $('#img_profil').removeClass('is-invalid');
-                        $('#img_profil').addClass('is-valid');
+                        $('#file_peraturan').removeClass('is-invalid');
+                        $('#file_peraturan').addClass('is-valid');
                     }
-                    if (data.errorTeks) {
-                        $('#teks_profil').addClass('is-invalid');
-                        $('.errorTeks').html(data.errorTeks);
+                    if (data.errorNama) {
+                        $('#nama_peraturan').addClass('is-invalid');
+                        $('.errorNama').html(data.errorNama);
                     } else {
-                        $('#teks_profil').removeClass('is-invalid');
-                        $('#teks_profil').addClass('is-valid');
+                        $('#nama_peraturan').removeClass('is-invalid');
+                        $('#nama_peraturan').addClass('is-valid');
                     }
                     document.body.scrollTop = 0;
                     document.documentElement.scrollTop = 0;
@@ -523,11 +488,12 @@
                         if (result.value) {
                             document.body.scrollTop = 1000;
                             document.documentElement.scrollTop = 1000;
-                            $('#formProfil').hide();
+                            $('#formPeraturan').hide();
                             $('#btnClose').hide();
-                            $('#showProfil').show();
+                            $('#showPeraturan').show();
                             resetForm();
                             reload_table();
+                            window.location.reload();
                         }
                     })
                 }
@@ -536,22 +502,20 @@
         });
     }
 
-    function edit_profil(id_profil) {
-        $('#formProfil').show();
-        $('#showProfil').hide();
+    function editPeraturan(id_peraturan) {
+        $('#formPeraturan').show();
+        $('#showPeraturan').hide();
         $('#btnClose').show();
-        var textareaValue = $('#teks_profil').summernote('code');
+        $('#btnSave').hide();
+        $('#btnEdit').show();
         $.ajax({
             type: "GET",
-            url: "<?= site_url('profil/get_id/'); ?>" + id_profil,
+            url: "<?= site_url('peraturan/get_id/'); ?>" + id_peraturan,
             dataType: "json",
             success: function(data) {
-                $('[name=id_kategori_profil]').val(data.id_kategori_profil);
-                $('[name=id_profil]').val(data.id_profil);
-                $('#image').attr('src', '<?= base_url('uploads/profil'); ?>/' + data.img_profil);
-                $("#teks_profil").summernote('code', data.teks_profil);
-                $('#btnEdit').show();
-                $('#btnSave').hide();
+                $('[name=id_kategori_peraturan]').val(data.id_kategori_peraturan);
+                $('[name=id_peraturan]').val(data.id_peraturan);
+                $('[name=nama_peraturan]').val(data.nama_peraturan);
             }
         });
         document.body.scrollTop = 0;
@@ -559,12 +523,12 @@
     }
 
     function edit() {
-        let form = $('#formProfil')[0];
+        let form = $('#formPeraturan')[0];
         let data = new FormData(form);
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('profil/edit_dataProfil') ?>",
+            url: "<?= site_url('peraturan/edit_peraturan') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -577,32 +541,34 @@
             },
             complete: function() {
                 $('#btnEdit').prop('disabled', false);
-                $('#btnEdit').html('Unggah');
+                $('#btnEdit').html('Edit');
             },
             success: function(response) {
                 if (response.error) {
                     let data = response.error
-                    if (data.error_kategoriProfil) {
-                        $('#id_kategori_profil').addClass('is-invalid');
-                        $('.error_kategoriProfil').html(data.error_kategoriProfil);
+                    if (data.error_kategoriPeraturan) {
+                        $('#id_kategori_peraturan').addClass('is-invalid');
+                        $('.error_kategoriPeraturan').html(data.error_kategoriPeraturan);
                     } else {
-                        $('#id_kategori_profil').removeClass('is-invalid');
-                        $('#id_kategori_profil').addClass('is-valid');
+                        $('#id_kategori_peraturan').removeClass('is-invalid');
+                        $('#id_kategori_peraturan').addClass('is-valid');
                     }
-                    if (data.errorImage) {
-                        $('#img_profil').addClass('is-invalid');
-                        $('.errorImage').html(data.errorImage);
+                    if (data.errorFile) {
+                        $('#file_peraturan').addClass('is-invalid');
+                        $('.errorFile').html(data.errorFile);
                     } else {
-                        $('#img_profil').removeClass('is-invalid');
-                        $('#img_profil').addClass('is-valid');
+                        $('#file_peraturan').removeClass('is-invalid');
+                        $('#file_peraturan').addClass('is-valid');
                     }
-                    if (data.errorTeks) {
-                        $('#teks_profil').addClass('is-invalid');
-                        $('.errorTeks').html(data.errorTeks);
+                    if (data.errorNama) {
+                        $('#nama_peraturan').addClass('is-invalid');
+                        $('.errorNama').html(data.errorNama);
                     } else {
-                        $('#teks_profil').removeClass('is-invalid');
-                        $('#teks_profil').addClass('is-valid');
+                        $('#nama_peraturan').removeClass('is-invalid');
+                        $('#nama_peraturan').addClass('is-valid');
                     }
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
                 }
                 if (response.sukses) {
                     Swal.fire({
@@ -611,13 +577,13 @@
                         html: `Data Berhasil Di Ubah`,
                     }).then((result) => {
                         if (result.value) {
-                            $('#formProfil').hide();
-                            $('#btnClose').hide();
-                            $('#showProfil').show();
-                            resetForm();
-                            reload_table();
                             $('#btnEdit').hide();
                             $('#btnSave').show();
+                            $('#formPeraturan').hide();
+                            $('#btnClose').hide();
+                            $('#showPeraturan').show();
+                            resetForm();
+                            reload_table();
                         }
                     })
                 }
