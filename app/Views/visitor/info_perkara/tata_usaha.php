@@ -25,17 +25,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr style="font-weight:bold; color:black">
-                    <th>no</th>
-                    <th>Hari / Tanggal</th>
-                    <th>Nama Terdakwa</th>
-                    <th>Nama Jaksa</th>
-                    <th>Hakim</th>
-                    <th>No. Perkara</th>
-                    <th>Keterangan</th>
-                  </tr>
+                  <?php $no = 1 + (10 * ($page - 1));
+                  foreach ($datun as $data) : ?>
+                    <tr style="font-weight:bold; color:black">
+                      <th><?= $no++; ?></th>
+                      <th><?= $data['tanggal']; ?></th>
+                      <th><?= $data['nama_terdakwa']; ?></th>
+                      <th><?= $data['nama_jaksa']; ?></th>
+                      <th><?= $data['nama_hakim']; ?></th>
+                      <th><?= $data['no_perkara']; ?></th>
+                      <th><?= $data['agenda']; ?></th>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
+              <?= $pager->links('datun', 'kejari_pagination') ?>
             </div>
           </div>
         </div>

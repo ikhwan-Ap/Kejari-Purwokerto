@@ -38,7 +38,7 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
-              <?= $pager->links() ?>
+              <?= $pager->links('umum', 'kejari_pagination') ?>
             </div>
           </div>
         </div>

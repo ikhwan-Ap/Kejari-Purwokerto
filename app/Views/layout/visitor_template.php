@@ -172,7 +172,7 @@
 										<li><a href="#" class="nav-link">Video Kegiatan</a></li>
 									</ul>
 								</li>
-								<li><a href="<?= base_url() ?>/home/portal" class="nav-link"><b>Pelayanan</b></a></li>
+								<li><a href="<?= base_url() ?>/home/portal" class="nav-link" target="_blank"><b>Pelayanan</b></a></li>
 								<li><a href="<?= base_url() ?>/home/kontak" class="nav-link"><b>Kontak Kami</b></a></li>
 							</ul>
 						</nav>
