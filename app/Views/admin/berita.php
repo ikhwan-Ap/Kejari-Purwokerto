@@ -200,7 +200,6 @@ $year = $arr[0];
         $("#btnClose").show();
         $("#btnOpen").hide();
         $('#judul_berita').focus();
-        resetForm();
         $('.summernote').summernote('code', '<b>Kejaksaan Negeri Purwokerto –</b>');
     }
 
