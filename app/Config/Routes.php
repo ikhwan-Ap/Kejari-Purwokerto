@@ -66,6 +66,7 @@ $routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1');
 $routes->get('/pelayanan', 'Modul::pelayanan');
 //Arsip
 $routes->get('/arsip_foto', 'Arsip::index');
+$routes->get('/arsip_video', 'Video::index');
 $routes->get('/struktur', 'Struktur::index');
 
 // Donwload

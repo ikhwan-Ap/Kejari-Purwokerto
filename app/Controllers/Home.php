@@ -8,6 +8,7 @@ use App\Models\bannerModel;
 use App\Models\kasusModel;
 use App\Models\buronModel;
 use App\Models\beritaModel;
+use App\Models\videoModel;
 use App\Models\carouselModel;
 use App\Models\navbarModel;
 use App\Models\bidangModel;
@@ -29,6 +30,7 @@ class Home extends BaseController
         $this->header  = new navbarModel();
         $this->bidang  = new bidangModel();
         $this->berita  = new beritaModel();
+        $this->video  = new videoModel();
         $this->carousel = new carouselModel();
         $this->kategori = new kategoriModel();
         $this->visi_misi = new visi_misiModel();
@@ -169,9 +171,10 @@ class Home extends BaseController
 
     public function berita()
     {
-        $data = $this->buron->get_last();
+        $data = $this->berira->get_last();
         echo json_encode($data);
     }
+
     public function visi_misi()
     {
         $data = [

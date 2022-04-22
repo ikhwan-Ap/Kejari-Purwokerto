@@ -36,7 +36,7 @@ $year = $arr[0];
                         <input type="text" name="id_berita" value="" id="id_berita" hidden>
                         <div class="form-group col p-right">
                             <label for="tanggal" class="md-sm5">Tanggal</label>
-                            <input type="text" id="tanggal" class="form-control" name="tanggal" placeholder="" value="<?= $date ?>">
+                            <input type="text" id="tanggal" class="form-control" name="tanggal" placeholder="" value="" hidden>
                             <p class="inline-space" ><?= $tgl.' '.$mon.' '.$year ?></p>
                             <div class="invalid-feedback errorTanggal">
                             </div>
@@ -133,6 +133,14 @@ $year = $arr[0];
 <script>
     var table;
 
+    var date = new Date();
+    var hari = date.getDate();
+    var mon = date.getMonth();
+    var yer = date.getFullYear()
+    if (mon < 10) {
+        mon = '0'+mon;
+    }
+    var tanggal = yer+'-'+mon+'-'+hari;
     $(document).ready(function() {
         table = $('#Berita').DataTable({
             "processing": true,
@@ -191,18 +199,15 @@ $year = $arr[0];
         $("#btnClose").show();
         $("#btnOpen").hide();
         $('#judul_berita').focus();
-        var date = $('#tanggal').val();
-        console.log('hai : ', date, $('#tanggal').val());
         resetForm();
+        $('.summernote').summernote('code', '<b>Kejaksaan Negeri Purwokerto –</b>');
     }
 
     function save() {
 
-        console.log('dat :', $('#tanggal').val());
-        // console.log('dat2s :', date);
+        $('#tanggal').val(tanggal);
         let form = $('#formBerita')[0];
         let data = new FormData(form);
-        console.log(date);
 
         $.ajax({
             type: "POST",
@@ -214,8 +219,6 @@ $year = $arr[0];
             cache: false,
             dataType: "json",
             beforeSend: function() {
-                $('#tanggal').val(date);
-                console.log('up : ', $('#tanggal').val());
                 $('#btnSave').prop('disabled', true);
                 $('#btnSave').html('Loading');
             },
@@ -224,7 +227,6 @@ $year = $arr[0];
                 $('#btnSave').html('Unggah');
             },
             success: function(response) {
-                console.log('res : ', $('#tanggal').val());
                 if (response.error) {
                     let data = response.error
                     if (data.errorJudul) {
@@ -265,9 +267,9 @@ $year = $arr[0];
                         html: `Data Berhasil Ditambahkan`,
                     }).then((result) => {
                         if (result.value) {
-                            // resetForm();
-                            // reload_table();
-                            // hideForm();
+                            resetForm();
+                            reload_table();
+                            hideForm();
                         }
                     })
                 }
@@ -356,6 +358,7 @@ $year = $arr[0];
     }
 
     function editBerita(id_berita) {
+        $('#tanggal').val(tanggal);
         var textareaValue = $('#teks_berita').summernote('code');
         $.ajax({
             type: "GET",
