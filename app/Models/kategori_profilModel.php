@@ -52,16 +52,14 @@ class kategori_profilModel extends Model
 
     public function get_kategori_profil()
     {
-        $not = ['Kepala kejaksaan'];
-        $builder = $this->db->table('kategori');
+        $builder = $this->db->table('kategori_profil');
         $builder->select('*');
-        $builder->select('kategori.nama_kategori_profil', 'nama_kategori_profil');
-        $builder->selectMax('bidang.id_bidang', 'id_bidang');
-        $builder->orderBy('id_bidang', 'DESC');
-        $builder->groupBy('bidang.id_kategori_profil');
-        $builder->whereNotIn('nama_kategori_profil', $not);
-        $builder->where('bidang.id_kategori_profil IS NOT NULL', null, false);
-        $builder->join('bidang', 'bidang.id_kategori_profil = kategori.id_kategori_profil', 'LEFT');
+        $builder->select('kategori_profil.nama_kategori_profil', 'nama_kategori_profil');
+        $builder->selectMax('profil.id_profil', 'id_profil');
+        $builder->orderBy('id_profil', 'DESC');
+        $builder->groupBy('profil.id_kategori_profil');
+        $builder->where('profil.id_kategori_profil IS NOT NULL', null, false);
+        $builder->join('profil', 'profil.id_kategori_profil = kategori_profil.id_kategori_profil', 'LEFT');
         $query = $builder->get();
         return $query->getResultArray();
     }

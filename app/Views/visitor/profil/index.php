@@ -9,16 +9,16 @@
           <div class="post_body">
             <div class="blog_section">
               <div class="section_panel flex-row align-items-center justify-content-start">
-                <div class="section_title">Nama profil</div>
+                <div class="section_title"><?= $data_profil['nama_kategori_profil']; ?></div>
               </div>
               <div class="section_content">
 
                 <div style="text-align:center">
-                  <img src="<?= base_url('/uploads/logo.jpg'); ?>" class="panel_content" alt="gambar">
+                  <img src="<?= base_url(); ?>/uploads/profil/<?= $data_profil['img_profil']; ?>" class="panel_content" alt="gambar">
 
                 </div>
                 <div class="main_section">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ducimus dolor mollitia hic necessitatibus dolore, ut iste nostrum unde, harum ipsa earum quas, a error. Maiores nulla dicta reprehenderit quae.</p>
+                  <p><?= $data_profil['teks_profil']; ?></p>
                 </div>
 
               </div>

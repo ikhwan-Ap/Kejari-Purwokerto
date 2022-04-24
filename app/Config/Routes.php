@@ -45,9 +45,9 @@ $routes->get('/beranda/agenda/(:any)', 'Home::get_agenda/$1');
 $routes->get('/beranda/pengumuman', 'Home::pengumuman');
 $routes->get('/beranda/pengumuman/(:any)', 'Home::get_pengumuman/$1');
 //Profil
-$routes->get('/beranda/profil', 'Home::profil');
+$routes->get('/beranda/profil/(:any)', 'Home::profil/$1');
 //Peraturan
-$routes->get('/beranda/peraturan', 'Home::peraturan');
+$routes->get('/beranda/peraturan/(:any)', 'Home::peraturan/$1');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');

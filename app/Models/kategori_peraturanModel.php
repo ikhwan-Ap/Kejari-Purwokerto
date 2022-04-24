@@ -43,17 +43,32 @@ class kategori_peraturanModel extends Model
 
     public function get_kategori_peraturan()
     {
-        $not = ['Kepala kejaksaan'];
-        $builder = $this->db->table('kategori');
-        $builder->select('*');
-        $builder->select('kategori.nama_kategori_peraturan', 'nama_kategori_peraturan');
-        $builder->selectMax('bidang.id_bidang', 'id_bidang');
-        $builder->orderBy('id_bidang', 'DESC');
-        $builder->groupBy('bidang.id_kategori_peraturan');
-        $builder->whereNotIn('nama_kategori_peraturan', $not);
-        $builder->where('bidang.id_kategori_peraturan IS NOT NULL', null, false);
-        $builder->join('bidang', 'bidang.id_kategori_peraturan = kategori.id_kategori_peraturan', 'LEFT');
+        $builder = $this->db->table('kategori_peraturan');
+        $builder->select('kategori_peraturan.id_kategori_peraturan');
+        $builder->select('kategori_peraturan.nama_kategori_peraturan', 'nama_kategori_peraturan');
+        $builder->orderBy('id_peraturan', 'DESC');
+        $builder->groupBy('peraturan.id_kategori_peraturan');
+        $builder->where('peraturan.id_kategori_peraturan IS NOT NULL', null, false);
+        $builder->join('peraturan', 'peraturan.id_kategori_peraturan = kategori_peraturan.id_kategori_peraturan', 'LEFT');
         $query = $builder->get();
         return $query->getResultArray();
+    }
+
+    public function get_data($id_kategori_peraturan)
+    {
+        $builder = $this->db->table('kategori_peraturan');
+        $builder->select('*');
+        $builder->where('peraturan.id_kategori_peraturan', $id_kategori_peraturan);
+        $builder->join('peraturan', 'peraturan.id_kategori_peraturan = kategori_peraturan.id_kategori_peraturan', 'LEFT');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+    public function get_title($id_kategori_peraturan)
+    {
+        $builder = $this->db->table('kategori_peraturan');
+        $builder->select('nama_kategori_peraturan', 'nama_kategori_peraturan');
+        $builder->where('id_kategori_peraturan', $id_kategori_peraturan);
+        $query = $builder->get();
+        return $query->getRowArray();
     }
 }

@@ -13,10 +13,13 @@ use App\Models\carouselModel;
 use App\Models\navbarModel;
 use App\Models\bidangModel;
 use App\Models\iconModel;
+use App\Models\kategori_peraturanModel;
+use App\Models\kategori_profilModel;
 use App\Models\kategoriModel;
 use App\Models\visi_misiModel;
 use App\Models\pelayananModel;
 use App\Models\pengumumanModel;
+use App\Models\profilModel;
 use CodeIgniter\Session\Session;
 use CodeIgniter\API\ResponseTrait;
 
@@ -42,6 +45,9 @@ class Home extends BaseController
         $this->foto = new arsip_fotoModel();
         $this->buron = new buronModel();
         $this->banner = new bannerModel();
+        $this->kategori_profil = new kategori_profilModel();
+        $this->profil = new profilModel();
+        $this->kategori_peraturan = new kategori_peraturanModel();
         helper('form');
 
         $header = $this->header->get_header();
@@ -53,6 +59,8 @@ class Home extends BaseController
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
         $_SESSION['buron'] = $this->buron->get_buron();
+        $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
+        $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         session()->set([
             'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
@@ -70,6 +78,8 @@ class Home extends BaseController
         $_SESSION['foto'] = $this->foto->get_foto();
         $_SESSION['banner'] = $this->banner->get_banner();
         $_SESSION['buron'] = $this->buron->get_buron();
+        $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
+        $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),
@@ -275,13 +285,24 @@ class Home extends BaseController
         return view('visitor/detail_pengumuman', $data);
     }
 
-    public function profil()
+    public function profil($id_profil)
     {
-        return view('visitor/profil/index');
+        $get_profil = $this->profil->get_id($id_profil);
+        $data = [
+            'title' => 'Profil',
+            'data_profil' => $get_profil,
+        ];
+        return view('visitor/profil/index', $data);
     }
 
-    public function peraturan()
+    public function peraturan($id_kategori_peraturan)
     {
-        return view('visitor/peraturan');
+        $peraturan = $this->kategori_peraturan->get_data($id_kategori_peraturan);
+
+        $data = [
+            'title' => $this->kategori_peraturan->get_title($id_kategori_peraturan),
+            'peraturan' => $peraturan,
+        ];
+        return view('visitor/peraturan', $data);
     }
 }

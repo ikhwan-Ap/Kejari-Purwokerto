@@ -106,10 +106,13 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Profil</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Sambutan Kejari Purwokerto</a></li>
+										<?php $i = 0;
+										foreach ($_SESSION['profil'] as $data) :
+										?>
+											<li><a href="<?= base_url() ?>/beranda/profil/<?= $data['id_profil']; ?>" class="nav-link"><?= $data['nama_kategori_profil']; ?></a></li>
+										<?php $i++;
+										endforeach; ?>
 										<li><a href="/visi-misi" class="nav-link">Visi dan Misi</a></li>
-										<li><a href="#" class="nav-link">Kegiatan IAD Purwokerto</a></li>
-										<li><a href="#" class="nav-link">Perintah Harian Jaksa Agung RI</a></li>
 									</ul>
 								</li>
 
@@ -127,7 +130,6 @@
 									<ul class="dropdown arrow-top">
 										<?php $i = 0;
 										foreach ($_SESSION['kategori']  as $row) : ?>
-											<input type="text" name="id_bidang" id="id_bidang" value="<?= $row['id_bidang']; ?>" hidden>
 											<li><a href="<?= base_url() ?>/bidang_view/<?= $row['id_bidang']; ?>" class="nav-link"><?= $row['nama_kategori']; ?></a></li>
 										<?php $i++;
 										endforeach; ?>
@@ -144,16 +146,13 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="<?= base_url('/home/peraturan'); ?>" class="nav-link"><b>Peraturan</b></a>
+									<a href="" class="nav-link"><b>Peraturan</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Instruksi Jaksa Agung</a></li>
-										<li><a href="#" class="nav-link">Instruksi Presiden</a></li>
-										<li><a href="#" class="nav-link">Keputusan Jaksa Agung</a></li>
-										<li><a href="#" class="nav-link">Keputusan Menteri</a></li>
-										<li><a href="#" class="nav-link">Keputusan Presiden</a></li>
-										<li><a href="#" class="nav-link">Peraturan Lainnya</a></li>
-										<li><a href="#" class="nav-link">Peraturan Pemerintah</a></li>
-										<li><a href="#" class="nav-link">Undang-Undang</a></li>
+										<?php $i = 0;
+										foreach ($_SESSION['peraturan'] as $data) : ?>
+											<li><a href="<?= base_url() ?>/beranda/peraturan/<?= $data['id_kategori_peraturan']; ?>" class="nav-link"><?= $data['nama_kategori_peraturan']; ?></a></li>
+										<?php $i++;
+										endforeach; ?>
 									</ul>
 								</li>
 								<li class="has-children">

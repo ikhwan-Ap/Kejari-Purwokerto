@@ -8,7 +8,7 @@
         <div class="main_content">
           <div class="blog_section">
             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
-              <div class="section_title">Peraturan</div>
+              <div class="section_title"><?= $title['nama_kategori_peraturan']; ?></div>
             </div>
             <div class="section_content">
               <div class="container">
@@ -16,16 +16,20 @@
                   <thead>
                     <tr>
                       <th style="width: 15px;">No</th>
-                      <th>Nama</th>
+                      <th>Nama Peraturan</th>
                       <th style="width: 100px;">File</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>No</td>
-                      <td>Nama</td>
-                      <td>File</td>
-                    </tr>
+                    <?php
+                    $no = 1;
+                    foreach ($peraturan as $data) : ?>
+                      <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $data['nama_peraturan']; ?></td>
+                        <td><?= $data['file_peraturan']; ?></td>
+                      </tr>
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>
