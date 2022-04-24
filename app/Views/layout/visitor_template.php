@@ -144,7 +144,7 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link"><b>Peraturan</b></a>
+									<a href="<?= base_url('/home/peraturan'); ?>" class="nav-link"><b>Peraturan</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Instruksi Jaksa Agung</a></li>
 										<li><a href="#" class="nav-link">Instruksi Presiden</a></li>

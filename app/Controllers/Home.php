@@ -274,4 +274,14 @@ class Home extends BaseController
             ];
         return view('visitor/detail_pengumuman', $data);
     }
+
+    public function profil()
+    {
+        return view('visitor/profil/index');
+    }
+
+    public function peraturan()
+    {
+        return view('visitor/peraturan');
+    }
 }

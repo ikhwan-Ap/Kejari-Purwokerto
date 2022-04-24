@@ -303,7 +303,7 @@
 												<div class="playlist_background"></div>
 
 												<!-- Video -->
-												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
+												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'QhOFg_3RV5Q', mute:false, addRaster:true})">
 													<div class="video d-flex flex-row align-items-center justify-content-start">
 														<div class="video_image">
 															<div><img src="https://img.youtube.com/vi/QhOFg_3RV5Q/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
@@ -315,44 +315,6 @@
 													</div>
 												</div>
 
-												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
-													<div class="video d-flex flex-row align-items-center justify-content-start">
-														<div class="video_image">
-															<div><img src="https://img.youtube.com/vi/_me2yfR7Jfk/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
-														</div>
-														<div class="video_content">
-															<div class="video_title">X-Japan - Rusty Nail</div>
-															<div class="video_info"><span>1.2M views</span><span>Sep 29</span></div>
-														</div>
-													</div>
-												</div>
-
-												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'https://www.youtube.com/watch?v=n_N8hB7CoPk', mute:false, addRaster:true})">
-													<div class="video d-flex flex-row align-items-center justify-content-start">
-														<div class="video_image">
-															<div><img src="https://img.youtube.com/vi/8ArAnXLbFck/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
-														</div>
-														<div class="video_content">
-															<div class="video_title">X-Japan - Kurenai</div>
-															<div class="video_info"><span>1.2M views</span><span>Sep 29</span></div>
-														</div>
-													</div>
-												</div>
-
-												<!-- Video -->
-												<div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'n_N8hB7CoPk', mute:false, addRaster:true})">
-													<div class="video d-flex flex-row align-items-center justify-content-start">
-														<div class="video_image">
-															<div><img src="https://img.youtube.com/vi/qlI7GAHnMfM/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
-														</div>
-														<div class="video_content">
-															<div class="video_title">X-Japan - Tears</div>
-															<div class="video_info"><span>1.2M views</span><span>Sep 29</span></div>
-														</div>
-													</div>
-												</div>
 											</div>
 										</div>
 									</div>
