@@ -269,7 +269,6 @@
         resetForm();
     }
 
-
     function cekKategori() {
         $('#modalBidang').modal('show');
         $('.modal-title').text('Data Kategori')
@@ -687,6 +686,9 @@
                             reload_table();
                             $('#btnEdit').hide();
                             $('#btnSave').show();
+                            $('#btnBidang').show();
+                            $('#btnClose').hide();
+                            $('#formBidang').hide();
                         }
                     })
                 }
