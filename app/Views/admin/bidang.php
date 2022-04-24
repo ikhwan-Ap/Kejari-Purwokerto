@@ -573,6 +573,8 @@
                             document.documentElement.scrollTop = 1000;
                             resetForm();
                             reload_table();
+                            $('#btnBidang').show();
+                            $('#btnClose').hide();
                             $('#formBidang').hide();
                         }
                     })
