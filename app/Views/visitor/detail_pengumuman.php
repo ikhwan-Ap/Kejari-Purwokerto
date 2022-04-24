@@ -15,8 +15,14 @@
                 <h2 style="color: black; text-align: left;"><b><?= $pengumuman['nama_pengumuman']; ?></b></h2>
                 <p style="color: black; text-align: left;"><?= $pengumuman['tgl_pengumuman']; ?></p>
                 <p style="color: black; text-align: left;"><?= $pengumuman['teks_pengumuman']; ?></p>
-                <a href="">Download file disini</a>
-                <img src="" alt="file image">
+                <?php
+                $data = explode(".", $pengumuman['file_pengumuman']);
+                ?>
+                <?php if ($data[1] == 'pdf') : ?>
+                  <a href="/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download file disini</a>
+                <?php else :  ?>
+                  <img src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>">
+                <?php endif; ?>
                 <br><br>
                 <h3 style="color: black; text-align: left;"><b>Pengumuman Lainnya:</b></h3>
                 <table class="table table-bordered">

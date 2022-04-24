@@ -4,6 +4,12 @@
     <div class="section-header">
         <h1>Bidang</h1>
         <div class="col">
+            <button class="btn btn-primary" id="btnCarousel" onclick="btnCarousel()">
+                Tambah <i class="ion ion-plus-circled"></i>
+            </button>
+            <button class="btn btn-danger" id="btnClose" onclick="btnClose()">
+                Close Form <i class="ion ion-close-circled"></i>
+            </button>
         </div>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item">Bidang</div>
@@ -44,42 +50,39 @@
 
     </div>
     <?php form_close();  ?>
+</section>
+<div class="section-body">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Bidang</h4>
+                </div>
 
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="display" id="Bidang" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Image</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-
-    <div class="section-body">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Bidang</h4>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="display" id="Bidang" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Image</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
-</section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 <script>
@@ -103,8 +106,24 @@
                 }
             }],
         });
+        $('#formCarousel').hide();
         $('#btnEdit').hide();
+        $('#btnClose').hide();
     });
+
+
+    function btnCarousel() {
+        $('#formCarousel').show();
+        $('#btnCarousel').hide();
+        $('#btnClose').show();
+    }
+
+    function btnClose() {
+        $('#formCarousel').hide();
+        $('#btnCarousel').show();
+        $('#btnClose').hide();
+        resetForm();
+    }
 
     function delCarousel(id_carousel) {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -234,6 +253,9 @@
                         if (result.value) {
                             resetForm();
                             reload_table();
+                            $('#formCarousel').hide();
+                            $('#btnCarousel').show();
+                            $('#btnClose').hide();
                         }
                     })
                 }
@@ -243,6 +265,9 @@
     }
 
     function editCarousel(id_carousel) {
+        $('#formCarousel').show();
+        $('#btnCarousel').hide();
+        $('#btnClose').show();
         $.ajax({
             type: "GET",
             url: "<?= site_url('menu/get_carousel/'); ?>" + id_carousel,
@@ -311,6 +336,9 @@
                             $('#btnSave').show();
                             document.body.scrollTop = 1000;
                             document.documentElement.scrollTop = 1000;
+                            $('#formCarousel').hide();
+                            $('#btnCarousel').show();
+                            $('#btnClose').hide();
                         }
                     })
                 }

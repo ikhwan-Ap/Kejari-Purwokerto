@@ -4,6 +4,12 @@
     <div class="section-header">
         <h1>Agenda</h1>
         <div class="col">
+            <button class="btn btn-primary" id="btnAgenda" onclick="btnAgenda()">
+                Tambah <i class="ion ion-plus-circled"></i>
+            </button>
+            <button class="btn btn-danger" id="btnClose" onclick="btnClose()">
+                Close Form <i class="ion ion-close-circled"></i>
+            </button>
         </div>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item">Agenda</div>
@@ -56,42 +62,39 @@
 
 
     <?php form_close();  ?>
+</section>
 
 
+<div class="section-body">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Agenda</h4>
+                </div>
 
-    <div class="section-body">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Agenda</h4>
-                    </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="display" id="Agenda" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Agenda</th>
+                                    <th>Tanggal</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="display" id="Agenda" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Agenda</th>
-                                        <th>Tanggal</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-
-
-</section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 <script>
@@ -111,6 +114,8 @@
             }, ],
         });
         $('#btnEdit').hide();
+        $('#btnClose').hide();
+        $('#formAgenda').hide();
         $('.summernote').summernote({
             height: 300,
             toolbar: [
@@ -177,6 +182,19 @@
         })
     }
 
+    function btnAgenda() {
+        $('#formAgenda').show();
+        $('#btnAgenda').hide();
+        $('#btnClose').show();
+    }
+
+    function btnClose() {
+        $('#formAgenda').hide();
+        $('#btnAgenda').show();
+        $('#btnClose').hide();
+        resetForm();
+    }
+
 
     function reload_table() {
         table.ajax.reload(null, false);
@@ -196,10 +214,8 @@
     }
 
     function save() {
-
         let form = $('#formAgenda')[0];
         let data = new FormData(form);
-
         $.ajax({
             type: "POST",
             url: "<?= site_url('modul/tambah_agenda') ?>",
@@ -251,6 +267,11 @@
                         if (result.value) {
                             resetForm();
                             reload_table();
+                            $('#btnAgenda').show();
+                            $('#btnClose').hide();
+                            $('#formAgenda').hide();
+                            document.body.scrollTop = 0;
+                            document.documentElement.scrollTop = 0;
                         }
                     })
                 }
@@ -260,6 +281,9 @@
     }
 
     function editAgenda(id_agenda) {
+        $('#formAgenda').show();
+        $('#btnAgenda').hide();
+        $('#btnClose').show();
         $.ajax({
             type: "GET",
             url: "<?= site_url('modul/get_id/'); ?>" + id_agenda,
@@ -273,8 +297,6 @@
                 $('#btnSave').hide();
             }
         });
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
     }
 
     function edit() {
@@ -334,6 +356,11 @@
                             reload_table();
                             $('#btnEdit').hide();
                             $('#btnSave').show();
+                            $('#btnAgenda').show();
+                            $('#btnClose').hide();
+                            $('#formAgenda').hide();
+                            document.body.scrollTop = 0;
+                            document.documentElement.scrollTop = 0;
                         }
                     })
                 }
