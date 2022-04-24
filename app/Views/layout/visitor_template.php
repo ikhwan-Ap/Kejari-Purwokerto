@@ -165,7 +165,7 @@
 										<li><a href="#" class="nav-link">Kontak</a></li>
 										<li><a href="<?= base_url() ?>/berita_tentang/1" class="nav-link">Berita</a></li>
 										<li><a href="#" class="nav-link">Artikel</a></li>
-										<li><a href="#" class="nav-link">Pengumuman</a></li>
+										<li><a href="<?= base_url() ?>/beranda/pengumuman" class="nav-link">Pengumuman</a></li>
 										<li><a href="<?= base_url() ?>/beranda/agenda" class="nav-link">Agenda</a></li>
 										<li><a href="#" class="nav-link">Webmail</a></li>
 										<li><a href="#" class="nav-link">Foto Kegiatan</a></li>
@@ -227,7 +227,7 @@
 					<?php $i++;
 					endforeach; ?>
 					<p>
-						<a href="#" class="btn btn-secondary btn-sm btn-sidebar">
+						<a href="<?= base_url() ?>/beranda/pengumuman" class="btn btn-secondary btn-sm btn-sidebar">
 							<span class="">Selengkapnya...</span>
 						</a>
 					</p>

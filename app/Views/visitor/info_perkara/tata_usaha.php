@@ -11,7 +11,7 @@
               <div class="section_title">Perdata dan Tata Usaha Negara</div>
             </div>
             <div class="section_content">
-
+              <?= $pager->links('datun', 'kejari_pagination') ?>
               <table class="table table-responsive table-bordered table-light">
                 <thead>
                   <tr style=" font-weight:bold; color:black">
@@ -39,7 +39,7 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
-              <?= $pager->links('datun', 'kejari_pagination') ?>
+
             </div>
           </div>
         </div>

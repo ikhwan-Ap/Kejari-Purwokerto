@@ -84,8 +84,8 @@
 
     function filter(urel) {
         let filter = document.getElementById('url').value;
-        filter = filter.replace(/[^a-zA-Z0-9]/g,' ');
-        filter = filter.substr(filter.length-11);
+        // filter = filter.replace(/[^a-zA-Z0-9]/g,' ');
+        filter = filter.substr(filter.length - 11);
         document.getElementById('url').value = filter;
     }
     $(document).ready(function() {
@@ -114,7 +114,7 @@
     }
 
     function save() {
-        
+
         let form = $('#formVideo')[0];
         let data = new FormData(form);
 
@@ -211,7 +211,7 @@
                             ).then((result) => {
                                 if (result.value) {
                                     reload_table();
-                                    $('#del'+id).parent().parent().remove();
+                                    $('#del' + id).parent().parent().remove();
 
                                 }
                             })

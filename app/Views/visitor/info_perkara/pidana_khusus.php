@@ -11,6 +11,7 @@
               <div class="section_title">Pidana Khusus</div>
             </div>
             <div class="section_content">
+              <?= $pager->links('khusus', 'kejari_pagination') ?>
 
               <table class="table table-bordered table-light">
                 <thead>
@@ -39,7 +40,6 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
-              <?= $pager->links('khusus', 'kejari_pagination') ?>
             </div>
           </div>
         </div>

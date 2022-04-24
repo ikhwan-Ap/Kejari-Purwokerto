@@ -14,14 +14,14 @@
             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
               <div class="section_title"><?= $title; ?></div>
             </div><br>
-            <?= $pager->links('agenda', 'kejari_pagination') ?>
+            <?= $pager->links('pengumuman', 'kejari_pagination') ?>
             <?php $i = 0;
-            foreach ($agenda as $data) : ?>
-              <a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
+            foreach ($pengumuman as $data) : ?>
+              <a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
                 <div class="section_content" style="background-color: white; border-radius: 10px; margin-left: 15px;">
-                  <p style="font-weight: bold; font-size:large;"><?= $data['nama_agenda']; ?></p>
-                  <p><?= $data['teks_agenda']; ?></p>
-                  <p><?= $data['tanggal_agenda']; ?></p>
+                  <p style="font-weight: bold; font-size:large;"><?= $data['nama_pengumuman']; ?></p>
+                  <p><?= $data['teks_pengumuman']; ?></p>
+                  <p><?= $data['tgl_pengumuman']; ?></p>
                 </div>
               </a>
               <br>

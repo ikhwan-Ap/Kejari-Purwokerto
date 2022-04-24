@@ -234,7 +234,7 @@ class Home extends BaseController
         $agenda->orderBy('tanggal_agenda', 'DESC');
         $data = [
             'title' => 'Agenda',
-            'agenda' => $agenda->paginate(10),
+            'agenda' => $agenda->paginate(10, 'agenda'),
             'pager' => $agenda->pager,
         ];
         return view('visitor/agenda', $data);
@@ -249,5 +249,29 @@ class Home extends BaseController
                 'agenda' => $get_agenda,
             ];
         return view('visitor/detail_agenda', $data);
+    }
+
+    public function pengumuman()
+    {
+        $_SESSION['pengumuman'] = $this->pengumuman->get_pengumuman();
+        $pengumuman =  $this->pengumuman;
+        $pengumuman->orderBy('tgl_pengumuman', 'DESC');
+        $data = [
+            'title' => 'Pengumuman',
+            'pengumuman' => $pengumuman->paginate(10, 'pengumuman'),
+            'pager' => $pengumuman->pager,
+        ];
+        return view('visitor/pengumuman', $data);
+    }
+
+    public function get_pengumuman($id_pengumuman)
+    {
+        $get_pengumuman = $this->pengumuman->get_id($id_pengumuman);
+        $data =
+            [
+                'title' => 'Pengumuman',
+                'pengumuman' => $get_pengumuman,
+            ];
+        return view('visitor/detail_pengumuman', $data);
     }
 }

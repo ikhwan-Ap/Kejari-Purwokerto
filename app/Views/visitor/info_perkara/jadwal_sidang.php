@@ -11,6 +11,7 @@
               <div class="section_title">Jadwal Sidang</div>
             </div>
             <div class="section_content">
+              <?= $pager->links('jadwal', 'kejari_pagination') ?>
               <table class="table table-responsive table-bordered table-light">
                 <thead>
                   <tr style=" font-weight:bold; color:black">
@@ -38,7 +39,7 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
-              <?= $pager->links('jadwal', 'kejari_pagination') ?>
+
             </div>
           </div>
         </div>

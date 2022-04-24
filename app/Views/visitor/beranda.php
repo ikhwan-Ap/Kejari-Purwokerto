@@ -2,7 +2,7 @@
 	<?= $this->section('content'); ?>
 
 	<!-- <div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/carousel.jpg');"></div> -->
-	<div id="carousel" class="carousel slide" data-ride="carousel" style="height: 720px;">
+	<div id="carousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel" data-slide-to="1"></li>
@@ -51,15 +51,15 @@
 
 								<div class="grid clearfix">
 									<!-- <?php
-											$warna = 'green';
-											$background = array(
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-												'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+												$warna = 'green';
+												$background = array(
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
+													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-											);
-											$i = 0;
-											foreach ($carousel as $value) :
-											?>
+												);
+												$i = 0;
+												foreach ($carousel as $value) :
+												?>
 										<a href="#">
 
 											<div class="card card_default card_small_with_background grid-item">
@@ -70,8 +70,8 @@
 											</div>
 										</a>
 									<?php
-												$i++;
-											endforeach;  ?> -->
+													$i++;
+												endforeach;  ?> -->
 
 									<!-- Small Card With Background -->
 
