@@ -80,6 +80,7 @@ class Home extends BaseController
             'carousel' =>  $this->carousel->get_img(),
             'pelayanan' => $this->pelayanan->get_data(),
             'banner' => $this->banner->get_banner(),
+            'berita' => $this->berita->get_berita(),
         ];
         return view('visitor/beranda', $data);
     }
