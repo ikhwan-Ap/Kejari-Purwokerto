@@ -92,6 +92,26 @@ class videoModel extends Model
         return $query->getRowArray();
     }
 
+    public function get_video()
+    {
+        $builder = $this->db->table('video');
+        $builder->select('*');
+        $builder->limit(4);
+        $builder->orderBy('id_video', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
+    public function get_video_cover()
+    {
+        $this->dt
+            ->select('*')
+            ->orderBy('id_video', 'DESC')
+            ->limit(1);
+        $query = $this->dt->get();
+        return $query->getRowArray();
+    }
+
     public function getJudul($id_video)
     {
         $this->dt

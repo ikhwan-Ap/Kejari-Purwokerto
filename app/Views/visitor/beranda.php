@@ -296,24 +296,28 @@
 									<div class="col">
 										<div class="videos">
 											<div class="player_container">
-												<div id="P1" class="player" data-property="{videoURL:'QhOFg_3RV5Q',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1}">
+												<div id="P1" class="player" data-property="{videoURL:'<?= session()->get('video_cover'); ?>',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1}">
 												</div>
 											</div>
 											<div class="playlist">
 												<div class="playlist_background"></div>
 
-												<!-- Video -->
-												<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'QhOFg_3RV5Q', mute:false, addRaster:true})">
-													<div class="video d-flex flex-row align-items-center justify-content-start">
-														<div class="video_image">
-															<div><img src="https://img.youtube.com/vi/QhOFg_3RV5Q/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
-														</div>
-														<div class="video_content">
-															<div class="video_title">X-Japan - Endless Rain</div>
-															<div class="video_info"><span>1.2M views</span><span>Sep 29</span></div>
+												<?php $i = 0;
+												foreach ($video as $data) :  ?>
+													<!-- Video -->
+													<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: '<?= $data['url']; ?>', mute:false, addRaster:true})">
+														<div class="video d-flex flex-row align-items-center justify-content-start">
+															<div class="video_image">
+																<div><img src="https://img.youtube.com/vi/<?= $data['url']; ?>/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
+															</div>
+															<div class="video_content">
+																<div class="video_title"><?= $data['judul_video']; ?></div>
+																<div class="video_info"><span>1.2M views</span><span>Sep 29</span></div>
+															</div>
 														</div>
 													</div>
-												</div>
+												<?php $i++;
+												endforeach; ?>
 
 											</div>
 										</div>

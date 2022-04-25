@@ -57,6 +57,7 @@ class Home extends BaseController
         $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
         $icon_beranda = $this->icon->get_icon_beranda();
+        $video_cover = $this->video->get_video_cover();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
         $_SESSION['pengumuman'] = $this->pengumuman->get_pengumuman();
@@ -73,6 +74,7 @@ class Home extends BaseController
             'nama_jaksa' => $kejaksaan['nama_pengurus'],
             'icon' => $icon['img_icon'],
             'icon_beranda' => $icon_beranda['img_icon'],
+            'video_cover' => $video_cover['url'],
         ]);
     }
 
@@ -98,6 +100,7 @@ class Home extends BaseController
             'pelayanan' => $this->pelayanan->get_data(),
             'banner' => $this->banner->get_banner(),
             'berita' => $this->berita->get_berita(),
+            'video' => $this->video->get_video(),
         ];
         return view('visitor/beranda', $data);
     }
