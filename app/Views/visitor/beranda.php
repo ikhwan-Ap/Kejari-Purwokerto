@@ -312,7 +312,7 @@
 															</div>
 															<div class="video_content">
 																<div class="video_title"><?= $data['judul_video']; ?></div>
-																<div class="video_info"><span>1.2M views</span><span>Sep 29</span></div>
+																<!-- <div class="video_info"><span>1.2M views</span><span>Sep 29</span></div> -->
 															</div>
 														</div>
 													</div>

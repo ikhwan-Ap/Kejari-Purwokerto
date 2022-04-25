@@ -14,8 +14,10 @@
               <div class="section_content">
                 <?php foreach ($struktur as $data) : ?>
                   <div style="text-align:center">
-                    <img src="<?= base_url(); ?>/uploads/struktur/<?= $data['img_struktur']; ?>" class="panel_content" alt="gambar">
+                    <img src="<?= base_url(); ?>/uploads/struktur/<?= $data['img_struktur']; ?>" class="panel_content" alt="gambar" width="100%">
+                    <p style="font-size: large;"><?= $data['nama_struktur']; ?></p>
                   </div>
+                  <hr>
                 <?php endforeach; ?>
               </div>
             </div>
