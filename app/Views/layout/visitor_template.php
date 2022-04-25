@@ -138,7 +138,11 @@
 								<li class="has-children">
 									<a href="" class="nav-link"><b>Sarana</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="#" class="nav-link">Pos Pelayanan Hukum</a></li>
+										<?php $i = 0;
+										foreach ($_SESSION['sarana'] as $data) : ?>
+											<li><a href="<?= base_url() ?>/beranda/sarana/<?= $data['id_sarana']; ?>" class="nav-link"><?= $data['nama_kategori_sarana']; ?></a></li>
+										<?php $i++;
+										endforeach; ?>
 									</ul>
 								</li>
 								<li class="has-children">

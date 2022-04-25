@@ -139,12 +139,6 @@
                     } else {
                         return '<img height="50%" width="50%" src="<?= base_url('dokumen/pengumuman'); ?>/' + full[1] + '"/>';
                     }
-                    console.log(ext);
-                    // if (full[1].split(".", 'pdf')) {
-                    //    
-                    // } else {
-                    //     
-                    // }
 
                 },
             }, ],

@@ -49,7 +49,7 @@ $routes->get('/beranda/profil/(:any)', 'Home::profil/$1');
 //Peraturan
 $routes->get('/beranda/peraturan/(:any)', 'Home::peraturan/$1');
 //Sarana
-$routes->get('/beranda/sarana', 'Home::sarana');
+$routes->get('/beranda/sarana/(:any)', 'Home::sarana/$1');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
@@ -71,6 +71,7 @@ $routes->get('/agenda', 'Modul::index');
 $routes->get('/profil', 'Profil::index');
 $routes->get('/pengumuman', 'Pengumuman::index');
 $routes->get('/peraturan', 'Peraturan::index');
+$routes->get('/sarana', 'Sarana::index');
 //Berita
 $routes->get('/berita_tentang/(:any)', 'Home::berita_view/$1');
 

@@ -9,16 +9,16 @@
           <div class="post_body">
             <div class="blog_section">
               <div class="section_panel flex-row align-items-center justify-content-start">
-                <div class="section_title">Sarana</div>
+                <div class="section_title"><?= $sarana['nama_kategori_sarana']; ?></div>
               </div>
               <div class="section_content">
 
                 <div style="text-align:center">
-                  <img src="" class="panel_content" alt="gambar">
+                  <img src="<?= base_url(); ?>/uploads/sarana/<?= $sarana['img_sarana']; ?>" class="panel_content" alt="gambar">
 
                 </div>
                 <div class="main_section">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam perspiciatis ea ab corrupti, accusamus tenetur iure aut aliquam, facere quo nobis molestias eaque aliquid sit autem quaerat? Odio, repudiandae similique.</p>
+                  <p><?= $sarana['teks_sarana']; ?></p>
                 </div>
 
               </div>
