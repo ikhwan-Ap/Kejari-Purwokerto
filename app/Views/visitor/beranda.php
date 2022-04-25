@@ -302,10 +302,10 @@
 											<div class="playlist">
 												<div class="playlist_background"></div>
 
-												<?php $i = 0;
+												<?php $i = 1;
 												foreach ($video as $data) :  ?>
 													<!-- Video -->
-													<div class="video_container video_command active" onclick="jQuery('#P1').YTPChangeVideo({videoURL: '<?= $data['url']; ?>', mute:false, addRaster:true})">
+													<div class="video_container video_command <?= ($i == 1) ? 'active' : '' ?>" onclick="jQuery('#P1').YTPChangeVideo({videoURL: '<?= $data['url']; ?>', mute:false, addRaster:true})">
 														<div class="video d-flex flex-row align-items-center justify-content-start">
 															<div class="video_image">
 																<div><img src="https://img.youtube.com/vi/<?= $data['url']; ?>/default.jpg" alt=""></div><img class="play_img" src="<?= base_url() ?>/template/visitor/images/play.png" alt="">
