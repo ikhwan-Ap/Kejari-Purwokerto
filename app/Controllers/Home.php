@@ -305,4 +305,9 @@ class Home extends BaseController
         ];
         return view('visitor/peraturan', $data);
     }
+
+    public function sarana()
+    {
+        return view('visitor/sarana');
+    }
 }

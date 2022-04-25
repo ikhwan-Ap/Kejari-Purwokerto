@@ -48,6 +48,8 @@ $routes->get('/beranda/pengumuman/(:any)', 'Home::get_pengumuman/$1');
 $routes->get('/beranda/profil/(:any)', 'Home::profil/$1');
 //Peraturan
 $routes->get('/beranda/peraturan/(:any)', 'Home::peraturan/$1');
+//Sarana
+$routes->get('/beranda/sarana', 'Home::sarana');
 
 //Templating Companny
 $routes->get('/beranda', 'Home::index');

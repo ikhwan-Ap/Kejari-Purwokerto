@@ -12,12 +12,12 @@
             </div>
             <div class="section_content">
               <div class="container">
-                <table class="table table-bordered" style="width: 100%;">
+                <table class="table table-bordered table-light" style="width: 100%;">
                   <thead>
                     <tr>
                       <th style="width: 15px;">No</th>
                       <th>Nama Peraturan</th>
-                      <th style="width: 100px;">File</th>
+                      <th>File</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -27,7 +27,7 @@
                       <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $data['nama_peraturan']; ?></td>
-                        <td><?= $data['file_peraturan']; ?></td>
+                        <td><a target="_blank" href="<?= base_url('/dokumen/peraturan'); ?>/<?= $data['file_peraturan']; ?>"><i class="fa fa-download"></i></a></td>
                       </tr>
                     <?php endforeach; ?>
                   </tbody>

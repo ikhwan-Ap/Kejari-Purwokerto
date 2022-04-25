@@ -136,13 +136,9 @@
 									</ul>
 								</li>
 								<li class="has-children">
-									<a href="#" class="nav-link"><b>Sarana</b></a>
+									<a href="" class="nav-link"><b>Sarana</b></a>
 									<ul class="dropdown arrow-top">
 										<li><a href="#" class="nav-link">Pos Pelayanan Hukum</a></li>
-										<li><a href="#" class="nav-link">Klinik Kesehatan</a></li>
-										<li><a href="#" class="nav-link">Perpustakaan</a></li>
-										<li><a href="#" class="nav-link">Ruang Rapat</a></li>
-										<li><a href="#" class="nav-link">Gedung Barang Bukti, Benda Sita dan Barang Rampasan</a></li>
 									</ul>
 								</li>
 								<li class="has-children">
@@ -271,19 +267,19 @@
 									<?php $carousel = 'active'; ?>
 									<div class="carousel-item dpo <?= $carousel; ?>">
 										<img width="100%" src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
-										<p><?= $data['nama_buron']; ?></p>
-										<p><?= $data['jenis_kelamin']; ?></p>
-										<p><?= $data['usia']; ?></p>
-										<p><?= $data['alamat_buron']; ?></p>
+										<p>Nama: <?= $data['nama_buron']; ?></p>
+										<p>Jenis Kelamin: <?= $data['jenis_kelamin']; ?></p>
+										<p>Usia: <?= $data['usia']; ?></p>
+										<p>Alamat: <?= $data['alamat_buron']; ?></p>
 									</div>
 								<?php else : ?>
 									<?php $carousel = ''; ?>
 									<div class="carousel-item dpo <?= $carousel; ?>">
 										<img width="100%" src="<?= base_url() ?>/uploads/buron/<?= $data['image']; ?>" alt="">
-										<p><?= $data['nama_buron']; ?></p>
-										<p><?= $data['jenis_kelamin']; ?></p>
-										<p><?= $data['usia']; ?></p>
-										<p><?= $data['alamat_buron']; ?></p>
+										<p>Nama: <?= $data['nama_buron']; ?></p>
+										<p>Jenis Kelamin: <?= $data['jenis_kelamin']; ?></p>
+										<p>Usia: <?= $data['usia']; ?></p>
+										<p>Alamat: <?= $data['alamat_buron']; ?></p>
 									</div>
 								<?php endif; ?>
 							<?php $i++;
