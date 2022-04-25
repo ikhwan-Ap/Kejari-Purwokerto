@@ -113,6 +113,7 @@
 										<?php $i++;
 										endforeach; ?>
 										<li><a href="/visi-misi" class="nav-link">Visi dan Misi</a></li>
+										<li><a href="/beranda/struktur" class="nav-link">Struktur Organisasi</a></li>
 									</ul>
 								</li>
 
