@@ -12,11 +12,11 @@
                 <div class="section_title">Struktur Organisasi Kejaksaan Negeri Purwokerto</div>
               </div>
               <div class="section_content">
-
-                <div style="text-align:center">
-                  <img src="" class="panel_content" alt="gambar">
-                </div>
-
+                <?php foreach ($struktur as $data) : ?>
+                  <div style="text-align:center">
+                    <img src="<?= base_url(); ?>/uploads/struktur/<?= $data['img_struktur']; ?>" class="panel_content" alt="gambar">
+                  </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>

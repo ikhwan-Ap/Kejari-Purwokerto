@@ -22,6 +22,7 @@ use App\Models\pelayananModel;
 use App\Models\pengumumanModel;
 use App\Models\profilModel;
 use App\Models\saranaModel;
+use App\Models\strukturModel;
 use CodeIgniter\API\ResponseTrait;
 
 class Home extends BaseController
@@ -51,6 +52,7 @@ class Home extends BaseController
         $this->kategori_peraturan = new kategori_peraturanModel();
         $this->kategori_sarana = new kategori_saranaModel();
         $this->sarana = new saranaModel();
+        $this->struktur = new strukturModel();
         helper('form');
 
         $header = $this->header->get_header();
@@ -474,7 +476,11 @@ class Home extends BaseController
 
     public function struktur()
     {
-        return view('visitor/profil/struktur');
+        $data = [
+            'title' => 'Struktur Organisasi',
+            'struktur' => $this->struktur->findAll(),
+        ];
+        return view('visitor/profil/struktur', $data);
     }
 
     public function arsip_foto()
