@@ -249,33 +249,24 @@
 								<div class="section_title">Berita Terbaru</div>
 							</div>
 							<div class="section_content">
-								<div class="grid clearfix">
-									<!-- Desending / Terbaru Yg akan Di Tampilkan-->
-									<?php $i = 0;
-									foreach ($berita as $data) :  ?>
-										<?php if ($i == 0) : ?>
-											<?php $card = 'card_largest_with_image';  ?>
-											<div class="card <?= $card; ?> grid-item">
-												<img class="card-img-top" height="600px" src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']; ?>" alt="https://unsplash.com/@cjtagupa">
-												<div class="card-body">
-													<div class="card-title"><a href="post.html"><?= $data['judul_berita']; ?></a></div>
-													<p class="card-text"><?= $data['teks_berita']; ?></p>
-													<small class="post_meta"><a href="#">Katy Liu</a><span><?= $data['tanggal']; ?></span></small>
+								<div class="container">
+									<div class="row">
+										<!-- Desending / Terbaru Yg akan Di Tampilkan-->
+										<?php $i = 0;
+										foreach ($berita as $data) :  ?>
+											<div class="col-md-4">
+												<div class="card" style="border-radius: 10px;">
+													<img class="" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']; ?>" alt="" style="border-radius: 10px;">
+													<div class="card-body">
+														<div class="card-title"><a href="post.html"><?= $data['judul_berita']; ?></a></div>
+														<!-- <p class="card-text"><?= $data['teks_berita']; ?></p> -->
+														<small class="post_meta"><a href="#">Katy Liu</a><span><?= $data['tanggal']; ?></span></small>
+													</div>
 												</div>
 											</div>
-										<?php else :  ?>
-											<?php $card = 'card_small_no_image' ?>
-											<div class="card card_default <?= $card; ?> grid-item">
-												<div class="card-body">
-													<div class="card-title card-title-small"><a href="post.html"><?= $data['judul_berita']; ?></a></div>
-													<img class="card-img-top" src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']; ?>" alt="https://unsplash.com/@cjtagupa">
-													<small class="post_meta"><a href="#">Katy Liu</a><span><?= $data['tanggal']; ?></span></small>
-												</div>
-											</div>
-										<?php endif; ?>
-									<?php $i++;
-									endforeach; ?>
-
+										<?php $i++;
+										endforeach; ?>
+									</div>
 								</div><br>
 								<p>
 									<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">
