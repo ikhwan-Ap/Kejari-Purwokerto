@@ -50,7 +50,11 @@ $routes->get('/beranda/profil/(:any)', 'Home::profil/$1');
 $routes->get('/beranda/peraturan/(:any)', 'Home::peraturan/$1');
 //Sarana
 $routes->get('/beranda/sarana/(:any)', 'Home::sarana/$1');
-
+//Arsip foto&video
+$routes->get('/beranda/arsip_foto', 'Home::arsip_foto');
+$routes->get('/beranda/arsip_video', 'Home::arsip_video');
+//Struktur
+$routes->get('/beranda/struktur', 'Home::struktur');
 //Templating Companny
 $routes->get('/beranda', 'Home::index');
 $routes->get('/visi-misi', 'Home::visi_misi');

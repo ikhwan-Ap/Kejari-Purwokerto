@@ -161,12 +161,9 @@
 										<li>
 											<a href="#" class="nav-link">Pengaduan</a>
 										</li>
-										<li><a href="#" class="nav-link">Kontak</a></li>
 										<li><a href="<?= base_url() ?>/berita_tentang/1" class="nav-link">Berita</a></li>
-										<li><a href="#" class="nav-link">Artikel</a></li>
 										<li><a href="<?= base_url() ?>/beranda/pengumuman" class="nav-link">Pengumuman</a></li>
 										<li><a href="<?= base_url() ?>/beranda/agenda" class="nav-link">Agenda</a></li>
-										<li><a href="#" class="nav-link">Webmail</a></li>
 										<li><a href="#" class="nav-link">Foto Kegiatan</a></li>
 										<li><a href="#" class="nav-link">Video Kegiatan</a></li>
 									</ul>
@@ -199,7 +196,13 @@
 						<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:13px;"><?= session()->get('nama_jaksa'); ?></div>
 					</div>
 				<?php endif;  ?>
-
+				<br>
+				<a href="#">
+					<div class="sidebar_section">
+						<img src="<?= base_url() ?>/icon-icon/<?= session()->get('icon_beranda'); ?>" alt="" width="100%" />
+					</div>
+				</a>
+				<br>
 				<!-- Advertising 2 -->
 				<br>
 				<?php foreach ($_SESSION['banner'] as $data) :  ?>
@@ -208,7 +211,6 @@
 							<img src="<?= base_url() ?>/uploads/banner/<?= $data['img_banner']; ?>" alt="" width="100%" height="135px" style="border: 3px solid gray; border-radius: 10px;" />
 						</div>
 					</a>
-					<br>
 				<?php endforeach; ?>
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">
