@@ -116,7 +116,7 @@ class beritaModel extends Model
     public function get_berita()
     {
         $builder = $this->db->table('berita');
-        $builder->limit(4);
+        $builder->limit(6);
         $builder->orderBy('id_berita', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();

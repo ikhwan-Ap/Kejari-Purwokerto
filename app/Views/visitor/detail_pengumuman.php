@@ -64,7 +64,7 @@
                   <?php if ($data[1] == 'pdf') : ?>
                     <a class="btn btn-sm btn-primary" target="_blank" href="/beranda/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download <i class="fa fa-download"></i></a>
                   <?php else :  ?>
-                    <img width="100%" style="border-radius: 10px;" src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>">
+                    <img class="imageClick" width="100%" style="border-radius: 10px;" src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>">
                   <?php endif; ?>
                   <br><br><br>
                   <hr>
