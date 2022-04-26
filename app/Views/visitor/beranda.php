@@ -49,46 +49,32 @@
 							</div>
 							<div class="section_content" style="margin-bottom: 20px;">
 
-								<div class="grid clearfix">
-									<!-- <?php
-												$warna = 'green';
-												$background = array(
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
-													'/template/visitor/images/post_12.jpg)', '/template/visitor/images/post_6.jpg)',
 
-												);
-												$i = 0;
-												foreach ($carousel as $value) :
-												?>
-										<a href="#">
 
-											<div class="card card_default card_small_with_background grid-item">
-												<div class="card_background" style="background-image:url(<?= base_url() ?><?= $background[$i]; ?>"></div>
-												<div class="card-body">
-													<div class="card-title card-title-small"><a href="post.html" style="display:block;">Pelayanan 1</a></div>
-												</div>
+								<!-- Small Card With Background -->
+								<div class="container" style="padding: 0;">
+									<div class="row">
+
+										<?php $i = 0;
+										foreach ($pelayanan as $data) :  ?>
+											<div class="col-md-3">
+
+												<a href="<?= $data['url_pelayanan']; ?>" target="_blank">
+													<div class="card card_default card_small_with_background grid-item md-sm">
+														<div class="card_background" style="background-image: linear-gradient(45deg, <?= $data['warna_pelayanan']; ?>, <?= $data['gradiasi_pelayanan']; ?>)"></div>
+														<div class="card-body">
+															<img style="display: inline;" src="<?= base_url() ?>/img_pelayanan/<?= $data['img_pelayanan']; ?>" alt="" width="20%">
+															<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;"><?= $data['nama_pelayanan']; ?></div>
+														</div>
+													</div>
+												</a>
 											</div>
-										</a>
-									<?php
-													$i++;
-												endforeach;  ?> -->
+										<?php $i++;
+										endforeach; ?>
 
-									<!-- Small Card With Background -->
-
-									<?php $i = 0;
-									foreach ($pelayanan as $data) :  ?>
-										<a href="<?= $data['url_pelayanan']; ?>" target="_blank">
-											<div class="card card_default card_small_with_background grid-item md-sm">
-												<div class="card_background" style="background-image: linear-gradient(45deg, <?= $data['warna_pelayanan']; ?>, <?= $data['gradiasi_pelayanan']; ?>)"></div>
-												<div class="card-body">
-													<img style="display: inline;" src="<?= base_url() ?>/img_pelayanan/<?= $data['img_pelayanan']; ?>" alt="" width="20%">
-													<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;"><?= $data['nama_pelayanan']; ?></div>
-												</div>
-											</div>
-										</a>
-									<?php $i++;
-									endforeach; ?>
+									</div>
 								</div>
+
 								<br>
 								<p>
 									<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">

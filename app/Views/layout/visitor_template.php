@@ -249,7 +249,7 @@
 						<div class="sidebar_section">
 							<img src="<?= base_url() ?>/uploads/banner/<?= $data['img_banner']; ?>" alt="" width="100%" height="135px" style="border: 3px solid gray; border-radius: 10px;" />
 						</div>
-					</a>
+					</a><br>
 				<?php endforeach; ?>
 				<div class="sidebar_section future_events">
 					<div class="sidebar_title_container">

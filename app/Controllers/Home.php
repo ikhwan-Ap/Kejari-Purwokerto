@@ -486,8 +486,11 @@ class Home extends BaseController
 
     public function arsip_foto()
     {
+        $foto = $this->foto;
+        $foto->orderBy('id_arsip_foto', 'DESC');
         $data = [
-            'foto' => $this->foto->get_all_foto(),
+            'foto' => $foto->paginate(10, 'arsip_foto'),
+            'pager' => $foto->pager,
         ];
         return view('visitor/arsip/foto', $data);
     }
