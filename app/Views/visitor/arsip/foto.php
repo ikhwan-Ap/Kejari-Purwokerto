@@ -26,6 +26,7 @@
                     endforeach; ?>
 
                   </div>
+                  <?= $pager->links('arsip_foto', 'kejari_pagination') ?>
                 </div>
                 <div class="modal fade" data-backdrop="false" role="dialog" id="modalFoto">
                   <div class="modal-dialog modal-lg">
@@ -40,8 +41,10 @@
                         <div class="card-body Proses ">
                           <div class="card-body Method">
                             <input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
+                            <p><?= $data['nama_arsip_foto']; ?></p>
                             <div class="dropzone" id="mydropzone">
                               <div class="fallback">
+
                                 <img src="" id="image" alt="Preview Image" style="width: 100%; ">
                               </div>
                             </div>
