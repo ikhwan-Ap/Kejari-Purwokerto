@@ -198,11 +198,9 @@
 					</div>
 				<?php endif;  ?>
 				<br>
-				<a href="#">
-					<div class="sidebar_section">
-						<img src="<?= base_url() ?>/icon-icon/<?= session()->get('icon_beranda'); ?>" alt="" width="100%" />
-					</div>
-				</a>
+				<div class="sidebar_section">
+					<img src="<?= base_url() ?>/icon-icon/<?= session()->get('icon_beranda'); ?>" alt="" width="100%" />
+				</div>
 				<br>
 				<!-- Advertising 2 -->
 				<br>
