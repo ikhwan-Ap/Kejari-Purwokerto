@@ -20,9 +20,20 @@
             foreach ($pengumuman as $data) : ?>
               <a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
                 <div class="section_content pengumuman" style="border-radius: 10px; margin-left: 15px;">
-                  <p style="font-weight: bold; font-size:large;"><?= $data['nama_pengumuman']; ?></p>
-                  <p><?= (strlen($data['teks_pengumuman']) >= 100) ? substr($data['teks_pengumuman'], 0, 175) : $data['teks_pengumuman'] ?></p>
-                  <p><?= $data['tgl_pengumuman']; ?></p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-1"><i style="color: grey; font-size: x-large; padding-top: 5px;" class="fa fa-file"></i></div>
+                      <div class="col-11">
+                        <p style="font-weight: bold; font-size:large;"><?= $data['nama_pengumuman']; ?></p>
+                        <?php if (strlen($data['teks_pengumuman']) >= 175) : ?>
+                          <p><?= substr($data['teks_pengumuman'], 0, 175) ?>...</p>
+                        <?php else : ?>
+                          <p><?= $data['teks_pengumuman'] ?></p>
+                        <?php endif; ?>
+                        <p><?= $data['tgl_pengumuman']; ?></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </a>
               <hr>
