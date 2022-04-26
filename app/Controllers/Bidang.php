@@ -300,6 +300,9 @@ class Bidang extends BaseController
                 <button type="button" class="btn btn-light" onclick="editBidang( ' . $hasil->id_bidang . ' )" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
+                <a target="_blank" class="btn btn-light" href="/bidang_view/' . $hasil->id_bidang . '" "title="DETAIL">
+                     <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
+                </a>
                 ';
                 $row[] = [
                     $no++,

@@ -19,7 +19,7 @@
                 $data = explode(".", $pengumuman['file_pengumuman']);
                 ?>
                 <?php if ($data[1] == 'pdf') : ?>
-                  <a target="_blank" href="/beranda/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download file disini</a>
+                  <a target="_blank" href="/beranda/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download <i class="fa fa-download"></i></a>
                 <?php else :  ?>
                   <img src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>">
                 <?php endif; ?>

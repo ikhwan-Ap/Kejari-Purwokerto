@@ -198,11 +198,11 @@ class Kasus extends BaseController
                 <button type="button" class="btn btn-light" onclick="editKasus( ' . $hasil->id_kasus . ' )" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
+                <button type="button" class="btn btn-light" onclick="kasusSelesai('  . $hasil->id_kasus  . ')"title="Selesai">
+                <span class="ion ion-checkmark-circled" data-pack="android" data-tags=""></span>
+                </button>
                 <button type="button" class="btn btn-light" onclick="detailKasus('  . $hasil->id_kasus  . ')"title="DETAIL">
                         <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
-                </button>
-                <button type="button" class="btn btn-light" onclick="kasusSelesai('  . $hasil->id_kasus  . ')"title="Selesai">
-                        <span class="ion ion-checkmark-circled" data-pack="android" data-tags=""></span>
                 </button>
                 ';
                 $row[] = [

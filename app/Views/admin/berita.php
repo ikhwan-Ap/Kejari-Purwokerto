@@ -37,7 +37,7 @@ $year = $arr[0];
                         <div class="form-group col p-right">
                             <label for="tanggal" class="md-sm5">Tanggal</label>
                             <input type="text" id="tanggal" class="form-control" name="tanggal" placeholder="" value="" hidden>
-                            <p class="inline-space" ><?= $tgl.' '.$mon.' '.$year ?></p>
+                            <p class="inline-space"><?= $tgl . ' ' . $mon . ' ' . $year ?></p>
                             <div class="invalid-feedback errorTanggal">
                             </div>
                         </div>
@@ -138,9 +138,9 @@ $year = $arr[0];
     var mon = date.getMonth();
     var yer = date.getFullYear()
     if (mon < 10) {
-        mon = '0'+mon;
+        mon = '0' + mon;
     }
-    var tanggal = yer+'-'+mon+'-'+hari;
+    var tanggal = yer + '-' + mon + '-' + hari;
     $(document).ready(function() {
         table = $('#Berita').DataTable({
             "processing": true,
@@ -204,7 +204,6 @@ $year = $arr[0];
     }
 
     function save() {
-
         $('#tanggal').val(tanggal);
         let form = $('#formBerita')[0];
         let data = new FormData(form);
@@ -223,7 +222,7 @@ $year = $arr[0];
                 $('#btnSave').html('Loading');
             },
             complete: function() {
-                $('#btnSave').prop('0led', false);
+                $('#btnSave').prop('disabled', false);
                 $('#btnSave').html('Unggah');
             },
             success: function(response) {
@@ -259,6 +258,8 @@ $year = $arr[0];
                         $('#teks_berita').removeClass('is-invalid');
                         $('#teks_berita').addClass('is-valid');
                     }
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
                 }
                 if (response.sukses) {
                     Swal.fire({
@@ -283,6 +284,9 @@ $year = $arr[0];
         $("#form-bot").hide();
         $("#btnClose").hide();
         $("#btnOpen").show();
+        $("#btnEdit").hide();
+        $("#btnSave").show();
+        resetForm();
     }
 
     function delBerita(id_berita) {
@@ -359,7 +363,6 @@ $year = $arr[0];
         $('#judul_berita').removeClass('is-valid');
         $('#tanggal').removeClass('is-invalid');
         $('#tanggal').removeClass('is-valid');
-        hideForm()
 
     }
 
@@ -432,6 +435,8 @@ $year = $arr[0];
                         $('#teks_berita').removeClass('is-invalid');
                         $('#teks_berita').addClass('is-valid');
                     }
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
                 }
                 if (response.sukses) {
                     Swal.fire({
@@ -446,6 +451,8 @@ $year = $arr[0];
                             $('#btnEdit').hide();
                             $('#btnSave').show();
                             hideForm();
+                            document.body.scrollTop = 0;
+                            document.documentElement.scrollTop = 0;
                         }
                     })
                 }

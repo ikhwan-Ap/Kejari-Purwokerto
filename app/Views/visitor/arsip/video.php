@@ -33,8 +33,8 @@
                       </div>
                     <?php $i++;
                     endforeach; ?>
-
                   </div>
+                  <?= $pager->links('arsip_video', 'kejari_pagination') ?>
                 </div>
 
               </div>

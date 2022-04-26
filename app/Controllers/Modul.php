@@ -401,6 +401,9 @@ class Modul extends BaseController
                 <button type="button" class="btn btn-light" onclick="editAgenda( ' . $hasil->id_agenda . ' )" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
+                <a target="_blank" class="btn btn-light" href="/beranda/agenda/' . $hasil->id_agenda . '" "title="DETAIL">
+                    <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
+                </a>
                 ';
                 $row[] = [
                     $no++,

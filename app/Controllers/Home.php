@@ -476,6 +476,7 @@ class Home extends BaseController
 
     public function struktur()
     {
+
         $data = [
             'title' => 'Struktur Organisasi',
             'struktur' => $this->struktur->findAll(),
@@ -489,8 +490,11 @@ class Home extends BaseController
     }
     public function arsip_video()
     {
+        $video =  $this->video;
+        $video->orderBy('id_video', 'DESC');
         $data = [
-            'video' => $this->video->get_all_video(),
+            'video' => $video->paginate(10, 'arsip_video'),
+            'pager' => $video->pager,
         ];
         return view('visitor/arsip/video', $data);
     }

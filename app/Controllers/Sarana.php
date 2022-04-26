@@ -242,6 +242,9 @@ class Sarana extends BaseController
                 <button type="button" class="btn btn-light" onclick="editSarana( ' . $hasil->id_sarana . ' )" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
+                <a target="_blank" class="btn btn-light" href="/beranda/sarana/' . $hasil->id_sarana . '" "title="DETAIL">
+                  <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
+                </a>
                 ';
                 $row[] = [
                     $no++,

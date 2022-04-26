@@ -242,6 +242,9 @@ class Profil extends BaseController
                 <button type="button" class="btn btn-light" onclick="edit_profil( ' . $hasil->id_profil . ' )" title="EDIT">
                      <span class="ion ion-gear-a" data-pack="default" data-tags="settings, options, cog"></span>
                 </button>
+                <a target="_blank" class="btn btn-light" href="/beranda/profil/' . $hasil->id_profil . '" "title="DETAIL">
+                    <span class="ion ion-android-open" data-pack="android" data-tags=""></span>
+                </a>
                 ';
                 $row[] = [
                     $no++,
