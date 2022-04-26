@@ -783,7 +783,15 @@ hr {
   outline: auto;
 }
 
-.misi li {
+.post {
+  color: #000;
+}
+
+p > .post {
+  color: #000;
+}
+
+.post li {
   list-style-type: disc;
   margin-left: 15px;
 }
@@ -824,4 +832,14 @@ hr {
   text-align: left;
   margin: 0;
   font-size: small;
+}
+
+.pengumuman {
+  background-color: white;
+}
+
+.pengumuman:hover {
+  transform: scale(1.025);
+  background-color: #4CAF50;
+  transition: all 0.3s;
 }

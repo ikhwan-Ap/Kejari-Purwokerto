@@ -17,7 +17,7 @@
                   <img src="<?= base_url(); ?>/uploads/sarana/<?= $sarana['img_sarana']; ?>" class="panel_content" alt="gambar">
 
                 </div>
-                <div class="main_section">
+                <div class="section_content post">
                   <p><?= $sarana['teks_sarana']; ?></p>
                 </div>
 

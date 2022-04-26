@@ -27,7 +27,7 @@
 
 <body>
 	<div style="text-align: left; margin-left:15px">
-		<a href="<?= base_url() ?>/home" class="btn btn-danger" onclick="window.close();">&#60; Kembali</a>
+		<a href="<?= base_url() ?>/home" class="btn btn-danger" onclick="window.close();"><i class="fa fa-close"></i> Kembali</a>
 	</div>
 	<img src="<?= base_url() ?>/template/visitor/images/logoportal.png" alt=""><br><br>
 	<h1 style="color: black; font-size: xx-large; font-weight: bolder;">Portal Layanan Kejari Purwokerto</h1>

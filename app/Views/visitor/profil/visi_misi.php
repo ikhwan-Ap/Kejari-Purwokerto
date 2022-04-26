@@ -15,14 +15,14 @@
               <div class="section_panel d-flex flex-row align-items-center justify-content-start">
                 <div class="section_title" style="text-align: center;">Visi</div>
               </div>
-              <div class="section_content" style="color: black; padding-top: 20px; text-align: justify;">
+              <div class="section_content post" style="color: black; padding-top: 20px; text-align: justify;">
                 <?= $visi['visi']; ?>
               </div>
               <br>
               <div class="section_panel d-flex flex-row align-items-center justify-content-start">
                 <div class="section_title" style="text-align: center;">Misi</div>
               </div>
-              <div class="section_content misi" style="color: black; padding-top: 20px;">
+              <div class="section_content post" style="color: black; padding-top: 20px;">
                 <?= $misi['misi']; ?>
               </div>
             </div>

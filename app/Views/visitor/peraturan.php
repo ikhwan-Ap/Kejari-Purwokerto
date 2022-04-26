@@ -14,7 +14,7 @@
               <div class="container">
                 <table class="table table-bordered table-light" style="width: 100%;">
                   <thead>
-                    <tr>
+                    <tr style="font-weight:bold; color:black">
                       <th style="width: 15px;">No</th>
                       <th>Nama Peraturan</th>
                       <th>File</th>
@@ -24,7 +24,7 @@
                     <?php
                     $no = 1;
                     foreach ($peraturan as $data) : ?>
-                      <tr>
+                      <tr style="font-weight:bold; color:black">
                         <td><?= $no++; ?></td>
                         <td><?= $data['nama_peraturan']; ?></td>
                         <td><a target="_blank" href="<?= base_url('/beranda/download_peraturan'); ?>/<?= $data['file_peraturan']; ?>">Download <i class="fa fa-download"></i></a></td>

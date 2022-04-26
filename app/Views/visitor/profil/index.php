@@ -15,9 +15,8 @@
 
                 <div style="text-align:center">
                   <img src="<?= base_url(); ?>/uploads/profil/<?= $data_profil['img_profil']; ?>" class="panel_content" alt="gambar">
-
                 </div>
-                <div class="main_section">
+                <div class="section_content post">
                   <p><?= $data_profil['teks_profil']; ?></p>
                 </div>
 

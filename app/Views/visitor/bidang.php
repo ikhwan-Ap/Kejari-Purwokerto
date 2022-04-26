@@ -21,7 +21,7 @@
                   <p style="font-weight: bold; font-size:large;"><?= $bidang['nip']; ?></p>
 
                 </div>
-                <div class="main_section">
+                <div class="section_content post">
                   <p><?= $bidang['teks_bidang']; ?></p>
                 </div>
 

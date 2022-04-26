@@ -491,6 +491,7 @@ class Home extends BaseController
         ];
         return view('visitor/arsip/foto', $data);
     }
+
     public function arsip_video()
     {
         $video =  $this->video;

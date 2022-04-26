@@ -13,18 +13,19 @@
           <div class="blog_section">
             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
               <div class="section_title"><?= $title; ?></div>
-            </div><br>
+            </div>
             <?= $pager->links('pengumuman', 'kejari_pagination') ?>
+            <br><br>
             <?php $i = 0;
             foreach ($pengumuman as $data) : ?>
               <a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
-                <div class="section_content" style="background-color: white; border-radius: 10px; margin-left: 15px;">
+                <div class="section_content pengumuman" style="border-radius: 10px; margin-left: 15px;">
                   <p style="font-weight: bold; font-size:large;"><?= $data['nama_pengumuman']; ?></p>
-                  <p><?= $data['teks_pengumuman']; ?></p>
+                  <p><?= (strlen($data['teks_pengumuman']) >= 100) ? substr($data['teks_pengumuman'], 0, 175) : $data['teks_pengumuman'] ?></p>
                   <p><?= $data['tgl_pengumuman']; ?></p>
                 </div>
               </a>
-              <br>
+              <hr>
             <?php $i++;
             endforeach;  ?>
           </div>
