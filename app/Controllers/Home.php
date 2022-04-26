@@ -486,7 +486,10 @@ class Home extends BaseController
 
     public function arsip_foto()
     {
-        return view('visitor/arsip/foto');
+        $data = [
+            'foto' => $this->foto->get_all_foto(),
+        ];
+        return view('visitor/arsip/foto', $data);
     }
     public function arsip_video()
     {

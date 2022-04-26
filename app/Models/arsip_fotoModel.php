@@ -115,4 +115,12 @@ class arsip_fotoModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
+    public function get_all_foto()
+    {
+        $builder = $this->db->table('arsip_foto');
+        $builder->select('*');
+        $builder->orderBy('tanggal_arsip_foto', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }

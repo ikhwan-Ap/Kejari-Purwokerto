@@ -165,8 +165,8 @@
 										<li><a href="<?= base_url() ?>/berita_tentang/1" class="nav-link">Berita</a></li>
 										<li><a href="<?= base_url() ?>/beranda/pengumuman" class="nav-link">Pengumuman</a></li>
 										<li><a href="<?= base_url() ?>/beranda/agenda" class="nav-link">Agenda</a></li>
-										<li><a href="#" class="nav-link">Foto Kegiatan</a></li>
-										<li><a href="#" class="nav-link">Video Kegiatan</a></li>
+										<li><a href="<?= base_url('/beranda/arsip_foto') ?>" class="nav-link">Foto Kegiatan</a></li>
+										<li><a href="<?= base_url('/beranda/arsip_video') ?>" class="nav-link">Video Kegiatan</a></li>
 									</ul>
 								</li>
 								<li><a href="<?= base_url() ?>/home/portal" class="nav-link" target="_blank"><b>Pelayanan</b></a></li>
