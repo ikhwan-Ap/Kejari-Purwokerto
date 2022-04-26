@@ -207,7 +207,7 @@
 				<!-- Advertising 2 -->
 				<br>
 				<?php foreach ($_SESSION['banner'] as $data) :  ?>
-					<a href="<?= $data['url_banner']; ?>">
+					<a href="<?= $data['url_banner']; ?>" target="_blank">
 						<div class="sidebar_section">
 							<img src="<?= base_url() ?>/uploads/banner/<?= $data['img_banner']; ?>" alt="" width="100%" height="135px" style="border: 3px solid gray; border-radius: 10px;" />
 						</div>

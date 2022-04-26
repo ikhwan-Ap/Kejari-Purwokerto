@@ -89,6 +89,8 @@ $routes->get('/struktur', 'Struktur::index');
 $routes->get('/download_file/(:any)', 'Menu::download_file/$1');
 $routes->get('/download_peraturan/(:any)', 'Peraturan::download_peraturan/$1');
 $routes->get('/download_pengumuman/(:any)', 'Pengumuman::download_pengumuman/$1');
+$routes->get('/beranda/download_pengumuman/(:any)', 'Home::download_pengumuman/$1');
+$routes->get('/beranda/download_peraturan/(:any)', 'Home::download_peraturan/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

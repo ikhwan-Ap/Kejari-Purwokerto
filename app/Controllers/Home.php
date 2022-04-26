@@ -491,4 +491,13 @@ class Home extends BaseController
     {
         return view('visitor/arsip/video');
     }
+
+    public function download_pengumuman($file)
+    {
+        return $this->response->download("dokumen/pengumuman/$file", null);
+    }
+    public function download_peraturan($file)
+    {
+        return $this->response->download("dokumen/peraturan/$file", null);
+    }
 }
