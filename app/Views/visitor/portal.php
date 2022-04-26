@@ -27,7 +27,7 @@
 
 <body>
 	<div style="text-align: left; margin-left:15px">
-		<a href="<?= base_url() ?>/home" class="btn btn-danger" onclick="window.close();"><i class="fa fa-close"></i> Kembali</a>
+		<a href="<?= base_url() ?>/home" class="btn btn-danger imageClick" onclick="window.close();"><i class="fa fa-close"></i> Kembali</a>
 	</div>
 	<img src="<?= base_url() ?>/template/visitor/images/logoportal.png" alt=""><br><br>
 	<h1 style="color: black; font-size: xx-large; font-weight: bolder;">Portal Layanan Kejari Purwokerto</h1>
@@ -36,7 +36,7 @@
 		<div class="row">
 			<?php $i = 0;
 			foreach ($pelayanan as $data) :  ?>
-				<div class="col-md-4">
+				<div class="col-md-4 imageClick">
 					<a href="<?= $data['url_pelayanan']; ?>">
 						<div class="card card_default card_small_with_background grid-item" style="width: 100%;">
 							<div class="card_background" style="background-image: linear-gradient(45deg, <?= $data['warna_pelayanan']; ?>, <?= $data['gradiasi_pelayanan']; ?>)"></div>

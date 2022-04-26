@@ -400,6 +400,7 @@
 											<div class="modal-body form_kasus">
 												<div class="card-body Proses ">
 													<div class="card-body Method">
+														<p id="foto"></p>
 														<input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
 														<div class="dropzone" id="mydropzone">
 															<div class="fallback">
@@ -486,6 +487,7 @@
 								$('#id_arsip_foto').val(data.id_arsip_foto);
 								$('#image').attr('src', '<?= base_url('img_arsip/foto'); ?>/' + data.img_arsip_foto);
 								$('#modalFoto').modal('show');
+								$('#foto').text(data.nama_arsip_foto);
 								$('.modal-title').text('Foto Galeri');
 							}
 						});

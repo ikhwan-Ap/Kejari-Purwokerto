@@ -41,7 +41,7 @@
                         <div class="card-body Proses ">
                           <div class="card-body Method">
                             <input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
-                            <p><?= $data['nama_arsip_foto']; ?></p>
+                            <p id="foto"></p>
                             <div class="dropzone" id="mydropzone">
                               <div class="fallback">
 
@@ -70,6 +70,7 @@
                       success: function(data) {
                         $('#id_arsip_foto').val(data.id_arsip_foto);
                         $('#image').attr('src', '<?= base_url('img_arsip/foto'); ?>/' + data.img_arsip_foto);
+                        $('#foto').text(data.nama_arsip_foto);
                         $('#modalFoto').modal('show');
                         $('.modal-title').text('Foto Galeri');
                       }
