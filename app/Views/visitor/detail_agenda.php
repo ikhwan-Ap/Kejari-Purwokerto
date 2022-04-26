@@ -8,15 +8,16 @@
         <div class="main_content">
           <div class="blog_section">
             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
-              <div class="section_title">Agenda</div>
+              <div class="section_title">Baca Agenda</div>
             </div>
             <div class="section_content">
-              <div class="container" style="background-color: white;"><br>
+              <div class="container" style="background-color: white; border-radius: 10px; border: 1px solid grey; padding-left: 25px;"><br>
                 <h2 style="color: black; text-align: left;"><b><?= $agenda['nama_agenda']; ?></b></h2>
                 <p style="color: black; text-align: left;"><?= $agenda['tanggal_agenda']; ?></p>
                 <p style="color: black; text-align: left;"><?= $agenda['teks_agenda']; ?></p><br>
-                <h3 style="color: black; text-align: left;"><b>Agenda Lainnya:</b></h3>
-                <table class="table table-bordered">
+                <br><br><br>
+                <h4 style="color: black; text-align: left;"><b>Agenda Lainnya:</b></h4>
+                <table class="table table-bordered table-light">
                   <?php
                   $i = 0;
                   foreach ($_SESSION['agenda'] as $data) : ?>
