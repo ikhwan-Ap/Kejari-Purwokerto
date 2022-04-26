@@ -18,7 +18,7 @@
 
                     <?php $i = 1;
                     foreach ($video as $data) :  ?>
-                      <div class="col-md-4" style="text-align: center; margin-bottom: 25px;">
+                      <div class="col-md-4 imageClick" style="text-align: center; margin-bottom: 25px;">
                         <!-- Video -->
                         <a href="https://www.youtube.com/watch?v=<?= $data['url']; ?>" target="_blank">
                           <div>

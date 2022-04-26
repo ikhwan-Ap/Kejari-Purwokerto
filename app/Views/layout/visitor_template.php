@@ -247,7 +247,7 @@
 				<?php foreach ($_SESSION['banner'] as $data) :  ?>
 					<a href="<?= $data['url_banner']; ?>" target="_blank">
 						<div class="sidebar_section">
-							<img src="<?= base_url() ?>/uploads/banner/<?= $data['img_banner']; ?>" alt="" width="100%" height="135px" style="border: 3px solid gray; border-radius: 10px;" />
+							<img class="imageClick" src="<?= base_url() ?>/uploads/banner/<?= $data['img_banner']; ?>" alt="" width="100%" height="135px" style="border: 3px solid gray; border-radius: 10px;" />
 						</div>
 					</a><br>
 				<?php endforeach; ?>
@@ -259,10 +259,12 @@
 					<?php
 					$i = 0;
 					foreach ($_SESSION['pengumuman'] as $data) : ?>
-						<a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
-							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tgl_pengumuman']); ?></div>
-							<div class="isi_agenda"><?= $data['nama_pengumuman']; ?></div>
-						</a>
+						<div class="imageClick">
+							<a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
+								<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tgl_pengumuman']); ?></div>
+								<div class="isi_agenda"><?= $data['nama_pengumuman']; ?></div>
+							</a>
+						</div>
 						<hr>
 					<?php $i++;
 					endforeach; ?>
@@ -282,10 +284,12 @@
 					<?php
 					$i = 0;
 					foreach ($_SESSION['agenda'] as $data) : ?>
-						<a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
-							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tanggal_agenda']); ?></div>
-							<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
-						</a>
+						<div class="imageClick">
+							<a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
+								<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tanggal_agenda']); ?></div>
+								<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
+							</a>
+						</div>
 						<hr>
 					<?php $i++;
 					endforeach; ?>

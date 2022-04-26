@@ -1,7 +1,47 @@
 	<?= $this->extend('layout/visitor_template'); ?>
 	<?= $this->section('content'); ?>
 
-	<!-- <div class="hero" style="background-image: url('<?= base_url() ?>/template/visitor/images/carousel.jpg');"></div> -->
+	<?php function waktu($date)
+	{
+		$datetime = DateTime::createFromFormat('Y-m-d', $date);
+		$day = $datetime->format('l');
+		switch ($day) {
+			case 'Sunday':
+				$hari = 'Minggu';
+				break;
+			case 'Monday':
+				$hari = 'Senin';
+				break;
+			case 'Tuesday':
+				$hari = 'Selasa';
+				break;
+			case 'Wednesday':
+				$hari = 'Rabu';
+				break;
+			case 'Thursday':
+				$hari = 'Kamis';
+				break;
+			case 'Friday':
+				$hari = 'Jum\'at';
+				break;
+			case 'Saturday':
+				$hari = 'Sabtu';
+				break;
+			default:
+				$hari = 'Tidak ada';
+				break;
+		}
+		$months = [
+			'0' => '', '01' => 'Januari', '02' => 'Februari',
+			'03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni',
+			'07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember'
+		];
+		$bulan = $months[$datetime->format('m')];
+		$year = $datetime->format(' Y');
+		$tgl = $datetime->format(' d');
+		return $hari . ', ' . $tgl . ' ' . $bulan .   $year;
+	} ?>
+
 	<div id="carousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -57,7 +97,7 @@
 
 										<?php $i = 0;
 										foreach ($pelayanan as $data) :  ?>
-											<div class="col-md-3">
+											<div class="col-md-3 imageClick">
 
 												<a href="<?= $data['url_pelayanan']; ?>" target="_blank">
 													<div class="card card_default card_small_with_background grid-item md-sm">
@@ -105,16 +145,16 @@
 							</div>
 							<div class="section_content">
 								<ul class="nav nav-tabs">
-									<li class="nav-item">
+									<li class="nav-item imageClick">
 										<button onclick="btnJadwal()" class="nav-link btnA actived" aria-current="page">Jadwal Sidang</button>
 									</li>
-									<li class="nav-item">
+									<li class="nav-item imageClick">
 										<button onclick="btnUmum()" class="nav-link btnB" href="#">Info Perkara Umum</button>
 									</li>
-									<li class="nav-item">
+									<li class="nav-item imageClick">
 										<button onclick="btnKhusus()" class="nav-link btnC" href="#">Info Perkara Khusus</button>
 									</li>
-									<li class="nav-item">
+									<li class="nav-item imageClick">
 										<button onclick="btnPerdata()" class="nav-link btnD" href="#">Info Perkara Datun</button>
 									</li>
 								</ul>
@@ -135,7 +175,7 @@
 										foreach ($jadwal as $informasi) : ?>
 											<tr style="font-weight:bold; color:black">
 												<td hidden><?= $i++; ?></td>
-												<td><?= $informasi['tanggal']; ?></td>
+												<td><?= waktu($informasi['tanggal']); ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['nama_jaksa']; ?></td>
 												<td><?= $informasi['nama_hakim']; ?></td>
@@ -158,7 +198,7 @@
 										foreach ($umum as $informasi) : ?>
 											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
-												<td><?= $informasi['tanggal']; ?></td>
+												<td><?= waktu($informasi['tanggal']); ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['keterangan']; ?></td>
@@ -179,7 +219,7 @@
 										foreach ($khusus as $informasi) : ?>
 											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
-												<td><?= $informasi['tanggal']; ?></td>
+												<td><?= waktu($informasi['tanggal']); ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['keterangan']; ?></td>
@@ -189,6 +229,7 @@
 									<thead id="th_perdata">
 										<tr style="font-weight:bold; color:black">
 											<th>No.</th>
+											<th>Tanggal</th>
 											<th>No. Perkara</th>
 											<th>Nama Terdakwa</th>
 											<th>Status</th>
@@ -199,6 +240,7 @@
 										foreach ($perdata as $informasi) : ?>
 											<tr style="font-weight:bold; color:black">
 												<td><?= $i++; ?></td>
+												<td><?= waktu($informasi['tanggal']); ?></td>
 												<td><?= $informasi['no_perkara']; ?></td>
 												<td><?= $informasi['nama_terdakwa']; ?></td>
 												<td><?= $informasi['keterangan']; ?></td>
@@ -241,7 +283,7 @@
 										<?php $i = 0;
 										foreach ($berita as $data) :  ?>
 											<div class="col-md-4">
-												<div class="card" style="border-radius: 10px;">
+												<div class="card imageClick" style="border-radius: 10px;">
 													<img class="" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']; ?>" alt="" style="border-radius: 10px;">
 													<div class="card-body">
 														<div class="card-title"><a href="post.html"><?= $data['judul_berita']; ?></a></div>
@@ -325,8 +367,8 @@
 												foreach ($_SESSION['foto'] as $data) :
 												?>
 													<div class="item">
-														<div class="pad15" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)">
-															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%" height="150px">
+														<div class="pad15 imageClick" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)">
+															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%" height="150px" style="border-radius: 10px;">
 															<p><i class="fa fa-clock-o"></i> <?= $data['tanggal_arsip_foto']; ?></p>
 															<p style="font-weight: bold;"><?= $data['nama_arsip_foto']; ?></p>
 														</div>

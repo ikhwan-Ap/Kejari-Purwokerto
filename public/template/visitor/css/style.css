@@ -844,3 +844,8 @@ p > .post {
   border-bottom: 5px solid grey;
   transition: all 0.3s;
 }
+
+.imageClick:hover {
+  transform: scale(1.04);
+  transition: all 0.3s;
+}
