@@ -316,7 +316,7 @@
 								</div>
 								<br>
 								<p>
-									<a href="#" target="_blank" class="btn btn-success">
+									<a href="<?= base_url('/beranda/arsip_video') ?>" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
@@ -355,7 +355,7 @@
 								</div>
 
 								<p>
-									<a href="#" target="_blank" class="btn btn-success">
+									<a href="<?= base_url('/beranda/arsip_video') ?>" target="_blank" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>

@@ -489,7 +489,10 @@ class Home extends BaseController
     }
     public function arsip_video()
     {
-        return view('visitor/arsip/video');
+        $data = [
+            'video' => $this->video->get_all_video(),
+        ];
+        return view('visitor/arsip/video', $data);
     }
 
     public function download_pengumuman($file)

@@ -102,6 +102,15 @@ class videoModel extends Model
         return $query->getResultArray();
     }
 
+    public function get_all_video()
+    {
+        $builder = $this->db->table('video');
+        $builder->select('*');
+        $builder->orderBy('id_video', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
     public function get_video_cover()
     {
         $this->dt
