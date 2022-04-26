@@ -22,7 +22,7 @@
                 <div class="section_content pengumuman" style="border-radius: 10px; margin-left: 15px;">
                   <div class="container">
                     <div class="row">
-                      <div class="col-1"><i style="color: grey; font-size: x-large; padding-top: 5px;" class="fa fa-file"></i></div>
+                      <div class="col-1"><i style=" font-size: x-large; padding-top: 5px;" class="fa fa-file"></i></div>
                       <div class="col-11">
                         <p style="font-weight: bold; font-size:large;"><?= $data['nama_pengumuman']; ?></p>
                         <?php if (strlen($data['teks_pengumuman']) >= 175) : ?>
