@@ -405,7 +405,7 @@
 														<input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
 														<div class="dropzone" id="mydropzone">
 															<div class="fallback">
-																<img src="" id="image" alt="Preview Image" style="width: 100%; ">
+																<img src="" id="image" alt="Preview Image" style="width: 100%; border-radius: 10px;">
 															</div>
 														</div>
 													</div>
