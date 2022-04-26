@@ -1,5 +1,45 @@
 <?= $this->extend('layout/visitor_template'); ?>
 <?= $this->section('content'); ?>
+<?php function waktu($date)
+{
+  $datetime = DateTime::createFromFormat('Y-m-d', $date);
+  $day = $datetime->format('l');
+  switch ($day) {
+    case 'Sunday':
+      $hari = 'Minggu';
+      break;
+    case 'Monday':
+      $hari = 'Senin';
+      break;
+    case 'Tuesday':
+      $hari = 'Selasa';
+      break;
+    case 'Wednesday':
+      $hari = 'Rabu';
+      break;
+    case 'Thursday':
+      $hari = 'Kamis';
+      break;
+    case 'Friday':
+      $hari = 'Jum\'at';
+      break;
+    case 'Saturday':
+      $hari = 'Sabtu';
+      break;
+    default:
+      $hari = 'Tidak ada';
+      break;
+  }
+  $months = [
+    '0' => '', '01' => 'Januari', '02' => 'Februari',
+    '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni',
+    '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember'
+  ];
+  $bulan = $months[$datetime->format('m')];
+  $year = $datetime->format(' Y');
+  $tgl = $datetime->format(' d');
+  return $hari . ', ' . $tgl . ' ' . $bulan .   $year;
+} ?>
 
 <div class="page_content">
   <div class="container">
@@ -15,7 +55,7 @@
                 <div class="card-body">
                   <br>
                   <h2 style="color: black; text-align: left;"><b><?= $pengumuman['nama_pengumuman']; ?></b></h2>
-                  <p style="color: black; text-align: left;"><i class="fa fa-calendar"></i> <?= $pengumuman['tgl_pengumuman']; ?></p>
+                  <p style="color: black; text-align: left;"><i class="fa fa-calendar"></i> <?= waktu($pengumuman['tgl_pengumuman']); ?></p>
                   <hr>
                   <p style="color: black; text-align: left;"><?= $pengumuman['teks_pengumuman']; ?></p>
                   <?php
@@ -36,7 +76,7 @@
                       <tr>
                         <td>
                           <a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
-                            <div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tgl_pengumuman']; ?></div>
+                            <div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= waktu($data['tgl_pengumuman']); ?></div>
                             <div class="isi_agenda"><?= $data['nama_pengumuman']; ?></div>
                           </a>
                         </td>

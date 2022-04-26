@@ -57,6 +57,46 @@
 
 
 
+	<?php function tanggal($date)
+	{
+		$datetime = DateTime::createFromFormat('Y-m-d', $date);
+		$day = $datetime->format('l');
+		switch ($day) {
+			case 'Sunday':
+				$hari = 'Minggu';
+				break;
+			case 'Monday':
+				$hari = 'Senin';
+				break;
+			case 'Tuesday':
+				$hari = 'Selasa';
+				break;
+			case 'Wednesday':
+				$hari = 'Rabu';
+				break;
+			case 'Thursday':
+				$hari = 'Kamis';
+				break;
+			case 'Friday':
+				$hari = 'Jum\'at';
+				break;
+			case 'Saturday':
+				$hari = 'Sabtu';
+				break;
+			default:
+				$hari = 'Tidak ada';
+				break;
+		}
+		$months = [
+			'0' => '', '01' => 'Januari', '02' => 'Februari',
+			'03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni',
+			'07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember'
+		];
+		$bulan = $months[$datetime->format('m')];
+		$year = $datetime->format(' Y');
+		$tgl = $datetime->format(' d');
+		return $hari . ', ' . $tgl . ' ' . $bulan .   $year;
+	} ?>
 
 	<div class="super_container">
 		<div class="custom-site-mobile-menu custom-site-navbar-target">
@@ -220,7 +260,7 @@
 					$i = 0;
 					foreach ($_SESSION['pengumuman'] as $data) : ?>
 						<a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
-							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tgl_pengumuman']; ?></div>
+							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tgl_pengumuman']); ?></div>
 							<div class="isi_agenda"><?= $data['nama_pengumuman']; ?></div>
 						</a>
 						<hr>
@@ -243,7 +283,7 @@
 					$i = 0;
 					foreach ($_SESSION['agenda'] as $data) : ?>
 						<a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
-							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= $data['tanggal_agenda']; ?></div>
+							<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tanggal_agenda']); ?></div>
 							<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
 						</a>
 						<hr>
