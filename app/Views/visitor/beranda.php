@@ -283,14 +283,16 @@
 										<?php $i = 0;
 										foreach ($berita as $data) :  ?>
 											<div class="col-md-4">
-												<div class="card imageClick" style="border-radius: 10px;">
-													<img class="" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']; ?>" alt="" style="border-radius: 10px;">
-													<div class="card-body">
-														<div class="card-title"><a href="post.html"><?= $data['judul_berita']; ?></a></div>
-														<!-- <p class="card-text"><?= $data['teks_berita']; ?></p> -->
-														<small class="post_meta"><a href="#">Katy Liu</a><span><?= $data['tanggal']; ?></span></small>
+												<a href="<?= base_url() ?>/berita_tentang/<?= $data['id_berita']; ?>">
+													<div class="card imageClick" style="border-radius: 10px;">
+														<img class="" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']; ?>" alt="" style="border-radius: 10px;">
+														<div class="card-body">
+															<div class="card-title" style="color: black; font-weight: bold;"><?= $data['judul_berita']; ?></div>
+															<!-- <p class="card-text"><?= $data['teks_berita']; ?></p> -->
+															<small class="post_meta">Kejari Purwokerto, <?= $data['tanggal']; ?></small>
+														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 										<?php $i++;
 										endforeach; ?>
