@@ -21,7 +21,7 @@
                 <?php if ($data[1] == 'pdf') : ?>
                   <a class="btn btn-sm btn-primary" target="_blank" href="/beranda/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download <i class="fa fa-download"></i></a>
                 <?php else :  ?>
-                  <img src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>">
+                  <img width="100%" style="border-radius: 10px;" src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>">
                 <?php endif; ?>
                 <br><br><br>
                 <h4 style="color: black; text-align: left;"><b>Pengumuman Lainnya:</b></h4>
