@@ -299,7 +299,7 @@
 									</div>
 								</div><br>
 								<p>
-									<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">
+									<a href="<?= base_url() ?>/beranda/berita" class="btn btn-success">
 										<span class="label label-default">Selengkapnya...</span>
 									</a>
 								</p>
