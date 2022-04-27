@@ -15,7 +15,7 @@ function waktu($date)
   return $hari . ', ' . $tgl . ' ' . $bulan .   $year;
 } 
 function cutter($string){
-    if (strlen($string) >=50) {
+    if (strlen($string) >=40) {
         $string = substr($string, 0, 46);
         $string = $string.' ...';
     }
