@@ -64,7 +64,7 @@
                   <?php if ($data[1] == 'pdf') : ?>
                     <a class="btn btn-sm btn-primary" target="_blank" href="/beranda/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download <i class="fa fa-download"></i></a>
                   <?php else :  ?>
-                    <img width="100%" style="border-radius: 10px;" src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>">
+                    <img class="imageClick" width="100%" style="border-radius: 10px;" src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>" onclick="cekFoto(<?= $pengumuman['id_pengumuman']; ?>)">
                   <?php endif; ?>
                   <br><br><br>
                   <hr>
@@ -87,7 +87,52 @@
                   <br>
                 </div>
               </div>
+              <div class="modal fade" data-backdrop="false" role="dialog" id="modalFoto">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 style="color: black; font-weight: bold;" class="modal-title"></h4>
+                      <button type="button" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body form_kasus">
+                      <div class="card-body Proses ">
+                        <div class="card-body Method">
+                          <input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
+                          <div class="dropzone" id="mydropzone">
+                            <div class="fallback">
+                              <img src="" id="image" alt="Preview Image" style="width: 100%; border-radius: 10px;">
+                            </div>
+                          </div>
+                        </div>
 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer Foot">
+                  </div>
+                </div>
+              </div>
+              <script>
+                $(document).ready(function() {
+                  $('#modalFoto').modal('hide');
+                })
+
+                function cekFoto(id_pengumuman) {
+                  $.ajax({
+                    type: "GET",
+                    url: "<?= site_url('pengumuman/get_id'); ?>/" + id_pengumuman,
+                    dataType: "json",
+                    success: function(data) {
+                      $('#id_pengumuman').val(data.id_pengumuman);
+                      $('#image').attr('src', '<?= base_url('dokumen/pengumuman'); ?>/' + data.file_pengumuman);
+                      $('#modalFoto').modal('show');
+                      $('.modal-title').text(data.nama_pengumuman);
+                    }
+                  });
+                }
+              </script>
             </div>
           </div>
         </div>

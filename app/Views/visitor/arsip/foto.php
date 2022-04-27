@@ -32,7 +32,7 @@
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title"></h5>
+                        <h4 style="color: black; font-weight: bold;" class="modal-title"></h4>
                         <button type="button" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">×</span>
                         </button>
@@ -41,10 +41,8 @@
                         <div class="card-body Proses ">
                           <div class="card-body Method">
                             <input type="hidden" value="" id="id_arsip_foto" name="id_arsip_foto" />
-                            <p id="foto"></p>
                             <div class="dropzone" id="mydropzone">
                               <div class="fallback">
-
                                 <img src="" id="image" alt="Preview Image" style="width: 100%; ">
                               </div>
                             </div>
@@ -70,9 +68,8 @@
                       success: function(data) {
                         $('#id_arsip_foto').val(data.id_arsip_foto);
                         $('#image').attr('src', '<?= base_url('img_arsip/foto'); ?>/' + data.img_arsip_foto);
-                        $('#foto').text(data.nama_arsip_foto);
                         $('#modalFoto').modal('show');
-                        $('.modal-title').text('Foto Galeri');
+                        $('.modal-title').text(data.nama_arsip_foto);
                       }
                     });
                   }
