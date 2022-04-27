@@ -1024,3 +1024,17 @@ p > .post {
 .bbb_viewed_item.is_new .item_new {
   display: inline-block
 }
+
+.beritaSampingan {
+  height: 200px;
+}
+
+.beritaUtama {
+  height: 350px;
+}
+
+@media (max-width: 991.98px) {
+  .beritaUtama {
+    height: 200px;
+  }
+}

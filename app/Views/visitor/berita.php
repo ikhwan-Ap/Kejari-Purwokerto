@@ -20,20 +20,20 @@
         <div class="row row-lg-eq-height">
             <div class="col-lg-9">
                 <div class="main_content">
-                    <div class="blog_section" id="<?= count($berita) ?>">
+                    <div class="blog_section" id="<?= count($listBerita) ?>">
                         <div class="section_panel">
                             <div class="section_title"> Berita Terbaru</div>
                         </div>
                         <div class="section_content">
                             <div class="container">
                                 <div class="row">
-                                    <?php for ($i = 0; $i < count($berita); $i++) {  ?>
+                                    <?php for ($i = 0; $i < count($listBerita); $i++) {  ?>
                                         <div class="<?= ($i == 0) ? 'col-12' : 'col-md-4' ?>">
-                                            <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
+                                            <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
                                                 <div class="card imageClick" style="border-radius: 10px;">
-                                                    <img height="200px" src="<?= base_url() ?>/uploads/berita/<?= $berita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
+                                                    <img class="<?= ($i == 0) ? 'beritaUtama' : 'beritaSampingan' ?>" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
                                                     <div class="card-body">
-                                                        <div class="card-title" style="color: black; font-weight: bold;"><?= $berita[$i]['judul_berita']; ?></div>
+                                                        <div class="card-title" style="color: black; font-weight: bold;"><?= $listBerita[$i]['judul_berita']; ?></div>
                                                     </div>
                                                 </div>
                                             </a>
