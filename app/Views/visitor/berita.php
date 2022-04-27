@@ -27,7 +27,7 @@
                 <div class="section_content">
                     <div class="container">
                         <div class="mini_content" >
-                            <?php for($i=0 ; $i < count($berita); $i++) {  ?>
+                            <?php for($i=0 ; $i < 4; $i++) {  ?>
                                 <div class="panel-sm-1">
                                     <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
                                         <div class="card imageClick" style="border-radius: 10px;">

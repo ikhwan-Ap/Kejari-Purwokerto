@@ -295,7 +295,7 @@ class Home extends BaseController
         $berita->orderBy('tanggal', 'DESC');
         $data = [
             'title' => 'Berita',
-            'berita' => $berita->paginate(4, 'berita'),
+            'berita' => $berita->paginate(10, 'berita'),
             'pager' => $berita->pager,
             'listBerita' => $this->berita->get_list(),
         ];
