@@ -126,7 +126,6 @@
 }
 .mini_content .panel-sm-1:not(:first-child) .imageClick{
     height: 320px;
-    padding: 0 6px;
 }
 .mini_content .panel-sm-1:first-child .card-title{
     font-size: x-large;
@@ -140,6 +139,7 @@
 
 .panel-sm-1{
     max-width: 31%;
+    padding: 0 6px;
     /* margin: auto; */
 }
 .panel-sm-1:first-child{
