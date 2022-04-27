@@ -97,13 +97,13 @@
 
 										<?php $i = 0;
 										foreach ($pelayanan as $data) :  ?>
-											<div class="col-md-3 imageClick">
+											<div class="col-md-3 imageClick" style="padding-left: 10px; padding-right: 10px;">
 
 												<a href="<?= $data['url_pelayanan']; ?>" target="_blank">
-													<div class="card card_default card_small_with_background grid-item md-sm">
+													<div class="card card_default card_small_with_background grid-item" style="width: 100%;">
 														<div class="card_background" style="background-image: linear-gradient(45deg, <?= $data['warna_pelayanan']; ?>, <?= $data['gradiasi_pelayanan']; ?>)"></div>
-														<div class="card-body">
-															<img style="display: inline;" src="<?= base_url() ?>/img_pelayanan/<?= $data['img_pelayanan']; ?>" alt="" width="20%">
+														<div class="card-body" style="text-align: center;">
+															<img src="<?= base_url() ?>/img_pelayanan/<?= $data['img_pelayanan']; ?>" alt="" height="60px">
 															<div class="card-title card-title-small md-sm" style="font-weight: 900; color: white;"><?= $data['nama_pelayanan']; ?></div>
 														</div>
 													</div>

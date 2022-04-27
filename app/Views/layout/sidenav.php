@@ -12,12 +12,12 @@
                 <a href="/dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Master</li>
-            <li class="nav-item dropdown <?= ($title == "Kasus" || $title == "Buron" || $title == 'Incraht') ? 'active' : ''; ?>">
+            <li class="nav-item dropdown <?= ($title == "Kasus" || $title == "DPO" || $title == 'Incraht') ? 'active' : ''; ?>">
                 <a href="" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-database"></i> <span>Master Data</span></a>
                 <ul class="dropdown-menu">
                     <li class="<?= ($title == "Kasus") ? 'active' : ''; ?>"><a class="nav-link" href="/kasus">Kasus</a></li>
                     <li class="<?= ($title == "Incraht") ? 'active' : ''; ?>"><a class="nav-link" href="/incraht">Incraht</a></li>
-                    <li class="<?= ($title == "Buron") ? 'active' : ''; ?>"><a class="nav-link" href="/buron">Buron</a></li>
+                    <li class="<?= ($title == "DPO") ? 'active' : ''; ?>"><a class="nav-link" href="/dpo">DPO</a></li>
                 </ul>
             </li>
             <li class="nav-item <?= ($title == "Bidang") ? 'active' : ''; ?>">

@@ -297,6 +297,7 @@ class Home extends BaseController
             'title' => 'Berita',
             'berita' => $berita->paginate(4, 'berita'),
             'pager' => $berita->pager,
+            'listBerita' => $this->berita->get_list(),
         ];
         return view('visitor/berita', $data);
     }

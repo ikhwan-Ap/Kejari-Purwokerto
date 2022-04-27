@@ -121,4 +121,13 @@ class beritaModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
+
+    public function get_list()
+    {
+        $builder = $this->db->table('berita');
+        $builder->limit(4);
+        $builder->orderBy('id_berita', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
 }
