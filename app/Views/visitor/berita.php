@@ -12,32 +12,33 @@
   $year = $datetime->format(' Y');
   $tgl = $datetime->format(' d');
   return $hari . ', ' . $tgl . ' ' . $bulan .   $year;
-} ?>
+} 
+?>
 
 <div class="page_content">
   <div class="container">
     <div class="row row-lg-eq-height">
       <div class="col-lg-9">
         <div class="main_content">
-            <div class="blog_section">
+            <div class="blog_section" id="<?= count($berita) ?>">
                 <div class="section_panel">
                     <div class="section_title"> Berita Terbaru</div>
                 </div>
                 <div class="section_content">
                     <div class="container">
-                        <div class="mini_content">
-                            <?php foreach ($berita as $data) :  ?>
+                        <div class="mini_content" >
+                            <?php for($i=0 ; $i < count($berita); $i++) {  ?>
                                 <div class="panel-sm-1">
-                                    <a href="<?= base_url() ?>/berita_tentang/<?= $data['id_berita']; ?>">
+                                    <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
                                         <div class="card imageClick" style="border-radius: 10px;">
-                                            <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']; ?>" alt="" style="border-radius: 10px;">
+                                            <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $berita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
                                             <div class="card-body">
-                                                <div class="card-title" style="color: black; font-weight: bold;"><?= $data['judul_berita']; ?></div>
+                                                <div class="card-title" style="color: black; font-weight: bold;"><?= $berita[$i]['judul_berita']; ?></div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                            <?php endforeach; ?>
+                            <?php }; ?>
                         </div>
                     </div>
                 </div>
@@ -67,4 +68,14 @@
         
       </div>
 
+      
+<script type="text/javascript">
+    console.log('hai');
+    let num = document.getElementsByClassName('blog_section')[0].id;
+    console.log(num);
+    if (num < 4){
+        document.getElementsByClassName('blog_section')[0].style = 'display: none';
+        console.log('done');
+    }
+</script>
       <?= $this->endSection(); ?>

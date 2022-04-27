@@ -21,6 +21,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/fonts/icomoon/style.css" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/css/style.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 </head>
 
 <body>
