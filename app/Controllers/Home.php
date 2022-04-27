@@ -280,7 +280,7 @@ class Home extends BaseController
         return view('visitor/berita/berita_tentang', $data);
     }
 
-    public function berita()
+    public function list_berita()
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
@@ -291,8 +291,14 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
-        $data = $this->berira->get_last();
-        echo json_encode($data);
+        $berita =  $this->berita;
+        $berita->orderBy('tanggal', 'DESC');
+        $data = [
+            'title' => 'Berita',
+            'berita' => $berita->paginate(4, 'berita'),
+            'pager' => $berita->pager,
+        ];
+        return view('visitor/berita', $data);
     }
 
     public function visi_misi()

@@ -135,7 +135,7 @@ $year = $arr[0];
 
     var date = new Date();
     var hari = date.getDate();
-    var mon = date.getMonth();
+    var mon = date.getMonth()+1;
     var yer = date.getFullYear()
     if (mon < 10) {
         mon = '0' + mon;

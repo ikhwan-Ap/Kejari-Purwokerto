@@ -204,7 +204,7 @@
 										<li>
 											<a href="#" class="nav-link">Pengaduan</a>
 										</li>
-										<li><a href="<?= base_url() ?>/berita_tentang/1" class="nav-link">Berita</a></li>
+										<li><a href="<?= base_url() ?>/beranda/berita" class="nav-link">Berita</a></li>
 										<li><a href="<?= base_url() ?>/beranda/pengumuman" class="nav-link">Pengumuman</a></li>
 										<li><a href="<?= base_url() ?>/beranda/agenda" class="nav-link">Agenda</a></li>
 										<li><a href="<?= base_url('/beranda/arsip_foto') ?>" class="nav-link">Foto Kegiatan</a></li>
