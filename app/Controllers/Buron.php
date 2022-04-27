@@ -17,7 +17,7 @@ class Buron extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Buron',
+            'title' => 'DPO',
         ];
         return view('kasus/buron', $data);
     }
