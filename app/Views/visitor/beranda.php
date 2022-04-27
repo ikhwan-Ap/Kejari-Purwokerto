@@ -289,7 +289,7 @@
 														<div class="card-body">
 															<div class="card-title" style="color: black; font-weight: bold;"><?= $data['judul_berita']; ?></div>
 															<!-- <p class="card-text"><?= $data['teks_berita']; ?></p> -->
-															<small class="post_meta">Kejari Purwokerto, <?= $data['tanggal']; ?></small>
+															<small class="post_meta">Kejari Purwokerto, <?= waktu($data['tanggal']); ?></small>
 														</div>
 													</div>
 												</a>
@@ -363,23 +363,26 @@
 
 								<div class="container">
 									<div class="row">
-										<div class="MultiCarousel" data-items="1,2,3,3" data-slide="1" id="MultiCarousel" data-interval="1000">
-											<div class="MultiCarousel-inner">
-												<?php $i = 0;
-												foreach ($_SESSION['foto'] as $data) :
-												?>
-													<div class="item">
-														<div class="pad15 imageClick" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)" style="border-radius: 10px; background-color: white; box-shadow: 2px 4px 5px #888888;">
-															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%" height="150px" style="border-radius: 10px;">
-															<p><i class="fa fa-clock-o"></i> <?= $data['tanggal_arsip_foto']; ?></p>
-															<p style="font-weight: bold;"><?= $data['nama_arsip_foto']; ?></p>
+										<div class="col">
+											<div class="bbb_viewed_slider_container">
+												<div class="bbb_viewed_nav bbb_viewed_prev"><i class="fa fa-angle-left imageClick"></i></div>
+												<div class="bbb_viewed_nav bbb_viewed_next"><i class="fa fa-angle-right imageClick"></i></div>
+												<div class="owl-carousel owl-theme bbb_viewed_slider">
+													<?php $i = 0;
+													foreach ($_SESSION['foto'] as $data) :
+													?>
+														<div class="owl-item">
+															<div class="pad15 imageClick" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)" style="padding-bottom: 15px; border-radius: 10px; background-color: white; box-shadow: 2px 4px 5px #888888;">
+																<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%" height="150px" style="border-radius: 10px;">
+																<p style="margin-left: 15px;"><i class="fa fa-clock-o"></i> <?= waktu($data['tanggal_arsip_foto']); ?></p>
+																<p style="font-weight: bold; margin-left: 15px;"><?= $data['nama_arsip_foto']; ?></p>
+															</div>
 														</div>
-													</div>
-												<?php $i++;
-												endforeach; ?>
+													<?php $i++;
+													endforeach; ?>
+												</div>
+												<br>
 											</div>
-											<button class="carousel-control-prev-icon leftLst"></button>
-											<button class="carousel-control-next-icon rightLst"></button>
 										</div>
 									</div>
 								</div>
@@ -432,6 +435,56 @@
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 				<script>
+					$(document).ready(function() {
+
+
+						if ($('.bbb_viewed_slider').length) {
+							var viewedSlider = $('.bbb_viewed_slider');
+
+							viewedSlider.owlCarousel({
+								loop: true,
+								margin: 30,
+								autoplay: false,
+								autoplayTimeout: 6000,
+								nav: false,
+								dots: false,
+								responsive: {
+									0: {
+										items: 1
+									},
+									575: {
+										items: 2
+									},
+									768: {
+										items: 3
+									},
+									991: {
+										items: 3
+									},
+									1199: {
+										items: 3
+									}
+								}
+							});
+
+							if ($('.bbb_viewed_prev').length) {
+								var prev = $('.bbb_viewed_prev');
+								prev.on('click', function() {
+									viewedSlider.trigger('prev.owl.carousel');
+								});
+							}
+
+							if ($('.bbb_viewed_next').length) {
+								var next = $('.bbb_viewed_next');
+								next.on('click', function() {
+									viewedSlider.trigger('next.owl.carousel');
+								});
+							}
+						}
+
+
+					});
+
 					$(document).ready(function() {
 						var table = $('#umum').hide();
 						var table = $('#khusus').hide();

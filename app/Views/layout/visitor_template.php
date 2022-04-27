@@ -21,7 +21,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/fonts/icomoon/style.css" />
 	<link rel="stylesheet" href="<?= base_url() ?>/template/visitor/css/style.css" />
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
 </head>
 
 <body>
@@ -230,29 +231,19 @@
 				<!-- Top Stories -->
 				<?php if (session()->get('jaksa') != null) :  ?>
 					<div class="card">
-						<div class="card-header" style="background-color: #24C632;">
-							<div style="color: black; font-size: medium; font-weight: bold;">Kepala Kejaksaan Negeri Purwokerto</div>
+						<div class="card-header" style="background-color: darkgreen;">
+							<div style="color: #fff; font-size: 14px; font-weight: bold;">Kepala Kejaksaan Negeri Purwokerto</div>
 						</div>
-						<div class="card-body">
+						<div class="card-body" style="padding: 0;">
 							<img src="<?= base_url() ?>/uploads/bidang/<?= session()->get('jaksa'); ?>" alt="" width="100%">
-							<!-- <img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px"> -->
-						</div>
-						<div class="card-footer" style="background-color: #24C632;">
-							<div class="sidebar_title" style="font-size:13px;"><?= session()->get('nama_jaksa'); ?></div>
+							<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
+							<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:15px; color: white;"><?= session()->get('nama_jaksa'); ?></div>
 						</div>
 					</div>
-					<!-- <div class="sidebar_section">
-						<div class="sidebar_title_container">
-							<div class="sidebar_title">Kepala Kejaksaan Negeri Purwokerto</div>
-						</div><br>
-						<img src="<?= base_url() ?>/uploads/bidang/<?= session()->get('jaksa'); ?>" alt="" width="100%">
-						<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
-						<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:13px;"><?= session()->get('nama_jaksa'); ?></div>
-					</div> -->
 				<?php endif;  ?>
 				<br>
-				<div class="sidebar_section">
-					<img src="<?= base_url() ?>/icon-icon/<?= session()->get('icon_beranda'); ?>" alt="" width="100%" />
+				<div class="sidebar_section" style="text-align: center;">
+					<img src="<?= base_url() ?>/icon-icon/<?= session()->get('icon_beranda'); ?>" alt="" width="75%" />
 				</div>
 				<br>
 				<!-- Advertising 2 -->
