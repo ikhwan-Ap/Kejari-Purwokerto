@@ -1,7 +1,8 @@
 <?= $this->extend('layout/visitor_template'); ?>
 <?= $this->section('content'); ?>
 
-<?php function waktu($date)
+<?php 
+function waktu($date)
 {
   $datetime = DateTime::createFromFormat('Y-m-d', $date);
   
@@ -13,6 +14,13 @@
   $tgl = $datetime->format(' d');
   return $hari . ', ' . $tgl . ' ' . $bulan .   $year;
 } 
+function cutter($string){
+    if (strlen($string) >=50) {
+        $string = substr($string, 0, 46);
+        $string = $string.' ...';
+    }
+    return $string;
+}
 ?>
 
 <div class="page_content">
@@ -26,14 +34,15 @@
                 </div>
                 <div class="section_content">
                     <div class="container">
-                        <div class="mini_content" >
+                        <div class="mini_content row" >
                             <?php for($i=0 ; $i < 4; $i++) {  ?>
                                 <div class="panel-sm-1">
                                     <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
                                         <div class="card imageClick" style="border-radius: 10px;">
                                             <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $berita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
                                             <div class="card-body">
-                                                <div class="card-title" style="color: black; font-weight: bold;"><?= $berita[$i]['judul_berita']; ?></div>
+                                                <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($berita[$i]['judul_berita']); ?></div>
+                                                <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($berita[$i]['tanggal']); ?></div>
                                             </div>
                                         </div>
                                     </a>

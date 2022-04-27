@@ -125,12 +125,14 @@
     display: inline-block;
 }
 .mini_content .panel-sm-1:not(:first-child) .imageClick{
-    height: 285px;
+    height: 320px;
+    padding: 0 6px;
 }
 .mini_content .panel-sm-1:first-child .card-title{
     font-size: x-large;
 }
 .mini_content .panel-sm-1:first-child:hover .card-body{
+    width: 100%;
     background: rgba(108, 54, 27, 0.5);
     border-radius: 10px;
     transition: 50ms;
