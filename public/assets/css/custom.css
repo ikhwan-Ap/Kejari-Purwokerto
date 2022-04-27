@@ -130,6 +130,11 @@
 .mini_content .panel-sm-1:first-child .card-title{
     font-size: x-large;
 }
+.mini_content .panel-sm-1:first-child:hover .card-body{
+    background: rgba(108, 54, 27, 0.5);
+    border-radius: 10px;
+    transition: 50ms;
+}
 
 .panel-sm-1{
     max-width: 31%;
