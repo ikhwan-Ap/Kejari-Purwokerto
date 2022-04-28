@@ -50,7 +50,7 @@ function cutter($string)
                                                 </a>
                                             </div>
                                         <?php endfor; ?>
-                                    <?php else : ?>
+                                    <?php elseif (count($berita) < 4) : ?>
                                         <?php for ($i = 0; $i < count($berita); $i++) :  ?>
                                             <div class="panel-sm-1">
                                                 <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">

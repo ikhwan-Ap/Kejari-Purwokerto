@@ -80,11 +80,11 @@ tests/coverage*
 # Don't save phpunit under version control.
 phpunit
 
+public/
 #-------------------------
 # Composer
 #-------------------------
 vendor/
-public/
 #-------------------------
 # IDE / Development Files
 #-------------------------
