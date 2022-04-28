@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Bidang</h1>
+        <h1>Carousel</h1>
         <div class="col">
             <button class="btn btn-primary" id="btnCarousel" onclick="btnCarousel()">
                 Tambah <i class="ion ion-plus-circled"></i>
@@ -12,7 +12,9 @@
             </button>
         </div>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item">Bidang</div>
+            <div class="breadcrumb-item active"><a href="/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item">Menu</div>
+            <div class="breadcrumb-item">Carousel</div>
         </div>
     </div>
     <?php echo form_open_multipart('', ['id' => 'formCarousel']); ?>
@@ -56,12 +58,12 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <h4>Bidang</h4>
+                    <h4>Carousel</h4>
                 </div>
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="display" id="Bidang" style="width:100%">
+                        <table class="display" id="Carousel" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -88,7 +90,7 @@
 <script>
     var table;
     $(document).ready(function() {
-        table = $('#Bidang').DataTable({
+        table = $('#Carousel').DataTable({
             "processing": true,
             "serverSide": true,
             'destroy': true,

@@ -18,7 +18,9 @@
             </button>
         </div>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item">Peraturan</div>
+            <div class="breadcrumb-item active"><a href="/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item">Moduls</div>
+            <div class="breadcrumb-item">Sarana</div>
         </div>
     </div>
     <?php echo form_open_multipart('', ['id' => 'formSarana']); ?>

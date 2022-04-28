@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Buron</h1>
+        <h1>DPO</h1>
         <div class="col">
             <button class="btn btn-primary" onclick="addBuron()">
                 <i class="ion ion-plus-circled"></i> Tambah
@@ -11,7 +11,7 @@
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="<?= base_url('/dashboard'); ?>">Dashboard</a></div>
             <div class="breadcrumb-item">Master Data</div>
-            <div class="breadcrumb-item">Buron</div>
+            <div class="breadcrumb-item">DPO</div>
         </div>
     </div>
     <div class="section-body">
@@ -19,7 +19,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Buron</h4>
+                        <h4>DPO</h4>
                         <div class="card-header-action">
                             <select name="kategori" id="filterJenis" class="form-control">
                                 <option value="">All</option>
@@ -314,7 +314,7 @@
                 $('[name=image]').attr(data.image);
                 $('#img_buron').attr('src', '<?= base_url('uploads/buron'); ?>/' + data.image);
                 $('#modalBuron').modal('show');
-                $('.modal-title').text('Edit Buron');
+                $('.modal-title').text('Edit DPO');
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert('Error get data from ajax');
@@ -326,7 +326,7 @@
         save_method = 'add';
         $('#formBuron')[0].reset();
         $('#modalBuron').modal('show');
-        $('.modal-title').text('Tambah Buron Terbaru');
+        $('.modal-title').text('Tambah DPO Terbaru');
         $('.Foot').show();
         $('.Proses').show();
         $('.Detail').hide();

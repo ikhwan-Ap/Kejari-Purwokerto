@@ -18,7 +18,7 @@ class Berita extends BaseController
         $data = [
             'title' => 'Berita',
         ];
-        return view('admin/berita.php', $data);
+        return view('moduls/berita', $data);
     }
 
     public function get_id($id_berita)

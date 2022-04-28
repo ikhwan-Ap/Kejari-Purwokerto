@@ -2,16 +2,15 @@
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Struktur </h1>
+        <h1>Kepala Kejaksaan </h1>
         <div class="col">
-            <button class="btn btn-primary" onclick="addStruktur()">
+            <button class="btn btn-primary" onclick="addKepala()">
                 Tambah <i class="ion ion-plus-circled"></i>
             </button>
         </div>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="/dashboard">Dashboard</a></div>
-            <div class="breadcrumb-item">Arsip</div>
-            <div class="breadcrumb-item">Struktur</div>
+            <div class="breadcrumb-item">Kepala Kejaksaan</div>
         </div>
     </div>
 
@@ -20,17 +19,17 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Struktur</h4>
+                        <h4>Kepala Kejaksaan</h4>
                     </div>
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="display" id="Struktur" style="width:100%">
+                            <table class="display" id="Kejaksaan" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Image</th>
-                                        <th>Nama Struktur</th>
+                                        <th>Nama Kepala Kejaksaan</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -45,7 +44,7 @@
         </div>
     </div>
 
-    <div class="modal fade" data-backdrop="false" role="dialog" id="modalStruktur">
+    <div class="modal fade" data-backdrop="false" role="dialog" id="modalKejaksaan">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -56,37 +55,32 @@
                 </div>
                 <div class="modal-body form_kasus">
                     <div class="card-body Proses ">
-                        <?php echo form_open_multipart('', ['id' => 'formStruktur']); ?>
+                        <?php echo form_open_multipart('', ['id' => 'formKejaksaan']); ?>
                         <div class="card-body Method">
-                            <input type="hidden" value="" id="id_struktur" name="id_struktur" />
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label for="nama_struktur">Nama Struktur</label>
-                                    <input id="nama_struktur" type="text" class="form-control" value="" name="nama_struktur">
-                                    <div class="invalid-feedback errorNama">
+                            <input type="hidden" value="" id="id_kepala_kejaksaan" name="id_kepala_kejaksaan" />
+                            <div class="col">
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label for="nama_banner">Nama Kepala Kejaksaan</label>
+                                        <input id="nama_kepala_kejaksaan" type="text" class="form-control" value="" name="nama_kepala_kejaksaan">
+                                        <div class="invalid-feedback errorNama">
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="col">
-                                    <div class="card-body">
-                                        <div class="section-body">
-                                            <div class="form-group">
-                                                <div class="dropzone" id="mydropzone">
-                                                    <div class="fallback">
-                                                        <input type="file" id="img_struktur" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="img_struktur">
-                                                        <img src="" id="image" alt="Preview Image" style="width: 280px; height:280px;">
-                                                        <div class="invalid-feedback errorImage">
-                                                        </div>
-                                                    </div>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <div class="dropzone" id="mydropzone">
+                                            <div class="fallback">
+                                                <input type="file" id="img_kepala_kejaksaan" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="img_kepala_kejaksaan">
+                                                <img src="" id="image" alt="Preview Image" style="width: 280px; height:280px;">
+                                                <div class="invalid-feedback errorImage">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <?php form_close();  ?>
                     </div>
@@ -107,24 +101,23 @@
     var table;
     var save_method;
     $(document).ready(function() {
-        table = $('#Struktur').DataTable({
+        table = $('#Kejaksaan').DataTable({
             "processing": true,
             "serverSide": true,
             'destroy': true,
             "order": [],
             "ajax": {
-                "url": "<?= site_url('struktur/getStruktur'); ?>",
+                "url": "<?= site_url('kejaksaan/getKepalaKejaksaan'); ?>",
                 "type": "POST",
             },
             "columnDefs": [{
                 "targets": 1,
                 "data": "img",
                 "render": function(url, type, full) {
-                    var img = '<img height="50%" width="50%" src="<?= base_url('uploads/struktur'); ?>/' + full[1] + '"/>';
+                    var img = '<img height="50%" width="50%" src="<?= base_url('uploads/kepala_kejaksaan'); ?>/' + full[1] + '"/>';
                     return img;
                 }
             }, ],
-
         });
     });
 
@@ -140,35 +133,35 @@
         }
     }
 
-    function addStruktur() {
+    function addKepala() {
         save_method = 'Add';
-        $('#modalStruktur').modal('show');
-        $('.modal-title').text('Tambah Data Struktur');
+        $('#modalKejaksaan').modal('show');
+        $('.modal-title').text('Tambah Data Kepala Kejaksaan');
     }
 
-    function editStruktur(id_struktur) {
+    function editKejaksaan(id_kepala_kejaksaan) {
         save_method = 'Update';
         $.ajax({
             type: "GET",
-            url: "<?= site_url('struktur/get_id/'); ?>" + id_struktur,
+            url: "<?= site_url('kejaksaan/get_id/'); ?>" + id_kepala_kejaksaan,
             dataType: "json",
             success: function(data) {
-                $('#id_struktur').val(data.id_struktur);
-                $('#nama_struktur').val(data.nama_struktur);
-                $('#image').attr('src', '<?= base_url('uploads/struktur'); ?>/' + data.img_struktur);
-                $('#modalStruktur').modal('show');
-                $('.modal-title').text('Edit Data Struktur');
+                $('#id_kepala_kejaksaan').val(data.id_kepala_kejaksaan);
+                $('#nama_kepala_kejaksaan').val(data.nama_kepala_kejaksaan);
+                $('#image').attr('src', '<?= base_url('uploads/kepala_kejaksaan'); ?>/' + data.img_kepala_kejaksaan);
+                $('#modalKejaksaan').modal('show');
+                $('.modal-title').text('Edit Data Kepala Kejaksaan');
             }
         });
     }
 
     function save() {
-        let form = $('#formStruktur')[0];
+        let form = $('#formKejaksaan')[0];
         let data = new FormData(form);
         if (save_method == 'Add') {
-            url = "<?= base_url('struktur/tambah_struktur'); ?>";
+            url = "<?= base_url('kejaksaan/tambah_kepala_kejaksaan'); ?>";
         } else {
-            url = "<?= base_url('struktur/edit_struktur'); ?>";
+            url = "<?= base_url('kejaksaan/edit_kepala_kejaksaan'); ?>";
         }
         $.ajax({
             type: "POST",
@@ -191,29 +184,29 @@
                 if (response.error) {
                     let data = response.error
                     if (data.errorNama) {
-                        $('#nama_struktur').addClass('is-invalid');
+                        $('#nama_kepala_kejaksaan').addClass('is-invalid');
                         $('.errorNama').html(data.errorNama);
                     } else {
-                        $('#nama_struktur').removeClass('is-invalid');
-                        $('#nama_struktur').addClass('is-valid');
+                        $('#nama_kepala_kejaksaan').removeClass('is-invalid');
+                        $('#nama_kepala_kejaksaan').addClass('is-valid');
                     }
                     if (data.errorImage) {
-                        $('#img_struktur').addClass('is-invalid');
+                        $('#img_kepala_kejaksaan').addClass('is-invalid');
                         $('.errorImage').html(data.errorImage);
                     } else {
-                        $('#img_struktur').removeClass('is-invalid');
-                        $('#img_struktur').addClass('is-valid');
+                        $('#img_kepala_kejaksaan').removeClass('is-invalid');
+                        $('#img_kepala_kejaksaan').addClass('is-valid');
                     }
                 }
                 if (response.sukses) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Berhasil',
-                        html: `Data Struktur Berhasil Di tambahkan`,
+                        html: `Data Kepala Kejaksaan Berhasil Di tambahkan`,
                     }).then((result) => {
                         if (result.value) {
                             reset();
-                            $('#modalStruktur').modal('hide');
+                            $('#modalKejaksaan').modal('hide');
                             reload_table();
                         }
                     })
@@ -225,27 +218,27 @@
 
     function reset() {
         $('input').val('').removeAttr('checked').removeAttr('selected')
-        $('#img_struktur').removeClass('is-invalid');
-        $('#img_struktur').removeClass('is-valid');
+        $('#img_kepala_kejaksaan').removeClass('is-invalid');
+        $('#img_kepala_kejaksaan').removeClass('is-valid');
         $("#image").attr("src", '');
-        $('#nama_struktur').removeClass('is-invalid');
-        $('#nama_struktur').removeClass('is-valid');
+        $('#nama_kepala_kejaksaan').removeClass('is-invalid');
+        $('#nama_kepala_kejaksaan').removeClass('is-valid');
     }
 
     function reset_data() {
         $('input').val('').removeAttr('checked').removeAttr('selected')
-        $('#img_struktur').removeClass('is-invalid');
-        $('#img_struktur').removeClass('is-valid');
+        $('#img_kepala_kejaksaan').removeClass('is-invalid');
+        $('#img_kepala_kejaksaan').removeClass('is-valid');
         $("#image").attr("src", '');
-        $('#nama_struktur').removeClass('is-invalid');
-        $('#nama_struktur').removeClass('is-valid');
+        $('#nama_kepala_kejaksaan').removeClass('is-invalid');
+        $('#nama_kepala_kejaksaan').removeClass('is-valid');
     }
 
     function reload_table() {
         table.ajax.reload(null, false);
     }
 
-    function delStruktur(id_struktur) {
+    function delKejaksaan(id_kepala_kejaksaan) {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -256,7 +249,7 @@
 
         swalWithBootstrapButtons.fire({
             title: 'Apakah Anda Yakin?',
-            text: "Anda Akan Menghapus Banner Ini!",
+            text: "Anda Akan Menghapus!",
             icon: 'warning',
             reverseButtons: true,
             showCancelButton: true,
@@ -266,13 +259,13 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('struktur/del_struktur/'); ?>" + id_struktur,
+                    url: "<?= site_url('kejaksaan/del_kepala_kejaksaan/'); ?>" + id_kepala_kejaksaan,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
                             swalWithBootstrapButtons.fire(
                                 'Deleted!',
-                                'Struktur Berhasil Di Delete',
+                                'Data Kepala Kejaksaan Berhasil Di Delete',
                                 'success'
                             ).then((result) => {
                                 if (result.value) {
