@@ -235,9 +235,39 @@
 							<div style="color: #fff; font-size: 14px; font-weight: bold;">Kepala Kejaksaan Negeri Purwokerto</div>
 						</div>
 						<div class="card-body" style="padding: 0;">
-							<img src="<?= base_url() ?>/uploads/bidang/<?= session()->get('jaksa'); ?>" alt="" width="100%">
-							<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
-							<div class="sidebar_title" style="margin-top: -45px; margin-left: 8px; font-size:15px; color: white;"><?= session()->get('nama_jaksa'); ?></div>
+							<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner">
+									<?php
+									$i = 0;
+									foreach ($_SESSION['kepalaKejaksaan'] as $data) :
+									?>
+										<?php if ($i == 0) : ?>
+											<?php $carousel = 'active'; ?>
+											<div class="carousel-item dpo <?= $carousel; ?>">
+												<img width="100%" src="<?= base_url() ?>/uploads/kepala_kejaksaan/<?= $data['img_kepala_kejaksaan']; ?>" alt="">
+												<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
+												<div class="sidebar_title" style="margin-top:-44px; margin-left: 8px; font-size:15px; color: white; text-align: left;"><?= session()->get('nama_jaksa'); ?></div>
+											</div>
+										<?php else : ?>
+											<?php $carousel = ''; ?>
+											<div class="carousel-item dpo <?= $carousel; ?>">
+												<img width="100%" src="<?= base_url() ?>/uploads/kepala_kejaksaan/<?= $data['img_kepala_kejaksaan']; ?>" alt="">
+												<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
+												<div class="sidebar_title" style="margin-top: -44px; margin-left: 8px; font-size:15px; color: white;text-align: left;"><?= session()->get('nama_jaksa'); ?></div>
+											</div>
+										<?php endif; ?>
+									<?php $i++;
+									endforeach; ?>
+								</div>
+								<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
 						</div>
 					</div>
 				<?php endif;  ?>
