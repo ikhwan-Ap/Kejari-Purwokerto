@@ -77,7 +77,7 @@ class Home extends BaseController
             'icon' => $icon['img_icon'],
             'icon_beranda' => $icon_beranda['img_icon'],
             'video_cover' => $video_cover['url'],
-            'nama_jaksa' => $nama,
+            'nama_jaksa' => $nama['nama_kepala_kejaksaan'],
         ]);
     }
 
