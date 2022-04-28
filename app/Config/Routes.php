@@ -62,6 +62,8 @@ $routes->get('/visi-misi', 'Home::visi_misi');
 $routes->get('/bidang_view/(:any)', 'Home::bidang/$1');
 // Bidang
 $routes->get('/bidang', 'Bidang::index');
+// Kepala Kejaksaan
+$routes->get('/kepala_kejaksaan', 'Kejaksaan::index');
 // Menu
 $routes->get('/header', 'Menu::index');
 $routes->get('/download', 'Menu::download');
@@ -87,6 +89,7 @@ $routes->get('/arsip_video', 'Video::index');
 $routes->get('/struktur', 'Struktur::index');
 
 // Donwload
+$routes->get('/download_excel', 'Kasus::download_excel');
 $routes->get('/download_file/(:any)', 'Menu::download_file/$1');
 $routes->get('/download_peraturan/(:any)', 'Peraturan::download_peraturan/$1');
 $routes->get('/download_pengumuman/(:any)', 'Pengumuman::download_pengumuman/$1');

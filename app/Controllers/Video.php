@@ -18,7 +18,7 @@ class Video extends BaseController
         $data = [
             'title' => 'Video',
         ];
-        return view('admin/arsip_video.php', $data);
+        return view('arsip/video', $data);
     }
 
     public function get_id($id_video)
@@ -130,7 +130,7 @@ class Video extends BaseController
             $video = $this->video->get_id($id_video);
             $judul_video = $this->request->getVar('judul_video');
             $url = $this->request->getVar('url');
-            
+
             $valid = $this->validate([
                 'judul_video' => [
                     'rules' => 'required',

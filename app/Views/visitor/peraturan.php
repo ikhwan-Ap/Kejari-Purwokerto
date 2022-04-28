@@ -1,4 +1,4 @@
-<?= $this->extend('layout/visitor_template'); ?>
+<?= $this->extend('template/visitor'); ?>
 <?= $this->section('content'); ?>
 
 <div class="page_content">

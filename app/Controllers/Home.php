@@ -17,17 +17,16 @@ use App\Models\kategori_peraturanModel;
 use App\Models\kategori_profilModel;
 use App\Models\kategori_saranaModel;
 use App\Models\kategoriModel;
+use App\Models\kepalaKejaksaanModel;
 use App\Models\visi_misiModel;
 use App\Models\pelayananModel;
 use App\Models\pengumumanModel;
 use App\Models\profilModel;
 use App\Models\saranaModel;
 use App\Models\strukturModel;
-use CodeIgniter\API\ResponseTrait;
 
 class Home extends BaseController
 {
-    use ResponseTrait;
 
     public function __construct()
     {
@@ -53,13 +52,16 @@ class Home extends BaseController
         $this->kategori_sarana = new kategori_saranaModel();
         $this->sarana = new saranaModel();
         $this->struktur = new strukturModel();
+        $this->kepalaKejaksaan = new kepalaKejaksaanModel();
         helper('form');
 
         $header = $this->header->get_header();
-        $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
         $icon_beranda = $this->icon->get_icon_beranda();
         $video_cover = $this->video->get_video_cover();
+        $nama = $this->kepalaKejaksaan->get_nama();
+
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
         $_SESSION['pengumuman'] = $this->pengumuman->get_pengumuman();
@@ -72,11 +74,10 @@ class Home extends BaseController
         session()->set([
             'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
-            'jaksa' => $kejaksaan['image_pengurus'],
-            'nama_jaksa' => $kejaksaan['nama_pengurus'],
             'icon' => $icon['img_icon'],
             'icon_beranda' => $icon_beranda['img_icon'],
             'video_cover' => $video_cover['url'],
+            'nama_jaksa' => $nama['nama_kepala_kejaksaan'],
         ]);
     }
 
@@ -91,6 +92,8 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
+
         $data = [
             'title' => 'beranda',
             'jadwal' => $this->kasus->get_jadwal(),
@@ -106,11 +109,13 @@ class Home extends BaseController
         ];
         return view('visitor/beranda', $data);
     }
+
     public function get_header()
     {
         $data = $this->header->get_header();
         echo json_encode($data);
     }
+
     public function kontak()
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
@@ -122,6 +127,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $data = [
             'title' => 'kontak',
             'header' => $this->header->get_header(),
@@ -141,6 +147,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $jadwal = $this->kasus;
         $jadwal->where('keterangan', '-');
         $jadwal->orderBy('id_kasus', 'DESC');
@@ -167,6 +174,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $khusus = $this->kasus;
         $khusus->where('kategori', 'Pidana Khusus');
         $khusus->where('keterangan', 'Incraht');
@@ -195,6 +203,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $umum = $this->kasus;
         $umum->where('kategori', 'Pidana Umum');
         $umum->where('keterangan', 'Incraht');
@@ -223,6 +232,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $datun = $this->kasus;
         $datun->where('kategori', 'Perdata Dan Tata Usaha Negara');
         $datun->where('keterangan', 'Incraht');
@@ -251,6 +261,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $bidang = $this->bidang->get_id($id_bidang);
         $title = $this->bidang->get_title($id_bidang);
         $data = [
@@ -271,13 +282,14 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $berita = $this->berita->get_id($id_berita);
         $title = $this->berita->getJudul($id_berita);
         $data = [
             'judul' => $title,
             'berita' => $berita,
         ];
-        return view('visitor/berita/berita_tentang', $data);
+        return view('visitor/informasi/berita_tentang', $data);
     }
 
     public function list_berita()
@@ -291,6 +303,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $berita =  $this->berita;
         $berita->orderBy('tanggal', 'DESC');
         $data = [
@@ -299,7 +312,7 @@ class Home extends BaseController
             'pager' => $berita->pager,
             'listBerita' => $this->berita->get_list(),
         ];
-        return view('visitor/berita', $data);
+        return view('visitor/informasi/berita', $data);
     }
 
     public function visi_misi()
@@ -313,6 +326,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $data = [
             'title' => 'Visi dan Misi',
             'visi' => $this->visi_misi->get_visi(),
@@ -332,6 +346,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $data = [
             'title' => 'Portal Pelayanan',
             'pelayanan' => $this->pelayanan->findAll(),
@@ -350,6 +365,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $agenda =  $this->agenda;
         $agenda->orderBy('tanggal_agenda', 'DESC');
         $data = [
@@ -357,7 +373,7 @@ class Home extends BaseController
             'agenda' => $agenda->paginate(10, 'agenda'),
             'pager' => $agenda->pager,
         ];
-        return view('visitor/agenda', $data);
+        return view('visitor/informasi/agenda', $data);
     }
 
     public function get_agenda($id_agenda)
@@ -371,13 +387,14 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $get_agenda = $this->agenda->get_id($id_agenda);
         $data =
             [
                 'title' => 'Agenda',
                 'agenda' => $get_agenda,
             ];
-        return view('visitor/detail_agenda', $data);
+        return view('visitor/informasi/detail_agenda', $data);
     }
 
     public function pengumuman()
@@ -391,6 +408,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $pengumuman =  $this->pengumuman;
         $pengumuman->orderBy('tgl_pengumuman', 'DESC');
         $data = [
@@ -398,7 +416,7 @@ class Home extends BaseController
             'pengumuman' => $pengumuman->paginate(10, 'pengumuman'),
             'pager' => $pengumuman->pager,
         ];
-        return view('visitor/pengumuman', $data);
+        return view('visitor/informasi/pengumuman', $data);
     }
 
     public function get_pengumuman($id_pengumuman)
@@ -412,13 +430,14 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $get_pengumuman = $this->pengumuman->get_id($id_pengumuman);
         $data =
             [
                 'title' => 'Pengumuman',
                 'pengumuman' => $get_pengumuman,
             ];
-        return view('visitor/detail_pengumuman', $data);
+        return view('visitor/informasi/detail_pengumuman', $data);
     }
 
     public function profil($id_profil)
@@ -432,6 +451,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
         $get_profil = $this->profil->get_id($id_profil);
         $data = [
             'title' => 'Profil',
@@ -451,6 +471,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
 
         $peraturan = $this->kategori_peraturan->get_data($id_kategori_peraturan);
         $data = [
@@ -471,6 +492,7 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['kepalaKejaksaan'] = $this->kepalaKejaksaan->get_kepala_kejaksaan();
 
         $get_sarana = $this->sarana->get_data($id_sarana);
         $data = [

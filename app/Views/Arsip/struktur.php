@@ -9,6 +9,8 @@
             </button>
         </div>
         <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a href="/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item">Arsip</div>
             <div class="breadcrumb-item">Struktur</div>
         </div>
     </div>

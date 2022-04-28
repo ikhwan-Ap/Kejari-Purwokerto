@@ -570,6 +570,7 @@ a:hover {
 
 .sticky-wrapper {
   position: relative;
+  height: auto !important;
   z-index: 100;
   width: 100%;
 }

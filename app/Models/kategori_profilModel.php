@@ -56,7 +56,7 @@ class kategori_profilModel extends Model
         $builder->select('*');
         $builder->select('kategori_profil.nama_kategori_profil', 'nama_kategori_profil');
         $builder->selectMax('profil.id_profil', 'id_profil');
-        $builder->orderBy('id_profil', 'DESC');
+        $builder->orderBy('kategori_profil.id_kategori_profil', 'ASC');
         $builder->groupBy('profil.id_kategori_profil');
         $builder->where('profil.id_kategori_profil IS NOT NULL', null, false);
         $builder->join('profil', 'profil.id_kategori_profil = kategori_profil.id_kategori_profil', 'LEFT');

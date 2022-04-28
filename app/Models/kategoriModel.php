@@ -58,7 +58,7 @@ class kategoriModel extends Model
         $builder->select('*');
         $builder->select('kategori.nama_kategori', 'nama_kategori');
         $builder->selectMax('bidang.id_bidang', 'id_bidang');
-        $builder->orderBy('id_bidang', 'DESC');
+        $builder->orderBy('id_bidang', 'ASC');
         $builder->groupBy('bidang.id_kategori');
         $builder->whereNotIn('nama_kategori', $not);
         $builder->where('bidang.id_kategori IS NOT NULL', null, false);

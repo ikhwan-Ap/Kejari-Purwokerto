@@ -18,7 +18,9 @@
             </button>
         </div>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item">Peraturan</div>
+            <div class="breadcrumb-item active"><a href="/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item">Moduls</div>
+            <div class="breadcrumb-item">Sarana</div>
         </div>
     </div>
     <?php echo form_open_multipart('', ['id' => 'formSarana']); ?>
@@ -86,9 +88,6 @@
     </div>
     <?php form_close();  ?>
 </section>
-
-
-
 
 <div class="modal fade" data-backdrop="false" tabindex="-1" role="dialog" id="modalSarana">
     <div class="modal-dialog modal-sm kategori_kecil" role="document">
@@ -160,6 +159,7 @@
         </div>
     </div>
 </div>
+
 <div class="section-body">
     <div class="row">
         <div class="col">
@@ -189,6 +189,7 @@
         </div>
     </div>
 </div>
+
 </section>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
@@ -261,7 +262,6 @@
         $('#btnClose').hide();
         resetForm();
     }
-
 
     function cekKategori() {
         $('#modalSarana').modal('show');
@@ -361,7 +361,6 @@
                                 'success'
                             ).then((result) => {
                                 if (result.value) {
-                                    reload_table();
                                     window.location.reload();
                                 }
                             })
@@ -527,7 +526,6 @@
                             $('#btnClose').hide();
                             $('#showSarana').show();
                             resetForm();
-                            reload_table();
                             window.location.reload();
                         }
                     })
@@ -620,6 +618,7 @@
                             $('#showSarana').show();
                             resetForm();
                             reload_table();
+                            window.location.reload();
                         }
                     })
                 }

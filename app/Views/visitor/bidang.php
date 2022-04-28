@@ -1,4 +1,4 @@
-<?= $this->extend('layout/visitor_template'); ?>
+<?= $this->extend('template/visitor'); ?>
 <?= $this->section('content'); ?>
 
 <div class="page_content">
@@ -18,7 +18,7 @@
 
                   <p style="font-weight: bold; font-size:large;"><?= $bidang['nama_pengurus']; ?></p>
                   <p style="font-weight: bold; font-size:large;"><?= $bidang['jabatan_pengurus']; ?></p>
-                  <p style="font-weight: bold; font-size:large;"><?= $bidang['nip']; ?></p>
+                  <p style="font-weight: bold; font-size:large;">NIP.<?= $bidang['nip']; ?></p>
 
                 </div>
                 <div class="section_content post">

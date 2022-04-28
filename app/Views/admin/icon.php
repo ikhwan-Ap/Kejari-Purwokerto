@@ -21,10 +21,10 @@
         <div class="col">
             <div class="row">
                 <div class="card-header col-6">
-                    <h4>Icon Beranda Ukuran XX</h4>
+                    <h4>Icon Beranda Ukuran 120x180</h4>
                 </div>
                 <div class="card-header col-6">
-                    <h4>Icon Contact Ukuran XX</h4>
+                    <h4>Icon Contact Ukuran 120x180</h4>
                 </div>
             </div>
         </div>

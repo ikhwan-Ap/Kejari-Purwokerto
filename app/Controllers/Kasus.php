@@ -267,7 +267,7 @@ class Kasus extends BaseController
                 }
             }
         }
-        json_encode($data);
+        echo json_encode($data);
     }
     public function import_khusus()
     {
@@ -312,7 +312,7 @@ class Kasus extends BaseController
                 }
             }
         }
-        json_encode($data);
+        echo json_encode($data);
     }
     public function import_perdata()
     {
@@ -357,6 +357,11 @@ class Kasus extends BaseController
                 }
             }
         }
-        json_encode($data);
+        echo json_encode($data);
+    }
+
+    public function download_excel()
+    {
+        return $this->response->download('uploads/template/contoh.xlsx', null);
     }
 }

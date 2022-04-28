@@ -7,7 +7,7 @@
             <button class="btn btn-primary" onclick="addKasus()">
                 <i class="ion ion-plus-circled"></i> Tambah
             </button>
-            <a href="#" class="btn btn-primary" data-toggle="dropdown">
+            <a href="" class="btn btn-primary" data-toggle="dropdown">
                 <i class="ion ion-ios-cloud-upload"></i> Excel
             </a>
             <ul class="dropdown-menu">
@@ -15,9 +15,11 @@
                 <a class="nav-link Khusus" onclick="btnKhusus()" href="#">Pidana Khusus</a>
                 <a class="nav-link Perdata" onclick="btnPerdata()" href="#">Perdata dan Tata Usaha Negara </a>
             </ul>
-            <button class="btn btn-primary">
-                <i class="ion ion-ios-cloud-download"></i> Template
-            </button>
+            <a href="/download_excel" class="btn btn-primary" target="_blank">
+                <span class="ion ion-archive" data-pack="android" data-tags="plus, include, invite">
+                    Contoh
+                </span>
+            </a>
         </div>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="<?= base_url('/dashboard'); ?>">Dashboard</a></div>

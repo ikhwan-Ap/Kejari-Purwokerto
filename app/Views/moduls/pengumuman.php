@@ -12,7 +12,9 @@
             </button>
         </div>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item">Bidang</div>
+            <div class="breadcrumb-item active"><a href="/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item">Moduls</div>
+            <div class="breadcrumb-item">Pengumuman</div>
         </div>
     </div>
     <?php echo form_open_multipart('', ['id' => 'formPengumuman']); ?>
