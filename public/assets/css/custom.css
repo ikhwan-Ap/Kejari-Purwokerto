@@ -138,7 +138,7 @@
 }
 .mini_content:first-child{
     display: block;
-    max-width: 100%;
+    width: 100%;
 }
 .mini_content .panel-sm-1:not(:first-child) {
     display: inline-block;
@@ -157,12 +157,12 @@
 }
 
 .panel-sm-1{
-    max-width: 33%;
+    width: 33%;
     padding: 0 6px;
     /* margin: auto; */
 }
 .panel-sm-1:first-child{
-    max-width: 100%;
+    width: 100%;
 }
 .panel-sm-1:first-child a div img{
     height: 300px;
