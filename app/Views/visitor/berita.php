@@ -28,14 +28,15 @@ function cutter($string){
     <div class="row row-lg-eq-height">
       <div class="col-lg-9">
         <div class="main_content">
-            <div class="blog_section" id="<?= count($berita) ?>">
+            <div class="blog_section h-1" id="<?= count($berita) ?>">
                 <div class="section_panel">
                     <div class="section_title"> Berita Terbaru</div>
                 </div>
                 <div class="section_content">
                     <div class="container">
                         <div class="mini_content row" >
-                            <?php for($i=0 ; $i < 4; $i++) {  ?>
+                            <?php if (count($berita) > 3){
+                                for($i=0 ; $i < 4; $i++) {  ?>
                                 <div class="panel-sm-1">
                                     <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
                                         <div class="card imageClick" style="border-radius: 10px;">
@@ -47,7 +48,7 @@ function cutter($string){
                                         </div>
                                     </a>
                                 </div>
-                            <?php }; ?>
+                            <?php }}; ?>
                         </div>
                     </div>
                 </div>
@@ -64,7 +65,7 @@ function cutter($string){
                     <div class="col-2">
                         <img src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita']?>" alt="">
                     </div>
-                    <div class="col-10">
+                    <div class="col-8">
                         <p style="font-weight: bold; font-size:large;"><?= $data['judul_berita']; ?></p>
                         <p><?= waktu($data['tanggal']); ?></p>
                     </div>
