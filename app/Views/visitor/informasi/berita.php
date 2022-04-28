@@ -29,37 +29,37 @@ function cutter($string)
         <div class="row row-lg-eq-height">
             <div class="col-lg-9">
                 <div class="main_content">
-                    <div class="blog_section" id="<?= count($berita) ?>">
+                    <div class="blog_section" id="<?= count($listBerita) ?>">
                         <div class="section_panel">
                             <div class="section_title"> Berita Terbaru</div>
                         </div>
                         <div class="section_content">
                             <div class="container">
                                 <div class="mini_content row">
-                                    <?php if (count($berita) >= 4) : ?>
+                                    <?php if (count($listBerita) >= 4) : ?>
                                         <?php for ($i = 0; $i < 4; $i++) : ?>
                                             <div class="panel-sm-1">
-                                                <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
+                                                <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
                                                     <div class="card imageClick" style="border-radius: 10px;">
-                                                        <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $berita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
+                                                        <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
                                                         <div class="card-body">
-                                                            <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($berita[$i]['judul_berita']); ?></div>
-                                                            <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($berita[$i]['tanggal']); ?></div>
+                                                            <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($listBerita[$i]['judul_berita']); ?></div>
+                                                            <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($listBerita[$i]['tanggal']); ?></div>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
                                         <?php endfor; ?>
-                                    <?php elseif (count($berita) < 4) : ?>
-                                        <?php $data = count($berita);  ?>
+                                    <?php elseif (count($listBerita) < 4) : ?>
+                                        <?php $data = count($listBerita);  ?>
                                         <?php for ($i = 0; $i < $data; $i++) :  ?>
                                             <div class="panel-sm-1">
-                                                <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
+                                                <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
                                                     <div class="card imageClick" style="border-radius: 10px;">
-                                                        <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $berita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
+                                                        <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
                                                         <div class="card-body">
-                                                            <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($berita[$i]['judul_berita']); ?></div>
-                                                            <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($berita[$i]['tanggal']); ?></div>
+                                                            <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($listBerita[$i]['judul_berita']); ?></div>
+                                                            <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($listBerita[$i]['tanggal']); ?></div>
                                                         </div>
                                                     </div>
                                                 </a>

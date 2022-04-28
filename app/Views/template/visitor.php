@@ -226,7 +226,7 @@
 				<div class="sidebar_background"></div>
 
 				<!-- Top Stories -->
-				<?php if (session()->get('jaksa') != null) :  ?>
+				<?php if (session()->get('nama_jaksa') != null) :  ?>
 					<div class="card">
 						<div class="card-header" style="background-color: darkgreen;">
 							<div style="color: #fff; font-size: 14px; font-weight: bold;">Kepala Kejaksaan Negeri Purwokerto</div>
@@ -243,14 +243,14 @@
 											<div class="carousel-item dpo <?= $carousel; ?>">
 												<img width="100%" src="<?= base_url() ?>/uploads/kepala_kejaksaan/<?= $data['img_kepala_kejaksaan']; ?>" alt="">
 												<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
-												<div class="sidebar_title" style="margin-top:-44px; margin-left: 8px; font-size:15px; color: white; text-align: left;">/<?= $data['nama_kepala_kejaksaan']; ?></div>
+												<div class="sidebar_title" style="margin-top:-44px; margin-left: 8px; font-size:15px; color: white; text-align: left;"><?= session()->get('nama_jaksa'); ?></div>
 											</div>
 										<?php else : ?>
 											<?php $carousel = ''; ?>
 											<div class="carousel-item dpo <?= $carousel; ?>">
 												<img width="100%" src="<?= base_url() ?>/uploads/kepala_kejaksaan/<?= $data['img_kepala_kejaksaan']; ?>" alt="">
 												<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
-												<div class="sidebar_title" style="margin-top: -44px; margin-left: 8px; font-size:15px; color: white;text-align: left;">/<?= $data['nama_kepala_kejaksaan']; ?></div>
+												<div class="sidebar_title" style="margin-top: -44px; margin-left: 8px; font-size:15px; color: white;text-align: left;"><?= session()->get('nama_jaksa'); ?></div>
 											</div>
 										<?php endif; ?>
 									<?php $i++;
