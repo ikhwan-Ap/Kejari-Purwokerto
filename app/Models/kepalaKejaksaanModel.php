@@ -110,9 +110,19 @@ class kepalaKejaksaanModel extends Model
     {
         $builder = $this->db->table('kepala_kejaksaan');
         $builder->select('*');
-        $builder->limit(4);
+        $builder->limit(3);
         $builder->orderBy('id_kepala_kejaksaan', 'DESC');
         $query = $builder->get();
         return $query->getResultArray();
+    }
+
+    public function get_nama()
+    {
+        $builder = $this->db->table('kepala_kejaksaan');
+        $builder->select('nama_kepala_kejaksaan');
+        $builder->limit(1);
+        $builder->orderBy('id_kepala_kejaksaan', 'DESC');
+        $query = $builder->get();
+        return $query->getRowArray();
     }
 }

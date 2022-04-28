@@ -51,7 +51,8 @@ function cutter($string)
                                             </div>
                                         <?php endfor; ?>
                                     <?php elseif (count($berita) < 4) : ?>
-                                        <?php for ($i = 0; $i < count($berita); $i++) :  ?>
+                                        <?php $data = count($berita);  ?>
+                                        <?php for ($i = 0; $i < $data; $i++) :  ?>
                                             <div class="panel-sm-1">
                                                 <a href="<?= base_url() ?>/berita_tentang/<?= $berita[$i]['id_berita']; ?>">
                                                     <div class="card imageClick" style="border-radius: 10px;">
@@ -64,6 +65,7 @@ function cutter($string)
                                                 </a>
                                             </div>
                                         <?php endfor; ?>
+
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -93,12 +95,4 @@ function cutter($string)
                 </div>
 
             </div>
-
-
-            <script type="text/javascript">
-                let num = document.getElementsByClassName('blog_section')[0].id;
-                if (num < 4) {
-                    document.getElementsByClassName('blog_section')[0].style = 'display: none';
-                }
-            </script>
             <?= $this->endSection(); ?>
