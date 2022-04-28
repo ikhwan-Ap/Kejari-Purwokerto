@@ -15,12 +15,12 @@
     </div>
 
     <div class="section-body">
+        <div class="card-header">
+            <h4>Ukuran 500x700</h4>
+        </div>
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">
-                        <h4>Kepala Kejaksaan</h4>
-                    </div>
 
                     <div class="card-body">
                         <div class="table-responsive">

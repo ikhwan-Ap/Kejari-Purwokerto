@@ -530,6 +530,7 @@
                             $('#showProfil').show();
                             resetForm();
                             reload_table();
+                            window.location.reload();
                         }
                     })
                 }
@@ -620,6 +621,7 @@
                             reload_table();
                             $('#btnEdit').hide();
                             $('#btnSave').show();
+                            window.location.reload();
                         }
                     })
                 }

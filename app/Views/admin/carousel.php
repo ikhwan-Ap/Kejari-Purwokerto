@@ -54,12 +54,13 @@
     <?php form_close();  ?>
 </section>
 <div class="section-body">
+    <div class="card-header">
+        <h4>Ukuran 1220x550 </h4>
+    </div>
     <div class="row">
         <div class="col">
             <div class="card">
-                <div class="card-header">
-                    <h4>Carousel</h4>
-                </div>
+
 
                 <div class="card-body">
                     <div class="table-responsive">

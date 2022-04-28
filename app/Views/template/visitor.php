@@ -201,9 +201,6 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Informasi</b></a>
 									<ul class="dropdown arrow-top">
-										<li>
-											<a href="#" class="nav-link">Pengaduan</a>
-										</li>
 										<li><a href="<?= base_url() ?>/beranda/berita" class="nav-link">Berita</a></li>
 										<li><a href="<?= base_url() ?>/beranda/pengumuman" class="nav-link">Pengumuman</a></li>
 										<li><a href="<?= base_url() ?>/beranda/agenda" class="nav-link">Agenda</a></li>

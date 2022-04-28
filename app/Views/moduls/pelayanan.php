@@ -94,25 +94,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="col">
-                                    <div class="card-body">
-                                        <div class="section-body">
-                                            <div class="form-group">
-                                                <div class="dropzone" id="mydropzone">
-                                                    <div class="fallback">
-                                                        <input type="file" id="img_pelayanan" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="img_pelayanan">
-                                                        <img src="" id="image_pelayanan" alt="Preview Image" style="width: 280px; height:280px;">
-                                                        <div class="invalid-feedback errorImage">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            <div class="form-group">
+                                <div class="dropzone" id="mydropzone">
+                                    <div class="fallback">
+                                        <input type="file" id="img_pelayanan" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="img_pelayanan">
+                                        <img src="" id="image_pelayanan" alt="Preview Image" style="width: 280px; height:280px;">
+                                        <div class="invalid-feedback errorImage">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <?php form_close();  ?>
                     </div>

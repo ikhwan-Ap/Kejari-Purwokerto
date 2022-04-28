@@ -576,6 +576,7 @@
                             $('#btnBidang').show();
                             $('#btnClose').hide();
                             $('#formBidang').hide();
+                            window.location.reload();
                         }
                     })
                 }
@@ -690,6 +691,7 @@
                             $('#btnBidang').show();
                             $('#btnClose').hide();
                             $('#formBidang').hide();
+                            window.location.reload();
                         }
                     })
                 }

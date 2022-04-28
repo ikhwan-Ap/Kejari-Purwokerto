@@ -586,6 +586,7 @@
                             $('#showPeraturan').show();
                             resetForm();
                             reload_table();
+                            window.location.reload();
                         }
                     })
                 }

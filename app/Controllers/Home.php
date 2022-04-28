@@ -24,11 +24,9 @@ use App\Models\pengumumanModel;
 use App\Models\profilModel;
 use App\Models\saranaModel;
 use App\Models\strukturModel;
-use CodeIgniter\API\ResponseTrait;
 
 class Home extends BaseController
 {
-    use ResponseTrait;
 
     public function __construct()
     {
@@ -58,7 +56,6 @@ class Home extends BaseController
         helper('form');
 
         $header = $this->header->get_header();
-        $kejaksaan = $this->bidang->get_kejaksaan();
         $icon = $this->icon->get_icon();
         $icon_beranda = $this->icon->get_icon_beranda();
         $video_cover = $this->video->get_video_cover();
@@ -75,8 +72,6 @@ class Home extends BaseController
         session()->set([
             'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
-            'jaksa' => $kejaksaan['image_pengurus'],
-            'nama_jaksa' => $kejaksaan['nama_pengurus'],
             'icon' => $icon['img_icon'],
             'icon_beranda' => $icon_beranda['img_icon'],
             'video_cover' => $video_cover['url'],
@@ -110,11 +105,13 @@ class Home extends BaseController
         ];
         return view('visitor/beranda', $data);
     }
+
     public function get_header()
     {
         $data = $this->header->get_header();
         echo json_encode($data);
     }
+
     public function kontak()
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
@@ -288,7 +285,7 @@ class Home extends BaseController
             'judul' => $title,
             'berita' => $berita,
         ];
-        return view('visitor/berita/berita_tentang', $data);
+        return view('visitor/informasi/berita_tentang', $data);
     }
 
     public function list_berita()
@@ -311,7 +308,7 @@ class Home extends BaseController
             'pager' => $berita->pager,
             'listBerita' => $this->berita->get_list(),
         ];
-        return view('visitor/berita', $data);
+        return view('visitor/informasi/berita', $data);
     }
 
     public function visi_misi()
@@ -372,7 +369,7 @@ class Home extends BaseController
             'agenda' => $agenda->paginate(10, 'agenda'),
             'pager' => $agenda->pager,
         ];
-        return view('visitor/agenda', $data);
+        return view('visitor/informasi/agenda', $data);
     }
 
     public function get_agenda($id_agenda)
@@ -393,7 +390,7 @@ class Home extends BaseController
                 'title' => 'Agenda',
                 'agenda' => $get_agenda,
             ];
-        return view('visitor/detail_agenda', $data);
+        return view('visitor/informasi/detail_agenda', $data);
     }
 
     public function pengumuman()
@@ -415,7 +412,7 @@ class Home extends BaseController
             'pengumuman' => $pengumuman->paginate(10, 'pengumuman'),
             'pager' => $pengumuman->pager,
         ];
-        return view('visitor/pengumuman', $data);
+        return view('visitor/informasi/pengumuman', $data);
     }
 
     public function get_pengumuman($id_pengumuman)
@@ -436,7 +433,7 @@ class Home extends BaseController
                 'title' => 'Pengumuman',
                 'pengumuman' => $get_pengumuman,
             ];
-        return view('visitor/detail_pengumuman', $data);
+        return view('visitor/informasi/detail_pengumuman', $data);
     }
 
     public function profil($id_profil)

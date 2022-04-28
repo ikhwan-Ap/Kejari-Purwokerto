@@ -19,7 +19,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h4>DPO</h4>
+                        <h4>Image Ukuran 600x400</h4>
                         <div class="card-header-action">
                             <select name="kategori" id="filterJenis" class="form-control">
                                 <option value="">All</option>

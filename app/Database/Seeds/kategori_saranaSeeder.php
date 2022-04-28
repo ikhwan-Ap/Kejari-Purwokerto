@@ -4,7 +4,7 @@ namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
 
-class KategoriSaranaSeeder extends Seeder
+class kategori_saranaSeeder extends Seeder
 {
     public function run()
     {
