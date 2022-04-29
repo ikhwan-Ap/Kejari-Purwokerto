@@ -32,6 +32,8 @@ class Kejaksaan extends BaseController
 
     public function del_kepala_kejaksaan($id_kepala_kejaksaan)
     {
+        $kepala_kejaksaan = $this->kepala_kejaksaan->get_id($id_kepala_kejaksaan);
+        unlink('uploads/kepala_kejaksaan' . $kepala_kejaksaan['img_kepala_kejaksaan']);
         $this->kepala_kejaksaan->del_kepala_kejaksaan($id_kepala_kejaksaan);
         $data = [
             'sukses' => 'Data Kepala Kejaksaan Berhasil Di Hapus'
