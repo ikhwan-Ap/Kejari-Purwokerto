@@ -146,16 +146,16 @@
 						<div class="section_content">
 							<ul class="nav nav-tabs">
 								<li class="nav-item imageClick">
-									<button onclick="btnJadwal()" class="nav-link btnA actived" aria-current="page">Jadwal Sidang</button>
+									<button style="cursor: pointer;" onclick="btnJadwal()" class="nav-link btnA actived" aria-current="page">Jadwal Sidang</button>
 								</li>
 								<li class="nav-item imageClick">
-									<button onclick="btnUmum()" class="nav-link btnB" href="#">Info Perkara Umum</button>
+									<button style="cursor: pointer;" onclick="btnUmum()" class="nav-link btnB" href="#">Info Perkara Umum</button>
 								</li>
 								<li class="nav-item imageClick">
-									<button onclick="btnKhusus()" class="nav-link btnC" href="#">Info Perkara Khusus</button>
+									<button style="cursor: pointer;" onclick="btnKhusus()" class="nav-link btnC" href="#">Info Perkara Khusus</button>
 								</li>
 								<li class="nav-item imageClick">
-									<button onclick="btnPerdata()" class="nav-link btnD" href="#">Info Perkara Datun</button>
+									<button style="cursor: pointer;" onclick="btnPerdata()" class="nav-link btnD" href="#">Info Perkara Datun</button>
 								</li>
 							</ul>
 							<table id="myTable" class="table table-responsive table-bordered table-light" style="width: 100%;">
@@ -372,7 +372,7 @@
 												foreach ($_SESSION['foto'] as $data) :
 												?>
 													<div class="owl-item">
-														<div class="pad15 imageClick" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)" style="padding-bottom: 15px; border-radius: 10px; background-color: white; box-shadow: 2px 4px 5px #888888;">
+														<div class="pad15 imageClick" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)" style="padding-bottom: 15px; border-radius: 10px; background-color: white; box-shadow: 2px 4px 5px #888888; cursor: pointer;">
 															<img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto']; ?>" alt="" width="100%" height="150px" style="border-radius: 10px;">
 															<p style="margin-left: 15px;"><i class="fa fa-clock-o"></i> <?= waktu($data['tanggal_arsip_foto']); ?></p>
 															<p style="font-weight: bold; margin-left: 15px;"><?= $data['nama_arsip_foto']; ?></p>
