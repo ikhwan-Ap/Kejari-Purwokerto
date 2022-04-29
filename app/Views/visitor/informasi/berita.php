@@ -33,39 +33,37 @@ function cutter($string)
                         <div class="section_panel">
                             <div class="section_title"> Berita Terbaru</div>
                         </div>
-                        <div class="section_content">
-                            <div class="container">
-                                <div class="mini_content row">
-                                    <?php if (count($listBerita) >= 4) : ?>
-                                        <?php for ($i = 0; $i < 4; $i++) : ?>
-                                            <div class="panel-sm-1">
-                                                <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
-                                                    <div class="card imageClick" style="border-radius: 10px;">
-                                                        <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
-                                                        <div class="card-body">
-                                                            <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($listBerita[$i]['judul_berita']); ?></div>
-                                                            <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($listBerita[$i]['tanggal']); ?></div>
-                                                        </div>
+                        <div class="section_content" style="padding-right: 0;">
+                            <div class="mini_content">
+                                <?php if (count($listBerita) >= 4) : ?>
+                                    <?php for ($i = 0; $i < 4; $i++) : ?>
+                                        <div class="panel-sm-1">
+                                            <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
+                                                <div class="card imageClick" style="border-radius: 10px;">
+                                                    <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
+                                                    <div class="card-body">
+                                                        <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($listBerita[$i]['judul_berita']); ?></div>
+                                                        <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($listBerita[$i]['tanggal']); ?></div>
                                                     </div>
-                                                </a>
-                                            </div>
-                                        <?php endfor; ?>
-                                    <?php elseif (count($listBerita) < 4) : ?>
-                                        <?php for ($i = 0; $i < (count($listBerita)); $i++) : ?>
-                                            <div class="panel-sm-1">
-                                                <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
-                                                    <div class="card imageClick" style="border-radius: 10px;">
-                                                        <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
-                                                        <div class="card-body">
-                                                            <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($listBerita[$i]['judul_berita']); ?></div>
-                                                            <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($listBerita[$i]['tanggal']); ?></div>
-                                                        </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php endfor; ?>
+                                <?php elseif (count($listBerita) < 4) : ?>
+                                    <?php for ($i = 0; $i < (count($listBerita)); $i++) : ?>
+                                        <div class="panel-sm-1">
+                                            <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
+                                                <div class="card imageClick" style="border-radius: 10px;">
+                                                    <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
+                                                    <div class="card-body">
+                                                        <div class="card-title" style="color: black; font-weight: bold;"><?= cutter($listBerita[$i]['judul_berita']); ?></div>
+                                                        <div class="post-meta" style="color: black; font-weight: lighter; font-size: 9pt">Kejari Purwokerto– </br><?= waktu($listBerita[$i]['tanggal']); ?></div>
                                                     </div>
-                                                </a>
-                                            </div>
-                                        <?php endfor; ?>
-                                    <?php endif; ?>
-                                </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -75,20 +73,26 @@ function cutter($string)
                         </div>
                         <?= $pager->links('berita', 'kejari_pagination') ?>
                         <br><br>
-                        <?php foreach ($berita as $data) : ?>
-                            <a href="/berita_tentang/<?= $data['id_berita']; ?>">
-                                <div class="section_content pengumuman row" style="border-radius: 10px; margin-left: 15px;">
-                                    <div class="col-2">
-                                        <img src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita'] ?>" alt="">
-                                    </div>
-                                    <div class="col-8">
-                                        <p style="font-weight: bold; font-size:large;"><?= $data['judul_berita']; ?></p>
-                                        <p><?= waktu($data['tanggal']); ?></p>
-                                    </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <?php foreach ($berita as $data) : ?>
+                                        <a href="/berita_tentang/<?= $data['id_berita']; ?>">
+                                            <div class="section_content pengumuman row" style="border-radius: 10px; margin-left: 15px;">
+                                                <div class="col-2">
+                                                    <img src="<?= base_url() ?>/uploads/berita/<?= $data['img_berita'] ?>" alt="">
+                                                </div>
+                                                <div class="col-8">
+                                                    <p style="font-weight: bold; font-size:large;"><?= $data['judul_berita']; ?></p>
+                                                    <p><?= waktu($data['tanggal']); ?></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <br>
+                                    <?php endforeach;  ?>
                                 </div>
-                            </a>
-                            <br>
-                        <?php endforeach;  ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
