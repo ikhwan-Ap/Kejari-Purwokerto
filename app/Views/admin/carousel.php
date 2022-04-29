@@ -125,6 +125,8 @@
         $('#formCarousel').hide();
         $('#btnCarousel').show();
         $('#btnClose').hide();
+        $('#btnEdit').hide();
+        $('#btnSave').show();
         resetForm();
     }
 

@@ -177,6 +177,8 @@
         $("#form-top").hide();
         $("#btnClose").hide();
         $("#btnOpen").show();
+        $("#btnEdit").hide();
+        $("#btnSave").show();
     }
 
     function delVideo(id_video) {

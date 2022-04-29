@@ -115,16 +115,15 @@
 
                         <div class="row">
                             <div class="form-group col">
-                                <label for="image">Image</label>
-                                <input id="image" type="file" value="" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="image">
-                                <div class="invalid-feedback errorImage">
-
+                                <div class="dropzone" id="mydropzone">
+                                    <label for="image">Image</label>
+                                    <input id="image" type="file" value="" accept="image/*,png/" class="form-control" onchange="previewFile(this);" name="image">
+                                    <img src="" id="img_buron" alt="Preview Image" style="width: 100%; height:100%;">
+                                    <div class="invalid-feedback errorImage">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="preview">
-                            <img src="" id="img_buron" alt="Placeholder" style="width: 30%; height:50%;">
                         </div>
 
                     </div>
@@ -133,7 +132,7 @@
                         <div class="row">
                             <div class="col">
                                 <h6 id="nama">
-                                    AA
+
                                 </h6>
                             </div>
                             <div class="col">

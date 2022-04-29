@@ -267,6 +267,8 @@
         $('#formBidang').hide();
         $('#btnBidang').show();
         $('#btnClose').hide();
+        $('#btnEdit').hide();
+        $('#btnSave').show();
         resetForm();
     }
 
@@ -478,7 +480,8 @@
     function resetForm() {
         $('#image_pengurus').removeClass('is-invalid');
         $('#image_pengurus').removeClass('is-valid');
-        $('input').val('').removeAttr('checked').removeAttr('selected')
+        $('input').val('').removeAttr('checked').removeAttr('selected');
+        $('#id_bidang').val('');
         $('select').val('').removeAttr('checked').removeAttr('selected');
         $("#img_bidang").attr("src", '');
         $(".summernote").summernote('code', '');

@@ -176,6 +176,8 @@
         $('#formPengumuman').hide();
         $('#btnPengumuman').show();
         $('#btnClose').hide();
+        $('#btnEdit').hide();
+        $('#btnSave').show();
         resetForm();
     }
 

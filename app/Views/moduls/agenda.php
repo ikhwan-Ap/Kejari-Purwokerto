@@ -194,6 +194,8 @@
         $('#formAgenda').hide();
         $('#btnAgenda').show();
         $('#btnClose').hide();
+        $('#btnEdit').hide();
+        $('#btnSave').show();
         resetForm();
     }
 
