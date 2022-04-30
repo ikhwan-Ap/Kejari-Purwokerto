@@ -24,7 +24,7 @@ class Bidang extends BaseController
             'kategori' => $this->kategori->cek_kategori(),
             'data_kategori' => $this->kategori->findAll(),
         ];
-        return view('admin/bidang', $data);
+        return view('admin/master/bidang', $data);
     }
 
     public function tambah_kategori()

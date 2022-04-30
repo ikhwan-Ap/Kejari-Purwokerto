@@ -20,7 +20,7 @@ class Struktur extends BaseController
         $data = [
             'title' => 'Struktur',
         ];
-        return view('arsip/struktur', $data);
+        return view('admin/arsip/struktur', $data);
     }
 
 

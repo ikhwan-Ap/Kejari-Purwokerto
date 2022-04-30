@@ -144,28 +144,28 @@
 					<div class="col-12">
 						<nav class="custom-site-navigation text-center mx-auto" style="margin-left: 0;" role="navigation">
 							<ul class="custom-site-menu main-menu js-clone-nav mx-auto d-none d-lg-block">
-								<li><a href="<?= base_url() ?>/home" class="nav-link"><b>Beranda</b></a></li>
+								<li><a href="<?= base_url() ?>/" class="nav-link"><b>Beranda</b></a></li>
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Profil</b></a>
 									<ul class="dropdown arrow-top">
 										<?php $i = 0;
 										foreach ($_SESSION['profil'] as $data) :
 										?>
-											<li><a href="<?= base_url() ?>/beranda/profil/<?= $data['id_profil']; ?>" class="nav-link"><?= $data['nama_kategori_profil']; ?></a></li>
+											<li><a href="<?= base_url() ?>/profil/<?= $data['id_profil']; ?>" class="nav-link"><?= $data['nama_kategori_profil']; ?></a></li>
 										<?php $i++;
 										endforeach; ?>
-										<li><a href="/visi-misi" class="nav-link">Visi dan Misi</a></li>
-										<li><a href="/beranda/struktur" class="nav-link">Struktur Organisasi</a></li>
+										<li><a href="/visi_misi" class="nav-link">Visi dan Misi</a></li>
+										<li><a href="/struktur" class="nav-link">Struktur Organisasi</a></li>
 									</ul>
 								</li>
 
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Info Perkara</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="<?= base_url() ?>/home/pidana_umum" class="nav-link">Pidana Umum</a></li>
-										<li><a href="<?= base_url() ?>/home/pidana_khusus" class="nav-link">Pidana Khusus</a></li>
-										<li><a href="<?= base_url() ?>/home/tata_usaha" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
-										<li><a href="<?= base_url() ?>/home/jadwal_sidang" class="nav-link">Jadwal Sidang</a></li>
+										<li><a href="<?= base_url('/pidana_umum') ?>" class="nav-link">Pidana Umum</a></li>
+										<li><a href="<?= base_url() ?>/pidana_khusus" class="nav-link">Pidana Khusus</a></li>
+										<li><a href="<?= base_url() ?>/perdata" class="nav-link">Perdata dan Tata Usaha Negara</a></li>
+										<li><a href="<?= base_url() ?>/jadwal_sidang" class="nav-link">Jadwal Sidang</a></li>
 									</ul>
 								</li>
 								<li class="has-children">
@@ -173,7 +173,7 @@
 									<ul class="dropdown arrow-top">
 										<?php $i = 0;
 										foreach ($_SESSION['kategori']  as $row) : ?>
-											<li><a href="<?= base_url() ?>/bidang_view/<?= $row['id_bidang']; ?>" class="nav-link"><?= $row['nama_kategori']; ?></a></li>
+											<li><a href="<?= base_url() ?>/bidang/<?= $row['id_bidang']; ?>" class="nav-link"><?= $row['nama_kategori']; ?></a></li>
 										<?php $i++;
 										endforeach; ?>
 									</ul>
@@ -183,7 +183,7 @@
 									<ul class="dropdown arrow-top">
 										<?php $i = 0;
 										foreach ($_SESSION['sarana'] as $data) : ?>
-											<li><a href="<?= base_url() ?>/beranda/sarana/<?= $data['id_sarana']; ?>" class="nav-link"><?= $data['nama_kategori_sarana']; ?></a></li>
+											<li><a href="<?= base_url() ?>/sarana/<?= $data['id_sarana']; ?>" class="nav-link"><?= $data['nama_kategori_sarana']; ?></a></li>
 										<?php $i++;
 										endforeach; ?>
 									</ul>
@@ -193,7 +193,7 @@
 									<ul class="dropdown arrow-top">
 										<?php $i = 0;
 										foreach ($_SESSION['peraturan'] as $data) : ?>
-											<li><a href="<?= base_url() ?>/beranda/peraturan/<?= $data['id_kategori_peraturan']; ?>" class="nav-link"><?= $data['nama_kategori_peraturan']; ?></a></li>
+											<li><a href="<?= base_url() ?>/peraturan/<?= $data['id_kategori_peraturan']; ?>" class="nav-link"><?= $data['nama_kategori_peraturan']; ?></a></li>
 										<?php $i++;
 										endforeach; ?>
 									</ul>
@@ -201,15 +201,15 @@
 								<li class="has-children">
 									<a href="#" class="nav-link"><b>Informasi</b></a>
 									<ul class="dropdown arrow-top">
-										<li><a href="<?= base_url() ?>/beranda/berita" class="nav-link">Berita</a></li>
-										<li><a href="<?= base_url() ?>/beranda/pengumuman" class="nav-link">Pengumuman</a></li>
-										<li><a href="<?= base_url() ?>/beranda/agenda" class="nav-link">Agenda</a></li>
-										<li><a href="<?= base_url('/beranda/arsip_foto') ?>" class="nav-link">Foto Kegiatan</a></li>
-										<li><a href="<?= base_url('/beranda/arsip_video') ?>" class="nav-link">Video Kegiatan</a></li>
+										<li><a href="<?= base_url() ?>/berita" class="nav-link">Berita</a></li>
+										<li><a href="<?= base_url() ?>/pengumuman" class="nav-link">Pengumuman</a></li>
+										<li><a href="<?= base_url() ?>/agenda" class="nav-link">Agenda</a></li>
+										<li><a href="<?= base_url('/arsip_foto') ?>" class="nav-link">Foto Kegiatan</a></li>
+										<li><a href="<?= base_url('/arsip_video') ?>" class="nav-link">Video Kegiatan</a></li>
 									</ul>
 								</li>
-								<li><a href="<?= base_url() ?>/home/portal" class="nav-link" target="_blank"><b>Pelayanan</b></a></li>
-								<li><a href="<?= base_url() ?>/home/kontak" class="nav-link"><b>Kontak Kami</b></a></li>
+								<li><a href="<?= base_url() ?>/portal" class="nav-link" target="_blank"><b>Pelayanan</b></a></li>
+								<li><a href="<?= base_url() ?>/kontak" class="nav-link"><b>Kontak Kami</b></a></li>
 							</ul>
 						</nav>
 					</div>
@@ -242,19 +242,21 @@
 											<?php $carousel = 'active'; ?>
 											<div class="carousel-item dpo <?= $carousel; ?>">
 												<img width="100%" src="<?= base_url() ?>/uploads/kepala_kejaksaan/<?= $data['img_kepala_kejaksaan']; ?>" alt="">
-												<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
-												<div class="sidebar_title" style="margin-top:-44px; margin-left: 8px; font-size:15px; color: white; text-align: left;"><?= session()->get('nama_jaksa'); ?></div>
 											</div>
 										<?php else : ?>
 											<?php $carousel = ''; ?>
 											<div class="carousel-item dpo <?= $carousel; ?>">
 												<img width="100%" src="<?= base_url() ?>/uploads/kepala_kejaksaan/<?= $data['img_kepala_kejaksaan']; ?>" alt="">
-												<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
-												<div class="sidebar_title" style="margin-top: -44px; margin-left: 8px; font-size:15px; color: white;text-align: left;"><?= session()->get('nama_jaksa'); ?></div>
 											</div>
 										<?php endif; ?>
 									<?php $i++;
 									endforeach; ?>
+									<div>
+										<img src="<?= base_url() ?>/template/visitor/images/bg_kepala.png" alt="" width="100%" style="margin-top:-50px">
+										<div class="sidebar_title" style="margin-top:-44px; margin-left: 8px; font-size:15px; color: white; text-align: left;"><?= session()->get('nama_jaksa'); ?>
+										</div>
+									</div>
+
 								</div>
 								<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -291,7 +293,7 @@
 					$i = 0;
 					foreach ($_SESSION['pengumuman'] as $data) : ?>
 						<div class="imageClick">
-							<a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
+							<a href="/pengumuman/<?= $data['id_pengumuman']; ?>">
 								<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tgl_pengumuman']); ?></div>
 								<div class="isi_agenda"><?= $data['nama_pengumuman']; ?></div>
 							</a>
@@ -300,7 +302,7 @@
 					<?php $i++;
 					endforeach; ?>
 					<p>
-						<a href="<?= base_url() ?>/beranda/pengumuman" class="btn btn-secondary btn-sm btn-sidebar">
+						<a href="<?= base_url() ?>/pengumuman" class="btn btn-secondary btn-sm btn-sidebar">
 							<span class="">Selengkapnya...</span>
 						</a>
 					</p>
@@ -316,7 +318,7 @@
 					$i = 0;
 					foreach ($_SESSION['agenda'] as $data) : ?>
 						<div class="imageClick">
-							<a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
+							<a href="/agenda/<?= $data['id_agenda']; ?>">
 								<div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= tanggal($data['tanggal_agenda']); ?></div>
 								<div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
 							</a>
@@ -325,7 +327,7 @@
 					<?php $i++;
 					endforeach; ?>
 					<p>
-						<a href="<?= base_url() ?>/home/agenda" class="btn btn-secondary btn-sm btn-sidebar">
+						<a href="<?= base_url() ?>/agenda" class="btn btn-secondary btn-sm btn-sidebar">
 							<span class="">Selengkapnya...</span>
 						</a>
 					</p>

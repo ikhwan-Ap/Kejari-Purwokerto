@@ -62,7 +62,7 @@
                   $data = explode(".", $pengumuman['file_pengumuman']);
                   ?>
                   <?php if ($data[1] == 'pdf') : ?>
-                    <a class="btn btn-sm btn-primary" target="_blank" href="/beranda/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download <i class="fa fa-download"></i></a>
+                    <a class="btn btn-sm btn-primary" target="_blank" href="/download_pengumuman/<?= $pengumuman['file_pengumuman']; ?>">Download <i class="fa fa-download"></i></a>
                   <?php else :  ?>
                     <img class="imageClick" width="100%" style="border-radius: 10px;" src="<?= base_url() ?>/dokumen/pengumuman/<?= $pengumuman['file_pengumuman']; ?>" onclick="cekFoto(<?= $pengumuman['id_pengumuman']; ?>)">
                   <?php endif; ?>
@@ -75,7 +75,7 @@
                     foreach ($_SESSION['pengumuman'] as $data) : ?>
                       <tr>
                         <td>
-                          <a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
+                          <a href="/pengumuman/<?= $data['id_pengumuman']; ?>">
                             <div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= waktu($data['tgl_pengumuman']); ?></div>
                             <div class="isi_agenda"><?= $data['nama_pengumuman']; ?></div>
                           </a>

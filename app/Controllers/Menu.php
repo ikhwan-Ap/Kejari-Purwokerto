@@ -24,7 +24,7 @@ class Menu extends BaseController
         $data = [
             'title' => 'Header',
         ];
-        return view('admin/header', $data);
+        return view('admin/menu/header', $data);
     }
 
     public function icon()
@@ -32,7 +32,7 @@ class Menu extends BaseController
         $data = [
             'title' => 'Icon',
         ];
-        return view('admin/icon', $data);
+        return view('admin/menu/icon', $data);
     }
 
     public function carousel()
@@ -40,7 +40,7 @@ class Menu extends BaseController
         $data = [
             'title' => 'Carousel',
         ];
-        return view('admin/carousel', $data);
+        return view('admin/menu/carousel', $data);
     }
 
     public function tambah_iconBeranda()

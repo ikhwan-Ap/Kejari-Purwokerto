@@ -27,7 +27,7 @@ class LoginFilter implements FilterInterface
     {
         $auth = session('username');
         if (!$auth) {
-            return redirect()->route('/');
+            return redirect()->route('login');
         }
     }
 

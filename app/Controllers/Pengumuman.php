@@ -20,7 +20,7 @@ class Pengumuman extends BaseController
         $data = [
             'title' => 'Pengumuman',
         ];
-        return view('moduls/pengumuman', $data);
+        return view('admin/moduls/pengumuman', $data);
     }
 
     public function tambah_kategori_profil()

@@ -20,7 +20,7 @@ class Visi_misi extends BaseController
         $data = [
             'title' => 'Visi Dan Misi',
         ];
-        return view('moduls/visi_misi', $data);
+        return view('admin/moduls/visi_misi', $data);
     }
 
     public function get_data()

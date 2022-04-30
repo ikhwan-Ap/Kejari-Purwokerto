@@ -20,7 +20,7 @@ class Banner extends BaseController
         $data = [
             'title' => 'Banner',
         ];
-        return view('admin/banner', $data);
+        return view('admin/menu/banner', $data);
     }
 
 

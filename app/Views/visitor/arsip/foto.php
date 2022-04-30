@@ -18,7 +18,7 @@
 
                     <?php $i = 1;
                     foreach ($foto as $data) :  ?>
-                      <div class="col-md-4 imageClick" style="text-align: center; margin-bottom: 25px;" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)">
+                      <div class="col-md-4 imageClick" style="text-align: center; margin-bottom: 25px; cursor: pointer" onclick="cekFoto(<?= $data['id_arsip_foto']; ?>)">
                         <img src="<?= base_url() ?>/img_arsip/foto/<?= $data['img_arsip_foto'] ?>" alt="" width="100%" height="150px" style="border-radius: 10px;">
                         <p style="font-size: large;"><?= $data['nama_arsip_foto']; ?></p>
                       </div>
@@ -33,7 +33,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <h4 style="color: black; font-weight: bold;" class="modal-title"></h4>
-                        <button type="button" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                        <button type="button" onclick="reset()" class="btn btn-danger" style="cursor: pointer" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">×</span>
                         </button>
                       </div>

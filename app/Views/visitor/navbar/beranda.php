@@ -117,7 +117,7 @@
 
 							<br>
 							<p>
-								<a href="<?= base_url() ?>/home/portal" target="_blank" class="btn btn-success">
+								<a href="<?= base_url() ?>/portal" target="_blank" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
@@ -249,22 +249,22 @@
 								</tbody>
 							</table>
 							<p id="p_perdata">
-								<a href="<?= base_url() ?>/home/tata_usaha" class="btn btn-success">
+								<a href="<?= base_url() ?>/tata_usaha" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
 							<p id="p_khusus">
-								<a href="<?= base_url() ?>/home/pidana_khusus" class="btn btn-success">
+								<a href="<?= base_url() ?>/pidana_khusus" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
 							<p id="p_umum">
-								<a href="<?= base_url() ?>/home/pidana_umum" class="btn btn-success">
+								<a href="<?= base_url() ?>/pidana_umum" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
 							<p id="p_jadwal">
-								<a href="<?= base_url() ?>/home/jadwal_sidang" class="btn btn-success">
+								<a href="<?= base_url() ?>/jadwal_sidang" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
@@ -299,7 +299,7 @@
 								</div>
 							</div><br>
 							<p>
-								<a href="<?= base_url() ?>/beranda/berita" target="_blank" class="btn btn-success">
+								<a href="<?= base_url() ?>/berita" target="_blank" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
@@ -346,7 +346,7 @@
 							</div>
 							<br>
 							<p>
-								<a href="<?= base_url('/beranda/arsip_video') ?>" class="btn btn-success">
+								<a href="<?= base_url('/arsip_video') ?>" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
@@ -388,7 +388,7 @@
 							</div>
 
 							<p>
-								<a href="<?= base_url('/beranda/arsip_foto') ?>" target="_blank" class="btn btn-success">
+								<a href="<?= base_url('/arsip_foto') ?>" target="_blank" class="btn btn-success">
 									<span class="label label-default">Selengkapnya...</span>
 								</a>
 							</p>
@@ -398,7 +398,7 @@
 									<div class="modal-content">
 										<div class="modal-header">
 											<h4 class="modal-title" style="color: black; font-weight: bold;"></h4>
-											<button type="button" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+											<button type="button" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close" style="cursor: pointer">
 												<span aria-hidden="true">×</span>
 											</button>
 										</div>

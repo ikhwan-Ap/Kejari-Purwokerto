@@ -15,13 +15,13 @@
             <li class="nav-item dropdown <?= ($title == "Kasus" || $title == "DPO" || $title == 'Incraht') ? 'active' : ''; ?>">
                 <a href="" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-database"></i> <span>Master Data</span></a>
                 <ul class="dropdown-menu">
-                    <li class="<?= ($title == "Kasus") ? 'active' : ''; ?>"><a class="nav-link" href="/kasus">Kasus</a></li>
-                    <li class="<?= ($title == "Incraht") ? 'active' : ''; ?>"><a class="nav-link" href="/incraht">Incraht</a></li>
-                    <li class="<?= ($title == "DPO") ? 'active' : ''; ?>"><a class="nav-link" href="/dpo">DPO</a></li>
+                    <li class="<?= ($title == "Kasus") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/kasus">Kasus</a></li>
+                    <li class="<?= ($title == "Incraht") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/incraht">Incraht</a></li>
+                    <li class="<?= ($title == "DPO") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/dpo">DPO</a></li>
                 </ul>
             </li>
             <li class="nav-item <?= ($title == "Bidang") ? 'active' : ''; ?>">
-                <a class="nav-link" href="/bidang"><i class="fas fa-users"></i> <span>Bidang</span></a>
+                <a class="nav-link" href="/admin/bidang"><i class="fas fa-users"></i> <span>Bidang</span></a>
             </li>
             <li class="nav-item <?= ($title == "Kepala Kejaksaan") ? 'active' : ''; ?>">
                 <a class="nav-link" href="/kepala_kejaksaan"><i class="fas fa-user"></i> <span>Kepala Kejaksaan</span></a>
@@ -41,23 +41,23 @@
                                                 $title == "Peraturan" || $title == "Sarana" || $title == "Agenda" || $title == 'Pengumuman') ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Moduls</span></a>
                 <ul class="dropdown-menu">
-                    <li class="<?= ($title == "Agenda") ? 'active' : ''; ?>"><a class="nav-link" href="/agenda">Agenda</a></li>
-                    <li class="<?= ($title == "Berita") ? 'active' : ''; ?>"><a class="nav-link" href="/berita">Berita</a></li>
-                    <li class="<?= ($title == "Profil") ? 'active' : ''; ?>"><a class="nav-link" href="/profil">Profil</a></li>
-                    <li class="<?= ($title == "Pelayanan") ? 'active' : ''; ?>"><a class="nav-link" href="/pelayanan">Pelayanan</a></li>
-                    <li class="<?= ($title == "Pengumuman") ? 'active' : ''; ?>"><a class="nav-link" href="/pengumuman">Pengumuman</a></li>
-                    <li class="<?= ($title == "Peraturan") ? 'active' : ''; ?>"><a class="nav-link" href="/peraturan">Peraturan</a></li>
-                    <li class="<?= ($title == "Sarana") ? 'active' : ''; ?>"><a class="nav-link" href="/sarana">Sarana</a></li>
-                    <li class="<?= ($title == "Visi Dan Misi") ? 'active' : ''; ?>"><a class="nav-link" href="/visi_misi"> Visi Dan Misi</a></li>
+                    <li class="<?= ($title == "Agenda") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/agenda">Agenda</a></li>
+                    <li class="<?= ($title == "Berita") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/berita">Berita</a></li>
+                    <li class="<?= ($title == "Profil") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/profil">Profil</a></li>
+                    <li class="<?= ($title == "Pelayanan") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/pelayanan">Pelayanan</a></li>
+                    <li class="<?= ($title == "Pengumuman") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/pengumuman">Pengumuman</a></li>
+                    <li class="<?= ($title == "Peraturan") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/peraturan">Peraturan</a></li>
+                    <li class="<?= ($title == "Sarana") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/sarana">Sarana</a></li>
+                    <li class="<?= ($title == "Visi Dan Misi") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/visi_misi"> Visi Dan Misi</a></li>
                 </ul>
             </li>
             <li class="menu-header">Arsip</li>
             <li class="nav-item dropdown <?= ($title == "Foto" || $title == "Video" || $title == "Struktur") ? 'active' : ''; ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Arsip</span></a>
                 <ul class="dropdown-menu">
-                    <li class="<?= ($title == "Foto") ? 'active' : ''; ?>"><a class="nav-link" href="/arsip_foto">Foto</a></li>
-                    <li class="<?= ($title == "Struktur") ? 'active' : ''; ?>"><a class="nav-link" href="/struktur">Struktur</a></li>
-                    <li class="<?= ($title == "Video") ? 'active' : ''; ?>"><a class="nav-link" href="/arsip_video">Video</a></li>
+                    <li class="<?= ($title == "Foto") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/arsip_foto">Foto</a></li>
+                    <li class="<?= ($title == "Struktur") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/struktur">Struktur</a></li>
+                    <li class="<?= ($title == "Video") ? 'active' : ''; ?>"><a class="nav-link" href="/admin/arsip_video">Video</a></li>
                 </ul>
             </li>
         </ul>

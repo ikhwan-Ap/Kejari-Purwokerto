@@ -66,7 +66,7 @@
                     foreach ($_SESSION['agenda'] as $data) : ?>
                       <tr>
                         <td>
-                          <a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
+                          <a href="/agenda/<?= $data['id_agenda']; ?>">
                             <div class="tgl_agenda"><i class="fa fa-calendar"></i> <?= waktu($data['tanggal_agenda']); ?></div>
                             <div class="isi_agenda"><?= $data['nama_agenda']; ?></div>
                           </a>

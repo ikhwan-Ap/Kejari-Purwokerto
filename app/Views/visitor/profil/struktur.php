@@ -17,7 +17,7 @@
                     <?php foreach ($struktur as $data) : ?>
                       <div class="col-md-6">
                         <div class="imageClick" style="text-align:center">
-                          <img src="<?= base_url(); ?>/uploads/struktur/<?= $data['img_struktur']; ?>" class="panel_content" alt="gambar" width="100%" onclick="cekFoto(<?= $data['id_struktur']; ?>)">
+                          <img src="<?= base_url(); ?>/uploads/struktur/<?= $data['img_struktur']; ?>" style="cursor: pointer" class="panel_content" alt="gambar" width="100%" onclick="cekFoto(<?= $data['id_struktur']; ?>)">
                           <p style="font-size: large;"><?= $data['nama_struktur']; ?></p>
                         </div>
                       </div>
@@ -30,7 +30,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <h4 style="color: black; font-weight: bold;" class="modal-title"></h4>
-                        <button type="button" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                        <button type="button" style="cursor: pointer" onclick="reset()" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">×</span>
                         </button>
                       </div>

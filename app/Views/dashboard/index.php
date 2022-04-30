@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <a href="<?= base_url(); ?>/kasus">
+            <a href="<?= base_url(); ?>/admin/kasus">
                 <div class="card card-statistic-1" id="one">
                     <div class="card-icon bg-primary">
                         <i class="fas fa-users"></i>
@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <a href="<?= base_url(); ?>/kasus">
+            <a href="<?= base_url(); ?>/admin/kasus">
                 <div class="card card-statistic-1" id="two">
                     <div class="card-icon bg-danger">
                         <i class="fas fa-users"></i>
@@ -40,7 +40,7 @@
             </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <a href="<?= base_url(); ?>/dpo">
+            <a href="<?= base_url(); ?>/admin/dpo">
                 <div class="card card-statistic-1" id="three">
                     <div class="card-icon bg-dark">
                         <i class="far fa-user"></i>
@@ -57,7 +57,7 @@
             </a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-            <a href="<?= base_url(); ?>/kasus">
+            <a href="<?= base_url(); ?>/admin/kasus">
                 <div class="card card-statistic-1" id="four">
                     <div class="card-icon bg-warning">
                         <i class="fas fa-users"></i>
@@ -74,7 +74,7 @@
             </a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-            <a href="<?= base_url(); ?>/incraht">
+            <a href="<?= base_url(); ?>/admin/incraht">
                 <div class="card card-statistic-1" id="five">
                     <div class="card-icon bg-success">
                         <i class="fas fa-user-alt-slash"></i>

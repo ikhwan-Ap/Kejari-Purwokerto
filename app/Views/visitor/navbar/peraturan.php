@@ -27,7 +27,7 @@
                       <tr style="font-weight:bold; color:black">
                         <td><?= $no++; ?></td>
                         <td><?= $data['nama_peraturan']; ?></td>
-                        <td><a target="_blank" href="<?= base_url('/beranda/download_peraturan'); ?>/<?= $data['file_peraturan']; ?>">Download <i class="fa fa-download"></i></a></td>
+                        <td><a target="_blank" href="<?= base_url('/download_peraturan'); ?>/<?= $data['file_peraturan']; ?>">Download <i class="fa fa-download"></i></a></td>
                       </tr>
                     <?php endforeach; ?>
                   </tbody>

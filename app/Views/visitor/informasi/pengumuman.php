@@ -54,7 +54,7 @@
             <br><br>
             <?php $i = 0;
             foreach ($pengumuman as $data) : ?>
-              <a href="/beranda/pengumuman/<?= $data['id_pengumuman']; ?>">
+              <a href="/pengumuman/<?= $data['id_pengumuman']; ?>">
                 <div class="section_content pengumuman" style="border-radius: 10px; margin-left: 15px;">
                   <div class="container">
                     <div class="row">

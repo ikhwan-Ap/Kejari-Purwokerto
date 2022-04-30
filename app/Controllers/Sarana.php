@@ -24,7 +24,7 @@ class Sarana extends BaseController
             'kategori_sarana' => $this->kategori_sarana->get_sarana(),
             'data_kategori' => $this->kategori_sarana->findAll(),
         ];
-        return view('moduls/sarana', $data);
+        return view('admin/moduls/sarana', $data);
     }
 
     public function tambah_kategori_sarana()

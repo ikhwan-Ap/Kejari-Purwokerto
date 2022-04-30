@@ -20,7 +20,7 @@ class Arsip extends BaseController
         $data = [
             'title' => 'Foto',
         ];
-        return view('arsip/foto', $data);
+        return view('admin/arsip/foto', $data);
     }
 
 

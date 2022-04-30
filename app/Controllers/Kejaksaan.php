@@ -20,7 +20,7 @@ class Kejaksaan extends BaseController
         $data = [
             'title' => 'Kepala Kejaksaan',
         ];
-        return view('admin/kepala_kejaksaan', $data);
+        return view('admin/master/kepala_kejaksaan', $data);
     }
 
 

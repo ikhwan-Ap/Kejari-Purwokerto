@@ -19,7 +19,7 @@ class Kasus extends BaseController
         $data = [
             'title' => 'Kasus',
         ];
-        return view('kasus/index', $data);
+        return view('admin/kasus/index', $data);
     }
 
     public function get_id($id_kasus)

@@ -178,7 +178,7 @@
                                 html: `Anda Berhasil Logout`,
                             }).then((result) => {
                                 if (result.value) {
-                                    window.location.replace('/')
+                                    window.location.replace('/login')
                                 }
                             })
 

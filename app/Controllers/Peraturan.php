@@ -24,7 +24,7 @@ class Peraturan extends BaseController
             'kategori_peraturan' => $this->kategori_peraturan->get_peraturan(),
             'data_kategori' => $this->kategori_peraturan->findAll(),
         ];
-        return view('moduls/peraturan', $data);
+        return view('admin/moduls/peraturan', $data);
     }
 
     public function tambah_kategori_peraturan()

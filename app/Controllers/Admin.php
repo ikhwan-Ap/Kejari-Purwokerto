@@ -32,15 +32,24 @@ class Admin extends BaseController
             $id = $this->request->getVar('id');
             $name = $this->request->getVar('name');
             $password = $this->request->getVar('password');
-
-            $this->adminModel->save([
-                'id' => $id,
-                'name' => $name,
-                'password' => password_hash($password, PASSWORD_DEFAULT),
-            ]);
-            $data = [
-                'sukses' => 'Data berhasil di ubah'
-            ];
+            if ($password == '') {
+                $this->adminModel->save([
+                    'id' => $id,
+                    'name' => $name,
+                ]);
+                $data = [
+                    'sukses' => 'Data berhasil di ubah'
+                ];
+            } else {
+                $this->adminModel->save([
+                    'id' => $id,
+                    'name' => $name,
+                    'password' => password_hash($password, PASSWORD_DEFAULT),
+                ]);
+                $data = [
+                    'sukses' => 'Data berhasil di ubah'
+                ];
+            }
         }
         echo json_encode($data);
     }

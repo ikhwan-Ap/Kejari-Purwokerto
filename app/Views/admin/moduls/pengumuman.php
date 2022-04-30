@@ -137,7 +137,7 @@
                     var ext = full[1].split('.')[1];
 
                     if (ext == 'pdf') {
-                        return '<a href="/download_pengumuman/' + full[1] + '" target="_blank">Download<i class="fa fa-download"></i></a>';
+                        return '<a href="/admin/download_pengumuman/' + full[1] + '" target="_blank">Download<i class="fa fa-download"></i></a>';
                     } else {
                         return '<img height="50%" width="50%" src="<?= base_url('dokumen/pengumuman'); ?>/' + full[1] + '"/>';
                     }

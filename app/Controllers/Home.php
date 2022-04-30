@@ -107,7 +107,7 @@ class Home extends BaseController
             'berita' => $this->berita->get_berita(),
             'video' => $this->video->get_video(),
         ];
-        return view('visitor/beranda', $data);
+        return view('visitor/navbar/beranda', $data);
     }
 
     public function get_header()
@@ -133,7 +133,7 @@ class Home extends BaseController
             'header' => $this->header->get_header(),
             'kategori' => $this->kategori->get_kategori(),
         ];
-        return view('visitor/kontak', $data);
+        return view('visitor/navbar/kontak', $data);
     }
 
     public function jadwal_sidang()
@@ -268,10 +268,10 @@ class Home extends BaseController
             'title' => $title,
             'bidang' => $bidang,
         ];
-        return view('visitor/bidang', $data);
+        return view('visitor/navbar/bidang', $data);
     }
 
-    public function berita_view($id_berita)
+    public function berita($id_berita)
     {
         $_SESSION['kategori'] =  $this->kategori->get_kategori();
         $_SESSION['agenda'] = $this->agenda->get_agenda();
@@ -351,7 +351,7 @@ class Home extends BaseController
             'title' => 'Portal Pelayanan',
             'pelayanan' => $this->pelayanan->findAll(),
         ];
-        return view('visitor/portal', $data);
+        return view('visitor/navbar/portal', $data);
     }
 
     public function agenda()
@@ -478,7 +478,7 @@ class Home extends BaseController
             'title' => $this->kategori_peraturan->get_title($id_kategori_peraturan),
             'peraturan' => $peraturan,
         ];
-        return view('visitor/peraturan', $data);
+        return view('visitor/navbar/peraturan', $data);
     }
 
     public function sarana($id_sarana)
@@ -500,7 +500,7 @@ class Home extends BaseController
             'sarana' => $get_sarana,
         ];
 
-        return view('visitor/sarana', $data);
+        return view('visitor/navbar/sarana', $data);
     }
 
     public function struktur()

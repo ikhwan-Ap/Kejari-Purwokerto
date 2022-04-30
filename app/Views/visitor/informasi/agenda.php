@@ -55,7 +55,7 @@
             <br><br>
             <?php $i = 0;
             foreach ($agenda as $data) : ?>
-              <a href="/beranda/agenda/<?= $data['id_agenda']; ?>">
+              <a href="/agenda/<?= $data['id_agenda']; ?>">
                 <div class="section_content pengumuman" style="border-radius: 10px; margin-left: 15px;">
                   <p style="font-weight: bold; font-size:large;"><?= $data['nama_agenda']; ?></p>
                   <p><?= $data['teks_agenda']; ?></p>

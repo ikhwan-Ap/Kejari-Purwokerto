@@ -22,7 +22,7 @@ class Modul extends BaseController
         $data = [
             'title' => 'Agenda',
         ];
-        return view('moduls/agenda', $data);
+        return view('admin/moduls/agenda', $data);
     }
 
     public function pelayanan()
@@ -30,7 +30,7 @@ class Modul extends BaseController
         $data = [
             'title' => 'Pelayanan',
         ];
-        return view('moduls/pelayanan', $data);
+        return view('admin/moduls/pelayanan', $data);
     }
 
 

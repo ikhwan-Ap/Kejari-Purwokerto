@@ -38,7 +38,7 @@ function cutter($string)
                                 <?php if (count($listBerita) >= 4) : ?>
                                     <?php for ($i = 0; $i < 4; $i++) : ?>
                                         <div class="panel-sm-1">
-                                            <a href="<?= base_url() ?>/berita_tentang/<?= $listBerita[$i]['id_berita']; ?>">
+                                            <a href="<?= base_url() ?>/berita/<?= $listBerita[$i]['id_berita']; ?>">
                                                 <div class="card imageClick" style="border-radius: 10px;">
                                                     <img class="img-pan" height="200px" src="<?= base_url() ?>/uploads/berita/<?= $listBerita[$i]['img_berita']; ?>" alt="" style="border-radius: 10px;">
                                                     <div class="card-body">

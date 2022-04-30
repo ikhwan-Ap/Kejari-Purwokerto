@@ -18,7 +18,7 @@ class Video extends BaseController
         $data = [
             'title' => 'Video',
         ];
-        return view('arsip/video', $data);
+        return view('admin/arsip/video', $data);
     }
 
     public function get_id($id_video)

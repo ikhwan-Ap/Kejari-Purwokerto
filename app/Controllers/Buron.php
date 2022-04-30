@@ -19,7 +19,7 @@ class Buron extends BaseController
         $data = [
             'title' => 'DPO',
         ];
-        return view('kasus/buron', $data);
+        return view('admin/kasus/buron', $data);
     }
 
     public function get_id($id_buron)

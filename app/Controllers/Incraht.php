@@ -17,7 +17,7 @@ class Incraht extends BaseController
         $data = [
             'title' => 'Incraht',
         ];
-        return view('kasus/incraht', $data);
+        return view('admin/kasus/incraht', $data);
     }
 
     public function get_incraht()

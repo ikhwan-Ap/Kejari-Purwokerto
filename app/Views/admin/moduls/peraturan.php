@@ -188,7 +188,7 @@
             "columnDefs": [{
                 "targets": 1,
                 "render": function(url, type, full) {
-                    return '<a href="/download_peraturan/' + full[1] + '" target="_blank">Download<i class="fa fa-download"></i></a>';
+                    return '<a href="/admin/download_peraturan/' + full[1] + '" target="_blank">Download<i class="fa fa-download"></i></a>';
                 },
             }, ],
         });

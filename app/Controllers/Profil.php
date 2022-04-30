@@ -25,7 +25,7 @@ class Profil extends BaseController
             'kategori_profil' => $this->kategori_profil->get_profil(),
             'data_kategori' => $this->kategori_profil->findAll(),
         ];
-        return view('moduls/profil', $data);
+        return view('admin/moduls/profil', $data);
     }
 
     public function tambah_kategori_profil()
