@@ -1,0 +1,218 @@
+CRITICAL - 2022-04-27 09:11:28 --> Undefined property: App\Controllers\Home::$berira
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(294): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\Lenovo...', 294)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->berita()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+ERROR - 2022-04-27 21:34:18 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-04-27 21:34:58 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-04-27 21:36:13 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-04-27 22:51:03 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 22:51:03 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 22:51:16 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 22:51:16 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 22:51:59 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 22:51:59 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 22:54:31 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 22:54:31 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(305): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_khusus()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 22:56:29 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 22:56:29 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(350): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_perdata()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 22:57:05 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 22:57:05 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:22:12 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 23:22:12 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:23:05 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 23:23:05 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:23:38 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 23:23:38 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:25:40 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 23:25:40 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(305): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_khusus()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:26:09 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 23:26:09 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:29:12 --> Column 'no_perkara' cannot be null
+CRITICAL - 2022-04-27 23:29:12 --> Column 'no_perkara' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:35:24 --> Column 'panitia_pengganti' cannot be null
+CRITICAL - 2022-04-27 23:35:24 --> Column 'panitia_pengganti' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-27 23:35:32 --> Column 'panitia_pengganti' cannot be null
+CRITICAL - 2022-04-27 23:35:32 --> Column 'panitia_pengganti' cannot be null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kasusModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(260): App\Models\kasusModel->add_excel(Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->import_umum()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-27 23:43:41 --> File not found: uploads/contoh.xlsx
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/contoh....')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/contoh....', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/contoh....')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Kasus.php(365): CodeIgniter\HTTP\Response->download('contoh.xlsx', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Kasus->download_excel()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kasus))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}

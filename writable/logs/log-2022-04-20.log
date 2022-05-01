@@ -1,0 +1,348 @@
+ERROR - 2022-04-20 02:08:11 --> Unknown column 'tanggal' in 'order clause'
+CRITICAL - 2022-04-20 02:08:11 --> Unknown column 'tanggal' in 'order clause'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\BaseModel.php(1088): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(201): CodeIgniter\BaseModel->paginate(10)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->agenda()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#13 {main}
+CRITICAL - 2022-04-20 09:25:15 --> Undefined array key "banner"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 206)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(74): view('visitor/beranda', Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-20 09:25:16 --> Undefined array key "banner"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 206)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(74): view('visitor/beranda', Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-20 09:39:06 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-04-20 09:40:11 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+CRITICAL - 2022-04-20 10:32:12 --> Undefined variable $page
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 27)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(156): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang('29')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-20 10:32:55 --> Undefined variable $page
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 27)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(156): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang('29')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-20 11:14:27 --> syntax error, unexpected variable "$this", expecting "("
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Lenovo...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(789): class_exists('\\App\\Controller...', true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(397): CodeIgniter\CodeIgniter->startController()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#8 {main}
+CRITICAL - 2022-04-20 11:14:48 --> syntax error, unexpected token ";"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Lenovo...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(789): class_exists('\\App\\Controller...', true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(397): CodeIgniter\CodeIgniter->startController()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#8 {main}
+CRITICAL - 2022-04-20 11:23:24 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(225): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/berita/', '1650471804_cb9b...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:23:30 --> unlink(uploads/berita/1650471792_7bb5becd31f86b3fe7b7.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(uploads/...', 'C:\\Users\\Lenovo...', 223)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(223): unlink('uploads/berita/...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:25:26 --> unlink(uploads/berita/1650471792_7bb5becd31f86b3fe7b7.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(uploads/...', 'C:\\Users\\Lenovo...', 101)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(101): unlink('uploads/berita/...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->delBerita('2')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:26:00 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(225): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/berita/', '1650471960_6381...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:29:29 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(225): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/berita/', '1650472169_29fc...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:30:18 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(225): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/berita/', '1650472218_9d51...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:31:44 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(223): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/berita/', '1650472304_b4a1...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:32:18 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(223): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/berita/', '1650472338_3cb7...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 11:42:21 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Berita.php(180): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/berita/', '1650472941_6ac7...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Berita->editBerita()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Berita))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-20 23:05:42 --> File not found: uploads/struktur/<?= ; ?>
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(490): CodeIgniter\HTTP\Response->download('<?= ; ?>', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file(NULL)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:06:00 --> File not found: uploads/struktur/'++'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(490): CodeIgniter\HTTP\Response->download(''++'', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file(NULL)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:06:09 --> File not found: uploads/struktur/'..'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(490): CodeIgniter\HTTP\Response->download(''..'', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file(NULL)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:07:35 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:07:58 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:08:38 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:08:39 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:09:37 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:09:42 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:09:50 --> File not found: uploads/struktur/'..'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(490): CodeIgniter\HTTP\Response->download(''..'', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:10:08 --> File not found: uploads/struktur
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(488): CodeIgniter\HTTP\Response->download('struktur', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:10:13 --> File not found: uploads/struktur
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(488): CodeIgniter\HTTP\Response->download('struktur', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:10:35 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:11:05 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:11:06 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:11:10 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:11:13 --> Too few arguments to function App\Controllers\Menu::download_file(), 0 passed in C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-20 23:11:32 --> File not found: uploads/struktur/'.2.'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(488): CodeIgniter\HTTP\Response->download(''.2.'', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file('2')
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:11:45 --> File not found: uploads/struktur/'.coba.png.'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(488): CodeIgniter\HTTP\Response->download(''.coba.png.'', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file('coba.png')
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:11:56 --> File not found: uploads/struktur/.coba.png.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('uploads/struktu...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\DownloadResponse.php(107): CodeIgniter\Files\File->__construct('uploads/struktu...', true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(723): CodeIgniter\HTTP\DownloadResponse->setFilePath('uploads/struktu...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(488): CodeIgniter\HTTP\Response->download('.coba.png.', NULL)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->download_file('coba.png')
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-20 23:55:39 --> Cannot declare class App\Controllers\Bidang, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

@@ -1,0 +1,787 @@
+CRITICAL - 2022-04-15 00:15:02 --> Invalid file: admin/carousel.php
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/carousel....')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('admin/carousel', Array, true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(43): view('admin/carousel', Array)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->carousel()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#8 {main}
+CRITICAL - 2022-04-15 00:15:25 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\admin\carousel.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 47)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('admin/carousel', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(43): view('admin/carousel', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->carousel()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 00:15:42 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\admin\carousel.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 47)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('admin/carousel', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(43): view('admin/carousel', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->carousel()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 00:15:47 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\admin\carousel.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 47)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('admin/carousel', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(43): view('admin/carousel', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->carousel()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 00:20:52 --> Undefined property: stdClass::$image_pengurus
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(338): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\Users\\Lenovo...', 338)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->getCarousel()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 00:41:05 --> There is no data to insert.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(375): CodeIgniter\BaseModel->save(Array)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->edit_carousel()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-15 00:41:11 --> unlink(img_carousel/1650001049_b7fa162b5acaa731ed54.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(img_caro...', 'C:\\Users\\Lenovo...', 370)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(370): unlink('img_carousel/16...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->edit_carousel()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-15 00:42:50 --> unlink(img_carousel/1650001049_b7fa162b5acaa731ed54.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(img_caro...', 'C:\\Users\\Lenovo...', 370)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Menu.php(370): unlink('img_carousel/16...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Menu->edit_carousel()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-15 02:18:56 --> Cannot declare class App\Controllers\Menu, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-04-15 02:19:07 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\moduls\visi_misi.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 47)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('moduls/visi_mis...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Visi_misi.php(23): view('moduls/visi_mis...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Visi_misi->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Visi_misi))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:10:59 --> Undefined array key "image"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 21)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 03:12:52 --> Undefined variable $carousel
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 12)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(44): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:13:08 --> Undefined variable $carousel
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 12)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(44): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:19:53 --> Undefined array key "image"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 13)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:20:16 --> Undefined array key 0
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 13)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:20:20 --> Undefined array key 1
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 13)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:20:23 --> Cannot use [] for reading
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-04-15 03:29:31 --> Undefined variable $images
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 12)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:30:09 --> Undefined array key "image"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 12)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:31:13 --> Trying to access array offset on value of type int
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 13)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:31:36 --> Trying to access array offset on value of type int
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 13)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:31:46 --> Undefined array key "image"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 13)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(45): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:33:11 --> Trying to access array offset on value of type int
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 22)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 03:33:58 --> Array to string conversion
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\Users\\Lenovo...', 13)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(47): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:49:25 --> Attempt to read property "image" on array
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\Users\\Lenovo...', 21)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(47): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 03:50:45 --> Attempt to read property "image" on array
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\Users\\Lenovo...', 21)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(47): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 04:10:13 --> Call to undefined method App\Models\bidangModel::get_kejaksaan
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(22): CodeIgniter\Model->__call('get_kejaksaan', Array)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 04:14:41 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 25)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 04:14:53 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 25)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 04:14:54 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 25)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 04:14:55 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 25)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 04:33:30 --> syntax error, unexpected end of file
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(49): view('visitor/beranda', Array)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#8 {main}
+ERROR - 2022-04-15 05:13:51 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-04-15 05:13:51 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\navbarModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(21): App\Models\navbarModel->get_header()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+ERROR - 2022-04-15 05:13:55 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-04-15 05:13:55 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\navbarModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(21): App\Models\navbarModel->get_header()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}
+CRITICAL - 2022-04-15 06:17:41 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 134)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(54): view('visitor/beranda', Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 06:18:48 --> syntax error, unexpected single-quoted string "id_kategori", expecting "]"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Lenovo...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(789): class_exists('\\App\\Controller...', true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(397): CodeIgniter\CodeIgniter->startController()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#8 {main}
+CRITICAL - 2022-04-15 06:19:38 --> Undefined array key "id_kategori"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 25)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+ERROR - 2022-04-15 06:22:04 --> Column 'id_kategori' in order clause is ambiguous
+CRITICAL - 2022-04-15 06:22:04 --> Column 'id_kategori' in order clause is ambiguous
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kategoriModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\kategoriModel->get_kategori()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 06:22:36 --> Column 'id_kategori' in order clause is ambiguous
+CRITICAL - 2022-04-15 06:22:36 --> Column 'id_kategori' in order clause is ambiguous
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kategoriModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\kategoriModel->get_kategori()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 06:23:26 --> Unknown column 'bidang.nama_kategori' in 'order clause'
+CRITICAL - 2022-04-15 06:23:26 --> Unknown column 'bidang.nama_kategori' in 'order clause'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kategoriModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\kategoriModel->get_kategori()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 06:24:07 --> Unknown column 'bidang.nama_kategori' in 'where clause'
+CRITICAL - 2022-04-15 06:24:07 --> Unknown column 'bidang.nama_kategori' in 'where clause'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kategoriModel.php(49): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\kategoriModel->get_kategori()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 06:31:07 --> Column 'id_kategori' in group statement is ambiguous
+CRITICAL - 2022-04-15 06:31:07 --> Column 'id_kategori' in group statement is ambiguous
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kategoriModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\kategoriModel->get_kategori()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 06:38:06 --> syntax error, unexpected variable "$builder"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Lenovo...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\bida...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(20): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\bida...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#8 {main}
+ERROR - 2022-04-15 07:01:43 --> Unknown column 'kategori.id_kategori' in 'field list'
+CRITICAL - 2022-04-15 07:01:43 --> Unknown column 'kategori.id_kategori' in 'field list'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, SUM(`...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, SUM(`...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, SUM(`...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *, SUM(`...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\bidangModel.php(135): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\bidangModel->get_bidang()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 07:06:48 --> Column 'id_kategori' in group statement is ambiguous
+CRITICAL - 2022-04-15 07:06:48 --> Column 'id_kategori' in group statement is ambiguous
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\bidangModel.php(136): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\bidangModel->get_bidang()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 07:18:02 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY `tanggal` DESC
+ LIMIT 3' at line 6
+CRITICAL - 2022-04-15 07:18:02 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY `tanggal` DESC
+ LIMIT 3' at line 6
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\bidangModel.php(136): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\bidangModel->get_bidang()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 07:18:48 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND bidang.id_kategori IS NOT NULL
+ORDER BY `tanggal` DESC
+ LIMIT 3' at line 4
+CRITICAL - 2022-04-15 07:18:48 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+AND bidang.id_kategori IS NOT NULL
+ORDER BY `tanggal` DESC
+ LIMIT 3' at line 4
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\bidangModel.php(136): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\bidangModel->get_bidang()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 07:19:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+ LIMIT 3' at line 4
+CRITICAL - 2022-04-15 07:19:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+ LIMIT 3' at line 4
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\bidangModel.php(136): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\bidangModel->get_bidang()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 07:19:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+ LIMIT 3' at line 3
+CRITICAL - 2022-04-15 07:19:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+ LIMIT 3' at line 3
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\bidangModel.php(136): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\bidangModel->get_bidang()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 07:19:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 3
+CRITICAL - 2022-04-15 07:19:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 3
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\bidangModel.php(136): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\bidangModel->get_bidang()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+ERROR - 2022-04-15 07:34:45 --> Unknown column 'bidang' in 'order clause'
+CRITICAL - 2022-04-15 07:34:45 --> Unknown column 'bidang' in 'order clause'
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, MAX(`...', 0)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, MAX(`...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, MAX(`...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *, MAX(`...', Array, false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\kategoriModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): App\Models\kategoriModel->get_kategori()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 07:39:55 --> Undefined array key "id_bidang"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 27)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 07:40:07 --> Undefined array key "id_bidang"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 27)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 07:40:50 --> Undefined array key "id_bidang"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 32)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Home->__construct()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 07:49:06 --> Undefined array key "nama_kategori"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 138)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(55): view('visitor/beranda', Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 07:49:28 --> Undefined array key "nama_kategori"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 138)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(55): view('visitor/beranda', Array)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 07:50:32 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 137)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/bidang/...', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(85): view('visitor/bidang/...')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->pidum('24')
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 07:54:44 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 137)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/bidang/...', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(85): view('visitor/bidang/...')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->pidum('18')
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 07:54:49 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 137)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/bidang/...', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(85): view('visitor/bidang/...')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->pidum('17')
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 07:55:00 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 137)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/bidang/...', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(85): view('visitor/bidang/...')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->pidum('18')
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 07:55:47 --> Undefined variable $kategori
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\layout\visitor_template.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 137)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(230): CodeIgniter\View\View->render('layout/visitor_...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/bidang/...', Array, true)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(88): view('visitor/bidang/...')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->pidum('18')
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#11 {main}
+CRITICAL - 2022-04-15 08:03:39 --> Call to undefined method App\Models\bidangModel::get_data
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(89): CodeIgniter\Model->__call('get_data', Array)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang(NULL, '17')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 08:06:19 --> Array to string conversion
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\Users\\Lenovo...', 11)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(93): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang(NULL, '17')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 08:06:24 --> Array to string conversion
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\Users\\Lenovo...', 11)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(93): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang(NULL, '18')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 08:06:32 --> Array to string conversion
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\Users\\Lenovo...', 11)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(93): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang(NULL, '18')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 08:06:48 --> Undefined array key "nama_kategori"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Users\\Lenovo...', 11)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(93): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang(NULL, '18')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 08:08:34 --> Call to undefined method App\Models\bidangModel::get_nama
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(90): CodeIgniter\Model->__call('get_nama', Array)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang(NULL, '18')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-15 08:11:29 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 11)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(93): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang('DATUN', '18')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-15 08:12:49 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\info_perkara\pidana_umum.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 11)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/info_pe...', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(93): view('visitor/info_pe...', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->bidang('DATUN')
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}

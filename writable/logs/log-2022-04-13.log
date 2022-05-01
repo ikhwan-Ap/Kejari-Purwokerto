@@ -1,0 +1,186 @@
+CRITICAL - 2022-04-13 00:54:46 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(82): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/buron/', '1649829286_34cf...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 00:54:54 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(82): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/buron/', '1649829294_1825...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 00:56:06 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(83): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/buron/', '1649829366_569b...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 00:56:28 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(83): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/buron/', '1649829388_ff14...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 00:57:07 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(83): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/buron/', '1649829427_64a2...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 00:57:59 --> The original file is not a valid file.
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(82): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/buron/', '1649829479_81d3...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 01:01:38 --> Undefined variable $data
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 123)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 01:01:44 --> Undefined variable $data
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 123)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 01:02:36 --> Undefined variable $data
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 123)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 01:04:00 --> Undefined variable $data
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 123)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 01:04:17 --> Undefined variable $data
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 123)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 01:17:13 --> unlink(uploads/buron1649830190_854ed6e8dbcb195f7c01.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(uploads/...', 'C:\\Users\\Lenovo...', 134)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(134): unlink('uploads/buron16...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->del_buron('7')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 01:17:20 --> unlink(uploads/buron1649830190_854ed6e8dbcb195f7c01.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(uploads/...', 'C:\\Users\\Lenovo...', 134)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(134): unlink('uploads/buron16...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->del_buron('7')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+CRITICAL - 2022-04-13 01:20:46 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 103)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 01:20:52 --> Trying to access array offset on value of type null
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Buron.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\Users\\Lenovo...', 103)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Buron->edit_buron()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buron))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 02:37:06 --> syntax error, unexpected token ";", expecting "]"
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Lenovo...')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(789): class_exists('\\App\\Controller...', true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(397): CodeIgniter\CodeIgniter->startController()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#8 {main}
+CRITICAL - 2022-04-13 02:41:09 --> Call to a member function Latest() on array
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#5 {main}
+CRITICAL - 2022-04-13 03:05:15 --> Undefined variable $no
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Views\visitor\beranda.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Users\\Lenovo...', 106)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\Users\\Lenovo...')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('visitor/beranda', Array, true)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(24): view('visitor/beranda', Array)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#10 {main}
+CRITICAL - 2022-04-13 03:41:37 --> session_name() expects at most 1 argument, 2 given
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(20): session_name('id_buron', '4')
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#6 {main}
+CRITICAL - 2022-04-13 03:41:44 --> session_name(): session.name &quot;4&quot; cannot be numeric or empty
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_name():...', 'C:\\Users\\Lenovo...', 20)
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Home.php(20): session_name('4')
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#7 {main}
+ERROR - 2022-04-13 12:28:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(5000) NOT NULL,
+	`image_pengurus` VARCHAR(255) NULL,
+	CONSTRAINT `pk_bidang`...' at line 7
+ERROR - 2022-04-13 12:29:23 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(5000) NOT NULL,
+	`image_pengurus` VARCHAR(255) NULL,
+	CONSTRAINT `pk_bidang`...' at line 7
+ERROR - 2022-04-13 12:34:56 --> Unknown column 'image' in 'field list'
+ERROR - 2022-04-13 12:35:18 --> Unknown column 'image_bidang' in 'field list'
+ERROR - 2022-04-13 12:35:58 --> Unknown column 'kategori_pengurus' in 'field list'
+ERROR - 2022-04-13 12:36:59 --> Unknown column 'kategori_pengurus' in 'field list'
+ERROR - 2022-04-13 12:38:02 --> Unknown column 'text_bidang' in 'field list'
+ERROR - 2022-04-13 12:38:18 --> Unknown column 'text_bidang' in 'field list'
