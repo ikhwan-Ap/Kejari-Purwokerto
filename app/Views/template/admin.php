@@ -168,7 +168,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('auth/logout/'); ?>/" + id,
+                    url: "<?= site_url('auth/logout/'); ?>" + id,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -199,7 +199,7 @@
 
         $.ajax({
             type: "GET",
-            url: "<?= site_url('admin/getProfil/'); ?>/" + id,
+            url: "<?= site_url('admin/getProfil/'); ?>" + id,
             dataType: "json",
             success: function(data) {
                 $('[name=id]').val(data.id);

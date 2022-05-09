@@ -265,7 +265,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('peraturan/del_kategori_peraturan/'); ?>" + id_kategori_peraturan,
+                    url: "<?= site_url('Peraturan/del_kategori_peraturan/'); ?>" + id_kategori_peraturan,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -317,7 +317,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('peraturan/delPeraturan/'); ?>" + id_peraturan,
+                    url: "<?= site_url('Peraturan/delPeraturan/'); ?>" + id_peraturan,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -370,7 +370,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('peraturan/tambah_kategori_peraturan'); ?>",
+                    url: "<?= site_url('Peraturan/tambah_kategori_peraturan'); ?>",
                     data: $('#formPeraturan').serialize(),
                     dataType: "json",
                     success: function(response) {
@@ -441,7 +441,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('peraturan/tambah_peraturan') ?>",
+            url: "<?= site_url('Peraturan/tambah_peraturan') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -514,7 +514,7 @@
         $('#btnEdit').show();
         $.ajax({
             type: "GET",
-            url: "<?= site_url('peraturan/get_id/'); ?>" + id_peraturan,
+            url: "<?= site_url('Peraturan/get_id/'); ?>" + id_peraturan,
             dataType: "json",
             success: function(data) {
                 $('[name=id_kategori_peraturan]').val(data.id_kategori_peraturan);
@@ -532,7 +532,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('peraturan/edit_peraturan') ?>",
+            url: "<?= site_url('Peraturan/edit_peraturan') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,

@@ -44,8 +44,7 @@
                         <div class="form-group col">
                             <label for="nip">NIP</label>
                             <input type="number" name="nip" class="form-control" id="nip" placeholder="nip">
-                            <div class="invalid-feedback errorNip">
-                            </div>
+
                         </div>
                         <div class="form-group col">
                             <label for="nip">Kategori</label>
@@ -502,7 +501,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('bidang/tambah_bidang') ?>",
+            url: "<?= site_url('Bidang/tambah_bidang') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -533,13 +532,6 @@
                     } else {
                         $('#jabatan_pengurus').removeClass('is-invalid');
                         $('#jabatan_pengurus').addClass('is-valid');
-                    }
-                    if (data.errorNip) {
-                        $('#nip').addClass('is-invalid');
-                        $('.errorNip').html(data.errorNip);
-                    } else {
-                        $('#nip').removeClass('is-invalid');
-                        $('#nip').addClass('is-valid');
                     }
                     if (data.error_kategoriBidang) {
                         $('#id_kategori').addClass('is-invalid');
@@ -595,7 +587,7 @@
         var textareaValue = $('#teks_bidang').summernote('code');
         $.ajax({
             type: "GET",
-            url: "<?= site_url('bidang/get_id/'); ?>" + id_bidang,
+            url: "<?= base_url('Bidang/get_id/'); ?>/" + id_bidang,
             dataType: "json",
             success: function(data) {
                 $('#nama_pengurus').val(data.nama_pengurus);
@@ -619,7 +611,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('bidang/edit_bidang') ?>",
+            url: "<?= site_url('Bidang/edit_bidang') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -650,13 +642,6 @@
                     } else {
                         $('#jabatan_pengurus').removeClass('is-invalid');
                         $('#jabatan_pengurus').addClass('is-valid');
-                    }
-                    if (data.errorNip) {
-                        $('#nip').addClass('is-invalid');
-                        $('.errorNip').html(data.errorNip);
-                    } else {
-                        $('#nip').removeClass('is-invalid');
-                        $('#nip').addClass('is-valid');
                     }
                     if (data.error_kategoriBidang) {
                         $('#id_kategori').addClass('is-invalid');

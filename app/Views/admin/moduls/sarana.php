@@ -301,7 +301,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('sarana/del_kategori_sarana/'); ?>" + id_kategori_sarana,
+                    url: "<?= site_url('Sarana/del_kategori_sarana/'); ?>" + id_kategori_sarana,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -353,7 +353,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('sarana/delSarana/'); ?>" + id_sarana,
+                    url: "<?= site_url('Sarana/delSarana/'); ?>" + id_sarana,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -402,7 +402,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('sarana/tambah_kategori_sarana'); ?>",
+                    url: "<?= site_url('Sarana/tambah_kategori_sarana'); ?>",
                     data: $('#formSarana').serialize(),
                     dataType: "json",
                     success: function(response) {
@@ -473,7 +473,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('sarana/tambah_sarana') ?>",
+            url: "<?= site_url('Sarana/tambah_sarana') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -545,7 +545,7 @@
         $('#btnEdit').show();
         $.ajax({
             type: "GET",
-            url: "<?= site_url('sarana/get_id/'); ?>" + id_sarana,
+            url: "<?= site_url('Sarana/get_id/'); ?>" + id_sarana,
             dataType: "json",
             success: function(data) {
                 $('[name=id_kategori_sarana]').val(data.id_kategori_sarana);

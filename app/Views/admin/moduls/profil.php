@@ -289,7 +289,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('profil/del_kategori_profil/'); ?>" + id_kategori_profil,
+                    url: "<?= site_url('Profil/del_kategori_profil/'); ?>" + id_kategori_profil,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -341,7 +341,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('profil/delProfil/'); ?>" + id_profil,
+                    url: "<?= site_url('Profil/delProfil/'); ?>" + id_profil,
                     dataType: "json",
                     success: function(response) {
                         if (response.sukses) {
@@ -394,7 +394,7 @@
             if (result.isConfirmed) {
                 $.ajax({
                     type: "POST",
-                    url: "<?= site_url('profil/tambah_kategori_profil'); ?>",
+                    url: "<?= site_url('Profil/tambah_kategori_profil'); ?>",
                     data: $('#formProfil').serialize(),
                     dataType: "json",
                     success: function(response) {
@@ -476,7 +476,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('profil/tambah_profil') ?>",
+            url: "<?= site_url('Profil/tambah_profil') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
@@ -548,7 +548,7 @@
         var textareaValue = $('#teks_profil').summernote('code');
         $.ajax({
             type: "GET",
-            url: "<?= site_url('profil/get_id/'); ?>" + id_profil,
+            url: "<?= site_url('Profil/get_id/'); ?>" + id_profil,
             dataType: "json",
             success: function(data) {
                 $('[name=id_kategori_profil]').val(data.id_kategori_profil);

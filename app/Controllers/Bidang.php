@@ -107,12 +107,6 @@ class Bidang extends BaseController
                         'required' => 'Jabatan Pengurus Tidak Boleh Kosong!!'
                     ],
                 ],
-                'nip' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'NIP Pengurus Tidak Boleh Kosong!!'
-                    ],
-                ],
                 'id_kategori' => [
                     'rules' => 'required',
                     'errors' => [
@@ -142,7 +136,6 @@ class Bidang extends BaseController
                     'error' => [
                         'errorNama' => $validation->getError('nama_pengurus'),
                         'errorJabatan' => $validation->getError('jabatan_pengurus'),
-                        'errorNip' => $validation->getError('nip'),
                         'error_kategoriBidang' => $validation->getError('id_kategori'),
                         'errorImage' => $validation->getError('image_pengurus'),
                         'errorTeks' => $validation->getError('teks_bidang'),
@@ -191,12 +184,6 @@ class Bidang extends BaseController
                         'required' => 'Jabatan Pengurus Tidak Boleh Kosong!!'
                     ],
                 ],
-                'nip' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'NIP Pengurus Tidak Boleh Kosong!!'
-                    ],
-                ],
                 'id_kategori' => [
                     'rules' => 'required',
                     'errors' => [
@@ -217,7 +204,6 @@ class Bidang extends BaseController
                     'error' => [
                         'errorNama' => $validation->getError('nama_pengurus'),
                         'errorJabatan' => $validation->getError('jabatan_pengurus'),
-                        'errorNip' => $validation->getError('nip'),
                         'error_kategoriBidang' => $validation->getError('id_kategori'),
                         'errorTeks' => $validation->getError('teks_bidang'),
                     ],
