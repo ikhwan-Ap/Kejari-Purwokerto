@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\kategoriModel;
 use Config\Services;
-use App\Models\BidangModel;
+use App\Models\bidangModel;
 use CodeIgniter\API\ResponseTrait;
 
 class Bidang extends BaseController

@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\beritaModel;
 use Config\Services;
-use CodeIgniter\API\ResponseTrait;
 
 class Berita extends BaseController
 {

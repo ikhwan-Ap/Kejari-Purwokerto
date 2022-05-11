@@ -100,6 +100,9 @@ $routes->get('/download_excel', 'Kasus::download_excel');
 $routes->get('/download_file/(:any)', 'Menu::download_file/$1');
 $routes->get('/admin/download_peraturan/(:any)', 'Peraturan::download_peraturan/$1');
 $routes->get('/admin/download_pengumuman/(:any)', 'Pengumuman::download_pengumuman/$1');
+
+//Api
+$routes->resource('BidangApi');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

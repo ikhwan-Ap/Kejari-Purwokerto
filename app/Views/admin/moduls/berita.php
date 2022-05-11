@@ -371,7 +371,7 @@ $year = $arr[0];
         var textareaValue = $('#teks_berita').summernote('code');
         $.ajax({
             type: "GET",
-            url: "<?= site_url('berita/get_id/'); ?>" + id_berita,
+            url: "<?= site_url('Berita/get_id/'); ?>" + id_berita,
             dataType: "json",
             success: function(data) {
                 showForm();
@@ -394,7 +394,7 @@ $year = $arr[0];
 
         $.ajax({
             type: "POST",
-            url: "<?= site_url('berita/editBerita') ?>",
+            url: "<?= site_url('Berita/editBerita') ?>",
             data: data,
             enctype: 'multipart/form-data',
             processData: false,
