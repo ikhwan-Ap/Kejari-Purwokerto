@@ -32,7 +32,7 @@ class Struktur extends BaseController
 
     public function del_struktur($id_struktur)
     {
-        $this->struktur->del_struktur($id_struktur);
+        $this->struktur->delete($id_struktur);
         $data = [
             'sukses' => 'Data Struktur Berhasil Di Hapus'
         ];
@@ -135,24 +135,18 @@ class Struktur extends BaseController
                         $struktur = $this->struktur->get_id($id_struktur);
                         $unlink = unlink('uploads/struktur/' . $struktur['img_struktur']);
                         if ($unlink != null) {
-                            $this->struktur->save([
-                                'id_struktur' => $id_struktur,
+                            $this->struktur->update(['id_struktur' => $id_struktur], [
                                 'nama_struktur' => $nama_struktur,
-                                'img_struktur' => $nama_image,
+                                'img_struktur' => $nama_image
                             ]);
-                            $data = [
-                                'sukses' => 'Data Struktur Berhasil Di Ubah'
-                            ];
+                            $data = ['sukses' => 'Data Struktur Berhasil Di Ubah'];
                         }
                     }
                 } else {
-                    $this->struktur->save([
-                        'id_struktur' => $id_struktur,
-                        'nama_struktur' => $nama_struktur,
+                    $this->struktur->update(['id_struktur' => $id_struktur], [
+                        'nama_struktur' => $nama_struktur
                     ]);
-                    $data = [
-                        'sukses' => 'Data Struktur Berhasil Di Ubah'
-                    ];
+                    $data = ['sukses' => 'Data Struktur Berhasil Di Ubah'];
                 }
             }
         }

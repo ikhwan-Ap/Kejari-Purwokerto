@@ -48,20 +48,16 @@ class Modul extends BaseController
 
     public function del_agenda($id_agenda)
     {
-        $this->agenda->del_agenda($id_agenda);
-        $data = [
-            'sukses' => 'Data Agenda Berhasil Di Hapus'
-        ];
+        $this->agenda->delete($id_agenda);
+        $data = ['sukses' => 'Data Agenda Berhasil Di Hapus'];
         echo json_encode($data);
     }
     public function del_pelayanan($id_pelayanan)
     {
         $pelayanan = $this->pelayanan->get_id($id_pelayanan);
         unlink('img_pelayanan/' . $pelayanan['img_pelayanan']);
-        $this->pelayanan->del_pelayanan($id_pelayanan);
-        $data = [
-            'sukses' => 'Data Pelayanan Berhasil Di Hapus'
-        ];
+        $this->pelayanan->delete($id_pelayanan);
+        $data = ['sukses' => 'Data Pelayanan Berhasil Di Hapus'];
         echo json_encode($data);
     }
 
@@ -104,15 +100,13 @@ class Modul extends BaseController
                     ],
                 ];
             } else {
-                $this->agenda->save([
-                    'id_agenda' => $id_agenda,
+                $data = [
                     'nama_agenda' => $nama_agenda,
                     'teks_agenda' => $teks_agenda,
                     'tanggal_agenda' => $tanggal_agenda,
-                ]);
-                $data = [
-                    'sukses' => 'Data Berhasil Di Ubah'
                 ];
+                $this->agenda->update(['id_agenda' => $id_agenda], $data);
+                $data = ['sukses' => 'Data Berhasil Di Ubah'];
             }
         }
         echo json_encode($data);
@@ -241,30 +235,26 @@ class Modul extends BaseController
                         $pelayanan = $this->pelayanan->get_id($id_pelayanan);
                         $unlink = unlink('img_pelayanan/' . $pelayanan['img_pelayanan']);
                         if ($unlink != null) {
-                            $this->pelayanan->save([
-                                'id_pelayanan' => $id_pelayanan,
+                            $data = [
                                 'nama_pelayanan' => $nama_pelayanan,
                                 'url_pelayanan' => $url_pelayanan,
                                 'warna_pelayanan' => $warna_pelayanan,
                                 'gradiasi_pelayanan' => $gradiasi_pelayanan,
                                 'img_pelayanan' => $nama_image,
-                            ]);
-                            $data = [
-                                'sukses' => 'Data Pelayanan Berhasil Di Ubah'
                             ];
+                            $this->pelayanan->update(['id_pelayanan' => $id_pelayanan], $data);
+                            $data = ['sukses' => 'Data Pelayanan Berhasil Di Ubah'];
                         }
                     }
                 } else {
-                    $this->pelayanan->save([
-                        'id_pelayanan' => $id_pelayanan,
+                    $data = [
                         'nama_pelayanan' => $nama_pelayanan,
                         'url_pelayanan' => $url_pelayanan,
                         'warna_pelayanan' => $warna_pelayanan,
-                        'gradiasi_pelayanan' => $gradiasi_pelayanan,
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Pelayanan Berhasil Di Ubah'
+                        'gradiasi_pelayanan' => $gradiasi_pelayanan
                     ];
+                    $this->pelayanan->update(['id_pelayanan' => $id_pelayanan], $data);
+                    $data = ['sukses' => 'Data Pelayanan Berhasil Di Ubah'];
                 }
             }
         }

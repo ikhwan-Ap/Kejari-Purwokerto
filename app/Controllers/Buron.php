@@ -16,9 +16,7 @@ class Buron extends BaseController
     }
     public function index()
     {
-        $data = [
-            'title' => 'DPO',
-        ];
+        $data = ['title' => 'DPO'];
         return view('admin/kasus/buron', $data);
     }
 
@@ -102,30 +100,26 @@ class Buron extends BaseController
                         $buron = $this->buron->get_id($id_buron);
                         $unlink = unlink('uploads/buron/' . $buron['image']);
                         if ($unlink != null) {
-                            $this->buron->save([
-                                'id_buron' => $id_buron,
+                            $data = [
                                 'nama_buron' => $nama_buron,
                                 'jenis_kelamin' => $jenis_kelamin,
                                 'usia' => $usia,
                                 'image' => $nama_image,
                                 'alamat_buron' => $alamat_buron,
-                            ]);
-                            $data = [
-                                'sukses' => 'Data Buron Berhasil Di Tambahkan'
                             ];
+                            $this->buron->update(['id_buron' => $id_buron], $data);
+                            $data = ['sukses' => 'Data Buron Berhasil Di Edit'];
                         }
                     }
                 } else {
-                    $this->buron->save([
-                        'id_buron' => $id_buron,
+                    $data = [
                         'nama_buron' => $nama_buron,
                         'jenis_kelamin' => $jenis_kelamin,
                         'usia' => $usia,
                         'alamat_buron' => $alamat_buron,
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Buron Berhasil Di Tambahkan'
                     ];
+                    $this->buron->update(['id_buron' => $id_buron], $data);
+                    $data = ['sukses' => 'Data Buron Berhasil Di Edit'];
                 }
             }
         }
@@ -136,10 +130,8 @@ class Buron extends BaseController
     {
         $buron = $this->buron->get_id($id_buron);
         unlink('uploads/buron/' . $buron['image']);
-        $this->buron->del_buron($id_buron);
-        $data = [
-            'sukses' => 'Data kasus berhasil di hapus'
-        ];
+        $this->buron->delete($id_buron);
+        $data = ['sukses' => 'Data kasus berhasil di hapus'];
         echo json_encode($data);
     }
 

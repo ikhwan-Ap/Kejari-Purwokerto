@@ -61,7 +61,7 @@ class Peraturan extends BaseController
 
     public function del_kategori_peraturan($id_kategori_peraturan)
     {
-        $this->kategori_peraturan->del_kategori_peraturan($id_kategori_peraturan);
+        $this->kategori_peraturan->delete($id_kategori_peraturan);
         $data = [
             'sukses' => 'Data Kategori berhasil di hapus'
         ];
@@ -72,10 +72,8 @@ class Peraturan extends BaseController
     {
         $peraturan = $this->peraturan->get_id($id_peraturan);
         unlink('dokumen/peraturan/' . $peraturan['file_peraturan']);
-        $this->peraturan->del_peraturan($id_peraturan);
-        $data = [
-            'sukses' => 'Data Peraturan berhasil di hapus'
-        ];
+        $this->peraturan->delete($id_peraturan);
+        $data = ['sukses' => 'Data Peraturan berhasil di hapus'];
         echo json_encode($data);
     }
 
@@ -198,26 +196,22 @@ class Peraturan extends BaseController
                         $peraturan = $this->peraturan->get_id($id_peraturan);
                         $unlink = unlink('dokumen/peraturan/' . $peraturan['file_peraturan']);
                         if ($unlink != null) {
-                            $this->peraturan->save([
-                                'id_peraturan' => $id_peraturan,
+                            $data = [
                                 'id_kategori_peraturan' => $id_kategori_peraturan,
                                 'file_peraturan' => $nama_file,
                                 'nama_peraturan' => $nama_peraturan
-                            ]);
-                            $data = [
-                                'sukses' => 'Data peraturan Berhasil Di Unggah'
                             ];
+                            $this->peraturan->save(['id_peraturan' => $id_peraturan], $data);
+                            $data = ['sukses' => 'Data peraturan Berhasil Di Unggah'];
                         }
                     }
                 } else {
-                    $this->peraturan->save([
-                        'id_peraturan' => $id_peraturan,
+                    $data = [
                         'id_kategori_peraturan' => $id_kategori_peraturan,
                         'nama_peraturan' => $nama_peraturan
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Peraturan Berhasil Di Ubah'
                     ];
+                    $this->peraturan->save(['id_peraturan' => $id_peraturan], $data);
+                    $data = ['sukses' => 'Data Peraturan Berhasil Di Ubah'];
                 }
             }
         }

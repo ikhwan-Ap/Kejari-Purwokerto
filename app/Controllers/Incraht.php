@@ -14,9 +14,7 @@ class Incraht extends BaseController
 
     public function index()
     {
-        $data = [
-            'title' => 'Incraht',
-        ];
+        $data = ['title' => 'Incraht',];
         return view('admin/kasus/incraht', $data);
     }
 

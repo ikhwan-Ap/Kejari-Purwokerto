@@ -48,12 +48,8 @@ class Bidang extends BaseController
                     ],
                 ];
             } else {
-                $this->kategori->save([
-                    'nama_kategori' => $kategori
-                ]);
-                $data = [
-                    'sukses' => 'Data Kategori Berhasil Di tambahkan!'
-                ];
+                $this->kategori->save(['nama_kategori' => $kategori]);
+                $data = ['sukses' => 'Data Kategori Berhasil Di tambahkan!'];
             }
         }
         echo json_encode($data);
@@ -61,20 +57,16 @@ class Bidang extends BaseController
 
     public function delKategori($id_kategori)
     {
-        $this->kategori->del_kategori($id_kategori);
-        $data = [
-            'sukses' => 'Data Kategori berhasil di hapus'
-        ];
+        $this->kategori->delete($id_kategori);
+        $data = ['sukses' => 'Data Kategori berhasil di hapus'];
         echo json_encode($data);
     }
     public function delBidang($id_bidang)
     {
         $bidang = $this->bidang->get_id($id_bidang);
         unlink('uploads/bidang/' . $bidang['image_pengurus']);
-        $this->bidang->del_bidang($id_bidang);
-        $data = [
-            'sukses' => 'Data Bidang berhasil di hapus'
-        ];
+        $this->bidang->delete($id_bidang);
+        $data = ['sukses' => 'Data Bidang berhasil di hapus'];
         echo json_encode($data);
     }
 
@@ -235,32 +227,28 @@ class Bidang extends BaseController
                         $bidang = $this->bidang->get_id($id_bidang);
                         $unlink = unlink('uploads/bidang/' . $bidang['image_pengurus']);
                         if ($unlink != null) {
-                            $this->bidang->save([
-                                'id_bidang' => $id_bidang,
+                            $data = [
                                 'nama_pengurus' => $nama_pengurus,
                                 'jabatan_pengurus' => $jabatan_pengurus,
                                 'nip' => $nip,
                                 'id_kategori' => $id_kategori,
                                 'image_pengurus' => $nama_image,
                                 'teks_bidang' => $teks_bidang
-                            ]);
-                            $data = [
-                                'sukses' => 'Data Bidang Berhasil Di Unggah'
                             ];
+                            $this->bidang->update(['id_bidang' => $id_bidang], $data);
+                            $data = ['sukses' => 'Data Bidang Berhasil Di Unggah'];
                         }
                     }
                 } else {
-                    $this->bidang->save([
-                        'id_bidang' => $id_bidang,
+                    $data = [
                         'nama_pengurus' => $nama_pengurus,
                         'jabatan_pengurus' => $jabatan_pengurus,
                         'nip' => $nip,
                         'id_kategori' => $id_kategori,
                         'teks_bidang' => $teks_bidang
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Bidang Berhasil Di Tambahkan'
                     ];
+                    $this->bidang->update(['id_bidang' => $id_bidang], $data);
+                    $data = ['sukses' => 'Data Bidang Berhasil Di Tambahkan'];
                 }
             }
         }

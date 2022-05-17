@@ -72,14 +72,11 @@ class Visi_misi extends BaseController
                     ],
                 ];
             } else {
-                $this->visi_misi->save([
-                    'id' => $id,
+                $this->visi_misi->update(['id' => $id], [
                     'visi' => $visi,
-                    'misi' => $misi,
+                    'misi' => $misi
                 ]);
-                $data = [
-                    'sukses' => 'Data Berhasil Di Ubah'
-                ];
+                $data = ['sukses' => 'Data Berhasil Di Ubah'];
             }
         }
         echo json_encode($data);

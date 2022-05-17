@@ -153,11 +153,10 @@ class Banner extends BaseController
                         $banner = $this->banner->get_id($id_banner);
                         $unlink = unlink('uploads/banner/' . $banner['img_banner']);
                         if ($unlink != null) {
-                            $this->banner->save([
-                                'id_banner' => $id_banner,
+                            $this->banner->update(['id_banner' => $id_banner], [
                                 'nama_banner' => $nama_banner,
                                 'url_banner' => $url_banner,
-                                'img_banner' => $nama_image,
+                                'img_banner' => $nama_image
                             ]);
                             $data = [
                                 'sukses' => 'Data Banner Berhasil Di Ubah'
@@ -165,8 +164,7 @@ class Banner extends BaseController
                         }
                     }
                 } else {
-                    $this->banner->save([
-                        'id_banner' => $id_banner,
+                    $this->banner->update(['id_banner' => $id_banner], [
                         'nama_banner' => $nama_banner,
                         'url_banner' => $url_banner,
                     ]);

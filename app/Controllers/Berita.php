@@ -98,10 +98,8 @@ class Berita extends BaseController
     {
         $berita = $this->berita->get_id($id_berita);
         unlink('uploads/berita/' . $berita['img_berita']);
-        $this->berita->del_berita($id_berita);
-        $data = [
-            'sukses' => 'Data Berita Berhasil Dihapus'
-        ];
+        $this->berita->delete($id_berita);
+        $data = ['sukses' => 'Data Berita Berhasil Dihapus'];
         echo json_encode($data);
     }
 
@@ -182,16 +180,14 @@ class Berita extends BaseController
                     $berita = $this->berita->get_id($id_berita);
                     $unlink = unlink('uploads/berita/' . $berita['img_berita']);
                     if ($unlink != null) {
-                        $this->berita->save([
-                            'id_berita' => $id_berita,
+                        $data = [
                             'judul_berita' => $judul_berita,
                             'tanggal' => $tanggal,
                             'img_berita' => $nama_image,
                             'teks_berita' => $teks_berita,
-                        ]);
-                        $data = [
-                            'sukses' => 'Data Berita Berhasil Diperbarui'
                         ];
+                        $this->berita->update(['id_berita' => $id_berita], $data);
+                        $data = ['sukses' => 'Data Berita Berhasil Diperbarui'];
                     }
                 }
             } else {
@@ -225,15 +221,13 @@ class Berita extends BaseController
                         ],
                     ];
                 } else {
-                    $this->berita->save([
-                        'id_berita' => $id_berita,
+                    $data = [
                         'judul_berita' => $judul_berita,
                         'tanggal' => $tanggal,
                         'teks_berita' => $teks_berita,
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Berita Berhasil Diperbarui'
                     ];
+                    $this->berita->update(['id_berita' => $id_berita], $data);
+                    $data = ['sukses' => 'Data Berita Berhasil Diperbarui'];
                 }
             }
         }

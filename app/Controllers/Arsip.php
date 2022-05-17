@@ -154,8 +154,7 @@ class Arsip extends BaseController
                         $arsip = $this->arsip->get_id($id_arsip);
                         $unlink = unlink('img_arsip/foto/' . $arsip['img_arsip_foto']);
                         if ($unlink != null) {
-                            $this->arsip->save([
-                                'id_arsip_foto' => $id_arsip,
+                            $this->arsip->update(['id_arsip_foto' => $id_arsip], [
                                 'nama_arsip_foto' => $nama,
                                 'tanggal_arsip_foto' => $tanggal,
                                 'img_arsip_foto' => $nama_image,
@@ -166,8 +165,7 @@ class Arsip extends BaseController
                         }
                     }
                 } else {
-                    $this->arsip->save([
-                        'id_arsip_foto' => $id_arsip,
+                    $this->arsip->update(['id_arsip_foto' => $id_arsip], [
                         'nama_arsip_foto' => $nama,
                         'tanggal_arsip_foto' => $tanggal,
                     ]);

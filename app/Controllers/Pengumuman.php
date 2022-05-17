@@ -57,20 +57,16 @@ class Pengumuman extends BaseController
 
     public function del_kategori_profil($id_kategori_profil)
     {
-        $this->kategori_profil->del_kategori_profil($id_kategori_profil);
-        $data = [
-            'sukses' => 'Data Kategori berhasil di hapus'
-        ];
+        $this->kategori_profil->delete($id_kategori_profil);
+        $data = ['sukses' => 'Data Kategori berhasil di hapus'];
         echo json_encode($data);
     }
     public function delPengumuman($id_pengumuman)
     {
         $pengumuman = $this->pengumuman->get_id($id_pengumuman);
         unlink('dokumen/pengumuman/' . $pengumuman['file_pengumuman']);
-        $this->pengumuman->del_pengumuman($id_pengumuman);
-        $data = [
-            'sukses' => 'Data Pengumuman berhasil di hapus'
-        ];
+        $this->pengumuman->delete($id_pengumuman);
+        $data = ['sukses' => 'Data Pengumuman berhasil di hapus'];
         echo json_encode($data);
     }
 
@@ -207,28 +203,24 @@ class Pengumuman extends BaseController
                         $pengumuman = $this->pengumuman->get_id($id_pengumuman);
                         $unlink = unlink('dokumen/pengumuman/' . $pengumuman['file_pengumuman']);
                         if ($unlink != null) {
-                            $this->pengumuman->save([
-                                'id_pengumuman' => $id_pengumuman,
+                            $data = [
                                 'nama_pengumuman' => $nama_pengumuman,
                                 'file_pengumuman' => $nama_file,
                                 'teks_pengumuman' => $teks_pengumuman,
                                 'tgl_pengumuman' => $tgl_pengumuman
-                            ]);
-                            $data = [
-                                'sukses' => 'Data Pengumuman Berhasil Di Unggah'
                             ];
+                            $this->pengumuman->save(['id_pengumuman' => $id_pengumuman], $data);
+                            $data = ['sukses' => 'Data Pengumuman Berhasil Di Unggah'];
                         }
                     }
                 } else {
-                    $this->pengumuman->save([
-                        'id_pengumuman' => $id_pengumuman,
+                    $data = [
                         'nama_pengumuman' => $nama_pengumuman,
                         'teks_pengumuman' => $teks_pengumuman,
                         'tgl_pengumuman' => $tgl_pengumuman
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Pengumuman Berhasil Di Ubah'
                     ];
+                    $this->pengumuman->save(['id_pengumuman' => $id_pengumuman], $data);
+                    $data = ['sukses' => 'Data Pengumuman Berhasil Di Ubah'];
                 }
             }
         }

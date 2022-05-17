@@ -21,25 +21,19 @@ class Menu extends BaseController
     public function index()
     {
 
-        $data = [
-            'title' => 'Header',
-        ];
+        $data = ['title' => 'Header',];
         return view('admin/menu/header', $data);
     }
 
     public function icon()
     {
-        $data = [
-            'title' => 'Icon',
-        ];
+        $data = ['title' => 'Icon',];
         return view('admin/menu/icon', $data);
     }
 
     public function carousel()
     {
-        $data = [
-            'title' => 'Carousel',
-        ];
+        $data = ['title' => 'Carousel',];
         return view('admin/menu/carousel', $data);
     }
 
@@ -235,13 +229,8 @@ class Menu extends BaseController
                     $navbar = $this->header->get_id($id_navbar);
                     $unlink = unlink('navbar/' . $navbar['img_navbar']);
                     if ($unlink != null) {
-                        $this->header->save([
-                            'id_navbar' => $id_navbar,
-                            'img_navbar' => $nama_image,
-                        ]);
-                        $data = [
-                            'sukses' => 'Data Bidang Berhasil Di Unggah'
-                        ];
+                        $this->header->update(['id_navbar' => $id_navbar], ['img_navbar' => $nama_image,]);
+                        $data = ['sukses' => 'Data Bidang Berhasil Di Unggah'];
                     }
                 }
             }
@@ -279,13 +268,8 @@ class Menu extends BaseController
                     $icon = $this->icon->get_icon_beranda($id_icon);
                     $unlink = unlink('icon-icon/' . $icon['img_icon']);
                     if ($unlink != null) {
-                        $this->icon->save([
-                            'id_icon' => $id_icon,
-                            'img_icon' => $nama_image,
-                        ]);
-                        $data = [
-                            'sukses' => 'Data Bidang Berhasil Di Unggah'
-                        ];
+                        $this->icon->update(['id_icon' => $id_icon], ['img_icon' => $nama_image]);
+                        $data = ['sukses' => 'Data Bidang Berhasil Di Unggah'];
                     }
                 }
             }
@@ -324,13 +308,8 @@ class Menu extends BaseController
                     $icon = $this->icon->get_icon($id_icon);
                     $unlink = unlink('icon-icon/' . $icon['img_icon']);
                     if ($unlink != null) {
-                        $this->icon->save([
-                            'id_icon' => $id_icon,
-                            'img_icon' => $nama_image,
-                        ]);
-                        $data = [
-                            'sukses' => 'Data Bidang Berhasil Di Unggah'
-                        ];
+                        $this->icon->update(['id_icon' => $id_icon], ['img_icon' => $nama_image]);
+                        $data = ['sukses' => 'Data Bidang Berhasil Di Unggah'];
                     }
                 }
             }
@@ -385,24 +364,16 @@ class Menu extends BaseController
                         $carousel = $this->carousel->get_id($id_carousel);
                         $unlink = unlink('img_carousel/' . $carousel['image']);
                         if ($unlink != null) {
-                            $this->carousel->save([
-                                'id_carousel' => $id_carousel,
+                            $this->carousel->update(['id_carousel' => $id_carousel], [
                                 'nama_carousel' => $nama_carousel,
                                 'image' => $nama_image,
                             ]);
-                            $data = [
-                                'sukses' => 'Data Bidang Berhasil Di Unggah'
-                            ];
+                            $data = ['sukses' => 'Data Bidang Berhasil Di Unggah'];
                         }
                     }
                 } else {
-                    $this->carousel->save([
-                        'id_carousel' => $id_carousel,
-                        'nama_carousel' => $nama_carousel,
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Bidang Berhasil Di Unggah'
-                    ];
+                    $this->carousel->update(['id_carousel' => $id_carousel], ['nama_carousel' => $nama_carousel]);
+                    $data = ['sukses' => 'Data Bidang Berhasil Di Unggah'];
                 }
             }
         }

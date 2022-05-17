@@ -62,7 +62,7 @@ class Profil extends BaseController
 
     public function del_kategori_profil($id_kategori_profil)
     {
-        $this->kategori_profil->del_kategori_profil($id_kategori_profil);
+        $this->kategori_profil->delete($id_kategori_profil);
         $data = [
             'sukses' => 'Data Kategori berhasil di hapus'
         ];
@@ -72,10 +72,8 @@ class Profil extends BaseController
     {
         $profil = $this->profil->get_id($id_profil);
         unlink('uploads/profil/' . $profil['img_profil']);
-        $this->profil->del_profil($id_profil);
-        $data = [
-            'sukses' => 'Data Profil berhasil di hapus'
-        ];
+        $this->profil->delete($id_profil);
+        $data = ['sukses' => 'Data Profil berhasil di hapus'];
         echo json_encode($data);
     }
 
@@ -197,26 +195,22 @@ class Profil extends BaseController
                         $profil = $this->profil->get_id($id_profil);
                         $unlink = unlink('uploads/profil/' . $profil['img_profil']);
                         if ($unlink != null) {
-                            $this->profil->save([
-                                'id_profil' => $id_profil,
+                            $data = [
                                 'id_kategori_profil' => $id_kategori_profil,
                                 'img_profil' => $nama_image,
                                 'teks_profil' => $teks_profil
-                            ]);
-                            $data = [
-                                'sukses' => 'Data Profil Berhasil Di Unggah'
                             ];
+                            $this->profil->update(['id_profil' => $id_profil], $data);
+                            $data = ['sukses' => 'Data Profil Berhasil Di Unggah'];
                         }
                     }
                 } else {
-                    $this->profil->save([
-                        'id_profil' => $id_profil,
+                    $data = [
                         'id_kategori_profil' => $id_kategori_profil,
                         'teks_profil' => $teks_profil
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Profil Berhasil Di Ubah'
                     ];
+                    $this->profil->update(['id_profil' => $id_profil], $data);
+                    $data = ['sukses' => 'Data Profil Berhasil Di Ubah'];
                 }
             }
         }

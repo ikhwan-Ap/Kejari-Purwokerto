@@ -74,11 +74,8 @@ class Video extends BaseController
 
     public function delVideo($id_video)
     {
-        $video = $this->video->get_id($id_video);
-        $this->video->del_video($id_video);
-        $data = [
-            'sukses' => 'Data Video Berhasil Dihapus'
-        ];
+        $this->video->delete($id_video);
+        $data = ['sukses' => 'Data Video Berhasil Dihapus'];
         echo json_encode($data);
     }
 
@@ -153,14 +150,11 @@ class Video extends BaseController
                     ],
                 ];
             } else {
-                $this->video->save([
-                    'id_video' => $id_video,
+                $this->video->update(['id_video' => $id_video], [
                     'judul_video' => $judul_video,
-                    'url' => $url,
+                    'url' => $url
                 ]);
-                $data = [
-                    'sukses' => 'Data Video Berhasil Diperbarui'
-                ];
+                $data = ['sukses' => 'Data Video Berhasil Diperbarui'];
             }
         }
         echo json_encode($data);

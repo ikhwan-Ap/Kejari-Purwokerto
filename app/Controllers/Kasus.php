@@ -16,9 +16,7 @@ class Kasus extends BaseController
     }
     public function index()
     {
-        $data = [
-            'title' => 'Kasus',
-        ];
+        $data = ['title' => 'Kasus',];
         return view('admin/kasus/index', $data);
     }
 
@@ -41,8 +39,7 @@ class Kasus extends BaseController
             $agenda = $this->request->getVar('agenda');
             $tanggal = $this->request->getVar('tanggal');
             $id_kasus = $this->request->getVar('id_kasus');
-            $this->kasus->save([
-                'id_kasus' => $id_kasus,
+            $data = [
                 'nama_terdakwa' => $nama_terdakwa,
                 'no_perkara' => $no_perkara,
                 'keterangan' => $keterangan,
@@ -52,33 +49,25 @@ class Kasus extends BaseController
                 'kategori' => $kategori,
                 'agenda' => $agenda,
                 'tanggal' => $tanggal
-            ]);
-
-            $data = [
-                'sukses' => 'Data kasus berhasil di edit'
             ];
+            $this->kasus->update(['id_kasus' => $id_kasus], $data);
+
+            $data = ['sukses' => 'Data kasus berhasil di edit'];
         }
         echo json_encode($data);
     }
 
     public function del_kasus($id_kasus)
     {
-        $this->kasus->del_kasus($id_kasus);
-        $data = [
-            'sukses' => 'Data kasus berhasil di hapus'
-        ];
+        $this->kasus->delete($id_kasus);
+        $data = ['sukses' => 'Data kasus berhasil di hapus'];
         echo json_encode($data);
     }
 
     public function kasus_selesai($id_kasus)
     {
-        $this->kasus->save([
-            'id_kasus' => $id_kasus,
-            'keterangan' => 'Incraht'
-        ]);
-        $data = [
-            'sukses' => 'Data Telah Berhasil Di Rubah(Selesai)'
-        ];
+        $this->kasus->update(['id_kasus' => $id_kasus], ['keterangan' => 'Incraht']);
+        $data = ['sukses' => 'Data Telah Berhasil Di Rubah(Selesai)'];
         echo json_encode($data);
     }
 

@@ -678,7 +678,7 @@
                     success: function(response) {
                         if (response.sukses) {
                             swalWithBootstrapButtons.fire(
-                                'Deleted!',
+                                'Done!',
                                 'Data Telah Selesai (Incraht)',
                                 'success'
                             ).then((result) => {

@@ -1,0 +1,13 @@
+ERROR - 2022-05-16 21:47:56 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-05-16 21:47:56 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1576): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Models\adminModel.php(16): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\Users\Lenovo\Desktop\kejari-purwokerto\app\Controllers\Auth.php(33): App\Models\adminModel->getLogin('admin')
+#4 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Auth->login()
+#5 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Lenovo\Desktop\kejari-purwokerto\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Lenovo\Desktop\kejari-purwokerto\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Lenovo...')
+#9 {main}

@@ -17,9 +17,7 @@ class Kejaksaan extends BaseController
     public function index()
     {
 
-        $data = [
-            'title' => 'Kepala Kejaksaan',
-        ];
+        $data = ['title' => 'Kepala Kejaksaan'];
         return view('admin/master/kepala_kejaksaan', $data);
     }
 
@@ -34,10 +32,8 @@ class Kejaksaan extends BaseController
     {
         $kepala_kejaksaan = $this->kepala_kejaksaan->get_id($id_kepala_kejaksaan);
         unlink('uploads/kepala_kejaksaan/' . $kepala_kejaksaan['img_kepala_kejaksaan']);
-        $this->kepala_kejaksaan->del_kepala_kejaksaan($id_kepala_kejaksaan);
-        $data = [
-            'sukses' => 'Data Kepala Kejaksaan Berhasil Di Hapus'
-        ];
+        $this->kepala_kejaksaan->delete($id_kepala_kejaksaan);
+        $data = ['sukses' => 'Data Kepala Kejaksaan Berhasil Di Hapus'];
         echo json_encode($data);
     }
 
@@ -129,28 +125,22 @@ class Kejaksaan extends BaseController
                     $image->move('uploads/kepala_kejaksaan', $nama_image);
                     if (!$valid_img) {
                         $data = [
-                            'error' => [
-                                'errorImage' => $validation->getError('img_kepala_kejaksaan'),
-                            ]
+                            'error' => ['errorImage' => $validation->getError('img_kepala_kejaksaan'),]
                         ];
                     } else {
                         $kepala_kejaksaan = $this->kepala_kejaksaan->get_id($id_kepala_kejaksaan);
                         $unlink = unlink('uploads/kepala_kejaksaan/' . $kepala_kejaksaan['img_kepala_kejaksaan']);
                         if ($unlink != null) {
-                            $this->kepala_kejaksaan->save([
-                                'id_kepala_kejaksaan' => $id_kepala_kejaksaan,
+                            $this->kepala_kejaksaan->update(['id_kepala_kejaksaan' => $id_kepala_kejaksaan], [
                                 'nama_kepala_kejaksaan' => $nama_kepala_kejaksaan,
-                                'img_kepala_kejaksaan' => $nama_image,
+                                'img_kepala_kejaksaan' => $nama_image
                             ]);
-                            $data = [
-                                'sukses' => 'Data Kepala Kejaksaan Berhasil Di Ubah'
-                            ];
+                            $data = ['sukses' => 'Data Kepala Kejaksaan Berhasil Di Ubah'];
                         }
                     }
                 } else {
-                    $this->kepala_kejaksaan->save([
-                        'id_kepala_kejaksaan' => $id_kepala_kejaksaan,
-                        'nama_kepala_kejaksaan' => $nama_kepala_kejaksaan,
+                    $this->kepala_kejaksaan->update(['id_kepala_kejaksaan' => $id_kepala_kejaksaan], [
+                        'nama_kepala_kejaksaan' => $nama_kepala_kejaksaan
                     ]);
                     $data = [
                         'sukses' => 'Data Kepala Kejaksaan Berhasil Di Ubah'

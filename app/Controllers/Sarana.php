@@ -61,7 +61,7 @@ class Sarana extends BaseController
 
     public function del_kategori_sarana($id_kategori_sarana)
     {
-        $this->kategori_sarana->del_kategori_sarana($id_kategori_sarana);
+        $this->kategori_sarana->delete($id_kategori_sarana);
         $data = [
             'sukses' => 'Data Kategori berhasil di hapus'
         ];
@@ -72,10 +72,8 @@ class Sarana extends BaseController
     {
         $sarana = $this->sarana->get_id($id_sarana);
         unlink('uploads/sarana/' . $sarana['img_sarana']);
-        $this->sarana->del_sarana($id_sarana);
-        $data = [
-            'sukses' => 'Data sarana berhasil di hapus'
-        ];
+        $this->sarana->delete($id_sarana);
+        $data = ['sukses' => 'Data sarana berhasil di hapus'];
         echo json_encode($data);
     }
 
@@ -197,26 +195,22 @@ class Sarana extends BaseController
                         $sarana = $this->sarana->get_id($id_sarana);
                         $unlink = unlink('uploads/sarana/' . $sarana['img_sarana']);
                         if ($unlink != null) {
-                            $this->sarana->save([
-                                'id_sarana' => $id_sarana,
+                            $data = [
                                 'id_kategori_sarana' => $id_kategori_sarana,
                                 'img_sarana' => $nama_image,
                                 'teks_sarana' => $teks_sarana
-                            ]);
-                            $data = [
-                                'sukses' => 'Data Sarana Berhasil Di Ubah'
                             ];
+                            $this->sarana->update(['id_sarana' => $id_sarana], $data);
+                            $data = ['sukses' => 'Data Sarana Berhasil Di Ubah'];
                         }
                     }
                 } else {
-                    $this->sarana->save([
-                        'id_sarana' => $id_sarana,
+                    $data = [
                         'id_kategori_sarana' => $id_kategori_sarana,
                         'teks_sarana' => $teks_sarana
-                    ]);
-                    $data = [
-                        'sukses' => 'Data Sarana Berhasil Di Ubah'
                     ];
+                    $this->sarana->update(['id_sarana' => $id_sarana], $data);
+                    $data = ['sukses' => 'Data Sarana Berhasil Di Ubah'];
                 }
             }
         }
