@@ -71,12 +71,12 @@ class Home extends BaseController
         $_SESSION['profil'] = $this->kategori_profil->get_kategori_profil();
         $_SESSION['peraturan'] = $this->kategori_peraturan->get_kategori_peraturan();
         $_SESSION['sarana'] = $this->kategori_sarana->get_kategori_sarana();
+        $_SESSION['video_cover'] =  $video_cover['url'];
         session()->set([
             'kategori' => $this->kategori->get_kategori(),
             'header' => $header['img_navbar'],
             'icon' => $icon['img_icon'],
             'icon_beranda' => $icon_beranda['img_icon'],
-            'video_cover' => $video_cover['url'],
             'nama_jaksa' => $nama['nama_kepala_kejaksaan'],
         ]);
     }
